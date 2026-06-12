@@ -21,6 +21,34 @@
   },
   "repairs": [
     {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/2f952ed9 alias for quoted key '2f952ed9'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/08d6964f alias for quoted key '08d6964f'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/4bc0f255 alias for quoted key '4bc0f255'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/9436319d alias for quoted key '9436319d'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/41638d24 alias for quoted key '41638d24'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/556bb773 alias for quoted key '556bb773'"
+    },
+    {
+      "kind": "component.quotedAlias",
+      "detail": "Added #/components/responses/5e128766 alias for quoted key '5e128766'"
+    },
+    {
       "kind": "schemaRef.alias",
       "detail": "Added compatibility schema for #/components/schemas/Error"
     },
@@ -43,6 +71,162 @@
     {
       "kind": "schemaRef.alias",
       "detail": "Added compatibility schema for #/components/schemas/PaginatedSuccessResponse"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped paths//1/vod/channel/{channel}/browse/delete/responses/204/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped paths//1/vod/channel/{channel}/browse/trash/{file}/delete/responses/204/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped paths//1/vod/channel/{channel}/browse/{file}/delete/responses/204/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped paths//1/vod/channel/{channel}/folder/{folder}/delete/responses/204/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped paths//1/vod/channel/{channel}/media/{media}/delete/responses/204/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "composition.objectToArray",
+      "detail": "Converted object-shaped components/responses/NotFound/content/application/json/schema/allOf to an array"
+    },
+    {
+      "kind": "mediaType.schema",
+      "detail": "Replaced invalid media schema paths//1/vod/channel/{channel}/upload/post/requestBody/content/file/schema with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/browse/{file}/put/requestBody/content/application/json/schema/properties/type with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/browse/{file}/put/requestBody/content/application/json/schema/properties/$ref with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/media/{media}/cut/post/requestBody/content/application/json/schema/properties/$ref with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/player/{player}/put/requestBody/content/application/json/schema/properties/type with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/player/{player}/put/requestBody/content/application/json/schema/properties/$ref with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/share/{share}/token/post/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/share/{share}/token/post/requestBody/content/application/json/schema/properties/$ref with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/consumption/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/consumption/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/consumption/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/geolocation/clusters/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/geolocation/countries/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/technologies/browsers/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/technologies/os/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/technologies/playback/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/technologies/players/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/viewing/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/media/{media}/viewing/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/technologies/browsers/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/technologies/os/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/technologies/playback/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/technologies/players/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewers/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewers/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewers/encodings/shares/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewers/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewers/uniques/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewing/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
+    },
+    {
+      "kind": "schema.property",
+      "detail": "Replaced invalid schema property paths//1/vod/channel/{channel}/statistics/viewing/encodings/histogram/get/responses/200/content/application/json/schema/allOf/1/properties/data with a permissive schema"
     },
     {
       "kind": "operationId.missing",

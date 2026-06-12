@@ -122,7 +122,11 @@ export function normalizeOpenApiSpec(input: JsonObject): NormalizeOpenApiResult 
     warnings: [],
   };
 
+  ensureQuotedComponentAliases(spec, report);
   ensureMissingSchemas(spec, report);
+  normalizeCompositions(spec, report);
+  normalizeMediaTypes(spec, report);
+  normalizeSchemaProperties(spec, report);
   normalizeOperations(spec, report);
   validateLocalRefs(spec, report);
 
@@ -132,6 +136,146 @@ export function normalizeOpenApiSpec(input: JsonObject): NormalizeOpenApiResult 
   }
 
   return { spec, report };
+}
+
+function ensureQuotedComponentAliases(spec: JsonObject, report: NormalizationReport): void {
+  const components = asOptionalObject(spec.components);
+  if (!components) {
+    return;
+  }
+
+  for (const [componentKind, componentValue] of Object.entries(components)) {
+    const componentMap = asOptionalObject(componentValue);
+    if (!componentMap) {
+      continue;
+    }
+
+    for (const [key, value] of Object.entries(componentMap)) {
+      if (!isWrappedInSingleQuotes(key)) {
+        continue;
+      }
+      const unquoted = key.slice(1, -1);
+      if (Object.hasOwn(componentMap, unquoted)) {
+        continue;
+      }
+      componentMap[unquoted] = cloneJsonValue(value);
+      report.repairs.push({
+        kind: "component.quotedAlias",
+        detail: `Added #/components/${componentKind}/${unquoted} alias for quoted key ${key}`,
+      });
+    }
+  }
+}
+
+function normalizeCompositions(value: unknown, report: NormalizationReport, path: string[] = []): void {
+  if (!isJsonObject(value)) {
+    return;
+  }
+
+  for (const key of ["allOf", "oneOf", "anyOf"]) {
+    const composition = value[key];
+    if (composition === undefined || Array.isArray(composition)) {
+      continue;
+    }
+    if (!isJsonObject(composition)) {
+      value[key] = [];
+      report.repairs.push({ kind: "composition.invalid", detail: `Replaced non-object ${path.concat(key).join("/")} with an empty array` });
+      continue;
+    }
+    value[key] = objectCompositionToArray(composition);
+    report.repairs.push({ kind: "composition.objectToArray", detail: `Converted object-shaped ${path.concat(key).join("/")} to an array` });
+  }
+
+  for (const [key, child] of Object.entries(value)) {
+    if (Array.isArray(child)) {
+      child.forEach((item, index) => normalizeCompositions(item, report, path.concat(key, String(index))));
+    } else {
+      normalizeCompositions(child, report, path.concat(key));
+    }
+  }
+}
+
+function objectCompositionToArray(composition: JsonObject): JsonObject[] {
+  const numericEntries = Object.entries(composition)
+    .filter(([key]) => /^\d+$/.test(key))
+    .sort(([left], [right]) => Number(left) - Number(right))
+    .map(([, value]) => (isJsonObject(value) ? value : {}));
+  const remainingEntries = Object.entries(composition).filter(([key]) => !/^\d+$/.test(key));
+  if (remainingEntries.length === 0) {
+    return numericEntries;
+  }
+  return [...numericEntries, Object.fromEntries(remainingEntries)];
+}
+
+function normalizeMediaTypes(value: unknown, report: NormalizationReport, path: string[] = []): void {
+  if (!isJsonObject(value)) {
+    return;
+  }
+
+  const content = asOptionalObject(value.content);
+  if (content && !path.includes("schema") && !path.includes("properties")) {
+    for (const [contentType, mediaValue] of Object.entries(content)) {
+      if (!isJsonObject(mediaValue)) {
+        content[contentType] = { schema: {} };
+        report.repairs.push({
+          kind: "mediaType.invalid",
+          detail: `Replaced invalid media type object ${path.concat("content", contentType).join("/")} with a permissive schema`,
+        });
+        continue;
+      }
+      if ("schema" in mediaValue && !isJsonObject(mediaValue.schema) && typeof mediaValue.schema !== "boolean") {
+        mediaValue.schema = {};
+        report.repairs.push({
+          kind: "mediaType.schema",
+          detail: `Replaced invalid media schema ${path.concat("content", contentType, "schema").join("/")} with a permissive schema`,
+        });
+      }
+    }
+  }
+
+  for (const [key, child] of Object.entries(value)) {
+    if (Array.isArray(child)) {
+      child.forEach((item, index) => normalizeMediaTypes(item, report, path.concat(key, String(index))));
+    } else {
+      normalizeMediaTypes(child, report, path.concat(key));
+    }
+  }
+}
+
+function normalizeSchemaProperties(value: unknown, report: NormalizationReport, path: string[] = []): void {
+  if (!isJsonObject(value)) {
+    return;
+  }
+
+  const properties = asOptionalObject(value.properties);
+  if (properties) {
+    for (const [propertyName, propertyValue] of Object.entries(properties)) {
+      if (isJsonObject(propertyValue) || typeof propertyValue === "boolean") {
+        continue;
+      }
+      properties[propertyName] = { "x-infomaniak-original-property-value": propertyValue };
+      report.repairs.push({
+        kind: "schema.property",
+        detail: `Replaced invalid schema property ${path.concat("properties", propertyName).join("/")} with a permissive schema`,
+      });
+    }
+  }
+
+  if ("items" in value && !isJsonObject(value.items) && typeof value.items !== "boolean" && !Array.isArray(value.items)) {
+    value.items = {};
+    report.repairs.push({
+      kind: "schema.items",
+      detail: `Replaced invalid items schema ${path.concat("items").join("/")} with a permissive schema`,
+    });
+  }
+
+  for (const [key, child] of Object.entries(value)) {
+    if (Array.isArray(child)) {
+      child.forEach((item, index) => normalizeSchemaProperties(item, report, path.concat(key, String(index))));
+    } else {
+      normalizeSchemaProperties(child, report, path.concat(key));
+    }
+  }
 }
 
 function normalizeOperations(spec: JsonObject, report: NormalizationReport): void {
@@ -316,6 +460,14 @@ function cloneJsonObject(value: JsonObject): JsonObject {
   return JSON.parse(JSON.stringify(value)) as JsonObject;
 }
 
+function cloneJsonValue(value: unknown): unknown {
+  return JSON.parse(JSON.stringify(value)) as unknown;
+}
+
+function isWrappedInSingleQuotes(value: string): boolean {
+  return value.length >= 2 && value.startsWith("'") && value.endsWith("'");
+}
+
 function ensureObject(parent: JsonObject, key: string): JsonObject {
   const value = parent[key];
   if (isJsonObject(value)) {
@@ -340,4 +492,3 @@ function asOptionalObject(value: unknown): JsonObject | undefined {
 function isJsonObject(value: unknown): value is JsonObject {
   return typeof value === "object" && value !== null && !Array.isArray(value);
 }
-

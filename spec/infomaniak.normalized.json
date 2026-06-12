@@ -13039,9 +13039,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": {
-                    "description": "The resource was deleted successfully."
-                  }
+                  "allOf": [
+                    {
+                      "description": "The resource was deleted successfully."
+                    }
+                  ]
                 }
               }
             }
@@ -13547,9 +13549,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": {
-                    "description": "The resource was deleted successfully."
-                  }
+                  "allOf": [
+                    {
+                      "description": "The resource was deleted successfully."
+                    }
+                  ]
                 }
               }
             }
@@ -14082,8 +14086,12 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/e40582f5_Fillable_App\\Models\\BrowsableVirtualFile"
+                  "type": {
+                    "x-infomaniak-original-property-value": "object"
+                  },
+                  "$ref": {
+                    "x-infomaniak-original-property-value": "#/components/schemas/e40582f5_Fillable_App\\Models\\BrowsableVirtualFile"
+                  }
                 },
                 "required": []
               }
@@ -14142,9 +14150,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": {
-                    "description": "The resource was deleted successfully."
-                  }
+                  "allOf": [
+                    {
+                      "description": "The resource was deleted successfully."
+                    }
+                  ]
                 }
               }
             }
@@ -18385,9 +18395,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": {
-                    "description": "The resource was deleted successfully."
-                  }
+                  "allOf": [
+                    {
+                      "description": "The resource was deleted successfully."
+                    }
+                  ]
                 }
               }
             }
@@ -19535,9 +19547,11 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "allOf": {
-                    "description": "The resource was deleted successfully."
-                  }
+                  "allOf": [
+                    {
+                      "description": "The resource was deleted successfully."
+                    }
+                  ]
                 }
               }
             }
@@ -20542,7 +20556,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "$ref": "#/components/parameters/cut"
+                  "$ref": {
+                    "x-infomaniak-original-property-value": "#/components/parameters/cut"
+                  }
                 },
                 "required": []
               }
@@ -21245,8 +21261,12 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "type": "object",
-                  "$ref": "#/components/schemas/e40582f5_Fillable_App\\Models\\Player"
+                  "type": {
+                    "x-infomaniak-original-property-value": "object"
+                  },
+                  "$ref": {
+                    "x-infomaniak-original-property-value": "#/components/schemas/e40582f5_Fillable_App\\Models\\Player"
+                  }
                 },
                 "required": []
               }
@@ -23532,7 +23552,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -23557,7 +23579,9 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "$ref": "#/components/parameters/maketoken"
+                  "$ref": {
+                    "x-infomaniak-original-property-value": "#/components/parameters/maketoken"
+                  }
                 },
                 "required": []
               }
@@ -23746,7 +23770,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -23817,7 +23843,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -23898,7 +23926,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -23982,7 +24012,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24060,7 +24092,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24138,7 +24172,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24219,7 +24255,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24300,7 +24338,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24381,7 +24421,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24462,7 +24504,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24637,7 +24681,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24718,7 +24764,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24893,7 +24941,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -24977,7 +25027,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25048,7 +25100,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25119,7 +25173,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25190,7 +25246,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25261,7 +25319,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25397,7 +25457,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25468,7 +25530,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25539,7 +25603,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25613,7 +25679,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25757,7 +25825,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25912,7 +25982,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -25983,7 +26055,9 @@
                     {
                       "type": "object",
                       "properties": {
-                        "data": []
+                        "data": {
+                          "x-infomaniak-original-property-value": []
+                        }
                       }
                     }
                   ]
@@ -26184,7 +26258,7 @@
               }
             },
             "file": {
-              "schema": 1
+              "schema": {}
             }
           }
         },
@@ -242818,8 +242892,8 @@
         "content": {
           "application/json": {
             "schema": {
-              "allOf": {
-                "0": {
+              "allOf": [
+                {
                   "type": "object",
                   "properties": {
                     "result": {
@@ -242844,12 +242918,14 @@
                     }
                   }
                 },
-                "properties": {
-                  "data": {
-                    "type": "string"
+                {
+                  "properties": {
+                    "data": {
+                      "type": "string"
+                    }
                   }
                 }
-              }
+              ]
             }
           }
         }
@@ -243279,6 +243355,293 @@
                   "$ref": "#/components/schemas/PaginatedSuccessResponse"
                 }
               ]
+            }
+          }
+        }
+      },
+      "2f952ed9": {
+        "description": "422 : The given data was invalid.",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 422
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "422 : The given data was invalid."
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "08d6964f": {
+        "description": "400 : BadRequestHttpException",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 400
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "400 : BadRequestHttpException"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "4bc0f255": {
+        "description": "404 : MissingModelBehaviorException",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 404
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "404 : MissingModelBehaviorException"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "9436319d": {
+        "description": "404 : InvalidImageFormatException",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 404
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "404 : InvalidImageFormatException"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "41638d24": {
+        "description": "404 : FileException",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 404
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "404 : FileException"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "556bb773": {
+        "description": "401 : NotAuthorized",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 401
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "401 : NotAuthorized"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "5e128766": {
+        "description": "500 : Exception",
+        "content": {
+          "application/json": {
+            "schema": {
+              "allOf": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "result": {
+                      "type": "string",
+                      "example": "failure"
+                    },
+                    "error": {
+                      "type": "object",
+                      "properties": {
+                        "code": {
+                          "type": "string",
+                          "example": 500
+                        },
+                        "description": {
+                          "type": "string",
+                          "example": "500 : Exception"
+                        },
+                        "context": {
+                          "type": "object"
+                        }
+                      }
+                    }
+                  }
+                }
+              ],
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
             }
           }
         }

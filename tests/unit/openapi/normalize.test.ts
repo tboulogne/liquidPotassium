@@ -150,6 +150,191 @@ describe("normalizeOpenApiSpec", () => {
     expect(report.repairs.some((repair) => repair.kind === "operationId.duplicate")).toBe(true);
   });
 
+  it("adds unquoted aliases for quoted component keys", () => {
+    const fixture: JsonObject = {
+      openapi: "3.1.0",
+      components: {
+        parameters: [],
+        responses: {
+          invalid: [],
+          "'bad-response'": { description: "quoted response" },
+          existing: { description: "existing response" },
+          "'existing'": { description: "should not overwrite" },
+        },
+      },
+      paths: {
+        "/1/kmeet/rooms": {
+          get: {
+            tags: ["Rooms"],
+            operationId: "getRooms",
+            responses: { 400: { $ref: "#/components/responses/bad-response" } },
+          },
+        },
+      },
+    };
+
+    const { spec, report } = normalizeOpenApiSpec(fixture);
+    const responses = ((spec.components as JsonObject).responses as JsonObject);
+
+    expect(responses["bad-response"]).toEqual({ description: "quoted response" });
+    expect(responses.existing).toEqual({ description: "existing response" });
+    expect(report.repairs.filter((repair) => repair.kind === "component.quotedAlias")).toHaveLength(1);
+  });
+
+  it("repairs object-shaped and invalid composition fields", () => {
+    const fixture: JsonObject = {
+      openapi: "3.1.0",
+      paths: {
+        "/1/kmeet/rooms": {
+          get: {
+            tags: ["Rooms"],
+            operationId: "getRooms",
+            responses: {
+              200: {
+                content: {
+                  "application/json": {
+                    schema: {
+                      allOf: {
+                        "1": { type: "string" },
+                        "2": "bad",
+                        "0": { type: "number" },
+                        properties: { value: { type: "boolean" } },
+                      },
+                      oneOf: "broken",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+
+    const { spec, report } = normalizeOpenApiSpec(fixture);
+    const schema = getJsonResponseSchema(spec);
+
+    expect(schema.allOf).toEqual([{ type: "number" }, { type: "string" }, {}, { properties: { value: { type: "boolean" } } }]);
+    expect(schema.oneOf).toEqual([]);
+    expect(report.repairs.some((repair) => repair.kind === "composition.objectToArray")).toBe(true);
+    expect(report.repairs.some((repair) => repair.kind === "composition.invalid")).toBe(true);
+  });
+
+  it("keeps numeric-only object-shaped compositions as sorted arrays", () => {
+    const fixture: JsonObject = {
+      openapi: "3.1.0",
+      paths: {
+        "/1/kmeet/rooms": {
+          get: {
+            tags: ["Rooms"],
+            operationId: "getRooms",
+            responses: {
+              200: {
+                content: {
+                  "application/json": {
+                    schema: {
+                      allOf: {
+                        "1": { type: "string" },
+                        "0": { type: "number" },
+                      },
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+
+    const { spec } = normalizeOpenApiSpec(fixture);
+    const schema = getJsonResponseSchema(spec);
+
+    expect(schema.allOf).toEqual([{ type: "number" }, { type: "string" }]);
+  });
+
+  it("repairs invalid schema property and items values", () => {
+    const fixture: JsonObject = {
+      openapi: "3.1.0",
+      paths: {
+        "/1/kmeet/rooms": {
+          get: {
+            tags: ["Rooms"],
+            operationId: "getRooms",
+            responses: {
+              200: {
+                content: {
+                  "application/json": {
+                    schema: {
+                      type: "object",
+                      properties: {
+                        type: "object",
+                        ok: { type: "string" },
+                        allowed: true,
+                      },
+                      items: "broken",
+                    },
+                  },
+                },
+              },
+            },
+          },
+        },
+      },
+    };
+
+    const { spec, report } = normalizeOpenApiSpec(fixture);
+    const schema = getJsonResponseSchema(spec);
+    const properties = schema.properties as JsonObject;
+
+    expect(properties.type).toEqual({ "x-infomaniak-original-property-value": "object" });
+    expect(properties.ok).toEqual({ type: "string" });
+    expect(properties.allowed).toBe(true);
+    expect(schema.items).toEqual({});
+    expect(report.repairs.some((repair) => repair.kind === "schema.property")).toBe(true);
+    expect(report.repairs.some((repair) => repair.kind === "schema.items")).toBe(true);
+  });
+
+  it("repairs invalid media type objects and schemas without touching schema properties named content", () => {
+    const fixture: JsonObject = {
+      openapi: "3.1.0",
+      paths: {
+        "/1/kmeet/rooms": {
+          get: {
+            tags: ["Rooms"],
+            operationId: "getRooms",
+            requestBody: {
+              content: {
+                file: { schema: 1 },
+                broken: 2,
+                "application/json": {
+                  schema: {
+                    type: "object",
+                    properties: {
+                      content: { type: "string" },
+                    },
+                  },
+                },
+              },
+            },
+            responses: { 200: { description: "ok" } },
+          },
+        },
+      },
+    };
+
+    const { spec, report } = normalizeOpenApiSpec(fixture);
+    const content = ((((spec.paths as JsonObject)["/1/kmeet/rooms"] as JsonObject).get as JsonObject).requestBody as JsonObject)
+      .content as JsonObject;
+    const jsonSchema = ((content["application/json"] as JsonObject).schema as JsonObject);
+
+    expect((content.file as JsonObject).schema).toEqual({});
+    expect(content.broken).toEqual({ schema: {} });
+    expect((jsonSchema.properties as JsonObject).content).toEqual({ type: "string" });
+    expect(report.repairs.some((repair) => repair.kind === "mediaType.invalid")).toBe(true);
+    expect(report.repairs.some((repair) => repair.kind === "mediaType.schema")).toBe(true);
+  });
+
   it("sanitizes duplicate operation ids that contain no identifier characters", () => {
     const fixture: JsonObject = {
       openapi: "3.1.0",
@@ -181,3 +366,13 @@ describe("normalizeOpenApiSpec", () => {
     expect(report.warnings).toEqual([]);
   });
 });
+
+function getJsonResponseSchema(spec: JsonObject): JsonObject {
+  const pathItem = (spec.paths as JsonObject)["/1/kmeet/rooms"] as JsonObject;
+  const operation = pathItem.get as JsonObject;
+  const responses = operation.responses as JsonObject;
+  const ok = responses["200"] as JsonObject;
+  const content = ok.content as JsonObject;
+  const media = content["application/json"] as JsonObject;
+  return media.schema as JsonObject;
+}

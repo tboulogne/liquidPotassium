@@ -11,6 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "isolatedModules": true,
     "skipLibCheck": true,
+    "resolveJsonModule": true,
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist",
@@ -20,4 +21,3 @@
   "include": ["src/**/*.ts", "scripts/**/*.ts", "tests/**/*.ts", "openclaw/**/*.ts", "vitest.config.ts"],
   "exclude": ["dist", "coverage", "node_modules"]
 }
-

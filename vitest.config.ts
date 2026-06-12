@@ -9,7 +9,7 @@ export default defineConfig({
       provider: "v8",
       reporter: ["text", "json", "lcov"],
       include: ["src/**/*.ts", "openclaw/**/*.ts"],
-      exclude: ["src/generated/**"],
+      exclude: ["src/generated/**", "src/client/generated-operation-client.ts"],
       thresholds: {
         statements: 100,
         branches: 100,
