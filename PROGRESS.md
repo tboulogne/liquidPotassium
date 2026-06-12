@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 4 - Runtime SDK.
-- Active task: Runtime SDK client is implemented and verified; next step is committing the focused runtime slice.
-- Repository status: generated catalog is committed; runtime client, typed errors, generated domain shape update, and client tests are ready to commit.
+- Phase: Phase 5 - Operation Catalog API.
+- Active task: Operation catalog API is implemented and verified; next step is committing the focused catalog slice.
+- Repository status: runtime SDK is committed; catalog helpers and tests are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -37,14 +37,15 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added spec copy, deterministic normalizer, normalized spec, normalization report, and normalizer tests.
 - `c976922 feat: generate infomaniak operation catalog`
   - Added generated OpenAPI types, domain catalog metadata, domain operation wrappers, endpoint representation tests for all normalized operations, and deterministic generation scripts.
+- `7b3ff7a feat: add runtime sdk client`
+  - Added `createInfomaniakClient`, raw and generated operation dispatch, injectable fetch, auth/header providers, request/response handling, typed errors, and mocked runtime tests.
 
 ## Next Task Queue
 
-1. Commit Phase 4 runtime SDK client.
-2. Implement and commit the operation catalog API.
-3. Build and commit the compact OpenClaw plugin tools.
-4. Add and commit the OpenClaw skill.
-5. Add and commit release documentation and CI.
+1. Commit Phase 5 operation catalog API.
+2. Build and commit the compact OpenClaw plugin tools.
+3. Add and commit the OpenClaw skill.
+4. Add and commit release documentation and CI.
 
 ## Validation Status
 
@@ -55,6 +56,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - OpenAPI normalization: passing for 1,429 operations with unique operation IDs, complete domain assignment, no unresolved local refs, and no warnings.
 - Generated endpoint coverage: passing for all 1,429 normalized operations across 17 generated domain test files.
 - Runtime SDK: passing mocked tests for auth, URL/path/query/body handling, multipart, binary/text/JSON responses, abort signals, non-2xx typed errors, generated operation dispatch, raw methods, custom base URLs, and missing fetch failures.
+- Operation catalog API: passing tests for domain listing, operation filtering, search, lookup, descriptions, mutating flags, and unknown-operation failures.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: not started.
 
