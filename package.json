@@ -4,11 +4,34 @@
   "private": true,
   "description": "Domain-oriented TypeScript SDK and OpenClaw integration for the Infomaniak API.",
   "type": "module",
+  "main": "./dist/src/index.js",
+  "types": "./dist/src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/index.d.ts",
+      "default": "./dist/src/index.js"
+    },
+    "./openclaw/plugin": {
+      "types": "./dist/openclaw/plugin.d.ts",
+      "default": "./dist/openclaw/plugin.js"
+    }
+  },
+  "files": [
+    "dist/src",
+    "dist/openclaw",
+    "openclaw/skills",
+    "README.md",
+    "RELEASE.md",
+    "spec/normalization-report.json"
+  ],
   "engines": {
     "node": ">=22"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "ci": "npm run check:generated && npm run check:no-network && npm run typecheck && npm run build && npm run test:coverage",
+    "check:generated": "npm run normalize && npm run generate && git diff --exit-code -- spec/infomaniak.normalized.json spec/normalization-report.json src/generated tests/generated",
+    "check:no-network": "tsx scripts/check-no-network-policy.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
@@ -29,4 +52,3 @@
     "vitest": "^3.2.4"
   }
 }
-

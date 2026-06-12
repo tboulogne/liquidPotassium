@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 7 - OpenClaw Skill.
-- Active task: OpenClaw skill is implemented and verified; next step is committing the focused skill slice.
-- Repository status: native OpenClaw plugin is committed; OpenClaw skill and drift tests are ready to commit.
+- Phase: Phase 8 - Release Readiness.
+- Active task: Release readiness is implemented and verified; next step is committing docs, CI, and release checks.
+- Repository status: OpenClaw skill is committed; release documentation, CI, package exports, and check scripts are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -43,11 +43,12 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added public catalog helpers for domain listing, operation filtering/search, lookup, descriptions, mutating flags, and unknown-operation failures.
 - `b5a335e feat: add openclaw infomaniak tools`
   - Added native OpenClaw plugin entry, compact tools, config policy handling, injected SDK calls, and OpenClaw adapter tests.
+- `3d0fe5d feat: add openclaw infomaniak skill`
+  - Added the Infomaniak OpenClaw skill and drift tests for valid tool references and safe search-describe-call guidance.
 
 ## Next Task Queue
 
-1. Commit Phase 7 OpenClaw skill.
-2. Add and commit release documentation and CI.
+1. Commit Phase 8 release readiness.
 
 ## Validation Status
 
@@ -61,6 +62,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Operation catalog API: passing tests for domain listing, operation filtering, search, lookup, descriptions, mutating flags, and unknown-operation failures.
 - OpenClaw plugin: passing tests for native registration, tool schemas, config defaults/validation, search/describe/call behavior, domain/operation filtering, mutating blocks, injected fetch usage, and no-network search/describe behavior.
 - OpenClaw skill: passing tests for valid tool references, search-describe-call workflow, and explicit mutating-operation intent guidance.
+- Release readiness: passing full `npm run ci`, including generation consistency, no-network policy, typecheck, build, and 100% coverage.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
 
