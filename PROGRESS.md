@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 5 - Operation Catalog API.
-- Active task: Operation catalog API is implemented and verified; next step is committing the focused catalog slice.
-- Repository status: runtime SDK is committed; catalog helpers and tests are ready to commit.
+- Phase: Phase 6 - OpenClaw Plugin.
+- Active task: OpenClaw plugin is implemented and verified; next step is committing the focused plugin slice.
+- Repository status: operation catalog API is committed; native OpenClaw tools and tests are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -39,13 +39,14 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added generated OpenAPI types, domain catalog metadata, domain operation wrappers, endpoint representation tests for all normalized operations, and deterministic generation scripts.
 - `7b3ff7a feat: add runtime sdk client`
   - Added `createInfomaniakClient`, raw and generated operation dispatch, injectable fetch, auth/header providers, request/response handling, typed errors, and mocked runtime tests.
+- `b95b654 feat: add operation catalog api`
+  - Added public catalog helpers for domain listing, operation filtering/search, lookup, descriptions, mutating flags, and unknown-operation failures.
 
 ## Next Task Queue
 
-1. Commit Phase 5 operation catalog API.
-2. Build and commit the compact OpenClaw plugin tools.
-3. Add and commit the OpenClaw skill.
-4. Add and commit release documentation and CI.
+1. Commit Phase 6 OpenClaw plugin tools.
+2. Add and commit the OpenClaw skill.
+3. Add and commit release documentation and CI.
 
 ## Validation Status
 
@@ -57,8 +58,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Generated endpoint coverage: passing for all 1,429 normalized operations across 17 generated domain test files.
 - Runtime SDK: passing mocked tests for auth, URL/path/query/body handling, multipart, binary/text/JSON responses, abort signals, non-2xx typed errors, generated operation dispatch, raw methods, custom base URLs, and missing fetch failures.
 - Operation catalog API: passing tests for domain listing, operation filtering, search, lookup, descriptions, mutating flags, and unknown-operation failures.
+- OpenClaw plugin: passing tests for native registration, tool schemas, config defaults/validation, search/describe/call behavior, domain/operation filtering, mutating blocks, injected fetch usage, and no-network search/describe behavior.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
-- OpenClaw plugin validation: not started.
+- OpenClaw plugin validation: implemented for compact native tools.
 
 ## Blockers And Risks
 
