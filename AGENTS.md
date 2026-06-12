@@ -2,6 +2,8 @@
 
 This project is a business-class TypeScript/Node SDK and OpenClaw integration for the Infomaniak OpenAPI specification. Treat correctness, maintainability, repeatability, and operator trust as product requirements, not polish.
 
+Read `MANIFESTO.md` before planning or implementing substantial changes. It defines the library's mission, domain-oriented API goal, and intended end state inside the OpenClaw ecosystem.
+
 ## Engineering Principles
 
 - Prefer typed TypeScript for public APIs, generated clients, test helpers, and build scripts.
