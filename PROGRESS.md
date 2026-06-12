@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 6 - OpenClaw Plugin.
-- Active task: OpenClaw plugin is implemented and verified; next step is committing the focused plugin slice.
-- Repository status: operation catalog API is committed; native OpenClaw tools and tests are ready to commit.
+- Phase: Phase 7 - OpenClaw Skill.
+- Active task: OpenClaw skill is implemented and verified; next step is committing the focused skill slice.
+- Repository status: native OpenClaw plugin is committed; OpenClaw skill and drift tests are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -41,12 +41,13 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added `createInfomaniakClient`, raw and generated operation dispatch, injectable fetch, auth/header providers, request/response handling, typed errors, and mocked runtime tests.
 - `b95b654 feat: add operation catalog api`
   - Added public catalog helpers for domain listing, operation filtering/search, lookup, descriptions, mutating flags, and unknown-operation failures.
+- `b5a335e feat: add openclaw infomaniak tools`
+  - Added native OpenClaw plugin entry, compact tools, config policy handling, injected SDK calls, and OpenClaw adapter tests.
 
 ## Next Task Queue
 
-1. Commit Phase 6 OpenClaw plugin tools.
-2. Add and commit the OpenClaw skill.
-3. Add and commit release documentation and CI.
+1. Commit Phase 7 OpenClaw skill.
+2. Add and commit release documentation and CI.
 
 ## Validation Status
 
@@ -59,6 +60,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Runtime SDK: passing mocked tests for auth, URL/path/query/body handling, multipart, binary/text/JSON responses, abort signals, non-2xx typed errors, generated operation dispatch, raw methods, custom base URLs, and missing fetch failures.
 - Operation catalog API: passing tests for domain listing, operation filtering, search, lookup, descriptions, mutating flags, and unknown-operation failures.
 - OpenClaw plugin: passing tests for native registration, tool schemas, config defaults/validation, search/describe/call behavior, domain/operation filtering, mutating blocks, injected fetch usage, and no-network search/describe behavior.
+- OpenClaw skill: passing tests for valid tool references, search-describe-call workflow, and explicit mutating-operation intent guidance.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
 
