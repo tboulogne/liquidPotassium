@@ -155,7 +155,7 @@ function renderOperationWrappers(domain: string, operations: readonly OperationM
 
 function renderOperationsRoot(domains: readonly DomainMetadata[]): string {
   const imports = domains.map((domain) => `import { create${pascalCase(domain.domain)}Operations } from "./${domain.domain}.js";`).join("\n");
-  const entries = domains.map((domain) => `    ${domain.domain}: create${pascalCase(domain.domain)}Operations(client),`).join("\n");
+  const entries = domains.map((domain) => `    ${domain.domain}: { operations: create${pascalCase(domain.domain)}Operations(client) },`).join("\n");
   return `${generatedHeader()}import type { GeneratedOperationClient } from "../../client/generated-operation-client.js";\n${imports}\n\nexport function createDomainOperations(client: GeneratedOperationClient) {\n  return {\n${entries}\n  } as const;\n}\n`;
 }
 

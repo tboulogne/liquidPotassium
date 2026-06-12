@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 3 - Generated Types, Catalog, And Endpoint Tests.
-- Active task: Phase 3 generation is complete and verified; next step is committing generated schema, catalog, wrappers, and endpoint tests.
-- Repository status: normalization is committed; generated types/catalog/wrappers/tests are ready to commit.
+- Phase: Phase 4 - Runtime SDK.
+- Active task: Runtime SDK client is implemented and verified; next step is committing the focused runtime slice.
+- Repository status: generated catalog is committed; runtime client, typed errors, generated domain shape update, and client tests are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -35,24 +35,27 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added Node 22+ ESM TypeScript scaffold, Vitest, no-network test harness, `.gitignore`, package lock, and initial validation scripts.
 - `bae9ddd feat: normalize infomaniak openapi spec`
   - Added spec copy, deterministic normalizer, normalized spec, normalization report, and normalizer tests.
+- `c976922 feat: generate infomaniak operation catalog`
+  - Added generated OpenAPI types, domain catalog metadata, domain operation wrappers, endpoint representation tests for all normalized operations, and deterministic generation scripts.
 
 ## Next Task Queue
 
-1. Commit Phase 3 generated types, catalog, wrappers, and endpoint tests.
-2. Implement the runtime SDK client with injectable transport and typed errors.
-3. Build the compact OpenClaw plugin tools.
-4. Add the OpenClaw skill.
-5. Add release documentation and CI.
+1. Commit Phase 4 runtime SDK client.
+2. Implement and commit the operation catalog API.
+3. Build and commit the compact OpenClaw plugin tools.
+4. Add and commit the OpenClaw skill.
+5. Add and commit release documentation and CI.
 
 ## Validation Status
 
-- Unit tests: passing for scaffold (`npm test`).
-- Typecheck: passing for scaffold (`npm run typecheck`).
-- Build: passing for scaffold (`npm run build`).
-- Coverage: 100% for scaffold (`npm run test:coverage`).
+- Unit tests: passing for scaffold, normalizer, generated endpoint tests, and runtime client (`npm test`).
+- Typecheck: passing for current source and tests (`npm run typecheck`).
+- Build: passing for current source (`npm run build`).
+- Coverage: 100% statements, branches, functions, and lines for included handwritten source (`npm run test:coverage`).
 - OpenAPI normalization: passing for 1,429 operations with unique operation IDs, complete domain assignment, no unresolved local refs, and no warnings.
 - Generated endpoint coverage: passing for all 1,429 normalized operations across 17 generated domain test files.
-- No-network test guarantee: policy documented, implementation not started.
+- Runtime SDK: passing mocked tests for auth, URL/path/query/body handling, multipart, binary/text/JSON responses, abort signals, non-2xx typed errors, generated operation dispatch, raw methods, custom base URLs, and missing fetch failures.
+- No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: not started.
 
 ## Blockers And Risks

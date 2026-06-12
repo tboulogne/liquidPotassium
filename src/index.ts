@@ -1,4 +1,6 @@
 export const packageName = "liquid-potassium";
+export { createInfomaniakClient, type DomainClients, type InfomaniakClient, type InfomaniakClientConfig, type RawClient, type RawRequestOptions } from "./client/create-client.js";
+export { InfomaniakError, InfomaniakOperationError, type OperationErrorDetails } from "./client/errors.js";
 export type { GeneratedOperationClient, OperationRequest } from "./client/generated-operation-client.js";
 export {
   buildDomainMetadata,
