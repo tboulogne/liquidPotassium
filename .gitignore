@@ -5,6 +5,3 @@ coverage/
 .vitest/
 .tsbuildinfo
 *.tsbuildinfo
-spec/infomaniak.normalized.json
-spec/normalization-report.json
-

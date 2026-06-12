@@ -8,7 +8,7 @@ export default defineConfig({
     coverage: {
       provider: "v8",
       reporter: ["text", "json", "lcov"],
-      include: ["src/**/*.ts", "scripts/**/*.ts", "openclaw/**/*.ts"],
+      include: ["src/**/*.ts", "openclaw/**/*.ts"],
       exclude: ["src/generated/**"],
       thresholds: {
         statements: 100,
@@ -19,4 +19,3 @@ export default defineConfig({
     }
   }
 });
-

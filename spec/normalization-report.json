@@ -1,0 +1,3061 @@
+{
+  "operationCount": 1429,
+  "domainCounts": {
+    "kmeet": 2,
+    "kchat": 173,
+    "ai": 16,
+    "vod": 364,
+    "urlShortener": 7,
+    "newsletter": 77,
+    "video": 99,
+    "swissBackup": 18,
+    "radio": 157,
+    "publicCloud": 74,
+    "mail": 125,
+    "etickets": 12,
+    "domains": 36,
+    "account": 38,
+    "core": 23,
+    "profile": 20,
+    "kdrive": 188
+  },
+  "repairs": [
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/Error"
+    },
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/AppError"
+    },
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/ApiError"
+    },
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/SuccessResponse"
+    },
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/TotalSuccessResponse"
+    },
+    {
+      "kind": "schemaRef.alias",
+      "detail": "Added compatibility schema for #/components/schemas/PaginatedSuccessResponse"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/kmeet/rooms",
+      "method": "post",
+      "detail": "Generated operationId post_1_kmeet_rooms for POST /1/kmeet/rooms"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/kmeet/rooms/{room_id}/settings",
+      "method": "get",
+      "detail": "Generated operationId get_1_kmeet_rooms_room_id_settings for GET /1/kmeet/rooms/{room_id}/settings"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel for GET /1/vod/channel"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/disk-usage",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/disk-usage"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/disk-usage",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_disk_usage for GET /1/vod/channel/{channel}/disk-usage"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbnail",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/thumbnail"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbnail",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_thumbnail for GET /1/vod/channel/{channel}/media/{media}/thumbnail"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbnail",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/thumbnail"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbnail",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_thumbnail for POST /1/vod/channel/{channel}/media/{media}/thumbnail"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse for GET /1/vod/channel/{channel}/browse"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/browse"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_browse for DELETE /1/vod/channel/{channel}/browse"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/copy",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/browse/copy"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/copy",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_copy for POST /1/vod/channel/{channel}/browse/copy"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/move",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/browse/move"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/move",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_move for POST /1/vod/channel/{channel}/browse/move"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/trash",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/trash"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/trash",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_trash for GET /1/vod/channel/{channel}/browse/trash"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/trash",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/browse/trash"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/trash",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_browse_trash for DELETE /1/vod/channel/{channel}/browse/trash"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/trash/{file}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/browse/trash/{file}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/trash/{file}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_browse_trash_file for DELETE /1/vod/channel/{channel}/browse/trash/{file}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/trash/{file}/restore",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/browse/trash/{file}/restore"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/trash/{file}/restore",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_trash_file_restore for POST /1/vod/channel/{channel}/browse/trash/{file}/restore"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/tree",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/tree"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/tree",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_tree for GET /1/vod/channel/{channel}/browse/tree"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/breadcrumb",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/breadcrumb"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/breadcrumb",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_breadcrumb for GET /1/vod/channel/{channel}/browse/breadcrumb"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}/breadcrumb",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/{file}/breadcrumb"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}/breadcrumb",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_file_breadcrumb for GET /1/vod/channel/{channel}/browse/{file}/breadcrumb"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/update",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/browse/update"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/update",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_browse_update for PUT /1/vod/channel/{channel}/browse/update"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_file for GET /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_browse_file for PUT /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_browse_file for DELETE /1/vod/channel/{channel}/browse/{file}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}/tree",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/browse/{file}/tree"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}/tree",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_browse_file_tree for GET /1/vod/channel/{channel}/browse/{file}/tree"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}/copy",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/browse/{file}/copy"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}/copy",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_file_copy for POST /1/vod/channel/{channel}/browse/{file}/copy"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/browse/{file}/move",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/browse/{file}/move"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}/move",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_file_move for POST /1/vod/channel/{channel}/browse/{file}/move"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/log",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/callback/log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/log",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_callback_log for GET /1/vod/channel/{channel}/callback/log"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/log",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/callback/log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/log",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_callback_log for DELETE /1/vod/channel/{channel}/callback/log"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/log/{callbackLog}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/callback/log/{callbackLog}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/log/{callbackLog}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_callback_log_callbackLog for GET /1/vod/channel/{channel}/callback/log/{callbackLog}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/log/{callbackLog}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/callback/log/{callbackLog}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/log/{callbackLog}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_callback_log_callbackLog for DELETE /1/vod/channel/{channel}/callback/log/{callbackLog}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_callback for GET /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_callback for PUT /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_callback for POST /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_callback for DELETE /1/vod/channel/{channel}/callback"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_callback_callback for GET /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_callback_callback for PUT /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/callback/{callback}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_callback_callback for DELETE /1/vod/channel/{channel}/callback/{callback}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/journal",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/journal"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/journal",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_journal for GET /1/vod/channel/{channel}/journal"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_encoding for GET /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_encoding for POST /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_encoding for DELETE /1/vod/channel/{channel}/encoding"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_encoding_encoding for GET /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_encoding_encoding for PUT /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/encoding/{encoding}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_encoding_encoding for DELETE /1/vod/channel/{channel}/encoding/{encoding}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_logo for GET /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_logo for POST /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_logo for DELETE /1/vod/channel/{channel}/logo"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo/detach",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/logo/detach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo/detach",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_logo_detach for POST /1/vod/channel/{channel}/logo/detach"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_logo_logo for GET /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_logo_logo for PUT /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo/{logo}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_logo_logo for DELETE /1/vod/channel/{channel}/logo/{logo}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/logo/{logo}/attach",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/logo/{logo}/attach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/logo/{logo}/attach",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_logo_logo_attach for POST /1/vod/channel/{channel}/logo/{logo}/attach"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/folder"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_folder for GET /1/vod/channel/{channel}/folder"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/folder"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_folder for POST /1/vod/channel/{channel}/folder"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/folder/{folder}/encoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_folder_folder_encoding for POST /1/vod/channel/{channel}/folder/{folder}/encoding"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/folder/{folder}/encoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_folder_folder_encoding for DELETE /1/vod/channel/{channel}/folder/{folder}/encoding"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_folder_folder_encoding_encoding for POST /1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_folder_folder_encoding_encoding for DELETE /1/vod/channel/{channel}/folder/{folder}/encoding/{encoding}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/logo/{logo}",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/folder/{folder}/logo/{logo}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/logo/{logo}",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_folder_folder_logo_logo for POST /1/vod/channel/{channel}/folder/{folder}/logo/{logo}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/logo",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/folder/{folder}/logo"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/logo",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_folder_folder_logo for DELETE /1/vod/channel/{channel}/folder/{folder}/logo"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/root",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/folder/root"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/root",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_folder_root for GET /1/vod/channel/{channel}/folder/root"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_folder_folder for POST /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_folder_folder for GET /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_folder_folder for PUT /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_folder_folder for DELETE /1/vod/channel/{channel}/folder/{folder}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/playlist",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/folder/{folder}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/playlist",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_folder_folder_playlist for GET /1/vod/channel/{channel}/folder/{folder}/playlist"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/ftp/user",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/ftp/user"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/ftp/user",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_ftp_user for GET /1/vod/channel/{channel}/ftp/user"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/ftp/user",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/ftp/user"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/ftp/user",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_ftp_user for POST /1/vod/channel/{channel}/ftp/user"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_ftp_user_ftpUser for GET /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_ftp_user_ftpUser for PUT /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/ftp/user/{ftpUser}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_ftp_user_ftpUser for DELETE /1/vod/channel/{channel}/ftp/user/{ftpUser}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media for GET /1/vod/channel/{channel}/media"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media for PUT /1/vod/channel/{channel}/media"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media for GET /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media for PUT /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media for DELETE /1/vod/channel/{channel}/media/{media}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_chapter for GET /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_chapter for POST /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media_chapter for PUT /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media_chapter for DELETE /1/vod/channel/{channel}/media/{media}/chapter"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_chapter_chapter for GET /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media_chapter_chapter for PUT /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/chapter/{chapter}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media_chapter_chapter for DELETE /1/vod/channel/{channel}/media/{media}/chapter/{chapter}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/cut",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/cut"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/cut",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_cut for GET /1/vod/channel/{channel}/media/{media}/cut"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/cut",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/cut"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/cut",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_cut for POST /1/vod/channel/{channel}/media/{media}/cut"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/waveform",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/waveform"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/waveform",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_waveform for POST /1/vod/channel/{channel}/media/{media}/waveform"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbstrip",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/thumbstrip"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/thumbstrip",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_thumbstrip for POST /1/vod/channel/{channel}/media/{media}/thumbstrip"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_player for GET /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_player for POST /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_player for DELETE /1/vod/channel/{channel}/player"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_player_player for GET /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_player_player for PUT /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_player_player for DELETE /1/vod/channel/{channel}/player/{player}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/copy",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/player/{player}/copy"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/copy",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_player_player_copy for POST /1/vod/channel/{channel}/player/{player}/copy"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_player_player_ad for GET /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_player_player_ad for POST /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_player_player_ad for DELETE /1/vod/channel/{channel}/player/{player}/ad"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_player_player_ad_ad for GET /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_player_player_ad_ad for PUT /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/player/{player}/ad/{ad}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_player_player_ad_ad for DELETE /1/vod/channel/{channel}/player/{player}/ad/{ad}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_playlist for GET /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist for POST /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_playlist for DELETE /1/vod/channel/{channel}/playlist"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_playlist_playlist for GET /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_playlist_playlist for PUT /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_playlist_playlist for DELETE /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "patch",
+      "detail": "Normalized malformed or empty tags for PATCH /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}",
+      "method": "patch",
+      "detail": "Generated operationId patch_1_vod_channel_channel_playlist_playlist for PATCH /1/vod/channel/{channel}/playlist/{playlist}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/browse/{folder?}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/playlist/{playlist}/browse/{folder?}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/browse/{folder?}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_playlist_playlist_browse_folder for GET /1/vod/channel/{channel}/playlist/{playlist}/browse/{folder?}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/share"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_share for GET /1/vod/channel/{channel}/share"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/share"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_share for POST /1/vod/channel/{channel}/share"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_share_share for GET /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_share_share for PUT /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share/{share}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_share_share for DELETE /1/vod/channel/{channel}/share/{share}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/share/{share}/token",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/share/{share}/token"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/share/{share}/token",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_share_share_token for POST /1/vod/channel/{channel}/share/{share}/token"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/avg_time",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/avg_time"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/avg_time",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_avg_time for GET /1/vod/channel/{channel}/statistics/avg_time"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/consumption",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_consumption for GET /1/vod/channel/{channel}/statistics/consumption"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/consumption/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/consumption/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/consumption/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_consumption_encodings_histogram for GET /1/vod/channel/{channel}/statistics/consumption/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media for GET /1/vod/channel/{channel}/statistics/media"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/consumption",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_consumption for GET /1/vod/channel/{channel}/statistics/media/{media}/consumption"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/consumption/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/consumption/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/consumption/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_consumption_encodings_histogram for GET /1/vod/channel/{channel}/statistics/media/{media}/consumption/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/geolocation/clusters",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/geolocation/clusters"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/geolocation/clusters",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_geolocation_clusters for GET /1/vod/channel/{channel}/statistics/media/{media}/geolocation/clusters"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/geolocation/countries",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/geolocation/countries"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/geolocation/countries",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_geolocation_countries for GET /1/vod/channel/{channel}/statistics/media/{media}/geolocation/countries"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/browsers/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/browsers/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/browsers/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_technologies_browsers_shares for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/browsers/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/os/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/os/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/os/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_technologies_os_shares for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/os/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/playback/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/playback/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/playback/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_technologies_playback_shares for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/playback/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/players/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/players/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/technologies/players/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_technologies_players_shares for GET /1/vod/channel/{channel}/statistics/media/{media}/technologies/players/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewers for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewers_encodings_histogram for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewers_encodings_shares for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/encodings/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/uniques",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/uniques"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewers/uniques",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewers_uniques for GET /1/vod/channel/{channel}/statistics/media/{media}/viewers/uniques"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewing",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewing"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewing",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewing for GET /1/vod/channel/{channel}/statistics/media/{media}/viewing"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewing/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/media/{media}/viewing/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/media/{media}/viewing/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_media_media_viewing_encodings_histogram for GET /1/vod/channel/{channel}/statistics/media/{media}/viewing/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/browsers/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/technologies/browsers/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/browsers/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_technologies_browsers_shares for GET /1/vod/channel/{channel}/statistics/technologies/browsers/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/os/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/technologies/os/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/os/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_technologies_os_shares for GET /1/vod/channel/{channel}/statistics/technologies/os/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/playback/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/technologies/playback/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/playback/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_technologies_playback_shares for GET /1/vod/channel/{channel}/statistics/technologies/playback/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/players/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/technologies/players/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/technologies/players/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_technologies_players_shares for GET /1/vod/channel/{channel}/statistics/technologies/players/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/time_ip",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/time_ip"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/time_ip",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_time_ip for GET /1/vod/channel/{channel}/statistics/time_ip"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers for GET /1/vod/channel/{channel}/statistics/viewers"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_encodings_histogram for GET /1/vod/channel/{channel}/statistics/viewers/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/encodings/shares",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/encodings/shares"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/encodings/shares",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_encodings_shares for GET /1/vod/channel/{channel}/statistics/viewers/encodings/shares"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_histogram for GET /1/vod/channel/{channel}/statistics/viewers/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/medias",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/medias"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/medias",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_medias for GET /1/vod/channel/{channel}/statistics/viewers/medias"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/uniques",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/uniques"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/uniques",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_uniques for GET /1/vod/channel/{channel}/statistics/viewers/uniques"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/uniques/medias",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewers/uniques/medias"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewers/uniques/medias",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewers_uniques_medias for GET /1/vod/channel/{channel}/statistics/viewers/uniques/medias"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewing",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewing"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewing",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewing for GET /1/vod/channel/{channel}/statistics/viewing"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/statistics/viewing/encodings/histogram",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/statistics/viewing/encodings/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/statistics/viewing/encodings/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_statistics_viewing_encodings_histogram for GET /1/vod/channel/{channel}/statistics/viewing/encodings/histogram"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/upload",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/upload"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/upload",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_upload for GET /1/vod/channel/{channel}/upload"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/upload",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/upload"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/upload",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_upload for POST /1/vod/channel/{channel}/upload"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{language}",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/subtitle/{language}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{language}",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_subtitle_language for POST /1/vod/channel/{channel}/media/{media}/subtitle/{language}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{language}/import",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/subtitle/{language}/import"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{language}/import",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_subtitle_language_import for POST /1/vod/channel/{channel}/media/{media}/subtitle/{language}/import"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/default",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/default"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/default",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media_subtitle_subtitle_default for PUT /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/default"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_subtitle_subtitle for GET /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media_subtitle_subtitle for PUT /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media_subtitle_subtitle for DELETE /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/logo/{logo}",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/media/{media}/logo/{logo}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/logo/{logo}",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_logo_logo for POST /1/vod/channel/{channel}/media/{media}/logo/{logo}"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/logo",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}/logo"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/logo",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media_logo for DELETE /1/vod/channel/{channel}/media/{media}/logo"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/encoding/constraint",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/encoding/constraint"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/encoding/constraint",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_encoding_constraint for GET /1/vod/encoding/constraint"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/encoding/profile",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/encoding/profile"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/encoding/profile",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_encoding_profile for GET /1/vod/encoding/profile"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/country",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/country"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/country",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_country for GET /1/vod/country"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/category",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/category"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/category",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_category for GET /1/vod/category"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/language",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/language"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/language",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_language for GET /1/vod/language"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/search",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/search"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/search",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_search for GET /1/vod/search"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/playlist",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/playlist",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_playlist for GET /1/vod/channel/{channel}/media/{media}/playlist"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/attach",
+      "method": "post",
+      "detail": "Normalized malformed or empty tags for POST /1/vod/channel/{channel}/playlist/attach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/attach",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_attach for POST /1/vod/channel/{channel}/playlist/attach"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/playlist/detach",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/playlist/detach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/detach",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_playlist_detach for DELETE /1/vod/channel/{channel}/playlist/detach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/attach",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_attach for POST /1/vod/channel/{channel}/playlist/{playlist}/attach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/detach",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_playlist_playlist_detach for DELETE /1/vod/channel/{channel}/playlist/{playlist}/detach"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/copy",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_copy for POST /1/vod/channel/{channel}/playlist/{playlist}/copy"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/image",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_playlist_playlist_image for GET /1/vod/channel/{channel}/playlist/{playlist}/image"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/image",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_playlist_playlist_image for DELETE /1/vod/channel/{channel}/playlist/{playlist}/image"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/media",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_playlist_playlist_media for GET /1/vod/channel/{channel}/playlist/{playlist}/media"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/media/move/up",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_media_move_up for POST /1/vod/channel/{channel}/playlist/{playlist}/media/move/up"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/media/move/down",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_media_move_down for POST /1/vod/channel/{channel}/playlist/{playlist}/media/move/down"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/media/move/after",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_media_move_after for POST /1/vod/channel/{channel}/playlist/{playlist}/media/move/after"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/playlist/{playlist}/media/move/before",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_playlist_playlist_media_move_before for POST /1/vod/channel/{channel}/playlist/{playlist}/media/move/before"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "get",
+      "detail": "Normalized malformed or empty tags for GET /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_subtitle for GET /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_subtitle for POST /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "put",
+      "detail": "Normalized malformed or empty tags for PUT /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_media_media_subtitle for PUT /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "tags",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "delete",
+      "detail": "Normalized malformed or empty tags for DELETE /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_media_media_subtitle for DELETE /1/vod/channel/{channel}/media/{media}/subtitle"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/summarize",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_subtitle_summarize for GET /1/vod/channel/{channel}/media/{media}/subtitle/summarize"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/summarize",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_subtitle_subtitle_summarize for GET /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/summarize"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/summarize",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_subtitle_subtitle_summarize for POST /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/summarize"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/translate",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_media_media_subtitle_subtitle_translate for POST /1/vod/channel/{channel}/media/{media}/subtitle/{subtitle}/translate"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel for GET /1/vod/channel/{channel}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel for PUT /1/vod/channel/{channel}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/export",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_export for POST /1/vod/channel/{channel}/browse/export"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/trash/restore",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_vod_channel_channel_browse_trash_restore for DELETE /1/vod/channel/{channel}/browse/trash/restore"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/browse/{file}/export",
+      "method": "post",
+      "detail": "Generated operationId post_1_vod_channel_channel_browse_file_export for POST /1/vod/channel/{channel}/browse/{file}/export"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/user-activity-log",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_user_activity_log for GET /1/vod/channel/{channel}/user-activity-log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/user-activity-log",
+      "method": "put",
+      "detail": "Generated operationId put_1_vod_channel_channel_user_activity_log for PUT /1/vod/channel/{channel}/user-activity-log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/folder/{folder}/user-activity-log",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_folder_folder_user_activity_log for GET /1/vod/channel/{channel}/folder/{folder}/user-activity-log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/vod/channel/{channel}/media/{media}/user-activity-log",
+      "method": "get",
+      "detail": "Generated operationId get_1_vod_channel_channel_media_media_user_activity_log for GET /1/vod/channel/{channel}/media/{media}/user-activity-log"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/vod/reflect/endpoints/v{version}/{endpoint?}",
+      "method": "get",
+      "detail": "Generated operationId get_2_vod_reflect_endpoints_vversion_endpoint for GET /2/vod/reflect/endpoints/v{version}/{endpoint?}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/vod/channels/{channel}/services",
+      "method": "post",
+      "detail": "Generated operationId post_2_vod_channels_channel_services for POST /2/vod/channels/{channel}/services"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/vod/reflect/endpoints/v{version}/{endpoint}",
+      "method": "post",
+      "detail": "Generated operationId post_2_vod_reflect_endpoints_vversion_endpoint for POST /2/vod/reflect/endpoints/v{version}/{endpoint}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/url-shortener",
+      "method": "get",
+      "detail": "Generated operationId get_1_url_shortener for GET /1/url-shortener"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/url-shortener",
+      "method": "post",
+      "detail": "Generated operationId post_1_url_shortener for POST /1/url-shortener"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/url-shortener",
+      "method": "get",
+      "detail": "Generated operationId get_2_url_shortener for GET /2/url-shortener"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/url-shortener",
+      "method": "post",
+      "detail": "Generated operationId post_2_url_shortener for POST /2/url-shortener"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/url-shortener/{short_url_code}",
+      "method": "put",
+      "detail": "Generated operationId put_1_url_shortener_short_url_code for PUT /1/url-shortener/{short_url_code}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/url-shortener/quota",
+      "method": "get",
+      "detail": "Generated operationId get_1_url_shortener_quota for GET /1/url-shortener/quota"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/url-shortener/quota",
+      "method": "get",
+      "detail": "Generated operationId get_2_url_shortener_quota for GET /2/url-shortener/quota"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/newsletters/{domain}/campaigns/{campaign}/test",
+      "method": "post",
+      "detail": "Generated operationId post_1_newsletters_domain_campaigns_campaign_test for POST /1/newsletters/{domain}/campaigns/{campaign}/test"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/videos/order",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/videos/order; first seen at GET /1/videos/order/{order}; new id Streaming_videoReturnsAPackOrder_get_1_videos_order"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_consumption for GET /1/videos/{channel}/stats/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/geolocation/countries",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_geolocation_countries for GET /1/videos/{channel}/stats/geolocation/countries"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/geolocation/clusters",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_geolocation_clusters for GET /1/videos/{channel}/stats/geolocation/clusters"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/viewers/uniques",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_viewers_uniques for GET /1/videos/{channel}/stats/viewers/uniques"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/viewing",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_viewing for GET /1/videos/{channel}/stats/viewing"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/stats/viewing/resolutions/histogram",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_stats_viewing_resolutions_histogram for GET /1/videos/{channel}/stats/viewing/resolutions/histogram"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/history/{connection_history}",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_history_connection_history for GET /1/videos/{channel}/history/{connection_history}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/players/{player}/thumbnail/{thumbnail}",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_players_player_thumbnail_thumbnail for GET /1/videos/{channel}/players/{player}/thumbnail/{thumbnail}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/players/{player}/embed",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_players_player_embed for GET /1/videos/{channel}/players/{player}/embed"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/options/recording/storage/{storage_machine}",
+      "method": "put",
+      "detail": "Generated operationId put_1_videos_channel_options_recording_storage_storage_machine for PUT /1/videos/{channel}/options/recording/storage/{storage_machine}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/options/recording/storage/{storage_machine}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_videos_channel_options_recording_storage_storage_machine for DELETE /1/videos/{channel}/options/recording/storage/{storage_machine}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}",
+      "method": "get",
+      "detail": "Generated operationId get_1_videos_channel_simulcasts_simulcast_platform_simulcast_config for GET /1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}",
+      "method": "put",
+      "detail": "Generated operationId put_1_videos_channel_simulcasts_simulcast_platform_simulcast_config for PUT /1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_videos_channel_simulcasts_simulcast_platform_simulcast_config for DELETE /1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}/disable",
+      "method": "put",
+      "detail": "Generated operationId put_1_videos_channel_simulcasts_simulcast_platform_simulcast_config_disable for PUT /1/videos/{channel}/simulcasts/{simulcast_platform}/{simulcast_config}/disable"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/admin",
+      "method": "put",
+      "detail": "Generated operationId put_1_swiss_backups_swiss_backup_id_admin for PUT /1/swiss_backups/{swiss_backup_id}/admin"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/admin",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_admin for POST /1/swiss_backups/{swiss_backup_id}/admin"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/admin/request_password",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_admin_request_password for POST /1/swiss_backups/{swiss_backup_id}/admin/request_password"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_swiss_backup_id_slots for GET /1/swiss_backups/{swiss_backup_id}/slots"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_slots for POST /1/swiss_backups/{swiss_backup_id}/slots"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/disable",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_slots_slot_id_disable for POST /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/disable"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/enable",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_slots_slot_id_enable for POST /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/enable"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/request_password",
+      "method": "post",
+      "detail": "Generated operationId post_1_swiss_backups_swiss_backup_id_slots_slot_id_request_password for POST /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/request_password"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups for GET /1/swiss_backups"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_swiss_backup_id for GET /1/swiss_backups/{swiss_backup_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}",
+      "method": "put",
+      "detail": "Generated operationId put_1_swiss_backups_swiss_backup_id for PUT /1/swiss_backups/{swiss_backup_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/acronis_informations",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_swiss_backup_id_acronis_informations for GET /1/swiss_backups/{swiss_backup_id}/acronis_informations"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_swiss_backup_id_slots_slot_id for GET /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}",
+      "method": "put",
+      "detail": "Generated operationId put_1_swiss_backups_swiss_backup_id_slots_slot_id for PUT /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_swiss_backups_swiss_backup_id_slots_slot_id for DELETE /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/rclone",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_swiss_backup_id_slots_slot_id_rclone for GET /1/swiss_backups/{swiss_backup_id}/slots/{slot_id}/rclone"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/pricing",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_pricing for GET /1/swiss_backups/pricing"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/swiss_backups/calculate",
+      "method": "get",
+      "detail": "Generated operationId get_1_swiss_backups_calculate for GET /1/swiss_backups/calculate"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/packs",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_packs for GET /1/radios/packs"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/streams/{stream_uuid}/playlist",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_streams_stream_uuid_playlist for GET /1/radios/streams/{stream_uuid}/playlist"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/streams/{stream_uuid}/introduction-file",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_streams_stream_uuid_introduction_file for GET /1/radios/streams/{stream_uuid}/introduction-file"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/players/{player_uuid}/config",
+      "method": "post",
+      "detail": "Replaced duplicate operationId from POST /1/radios/players/{player_uuid}/config; first seen at GET /1/radios/players/{player_uuid}/config; new id Streaming_radioGetPlayerConfig_post_1_radios_players_player_uuid_config"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/stats/sum-listeners-on-product",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/stats/sum-listeners-on-product; first seen at GET /1/radios/stats/sum-listeners; new id Streaming_radioGetStatsListeners_get_1_radios_stats_sum_listeners_on_product"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/radio/diag/status.php",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/radio/diag/status.php; first seen at GET /1/radios/stats/status; new id Streaming_radioGetStatus_get_1_radios_radio_diag_status_php"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/updatemetadata.php",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/updatemetadata.php; first seen at GET /1/radios/stats/metadata; new id Streaming_radioSetMetadataToStation_get_1_radios_updatemetadata_php"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/mediastats.php",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/mediastats.php; first seen at GET /1/radios/stats/mediastats; new id Streaming_radioGetMediastats_get_1_radios_mediastats_php"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/listclients.xml",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/listclients.xml; first seen at GET /1/radios/stats/mediastats; new id Streaming_radioGetMediastats_get_1_radios_listclients_xml"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/admin/stats.xml",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/admin/stats.xml; first seen at GET /1/radios/stats/sum-listeners; new id Streaming_radioGetStatsListeners_get_1_radios_admin_stats_xml"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/admin/stats",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/admin/stats; first seen at GET /1/radios/stats/sum-listeners; new id Streaming_radioGetStatsListeners_get_1_radios_admin_stats"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/admin/stats_group.xml",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/admin/stats_group.xml; first seen at GET /1/radios/stats/sum-listeners; new id Streaming_radioGetStatsListeners_get_1_radios_admin_stats_group_xml"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios for GET /1/radios"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id for GET /1/radios/{radio_product_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id for GET /1/radios/{radio_product_id}/stations/{station_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}",
+      "method": "put",
+      "detail": "Generated operationId put_1_radios_radio_product_id_stations_station_id for PUT /1/radios/{radio_product_id}/stations/{station_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_radios_radio_product_id_stations_station_id for DELETE /1/radios/{radio_product_id}/stations/{station_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams for GET /1/radios/{radio_product_id}/stations/{station_id}/streams"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/introduction-file",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_introduction_file for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/introduction-file"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/listeners",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_listeners for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/listeners"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/countries",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_countries for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/countries"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/countries_continent",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_countries_continent for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/countries_continent"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_consumption for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/total_consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_total_consumption for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/total_consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_players for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/total_players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_total_players for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/total_players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/export_csv",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_streams_stream_id_stats_export_csv for GET /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/stats/export_csv"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/listeners",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_listeners for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/listeners"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/listeners_per_minute",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_listeners_per_minute for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/listeners_per_minute"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/countries",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_countries for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/countries"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/countries_continent",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_countries_continent for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/countries_continent"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_consumption for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/total_consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_total_consumption for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/total_consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_players for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/total_players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_total_players for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/total_players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/export_csv",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stations_station_id_hls_stream_stats_export_csv for GET /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/stats/export_csv"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/autodj/playing_playlist/medias",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/{radio_product_id}/stations/{station_id}/autodj/playing_playlist/medias; first seen at GET /1/radios/{radio_product_id}/stations/{station_id}/autodj/playing_playlist; new id Streaming_radioGetPlayingPlaylist_get_1_radios_radio_product_id_stations_station_id_autodj_playing_playlist_medias"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/radios/{radio_product_id}/notification",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/radios/{radio_product_id}/notification; first seen at GET /1/radios/{radio_product_id}/stations/{station_id}/notification; new id Streaming_radioGetNotification_get_1_radios_radio_product_id_notification"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/listeners",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_listeners for GET /1/radios/{radio_product_id}/stats/listeners"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/listeners_per_minute",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_listeners_per_minute for GET /1/radios/{radio_product_id}/stats/listeners_per_minute"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/countries",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_countries for GET /1/radios/{radio_product_id}/stats/countries"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/countries_continent",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_countries_continent for GET /1/radios/{radio_product_id}/stats/countries_continent"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_consumption for GET /1/radios/{radio_product_id}/stats/consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/total_consumption",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_total_consumption for GET /1/radios/{radio_product_id}/stats/total_consumption"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_players for GET /1/radios/{radio_product_id}/stats/players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/total_players",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_total_players for GET /1/radios/{radio_product_id}/stats/total_players"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stats/export_csv",
+      "method": "get",
+      "detail": "Generated operationId get_1_radios_radio_product_id_stats_export_csv for GET /1/radios/{radio_product_id}/stats/export_csv"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/toggle_direct_live",
+      "method": "post",
+      "detail": "Generated operationId post_1_radios_radio_product_id_stations_station_id_streams_stream_id_toggle_direct_live for POST /1/radios/{radio_product_id}/stations/{station_id}/streams/{stream_id}/toggle_direct_live"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/add",
+      "method": "post",
+      "detail": "Generated operationId post_1_radios_radio_product_id_stations_station_id_hls_stream_add for POST /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/add"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/hls_stream/toggle_direct_live",
+      "method": "post",
+      "detail": "Generated operationId post_1_radios_radio_product_id_stations_station_id_hls_stream_toggle_direct_live for POST /1/radios/{radio_product_id}/stations/{station_id}/hls_stream/toggle_direct_live"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/transcoding/add",
+      "method": "post",
+      "detail": "Generated operationId post_1_radios_radio_product_id_stations_station_id_transcoding_add for POST /1/radios/{radio_product_id}/stations/{station_id}/transcoding/add"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/transcoding",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_radios_radio_product_id_stations_station_id_transcoding for DELETE /1/radios/{radio_product_id}/stations/{station_id}/transcoding"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/transcoding/{stream_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_radios_radio_product_id_stations_station_id_transcoding_stream_id for DELETE /1/radios/{radio_product_id}/stations/{station_id}/transcoding/{stream_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/radios/{radio_product_id}/stations/{station_id}/autodj/playlists/{playlist_id}/attach_media",
+      "method": "put",
+      "detail": "Generated operationId put_1_radios_radio_product_id_stations_station_id_autodj_playlists_playlist_id_attach_media for PUT /1/radios/{radio_product_id}/stations/{station_id}/autodj/playlists/{playlist_id}/attach_media"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/public_clouds/dbaas/regions",
+      "method": "get",
+      "detail": "Generated operationId get_1_public_clouds_dbaas_regions for GET /1/public_clouds/dbaas/regions"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/public_clouds/dbaas/packs",
+      "method": "get",
+      "detail": "Generated operationId get_1_public_clouds_dbaas_packs for GET /1/public_clouds/dbaas/packs"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/users/{public_cloud_user_id}/openrc",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/users/{public_cloud_user_id}/openrc; first seen at GET /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/users/{public_cloud_user_id}/authentication/{type}; new id Public_CloudGetAuthenticationFile_get_1_public_clouds_public_cloud_id_projects_public_cloud_project_id_users_public_cloud_user_id_openrc"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters",
+      "method": "get",
+      "detail": "Generated operationId get_1_public_clouds_public_cloud_id_projects_public_cloud_project_id_dbaas_dbaas_id_ip_filters for GET /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters",
+      "method": "put",
+      "detail": "Generated operationId put_1_public_clouds_public_cloud_id_projects_public_cloud_project_id_dbaas_dbaas_id_ip_filters for PUT /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_public_clouds_public_cloud_id_projects_public_cloud_project_id_dbaas_dbaas_id_ip_filters for DELETE /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/dbaas/{dbaas_id}/ip_filters"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailing_lists/{mailing_list_name}/subscribers",
+      "method": "patch",
+      "detail": "Generated operationId patch_1_mail_hostings_mail_hosting_id_mailing_lists_mailing_list_name_subscribers for PATCH /1/mail_hostings/{mail_hosting_id}/mailing_lists/{mailing_list_name}/subscribers"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/set_activation",
+      "method": "put",
+      "detail": "Generated operationId put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_set_activation for PUT /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/set_activation"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/reorder",
+      "method": "put",
+      "detail": "Generated operationId put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_reorder for PUT /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/reorder"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/scripts/set_activation",
+      "method": "put",
+      "detail": "Generated operationId put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_scripts_set_activation for PUT /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/filters/scripts/set_activation"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders",
+      "method": "get",
+      "detail": "Generated operationId get_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders for GET /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/signatures/upload",
+      "method": "post",
+      "detail": "Generated operationId post_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_signatures_upload for POST /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/signatures/upload"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auto_reply/reset",
+      "method": "put",
+      "detail": "Generated operationId put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auto_reply_reset for PUT /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auto_reply/reset"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{service_mail}/mailboxes/{mailbox_name}/accesses/webmail/users/bulk",
+      "method": "post",
+      "detail": "Generated operationId post_1_mail_hostings_service_mail_mailboxes_mailbox_name_accesses_webmail_users_bulk for POST /1/mail_hostings/{service_mail}/mailboxes/{mailbox_name}/accesses/webmail/users/bulk"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{service_mail}/mailboxes/{mailbox_name}/accesses/webmail/teams/bulk",
+      "method": "post",
+      "detail": "Generated operationId post_1_mail_hostings_service_mail_mailboxes_mailbox_name_accesses_webmail_teams_bulk for POST /1/mail_hostings/{service_mail}/mailboxes/{mailbox_name}/accesses/webmail/teams/bulk"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailing_lists/{mailing_list_name}",
+      "method": "patch",
+      "detail": "Generated operationId patch_1_mail_hostings_mail_hosting_id_mailing_lists_mailing_list_name for PATCH /1/mail_hostings/{mail_hosting_id}/mailing_lists/{mailing_list_name}"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}",
+      "method": "patch",
+      "detail": "Replaced duplicate operationId from PATCH /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}; first seen at PUT /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}; new id Mail_ServicesUpdateAMailbox_patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/signatures/{signature}",
+      "method": "patch",
+      "detail": "Generated operationId patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_signatures_signature for PATCH /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/signatures/{signature}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auto_reply/model/{model_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auto_reply_model_model_id for DELETE /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auto_reply/model/{model_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/invitations/{key}",
+      "method": "patch",
+      "detail": "Generated operationId patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_invitations_key for PATCH /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/invitations/{key}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders/spam",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders_spam for DELETE /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders/spam"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders/trash",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders_trash for DELETE /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}/auth/folders/trash"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/2/etickets/reservation/{reservation_uuid}",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /2/etickets/reservation/{reservation_uuid}; first seen at GET /2/etickets/reservation/{reservation_id}; new id EticketsGetReservationV2_get_2_etickets_reservation_reservation_uuid"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/etickets/surveys/answers/passes",
+      "method": "patch",
+      "detail": "Generated operationId patch_2_etickets_surveys_answers_passes for PATCH /2/etickets/surveys/answers/passes"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/domains/{domain}/nameservers",
+      "method": "put",
+      "detail": "Generated operationId put_2_domains_domain_nameservers for PUT /2/domains/{domain}/nameservers"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/domains/{domain}/zones",
+      "method": "get",
+      "detail": "Generated operationId get_2_domains_domain_zones for GET /2/domains/{domain}/zones"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/domains/{domain}/dnssec/check",
+      "method": "get",
+      "detail": "Generated operationId get_2_domains_domain_dnssec_check for GET /2/domains/{domain}/dnssec/check"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/domains/{domain}/dnssec/enable",
+      "method": "post",
+      "detail": "Generated operationId post_2_domains_domain_dnssec_enable for POST /2/domains/{domain}/dnssec/enable"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/domains/{domain}/dnssec/disable",
+      "method": "post",
+      "detail": "Generated operationId post_2_domains_domain_dnssec_disable for POST /2/domains/{domain}/dnssec/disable"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/accounts/{account}/invitations/{invitation}/mailbox/{mail_id}",
+      "method": "post",
+      "detail": "Generated operationId post_1_accounts_account_invitations_invitation_mailbox_mail_id for POST /1/accounts/{account}/invitations/{invitation}/mailbox/{mail_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/actions/{action_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_actions_action_id for GET /1/actions/{action_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/app-information/applications/version-types",
+      "method": "get",
+      "detail": "Generated operationId get_1_app_information_applications_version_types for GET /1/app-information/applications/version-types"
+    },
+    {
+      "kind": "operationId.duplicate",
+      "path": "/1/app-information/versions/{appStore}",
+      "method": "get",
+      "detail": "Replaced duplicate operationId from GET /1/app-information/versions/{appStore}; first seen at GET /1/app-information/versions; new id Core_ResourcesGetSupportedStoreList_get_1_app_information_versions_appStore"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/my_ksuite/{my_k_suite_id}",
+      "method": "get",
+      "detail": "Generated operationId get_1_my_ksuite_my_k_suite_id for GET /1/my_ksuite/{my_k_suite_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/products",
+      "method": "get",
+      "detail": "Generated operationId get_1_products for GET /1/products"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/events",
+      "method": "get",
+      "detail": "Generated operationId get_2_events for GET /2/events"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/1/accounts/{account}/invitations/{invitation}/drive/{drive_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_1_accounts_account_invitations_invitation_drive_drive_id for DELETE /1/accounts/{account}/invitations/{invitation}/drive/{drive_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/users",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_users for GET /2/drive/{drive_id}/users"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/download",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_files_file_id_download for GET /2/drive/{drive_id}/files/{file_id}/download"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/versions/{version_id}",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_files_file_id_versions_version_id for GET /2/drive/{drive_id}/files/{file_id}/versions/{version_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/versions/{version_id}/download",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_files_file_id_versions_version_id_download for GET /2/drive/{drive_id}/files/{file_id}/versions/{version_id}/download"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/access/teams",
+      "method": "post",
+      "detail": "Generated operationId post_2_drive_drive_id_files_file_id_access_teams for POST /2/drive/{drive_id}/files/{file_id}/access/teams"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/access/users",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_files_file_id_access_users for GET /2/drive/{drive_id}/files/{file_id}/access/users"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/access/users",
+      "method": "post",
+      "detail": "Generated operationId post_2_drive_drive_id_files_file_id_access_users for POST /2/drive/{drive_id}/files/{file_id}/access/users"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/access/users/{user_id}",
+      "method": "put",
+      "detail": "Generated operationId put_2_drive_drive_id_files_file_id_access_users_user_id for PUT /2/drive/{drive_id}/files/{file_id}/access/users/{user_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/{file_id}/access/users/{user_id}",
+      "method": "delete",
+      "detail": "Generated operationId delete_2_drive_drive_id_files_file_id_access_users_user_id for DELETE /2/drive/{drive_id}/files/{file_id}/access/users/{user_id}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/drive/{drive_id}/files/archives/{archive_uuid}",
+      "method": "get",
+      "detail": "Generated operationId get_2_drive_drive_id_files_archives_archive_uuid for GET /2/drive/{drive_id}/files/archives/{archive_uuid}"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/app/{drive_id}/share/{sharelink_uuid}/archive",
+      "method": "post",
+      "detail": "Generated operationId post_2_app_drive_id_share_sharelink_uuid_archive for POST /2/app/{drive_id}/share/{sharelink_uuid}/archive"
+    },
+    {
+      "kind": "operationId.missing",
+      "path": "/2/app/{drive_id}/share/{sharelink_uuid}/archive/{archive_uuid}/download",
+      "method": "get",
+      "detail": "Generated operationId get_2_app_drive_id_share_sharelink_uuid_archive_archive_uuid_download for GET /2/app/{drive_id}/share/{sharelink_uuid}/archive/{archive_uuid}/download"
+    }
+  ],
+  "warnings": []
+}

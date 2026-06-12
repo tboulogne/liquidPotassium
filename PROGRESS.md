@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 1 - Progress Reset And Scaffold.
-- Active task: Phase 1 scaffold is complete and verified; next step is committing the scaffold.
-- Repository status: documentation, raw OpenAPI spec, and scaffold changes are ready to commit.
+- Phase: Phase 2 - Spec Location And Normalization.
+- Active task: Phase 2 normalization is complete and verified; next step is committing normalization work.
+- Repository status: TypeScript scaffold is committed; normalized spec, report, normalizer, and tests are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -31,17 +31,17 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added `infomaniak_api_1781289971.json`.
 - `b5eff5d docs: add progress tracking workflow`
   - Added `PROGRESS.md` and documented synchronous main-agent/subagent coordination in `AGENTS.md` and `MASTERPLAN.md`.
+- `2ecffc3 chore: scaffold typescript project`
+  - Added Node 22+ ESM TypeScript scaffold, Vitest, no-network test harness, `.gitignore`, package lock, and initial validation scripts.
 
 ## Next Task Queue
 
-1. Commit Phase 1 scaffold.
-2. Move or copy the raw spec into the planned `spec/infomaniak.raw.json` location while preserving the committed original.
-3. Implement and test OpenAPI normalization.
-4. Generate typed schema, operation catalog, domain metadata, operation wrappers, and generated endpoint tests.
-5. Implement the runtime SDK client with injectable transport and typed errors.
-6. Build the compact OpenClaw plugin tools.
-7. Add the OpenClaw skill.
-8. Add release documentation and CI.
+1. Commit Phase 2 normalization work.
+2. Generate typed schema, operation catalog, domain metadata, operation wrappers, and generated endpoint tests.
+3. Implement the runtime SDK client with injectable transport and typed errors.
+4. Build the compact OpenClaw plugin tools.
+5. Add the OpenClaw skill.
+6. Add release documentation and CI.
 
 ## Validation Status
 
@@ -49,7 +49,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Typecheck: passing for scaffold (`npm run typecheck`).
 - Build: passing for scaffold (`npm run build`).
 - Coverage: 100% for scaffold (`npm run test:coverage`).
-- OpenAPI normalization: not started.
+- OpenAPI normalization: passing for 1,429 operations with unique operation IDs, complete domain assignment, no unresolved local refs, and no warnings.
 - Generated endpoint coverage: not started.
 - No-network test guarantee: policy documented, implementation not started.
 - OpenClaw plugin validation: not started.
