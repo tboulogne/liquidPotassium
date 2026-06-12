@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: project documentation foundation.
-- Active task: progress-tracking and agent-coordination workflow is documented; next step is committing these documentation changes.
-- Repository status: documentation and raw OpenAPI spec are committed; implementation scaffold has not started.
+- Phase: Phase 1 - Progress Reset And Scaffold.
+- Active task: Phase 1 scaffold is complete and verified; next step is committing the scaffold.
+- Repository status: documentation, raw OpenAPI spec, and scaffold changes are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -29,24 +29,26 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added `MASTERPLAN.md` and referenced it from `AGENTS.md`.
 - `f57c58b docs: add infomaniak openapi spec`
   - Added `infomaniak_api_1781289971.json`.
+- `b5eff5d docs: add progress tracking workflow`
+  - Added `PROGRESS.md` and documented synchronous main-agent/subagent coordination in `AGENTS.md` and `MASTERPLAN.md`.
 
 ## Next Task Queue
 
-1. Commit the progress-tracking documentation changes.
-2. Add project scaffold: package metadata, TypeScript config, Vitest config, source/test folders, and `.gitignore`.
-3. Move or copy the raw spec into the planned `spec/infomaniak.raw.json` location while preserving the committed original.
-4. Implement and test OpenAPI normalization.
-5. Generate typed schema, operation catalog, domain metadata, operation wrappers, and generated endpoint tests.
-6. Implement the runtime SDK client with injectable transport and typed errors.
-7. Build the compact OpenClaw plugin tools.
-8. Add the OpenClaw skill.
-9. Add release documentation and CI.
+1. Commit Phase 1 scaffold.
+2. Move or copy the raw spec into the planned `spec/infomaniak.raw.json` location while preserving the committed original.
+3. Implement and test OpenAPI normalization.
+4. Generate typed schema, operation catalog, domain metadata, operation wrappers, and generated endpoint tests.
+5. Implement the runtime SDK client with injectable transport and typed errors.
+6. Build the compact OpenClaw plugin tools.
+7. Add the OpenClaw skill.
+8. Add release documentation and CI.
 
 ## Validation Status
 
-- Unit tests: not started.
-- Typecheck: not started.
-- Build: not started.
+- Unit tests: passing for scaffold (`npm test`).
+- Typecheck: passing for scaffold (`npm run typecheck`).
+- Build: passing for scaffold (`npm run build`).
+- Coverage: 100% for scaffold (`npm run test:coverage`).
 - OpenAPI normalization: not started.
 - Generated endpoint coverage: not started.
 - No-network test guarantee: policy documented, implementation not started.
