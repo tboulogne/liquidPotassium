@@ -2,7 +2,7 @@
 
 This project is a business-class TypeScript/Node SDK and OpenClaw integration for the Infomaniak OpenAPI specification. Treat correctness, maintainability, repeatability, and operator trust as product requirements, not polish.
 
-Read `MANIFESTO.md` and `MASTERPLAN.md` before planning or implementing substantial changes. The manifesto defines the mission and OpenClaw end state; the master plan defines the complete implementation blueprint.
+Read `MANIFESTO.md`, `MASTERPLAN.md`, and `PROGRESS.md` before planning or implementing substantial changes. The manifesto defines the mission and OpenClaw end state, the master plan defines the complete implementation blueprint, and the progress file tracks the live execution state.
 
 ## Engineering Principles
 
@@ -49,6 +49,15 @@ Read `MANIFESTO.md` and `MASTERPLAN.md` before planning or implementing substant
 - OpenClaw tools must validate domain, operation, parameters, and body before making a request.
 - Destructive operations must be easy to identify from metadata and suitable for future approval gating.
 - Skills should teach workflows and safety constraints; they should not contain the core implementation.
+
+## Progress And Coordination Rules
+
+- Track implementation progress in `PROGRESS.md` throughout the project.
+- Use one main agent to own sequencing, verification, integration, progress updates, and commits.
+- Subagents may perform bounded tasks, but only one subagent task may run at a time.
+- Subagent work must be synchronous: assign one task, wait for completion, review it, update `PROGRESS.md`, then continue.
+- Do not run parallel mutation streams unless the user explicitly changes this rule.
+- Continue task by task until the completion checklist in `MASTERPLAN.md` is satisfied.
 
 ## Git And Review Rules
 

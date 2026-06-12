@@ -4,7 +4,7 @@
 
 Build a production-quality TypeScript/Node SDK for the Infomaniak API, generated from the official OpenAPI specification and organized by Infomaniak product domains. The end state is a safe, searchable, domain-oriented OpenClaw integration that lets agents inspect, describe, and call Infomaniak operations without exposing a huge raw endpoint list to the model.
 
-This plan is the implementation blueprint. It should be followed together with `MANIFESTO.md` and `AGENTS.md`.
+This plan is the implementation blueprint. It should be followed together with `MANIFESTO.md`, `AGENTS.md`, and the live tracker in `PROGRESS.md`.
 
 ## Current Known Facts
 
@@ -40,6 +40,7 @@ Start as a single package if that is fastest, but structure it so packages can s
   AGENTS.md
   MANIFESTO.md
   MASTERPLAN.md
+  PROGRESS.md
   package.json
   tsconfig.json
   vitest.config.ts
@@ -87,6 +88,16 @@ packages/
 ```
 
 The MCP server is a future adapter, not required for the first complete OpenClaw plugin.
+
+## Progress And Coordination
+
+Track all implementation progress in `PROGRESS.md`.
+
+The work must be coordinated by one main agent from start to completion. The main agent owns task order, progress updates, verification, integration, and commits.
+
+Subagents may be used only for bounded tasks assigned by the main agent. Subagent work must happen one task at a time and synchronously: assign one task, wait for the result, review and verify the result, update `PROGRESS.md`, then decide the next task.
+
+Do not run parallel mutation streams unless the user explicitly changes this rule. Continue task by task until this master plan's completion checklist is satisfied.
 
 ## Domain Model
 
@@ -407,4 +418,5 @@ Generated endpoint test minimum:
 - OpenClaw plugin uses compact tools, not one tool per endpoint.
 - Skill documents safe usage.
 - Docs explain installation, generation, testing, and OpenClaw configuration.
+- `PROGRESS.md` accurately reflects current phase, completed work, next tasks, blockers, and validation status.
 - Conventional Commit history remains small and reviewable.
