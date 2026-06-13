@@ -3,6 +3,7 @@ import { InfomaniakError } from "../client/errors.js";
 import type { MailDraftPayload, MailMoveMessagesPayload } from "../client/mail-application.js";
 import {
   booleanParam,
+  buildUploadFileRequest,
   customAction,
   discoveryActions,
   field,
@@ -19,7 +20,6 @@ import {
   requiredInteger,
   requiredRecord,
   requiredString,
-  requiredValue,
   responseItems,
   withSignal,
 } from "./domain-action-helpers.js";
@@ -485,36 +485,24 @@ const staticActions: readonly DomainActionDefinition[] = [
         signal,
       ),
   }),
-  operationAction({
+  customAction({
     domain: "kdrive",
     action: "uploadFile",
-    operationId: "kDriveUploadV3",
+    operationIds: ["kDriveUploadV3"],
     summary: "Upload file bytes to kDrive.",
-    description: "Upload direct file content to a kDrive destination using the documented v3 upload route.",
+    description: "Upload file content from a local path or direct body to a kDrive destination using the documented v3 upload route.",
     input: [
       field("drive_id", "number", true, "Drive identifier."),
-      field("body", "binary", true, "File bytes as a BodyInit-compatible value."),
-      field("total_size", "number", true, "Total uploaded byte size."),
+      field("body", "binary", false, "File bytes as a BodyInit-compatible value."),
+      field("file_path", "string", false, "Absolute local file path to read and upload."),
+      field("total_size", "number", false, "Total uploaded byte size. Required for direct body uploads and validated for file_path uploads."),
       field("file_name", "string", false, "Remote file name."),
       field("directory_id", "number", false, "Destination directory identifier."),
       field("directory_path", "string", false, "Destination directory path."),
       field("conflict", "string", false, "Conflict handling mode accepted by the API."),
     ],
-    buildRequest: (input, signal) =>
-      withSignal(
-        {
-          path: { drive_id: requiredInteger(input, "drive_id") },
-          query: optionalQuery({
-            total_size: requiredInteger(input, "total_size"),
-            file_name: optionalString(input, "file_name"),
-            directory_id: integerParam(input.directory_id),
-            directory_path: optionalString(input, "directory_path"),
-            conflict: optionalString(input, "conflict"),
-          }),
-          body: requiredValue(input, "body"),
-        },
-        signal,
-      ),
+    mutating: true,
+    run: async (client, input, signal) => client.requestOperation("kDriveUploadV3", withSignal(await buildUploadFileRequest(input), signal)),
   }),
   operationAction({
     domain: "publicCloud",

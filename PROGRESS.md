@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: OpenClaw migration readiness.
-- Active task: SDK workflow actions and migration documentation for `potassium-openclaw` are complete and validated.
-- Repository status: The Phase 1-11 implementation is complete on branch `codex/native-domain-workflows`.
+- Phase: Published SDK release and OpenClaw migration readiness.
+- Active task: Migrating downstream `potassium-openclaw` usage to the published `liquid-potassium` package.
+- Repository status: `liquid-potassium@0.1.0` is published on npm; OpenClaw workflow tooling and kDrive upload file-path support are implemented on branch `codex/liquid-library-openclaw-workflows`.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -93,10 +93,22 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - `docs: document OpenClaw migration workflow bridge`
   - Documents `client.workflows` as the SDK-first bridge for migrating `potassium-openclaw`.
   - Records that OpenClaw-specific orchestration belongs in the OpenClaw adapter/repository, while this library owns reusable network/domain workflows.
+- `feat: expose openclaw workflow tools`
+  - Added OpenClaw workflow list/describe/run tools backed by `client.workflows`, with domain/operation allow/deny policy, mutating blocks, explicit confirmation, and injected fetch.
+  - Added `tokenEnvName` config defaulting to `INFOMANIAK_TOKEN` so OpenClaw can inject credentials without copying bearer tokens into plugin config.
+  - Added public exports and the `./openclaw/tools` package subpath for downstream `potassium-openclaw` migration.
+  - Added kDrive workflow uploads from absolute local `file_path`, including size validation, default remote file names, and binary body preservation in the shared transport.
+  - Added a package `prepare` script so GitHub-pinned installs can build `dist` without publishing `liquid-potassium` to npm.
+- `security: harden public repository readiness`
+  - Redacted sensitive response headers and secret-shaped JSON/text fields from `InfomaniakOperationError.responseSummary` while preserving status, request id, and non-sensitive diagnostics.
+  - Added tests for JSON, malformed JSON, and text error redaction while maintaining 100% coverage.
+  - Tightened local ignore rules for credential files and generated build leftovers.
+  - Restricted CI workflow permissions to read-only contents access and disabled checkout credential persistence.
+  - Added `SECURITY.md` and Dependabot updates for npm and GitHub Actions.
 
 ## Next Task Queue
 
-- In `/Users/opencow/Software/potassium-openclaw`, migrate existing skills/tools to call `liquid-potassium` through `client.workflows` where a curated action exists.
+- In `/Users/opencow/Software/potassium-openclaw`, depend on a specific `OpenCow42/liquidPotassium` commit and migrate existing skills/tools to call `liquid-potassium` through the exported OpenClaw tools and `client.workflows` where a curated action exists.
 - Fall back to catalog search/describe plus generated/raw SDK calls for operations that are not yet worth promoting to workflow actions.
 - Add new workflow actions in this repository only when migration exposes repeated adapter code or a common user workflow.
 
@@ -125,6 +137,11 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Open-source release preparation: passing `npm run ci`, `npm audit`, `npm audit --omit=dev`, `npm pack --dry-run`, and `git diff --check`.
 - Package preview: `npm pack --dry-run` reports `liquid-potassium@0.1.0`, 160 files, approximately 881.6 kB packed and 16.1 MB unpacked, including `LICENSE`, `README.md`, built SDK output, OpenClaw plugin output, skill docs, Mail application docs, and normalization report.
 - Domain workflow actions: passing `npm run typecheck` and `npm run test:coverage` with 100% statements, branches, functions, and lines after the workflow expansion and module split.
+- OpenClaw workflow tool migration slice: passing `npm run typecheck`, `npm test`, `npm run test:coverage` with 100% statements/branches/functions/lines, `npm run build`, and `npm pack --dry-run --json`.
+- Package preview after workflow tool migration: `npm pack --dry-run --json` reports `liquid-potassium@0.1.0`, 169 files, approximately 898.8 kB packed and 16.2 MB unpacked, including `dist/src/openclaw/infomaniak-tools.*`, `dist/openclaw/plugin.*`, skill docs, package exports, and the `prepare` build flow.
+- npm publication: `liquid-potassium@0.1.0` is published to `https://registry.npmjs.org/` with `latest` pointing to `0.1.0`.
+- Post-publish install verification: a fresh temporary project installed `liquid-potassium@0.1.0` from npm with 0 vulnerabilities and successfully imported the main SDK, OpenClaw plugin, and OpenClaw tools subpaths.
+- Public GitHub security preflight: passing `npm run ci`, `npm audit`, `npm audit --omit=dev`, `npm pack --dry-run --json`, `git diff --check`, and high-confidence secret scans across current tracked files and git history.
 
 ## Blockers And Risks
 

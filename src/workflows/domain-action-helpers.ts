@@ -1,3 +1,6 @@
+import { readFile, stat } from "node:fs/promises";
+import { basename, isAbsolute } from "node:path";
+
 import { getOperation } from "../catalog/operation-catalog.js";
 import { InfomaniakError } from "../client/errors.js";
 import type { OperationRequest } from "../client/generated-operation-client.js";
@@ -166,11 +169,52 @@ export function optionalRecord(input: Record<string, unknown>, key: string): Rec
   return isRecord(value) ? value : undefined;
 }
 
-export function requiredValue(input: Record<string, unknown>, key: string): unknown {
-  if (!(key in input) || input[key] === undefined || input[key] === null) {
-    throw new InfomaniakError(`${key} is required.`);
+export async function buildUploadFileRequest(input: Record<string, unknown>): Promise<Omit<OperationRequest, "signal">> {
+  const upload = await readUploadBody(input);
+  return {
+    path: { drive_id: requiredInteger(input, "drive_id") },
+    query: optionalQuery({
+      total_size: upload.totalSize,
+      file_name: upload.fileName,
+      directory_id: integerParam(input.directory_id),
+      directory_path: optionalString(input, "directory_path"),
+      conflict: optionalString(input, "conflict"),
+    }),
+    body: upload.body,
+  };
+}
+
+async function readUploadBody(input: Record<string, unknown>): Promise<{ body: unknown; totalSize: number; fileName: string | undefined }> {
+  if ("body" in input && input.body !== undefined && input.body !== null) {
+    return {
+      body: input.body,
+      totalSize: requiredInteger(input, "total_size"),
+      fileName: optionalString(input, "file_name"),
+    };
   }
-  return input[key];
+
+  const filePath = optionalString(input, "file_path");
+  if (!filePath) {
+    throw new InfomaniakError("body or file_path is required.");
+  }
+  if (!isAbsolute(filePath)) {
+    throw new InfomaniakError("file_path must be absolute.");
+  }
+
+  const fileStats = await stat(filePath);
+  if (!fileStats.isFile()) {
+    throw new InfomaniakError("file_path must point to a regular file.");
+  }
+  const expectedSize = integerParam(input.total_size);
+  if (expectedSize !== undefined && expectedSize !== fileStats.size) {
+    throw new InfomaniakError("total_size must match file_path byte size.");
+  }
+
+  return {
+    body: await readFile(filePath),
+    totalSize: fileStats.size,
+    fileName: optionalString(input, "file_name") ?? basename(filePath),
+  };
 }
 
 function stringNumberRecord(value: unknown): Record<string, string | number> | undefined {

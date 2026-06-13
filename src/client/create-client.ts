@@ -46,6 +46,10 @@ export type InfomaniakClient = GeneratedOperationClient &
 
 const defaultBaseUrl = "https://api.infomaniak.com";
 const defaultMailApplicationBaseUrl = "https://mail.infomaniak.com";
+const responseSummaryMaxLength = 500;
+const redactedValue = "[redacted]";
+const sensitiveHeaderNames = new Set(["authorization", "proxy-authorization", "cookie", "set-cookie", "x-api-key", "x-auth-token"]);
+const sensitiveFieldNameFragments = ["authorization", "password", "passwd", "secret", "token", "apikey", "privatekey", "session", "cookie", "csrf"];
 const operationById = new Map<string, OperationMetadata>(operations.map((operation) => [operation.operationId, operation]));
 
 export function createInfomaniakClient(config: InfomaniakClientConfig = {}): InfomaniakClient {
@@ -237,7 +241,15 @@ function serializeBody(body: unknown, headers: Headers): BodyInit | undefined {
 }
 
 function isJsonSerializableBody(body: unknown): boolean {
-  return typeof body === "object" && body !== null && !(body instanceof ArrayBuffer) && !(body instanceof Blob) && !(body instanceof FormData) && !(body instanceof URLSearchParams);
+  return (
+    typeof body === "object" &&
+    body !== null &&
+    !(body instanceof ArrayBuffer) &&
+    !ArrayBuffer.isView(body) &&
+    !(body instanceof Blob) &&
+    !(body instanceof FormData) &&
+    !(body instanceof URLSearchParams)
+  );
 }
 
 async function parseSuccessResponse(response: Response): Promise<unknown> {
@@ -256,16 +268,54 @@ async function parseSuccessResponse(response: Response): Promise<unknown> {
 
 async function safeResponseSummary(response: Response): Promise<string> {
   const contentType = response.headers.get("content-type") ?? "";
-  if (contentType.includes("application/json")) {
-    return JSON.stringify(await response.json());
+  const body = await response.text();
+  if (!body) {
+    return "";
   }
-  return (await response.text()).slice(0, 500);
+  if (contentType.includes("application/json")) {
+    try {
+      return truncateResponseSummary(JSON.stringify(redactJsonValue(JSON.parse(body))));
+    } catch {
+      return truncateResponseSummary(redactSensitiveText(body));
+    }
+  }
+  return truncateResponseSummary(redactSensitiveText(body));
+}
+
+function redactJsonValue(value: unknown, key?: string): unknown {
+  if (key && isSensitiveFieldName(key)) {
+    return redactedValue;
+  }
+  if (Array.isArray(value)) {
+    return value.map((item) => redactJsonValue(item));
+  }
+  if (isQueryObject(value)) {
+    return Object.fromEntries(Object.entries(value).map(([entryKey, entryValue]) => [entryKey, redactJsonValue(entryValue, entryKey)]));
+  }
+  return value;
+}
+
+function redactSensitiveText(value: string): string {
+  return value
+    .replace(/\b(authorization|proxy-authorization)\s*:\s*bearer\s+[^\r\n]+/gi, "$1: Bearer [redacted]")
+    .replace(/\b((?:set-)?cookie)\s*:\s*[^\r\n]+/gi, "$1: [redacted]")
+    .replace(/\b(access[_-]?token|refresh[_-]?token|api[_-]?key|password|secret|token)\s*=\s*[^&\s]+/gi, "$1=[redacted]")
+    .replace(/\bBearer\s+[A-Za-z0-9._~+/=-]+/gi, "Bearer [redacted]");
+}
+
+function truncateResponseSummary(value: string): string {
+  return value.slice(0, responseSummaryMaxLength);
+}
+
+function isSensitiveFieldName(key: string): boolean {
+  const normalized = key.toLowerCase().replace(/[^a-z0-9]/g, "");
+  return sensitiveFieldNameFragments.some((fragment) => normalized.includes(fragment));
 }
 
 function headersToRecord(headers: Headers): Record<string, string> {
   const record: Record<string, string> = {};
   headers.forEach((value, key) => {
-    record[key] = value;
+    record[key] = sensitiveHeaderNames.has(key.toLowerCase()) ? redactedValue : value;
   });
   return record;
 }

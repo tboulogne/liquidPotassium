@@ -11,6 +11,9 @@ import {
   infomaniakDomainsToolSchema,
   infomaniakMailApplicationToolSchema,
   infomaniakSearchToolSchema,
+  infomaniakWorkflowDescribeToolSchema,
+  infomaniakWorkflowListToolSchema,
+  infomaniakWorkflowRunToolSchema,
   resolveInfomaniakPluginConfig,
 } from "../../../src/openclaw/infomaniak-tools.js";
 
@@ -28,12 +31,16 @@ describe("Infomaniak OpenClaw tools", () => {
 
     expect(infomaniakOpenClawPlugin.id).toBe("infomaniak");
     expect(InfomaniakPluginConfigJsonSchema.properties.blockMutating.default).toBe(true);
+    expect(InfomaniakPluginConfigJsonSchema.properties.tokenEnvName.default).toBe("INFOMANIAK_TOKEN");
     expect(registeredTools.map((tool) => tool.name)).toEqual([
       "infomaniak_domains",
       "infomaniak_search",
       "infomaniak_describe",
       "infomaniak_discover",
       "infomaniak_mail_application",
+      "infomaniak_workflow_list",
+      "infomaniak_workflow_describe",
+      "infomaniak_workflow_run",
       "infomaniak_call",
     ]);
     expect(registeredTools.map((tool) => tool.parameters)).toEqual([
@@ -42,6 +49,9 @@ describe("Infomaniak OpenClaw tools", () => {
       infomaniakDescribeToolSchema,
       infomaniakDiscoverToolSchema,
       infomaniakMailApplicationToolSchema,
+      infomaniakWorkflowListToolSchema,
+      infomaniakWorkflowDescribeToolSchema,
+      infomaniakWorkflowRunToolSchema,
       infomaniakCallToolSchema,
     ]);
     expect(registeredTools.every((tool) => tool.label && tool.description)).toBe(true);
@@ -49,6 +59,7 @@ describe("Infomaniak OpenClaw tools", () => {
 
   it("resolves strict plugin config defaults and validates supported config types", () => {
     expect(resolveInfomaniakPluginConfig(undefined)).toEqual({
+      tokenEnvName: "INFOMANIAK_TOKEN",
       allowedDomains: [],
       allowedOperations: [],
       deniedOperations: [],
@@ -57,6 +68,7 @@ describe("Infomaniak OpenClaw tools", () => {
     expect(
       resolveInfomaniakPluginConfig({
         token: " token ",
+        tokenEnvName: " LIQUID_TEST_TOKEN ",
         baseUrl: " https://example.test ",
         mailApplicationBaseUrl: " https://mail.example.test ",
         allowedDomains: ["kmeet", "", 1],
@@ -66,6 +78,7 @@ describe("Infomaniak OpenClaw tools", () => {
       }),
     ).toEqual({
       token: "token",
+      tokenEnvName: "LIQUID_TEST_TOKEN",
       baseUrl: "https://example.test",
       mailApplicationBaseUrl: "https://mail.example.test",
       allowedDomains: ["kmeet"],
@@ -458,6 +471,162 @@ describe("Infomaniak OpenClaw tools", () => {
     );
   });
 
+  it("lists, describes, and runs allowed SDK workflow actions through injected fetch", async () => {
+    const abort = new AbortController();
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () =>
+      new Response(JSON.stringify({ result: "success", data: [] }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    const tools = createInfomaniakOpenClawTools({
+      fetch: fetchMock,
+      config: {
+        allowedDomains: ["kdrive"],
+        tokenEnvName: "LIQUID_POTASSIUM_TEST_TOKEN",
+      },
+    });
+    const previousToken = process.env.LIQUID_POTASSIUM_TEST_TOKEN;
+    process.env.LIQUID_POTASSIUM_TEST_TOKEN = "env-secret";
+
+    try {
+      const readOnlyActions = await executeTool(findTool(tools, "infomaniak_workflow_list"), {
+        domain: "kdrive",
+        mutating: false,
+      });
+      const allKdriveActions = await executeTool(findTool(tools, "infomaniak_workflow_list"), {
+        domain: "kdrive",
+      });
+      const mutatingActions = await executeTool(findTool(tools, "infomaniak_workflow_list"), {
+        domain: "kdrive",
+        mutating: true,
+      });
+      const description = await executeTool(findTool(tools, "infomaniak_workflow_describe"), {
+        domain: "kdrive",
+        action: "uploadFile",
+      });
+      const run = await findTool(tools, "infomaniak_workflow_run").execute(
+        "workflow-run",
+        {
+          domain: "kdrive",
+          action: "listDirectory",
+          input: { drive_id: 3024749, file_id: 5, limit: 2 },
+        },
+        abort.signal,
+      );
+
+      expect(readOnlyActions.actions).toEqual(
+        expect.arrayContaining([expect.objectContaining({ id: "kdrive/listDirectory", operationIds: ["kDriveGetFilesInDirectoryV3"] })]),
+      );
+      expect((allKdriveActions.actions as unknown[]).length).toBeGreaterThan((readOnlyActions.actions as unknown[]).length);
+      expect(mutatingActions.actions).toEqual(expect.arrayContaining([expect.objectContaining({ id: "kdrive/uploadFile", mutating: true })]));
+      expect(description.action).toEqual(
+        expect.objectContaining({
+          id: "kdrive/uploadFile",
+          input: expect.arrayContaining([expect.objectContaining({ name: "file_path", required: false })]),
+        }),
+      );
+      expect(run.details).toEqual({
+        action: expect.objectContaining({ id: "kdrive/listDirectory" }),
+        result: { result: "success", data: [] },
+      });
+      expect(fetchMock.mock.calls[0]?.[0]).toBe("https://api.infomaniak.com/3/drive/3024749/files/5/files?limit=2");
+      expect(fetchMock.mock.calls[0]?.[1]?.signal).toBe(abort.signal);
+      expect((fetchMock.mock.calls[0]?.[1]?.headers as Headers).get("authorization")).toBe("Bearer env-secret");
+    } finally {
+      if (previousToken === undefined) {
+        delete process.env.LIQUID_POTASSIUM_TEST_TOKEN;
+      } else {
+        process.env.LIQUID_POTASSIUM_TEST_TOKEN = previousToken;
+      }
+    }
+  });
+
+  it("applies operation policy, confirmation, and parameter validation to workflow actions", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () =>
+      new Response(JSON.stringify({ created: true }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+
+    const allowedByOperation = await executeTool(
+      findTool(createInfomaniakOpenClawTools({ config: { allowedOperations: ["kDriveGetFilesInDirectoryV3"] } }), "infomaniak_workflow_describe"),
+      { domain: "kdrive", action: "listDirectory" },
+    );
+    const emptyOperationIds = await executeTool(
+      findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["newsletter"] } }), "infomaniak_workflow_list"),
+      { domain: "newsletter", mutating: false },
+    );
+    const mutationResult = await executeTool(
+      findTool(
+        createInfomaniakOpenClawTools({
+          fetch: fetchMock,
+          config: { blockMutating: false, allowedOperations: ["kDriveCreateDirectoryV3"] },
+        }),
+        "infomaniak_workflow_run",
+      ),
+      {
+        domain: "kdrive",
+        action: "createDirectory",
+        input: { drive_id: 3024749, file_id: 5, body: { name: "Docs" } },
+        confirm_mutating: true,
+      },
+    );
+
+    expect(allowedByOperation.action).toEqual(expect.objectContaining({ id: "kdrive/listDirectory" }));
+    expect(emptyOperationIds.actions).toEqual(expect.arrayContaining([expect.objectContaining({ id: "newsletter/discoverNewsletterDomain", operationIds: [] })]));
+    expect(mutationResult).toEqual({
+      action: expect.objectContaining({ id: "kdrive/createDirectory" }),
+      result: { created: true },
+    });
+    expect(fetchMock.mock.calls[0]?.[0]).toBe("https://api.infomaniak.com/3/drive/3024749/files/5/directory");
+
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { allowedOperations: ["NewsletterShowDomain"] } }), "infomaniak_workflow_describe"),
+        { domain: "newsletter", action: "discoverNewsletterDomain" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { deniedOperations: ["kDriveGetFilesInDirectoryV3"] } }), "infomaniak_workflow_describe"),
+        { domain: "kdrive", action: "listDirectory" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["mail"] } }), "infomaniak_workflow_describe"),
+        { domain: "kdrive", action: "listDirectory" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_workflow_describe"), {
+        domain: "kdrive",
+        action: "missing",
+      }),
+    ).rejects.toThrow(/Unknown Infomaniak workflow action/);
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_workflow_run"), {
+        domain: "kdrive",
+        action: "uploadFile",
+        confirm_mutating: true,
+      }),
+    ).rejects.toThrow(/blocked by plugin config/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { blockMutating: false } }), "infomaniak_workflow_run"),
+        { domain: "kdrive", action: "uploadFile" },
+      ),
+    ).rejects.toThrow(/confirm_mutating=true/);
+    await expect(findTool(createInfomaniakOpenClawTools(), "infomaniak_workflow_describe").execute("bad-call", undefined)).rejects.toThrow(
+      /domain is required/,
+    );
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_workflow_describe"), {
+        domain: "kdrive",
+      }),
+    ).rejects.toThrow(/action is required/);
+  });
+
   it("calls allowed operations through the SDK with injected fetch", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
       new Response(JSON.stringify({ planned: true }), {
@@ -495,6 +664,29 @@ describe("Infomaniak OpenClaw tools", () => {
     expect(init?.body).toBe(JSON.stringify({ title: "Planning" }));
     expect((init?.headers as Headers).get("authorization")).toBe("Bearer secret");
     expect((init?.headers as Headers).get("x-extra")).toBe("1");
+  });
+
+  it("omits authorization when the configured token environment variable is absent", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response(JSON.stringify({ settings: true }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    delete process.env.LIQUID_POTASSIUM_MISSING_TOKEN;
+    const tools = createInfomaniakOpenClawTools({
+      fetch: fetchMock,
+      config: {
+        tokenEnvName: "LIQUID_POTASSIUM_MISSING_TOKEN",
+        allowedOperations: ["get_1_kmeet_rooms_room_id_settings"],
+      },
+    });
+
+    await executeTool(findTool(tools, "infomaniak_call"), {
+      operation_id: "get_1_kmeet_rooms_room_id_settings",
+      path: { room_id: "room-1" },
+    });
+
+    expect((fetchMock.mock.calls[0]?.[1]?.headers as Headers).has("authorization")).toBe(false);
   });
 
   it("blocks disallowed calls and mutating operations without explicit permission", async () => {

@@ -34,6 +34,10 @@
     "./openclaw/plugin": {
       "types": "./dist/openclaw/plugin.d.ts",
       "default": "./dist/openclaw/plugin.js"
+    },
+    "./openclaw/tools": {
+      "types": "./dist/src/openclaw/infomaniak-tools.d.ts",
+      "default": "./dist/src/openclaw/infomaniak-tools.js"
     }
   },
   "files": [
@@ -43,6 +47,7 @@
     "openclaw/skills",
     "README.md",
     "RELEASE.md",
+    "SECURITY.md",
     "spec/normalization-report.json"
   ],
   "engines": {
@@ -54,6 +59,7 @@
     "check:generated": "npm run normalize && npm run generate && git diff --exit-code -- spec/infomaniak.normalized.json spec/normalization-report.json src/generated tests/generated",
     "check:docs": "npm run docs:check && git diff --exit-code -- spec/docs-enrichment-report.json",
     "check:no-network": "tsx scripts/check-no-network-policy.ts",
+    "prepare": "npm run build",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",

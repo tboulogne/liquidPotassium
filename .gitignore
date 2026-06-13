@@ -5,3 +5,15 @@ coverage/
 .vitest/
 .tsbuildinfo
 *.tsbuildinfo
+*.log
+npm-debug.log*
+
+# Local credentials and machine-specific package registry state.
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx

@@ -1,0 +1,7 @@
+name: liquid-potassium CodeQL config
+
+paths-ignore:
+  - dist/**
+  - src/generated/**
+  - tests/generated/**
+  - coverage/**

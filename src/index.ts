@@ -72,6 +72,24 @@ export {
   type DomainWorkflowRuntimeClient,
 } from "./workflows/domain-actions.js";
 export {
+  createInfomaniakOpenClawTools,
+  InfomaniakPluginConfigJsonSchema,
+  infomaniakCallToolSchema,
+  infomaniakDiscoverToolSchema,
+  infomaniakDescribeToolSchema,
+  infomaniakDomainsToolSchema,
+  infomaniakMailApplicationToolSchema,
+  infomaniakSearchToolSchema,
+  infomaniakWorkflowDescribeToolSchema,
+  infomaniakWorkflowListToolSchema,
+  infomaniakWorkflowRunToolSchema,
+  resolveInfomaniakPluginConfig,
+  type InfomaniakOpenClawPluginConfig,
+  type InfomaniakOpenClawToolsOptions,
+  type OperationDescriptionWithRequirements,
+  type OperationSummary,
+} from "./openclaw/infomaniak-tools.js";
+export {
   buildDomainMetadata,
   buildOperationCatalog,
   renderCatalogSources,
