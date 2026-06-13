@@ -1,6 +1,6 @@
 {
   "name": "liquid-potassium",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Domain-oriented TypeScript SDK and OpenClaw integration for the Infomaniak API.",
   "license": "Apache-2.0",
   "author": "OpenCow42",

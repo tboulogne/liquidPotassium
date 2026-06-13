@@ -33,7 +33,7 @@ describe("kChat WebSocket client", () => {
       webSocket: EventTargetWebSocket,
     });
     expect(client.kchat.websocket.resolveUrl()).toBe(
-      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.2.0&flash=false",
+      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.3.0&flash=false",
     );
     const posts: string[] = [];
     const abort = new AbortController();
@@ -78,13 +78,13 @@ describe("kChat WebSocket client", () => {
 
   it("derives Echo and Mattermost WebSocket URLs", () => {
     expect(resolveKchatWebSocketUrl()).toBe(
-      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.2.0&flash=false",
+      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.3.0&flash=false",
     );
     expect(resolveKchatWebSocketUrl({ host: "ws.example.test", appKey: "custom key" })).toBe(
-      "wss://ws.example.test/app/custom%20key?protocol=7&client=liquid-potassium&version=0.2.0&flash=false",
+      "wss://ws.example.test/app/custom%20key?protocol=7&client=liquid-potassium&version=0.3.0&flash=false",
     );
     expect(resolveKchatWebSocketUrl({ url: " ", host: " ", appKey: " " })).toBe(
-      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.2.0&flash=false",
+      "wss://websocket.kchat.infomaniak.com/app/kchat-key?protocol=7&client=liquid-potassium&version=0.3.0&flash=false",
     );
     expect(resolveKchatWebSocketUrl({ protocol: "mattermost", apiBaseUrl: "http://mattermost.example.test/path?ignored=true" })).toBe(
       "ws://mattermost.example.test/api/v4/websocket",

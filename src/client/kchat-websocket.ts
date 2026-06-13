@@ -90,7 +90,7 @@ const defaultProtocol: KchatWebSocketProtocol = "infomaniak-echo";
 const defaultEchoHost = "websocket.kchat.infomaniak.com";
 const defaultEchoAppKey = "kchat-key";
 const echoClientName = "liquid-potassium";
-const echoClientVersion = "0.2.0";
+const echoClientVersion = "0.3.0";
 const mattermostAuthSeq = 1;
 
 export function createKchatWebSocketClient(options: KchatWebSocketClientFactoryOptions = {}): KchatWebSocketClient {
