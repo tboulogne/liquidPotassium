@@ -170,6 +170,7 @@ describe("Infomaniak OpenClaw tools", () => {
     });
     const domainDiscovery = await executeTool(findTool(tools, "infomaniak_discover"), {
       domain: "kdrive",
+      parents: { account_id: 12 },
     });
     const newsletterDiscovery = await executeTool(findTool(tools, "infomaniak_discover"), {
       kind: "newsletterDomain",
@@ -198,7 +199,8 @@ describe("Infomaniak OpenClaw tools", () => {
       suggestions: [expect.objectContaining({ code: "no_public_discovery", kind: "newsletterDomain" })],
     });
     expect(fetchMock).toHaveBeenCalledTimes(2);
-    expect(fetchMock.mock.calls[0]?.[0]).toBe("https://api.infomaniak.com/2/drive");
+    expect(fetchMock.mock.calls[0]?.[0]).toBe("https://api.infomaniak.com/2/drive?account_id=12");
+    expect(fetchMock.mock.calls[1]?.[0]).toBe("https://api.infomaniak.com/2/drive?account_id=12");
 
     await expect(
       executeTool(

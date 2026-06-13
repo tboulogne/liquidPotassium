@@ -91,7 +91,7 @@ describe("resource discovery", () => {
     const client = { requestOperation };
 
     const accounts = await createResourceDiscovery(client).discover({ kind: "account", limit: 5, signal: abort.signal });
-    const drive = await discoverResources(client, { operationId: "kDriveGetDriveInformationV2" });
+    const drive = await discoverResources(client, { operationId: "kDriveGetDriveInformationV2", parents: { account_id: 42 } });
     const nested = await discoverResources(client, { kind: "coreProduct" });
     const single = await discoverResources(client, { kind: "account" });
     const empty = await discoverResources(client, { kind: "account" });
@@ -150,6 +150,7 @@ describe("resource discovery", () => {
       "Core/ResourcesListAccounts",
     ]);
     expect(requestOperation.mock.calls[0]?.[1]).toEqual({ path: {}, signal: abort.signal });
+    expect(requestOperation.mock.calls[1]?.[1]).toEqual({ query: { account_id: 42 } });
   });
 
   it("returns structured suggestions instead of calling the client for known discovery gaps", async () => {

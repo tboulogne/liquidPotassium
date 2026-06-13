@@ -32,6 +32,7 @@ export interface ResourceDiscoveryRecipe {
   labelFields: readonly string[];
   request?: OperationRequest;
   parentRequirements: readonly string[];
+  parentLocation: "path" | "query";
 }
 
 export interface OperationRequirement {
@@ -220,7 +221,15 @@ export const resourceKinds = [
 
 const discoveryRecipes = [
   recipe("account", "account", "Core/ResourcesListAccounts", "List accounts for the current token.", ["id", "account_id"], ["name", "display_name", "email"]),
-  recipe("kdriveDrive", "kdrive", "kDriveAccessiblesDrivesV2", "List accessible kDrive drives.", ["id", "drive_id"], ["name", "drive_name"]),
+  recipeWithQueryParents(
+    "kdriveDrive",
+    "kdrive",
+    "kDriveAccessiblesDrivesV2",
+    "List accessible kDrive drives once an account id is known.",
+    ["id", "drive_id"],
+    ["name", "drive_name"],
+    ["account_id"],
+  ),
   recipe("mailAccess", "mail", "Mail/ServicesListOfAccessesForTheCurrentUser", "List mail accesses for the current user.", ["mail_hosting_id", "service_mail", "id"], ["email", "mailbox", "mailbox_name", "name"]),
   recipeWithParents(
     "newsletterCampaign",
@@ -232,13 +241,31 @@ const discoveryRecipes = [
     ["domain"],
   ),
   recipe("kchatTeam", "kchat", "GetAllTeams", "List kChat teams.", ["id", "team_id"], ["display_name", "name"]),
-  recipe("publicCloud", "publicCloud", "Public/CloudListAllPublicClouds", "List public clouds.", ["id", "public_cloud_id"], ["name", "display_name"]),
+  recipeWithQueryParents(
+    "publicCloud",
+    "publicCloud",
+    "Public/CloudListAllPublicClouds",
+    "List public clouds once an account id is known.",
+    ["id", "public_cloud_id"],
+    ["name", "display_name"],
+    ["account_id"],
+  ),
   recipe("domainName", "domains", "Domain/&/ZoneListDomainsV2", "List managed domain names.", ["domain", "name", "id"], ["domain", "name"]),
   recipe("aiProduct", "ai", "AI/ToolsListAllYourLLMAPI", "List AI products.", ["id", "product_id"], ["name", "display_name"]),
   recipe("vodChannel", "vod", "get_1_vod_channel", "List VOD channels.", ["id", "channel"], ["name", "title"]),
   recipe("videoChannel", "video", "Streaming/videoListChannels", "List video streaming channels.", ["id", "channel"], ["name", "title"]),
-  recipe("radioProduct", "radio", "get_1_radios", "List radio products.", ["id", "radio_product_id"], ["name", "title"]),
-  recipe("swissBackup", "swissBackup", "get_1_swiss_backups", "List Swiss Backup products.", ["id", "swiss_backup_id"], ["name", "display_name"]),
+  recipeWithQueryParents("radioProduct", "radio", "get_1_radios", "List radio products once an account id is known.", ["id", "radio_product_id"], ["name", "title"], [
+    "account_id",
+  ]),
+  recipeWithQueryParents(
+    "swissBackup",
+    "swissBackup",
+    "get_1_swiss_backups",
+    "List Swiss Backup products once an account id is known.",
+    ["id", "swiss_backup_id"],
+    ["name", "display_name"],
+    ["account_id"],
+  ),
   recipe("shortUrl", "urlShortener", "get_2_url_shortener", "List short URLs.", ["id", "short_url_id"], ["url", "short_url", "name"]),
   recipe("eticketDate", "etickets", "EticketsListDatesV2", "List eTicket dates.", ["id", "date_id"], ["name", "title", "date"]),
   recipe("profileEmail", "profile", "Core/ResourcesListEmailsV2", "List current profile email addresses.", ["id", "email_id"], ["email", "address"]),
@@ -380,7 +407,7 @@ function recipe(
   idFields: readonly string[],
   labelFields: readonly string[],
 ): ResourceDiscoveryRecipe {
-  return { kind, domain, operationId, description, idFields, labelFields, parentRequirements: [] };
+  return { kind, domain, operationId, description, idFields, labelFields, parentRequirements: [], parentLocation: "path" };
 }
 
 function recipeWithParents(
@@ -392,7 +419,19 @@ function recipeWithParents(
   labelFields: readonly string[],
   parentRequirements: readonly string[],
 ): ResourceDiscoveryRecipe {
-  return { kind, domain, operationId, description, idFields, labelFields, request: { path: {} }, parentRequirements };
+  return { kind, domain, operationId, description, idFields, labelFields, request: { path: {} }, parentRequirements, parentLocation: "path" };
+}
+
+function recipeWithQueryParents(
+  kind: string,
+  domain: string,
+  operationId: string,
+  description: string,
+  idFields: readonly string[],
+  labelFields: readonly string[],
+  parentRequirements: readonly string[],
+): ResourceDiscoveryRecipe {
+  return { kind, domain, operationId, description, idFields, labelFields, parentRequirements, parentLocation: "query" };
 }
 
 function describeParameterRequirement(operation: OperationMetadata, parameter: OperationParameterMetadata): OperationParameterRequirement {
@@ -457,7 +496,10 @@ function selectRecipe(options: ResourceDiscoveryOptions): ResourceDiscoveryRecip
     return suggestedRecipe?.kind ? recipeByKind.get(suggestedRecipe.kind) : undefined;
   }
   if (options.domain) {
-    return discoveryRecipes.find((candidate) => candidate.domain === options.domain && candidate.parentRequirements.length === 0);
+    return (
+      discoveryRecipes.find((candidate) => candidate.domain === options.domain && candidate.parentRequirements.length === 0) ??
+      discoveryRecipes.find((candidate) => candidate.domain === options.domain)
+    );
   }
   return undefined;
 }
@@ -501,13 +543,18 @@ function discoverySuggestionsForOptions(options: ResourceDiscoveryOptions): read
 }
 
 function buildDiscoveryRequest(recipeCandidate: ResourceDiscoveryRecipe, options: ResourceDiscoveryOptions): OperationRequest {
+  const parentValues = Object.fromEntries(recipeCandidate.parentRequirements.map((parent) => [parent, options.parents?.[parent]]).filter((entry) => entry[1] !== undefined));
   const request: OperationRequest = {
     ...recipeCandidate.request,
-    path: {
-      ...(recipeCandidate.request?.path ?? {}),
-      ...(options.parents ?? {}),
-    },
   };
+  const path = recipeCandidate.parentLocation === "path" ? { ...(recipeCandidate.request?.path ?? {}), ...parentValues } : recipeCandidate.request?.path;
+  const query = recipeCandidate.parentLocation === "query" ? { ...(recipeCandidate.request?.query ?? {}), ...parentValues } : recipeCandidate.request?.query;
+  if (path) {
+    request.path = path;
+  }
+  if (query) {
+    request.query = query;
+  }
   if (options.signal) {
     request.signal = options.signal;
   }

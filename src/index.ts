@@ -59,6 +59,19 @@ export {
   type ResourceKindMetadata,
 } from "./discovery/resource-discovery.js";
 export {
+  createDomainWorkflowClient,
+  describeDomainAction,
+  listDomainActions,
+  runDomainAction,
+  type DomainActionExecutionResult,
+  type DomainActionInputField,
+  type DomainActionListOptions,
+  type DomainActionMetadata,
+  type DomainActionRequest,
+  type DomainWorkflowClient,
+  type DomainWorkflowRuntimeClient,
+} from "./workflows/domain-actions.js";
+export {
   buildDomainMetadata,
   buildOperationCatalog,
   renderCatalogSources,

@@ -1,6 +1,7 @@
 import { createDomainOperations } from "../generated/operations/index.js";
 import { operations } from "../generated/catalog/operations.js";
 import { createResourceDiscovery, type ResourceDiscovery } from "../discovery/resource-discovery.js";
+import { createDomainWorkflowClient, type DomainWorkflowClient } from "../workflows/domain-actions.js";
 import type { OperationMetadata } from "../generated/catalog/types.js";
 import type { GeneratedOperationClient, OperationRequest } from "./generated-operation-client.js";
 import { InfomaniakError, InfomaniakOperationError } from "./errors.js";
@@ -39,6 +40,7 @@ export type InfomaniakClient = GeneratedOperationClient &
     discovery: ResourceDiscovery;
     mail: MailDomainClient;
     raw: RawClient;
+    workflows: DomainWorkflowClient;
     request(path: string, options?: RawRequestOptions): Promise<unknown>;
   };
 
@@ -81,16 +83,23 @@ export function createInfomaniakClient(config: InfomaniakClientConfig = {}): Inf
     mailApplicationBaseUrl,
     mailRequest: (path, options) => requestPath(fetchImpl, { ...config, baseUrl: mailApplicationBaseUrl }, path, options as RawRequestOptions | undefined),
   });
+  const discovery = createResourceDiscovery(generatedClient);
+  const workflows = createDomainWorkflowClient({
+    ...generatedClient,
+    discovery,
+    mail: { application: mailApplication },
+  });
 
   return {
     ...generatedClient,
     ...domainClients,
-    discovery: createResourceDiscovery(generatedClient),
+    discovery,
     mail: {
       ...domainClients.mail,
       application: mailApplication,
     },
     raw,
+    workflows,
     request: (path, options) => requestPath(fetchImpl, config, path, options),
   };
 }
