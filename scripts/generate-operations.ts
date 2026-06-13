@@ -7,9 +7,11 @@ import {
   renderOperationWrapperSources,
 } from "../src/openapi/operation-generator.js";
 import type { JsonObject } from "../src/openapi/normalize.js";
+import type { DocsSnapshot } from "../src/openapi/docs-snapshot.js";
 
 const spec = JSON.parse(await readFile("spec/infomaniak.normalized.json", "utf8")) as JsonObject;
-const operations = buildOperationCatalog(spec);
+const docsSnapshot = JSON.parse(await readFile("spec/infomaniak.docs-snapshot.json", "utf8")) as DocsSnapshot;
+const operations = buildOperationCatalog(spec, docsSnapshot);
 const generatedRoot = resolve("src/generated");
 
 await rm(resolve(generatedRoot, "catalog"), { recursive: true, force: true });

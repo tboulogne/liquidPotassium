@@ -29,8 +29,9 @@
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "ci": "npm run check:generated && npm run check:no-network && npm run typecheck && npm run build && npm run test:coverage",
+    "ci": "npm run check:generated && npm run check:docs && npm run check:no-network && npm run typecheck && npm run build && npm run test:coverage",
     "check:generated": "npm run normalize && npm run generate && git diff --exit-code -- spec/infomaniak.normalized.json spec/normalization-report.json src/generated tests/generated",
+    "check:docs": "npm run docs:check && git diff --exit-code -- spec/docs-enrichment-report.json",
     "check:no-network": "tsx scripts/check-no-network-policy.ts",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",

@@ -37,7 +37,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/app/%7Bdrive_id%7D/share/%7Bsharelink_uuid%7D/archive",
+      "operationId": null,
+      "summary": "Build archive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Archive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 30267
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            30267
+          ]
+        },
+        {
+          "name": "sharelink_uuid",
+          "in": "path",
+          "required": true,
+          "description": "Sharelink token",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 64076
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64076
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_app_drive_id_share_sharelink_uuid_archive_archive_uuid_download",
@@ -78,7 +141,89 @@ export const kdriveOperations: readonly OperationMetadata[] = [
       "application/zip"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/app/%7Bdrive_id%7D/share/%7Bsharelink_uuid%7D/archive/%7Barchive_uuid%7D/download",
+      "operationId": null,
+      "summary": "Download sharelink archive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Archive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73040
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73040
+          ]
+        },
+        {
+          "name": "sharelink_uuid",
+          "in": "path",
+          "required": true,
+          "description": "Sharelink token",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "archive_uuid",
+          "in": "path",
+          "required": true,
+          "description": "Archive token",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAccessiblesDrivesV2",
@@ -130,7 +275,286 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive",
+      "operationId": "kDriveAccessiblesDrivesV2",
+      "summary": "Accessibles drives",
+      "categoryPath": [
+        "kDrive",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "query",
+          "required": true,
+          "description": "Account identifier",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "account_id",
+            "type": "integer",
+            "description": "Account identifier",
+            "example": 3107
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3107
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "pack",
+            "enum": [
+              "account",
+              "account.has_customization_url",
+              "capabilities",
+              "pack",
+              "pack.capabilities",
+              "pack.limits",
+              "limits",
+              "settings",
+              "preferences",
+              "k_suite",
+              "tags",
+              "rights",
+              "categories",
+              "categories.user_uses",
+              "categories_permissions",
+              "users",
+              "teams",
+              "invitations_count",
+              "rewind",
+              "bill_reference",
+              "description",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "account",
+            "account.has_customization_url",
+            "capabilities",
+            "pack",
+            "pack.capabilities",
+            "pack.limits",
+            "limits",
+            "settings",
+            "preferences",
+            "k_suite",
+            "tags",
+            "rights",
+            "categories",
+            "categories.user_uses",
+            "categories_permissions",
+            "users",
+            "teams",
+            "invitations_count",
+            "rewind",
+            "bill_reference",
+            "description",
+            "total"
+          ],
+          "values": [
+            "account",
+            "account.has_customization_url",
+            "capabilities",
+            "pack",
+            "pack.capabilities",
+            "pack.limits",
+            "limits",
+            "settings",
+            "preferences",
+            "k_suite",
+            "tags",
+            "rights",
+            "categories",
+            "categories.user_uses",
+            "categories_permissions",
+            "users",
+            "teams",
+            "invitations_count",
+            "rewind",
+            "bill_reference",
+            "description",
+            "total"
+          ],
+          "examples": [
+            "pack"
+          ]
+        },
+        {
+          "name": "in_maintenance",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "in_maintenance",
+            "type": "boolean",
+            "description": "True for any maintenance, False for no maintenance.",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "maintenance_reasons",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "maintenance_reasons",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "demo_end",
+                "invoice_overdue",
+                "not_renew",
+                "technical"
+              ],
+              "type": "string",
+              "description": "Reason of {name} maintenance.<note><strong>demo_end</strong>: The demonstration period of the {name} has come to an end.</note><note><strong>invoice_overdue</strong>: An invoice for this {name} is currently unpaid.</note><note><strong>not_renew</strong>: This {name} has expired and must be renewed.</note>",
+              "example": "demo_end"
+            },
+            "description": "Array of maintenance reasons. Ignored if `in_maintenance` is set.",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "tags",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "tags",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer",
+              "description": "Id of a tag"
+            },
+            "description": "Array of tag id",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 77880
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            77880
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": "10",
+            "example": 55
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            55
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetDriveInformationV2",
@@ -168,7 +592,136 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D",
+      "operationId": "kDriveGetDriveInformationV2",
+      "summary": "Get drive information",
+      "categoryPath": [
+        "kDrive",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17122
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17122
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "users",
+            "enum": [
+              "account",
+              "account.has_customization_url",
+              "capabilities",
+              "pack",
+              "pack.capabilities",
+              "pack.limits",
+              "limits",
+              "settings",
+              "preferences",
+              "k_suite",
+              "tags",
+              "rights",
+              "categories",
+              "categories.user_uses",
+              "categories_permissions",
+              "users",
+              "teams",
+              "invitations_count",
+              "rewind",
+              "bill_reference",
+              "description",
+              "quota"
+            ]
+          },
+          "enumValues": [
+            "account",
+            "account.has_customization_url",
+            "capabilities",
+            "pack",
+            "pack.capabilities",
+            "pack.limits",
+            "limits",
+            "settings",
+            "preferences",
+            "k_suite",
+            "tags",
+            "rights",
+            "categories",
+            "categories.user_uses",
+            "categories_permissions",
+            "users",
+            "teams",
+            "invitations_count",
+            "rewind",
+            "bill_reference",
+            "description",
+            "quota"
+          ],
+          "values": [
+            "account",
+            "account.has_customization_url",
+            "capabilities",
+            "pack",
+            "pack.capabilities",
+            "pack.limits",
+            "limits",
+            "settings",
+            "preferences",
+            "k_suite",
+            "tags",
+            "rights",
+            "categories",
+            "categories.user_uses",
+            "categories_permissions",
+            "users",
+            "teams",
+            "invitations_count",
+            "rewind",
+            "bill_reference",
+            "description",
+            "quota"
+          ],
+          "examples": [
+            "users"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateDriveV2",
@@ -202,7 +755,49 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D",
+      "operationId": "kDriveUpdateDriveV2",
+      "summary": "Update Drive",
+      "categoryPath": [
+        "kDrive",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26037
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26037
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetRequestedFileAccessFromItsIdV2",
@@ -245,7 +840,96 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/access/requests/%7Brequest_id%7D",
+      "operationId": "kDriveGetRequestedFileAccessFromItsIdV2",
+      "summary": "Get requested file access from its id",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Request"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 10287
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10287
+          ]
+        },
+        {
+          "name": "request_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7264
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7264
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "",
+            "enum": [
+              ""
+            ]
+          },
+          "enumValues": [
+            ""
+          ],
+          "values": [
+            ""
+          ],
+          "examples": [
+            ""
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeclineAFileAccessRequestV2",
@@ -282,7 +966,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/access/requests/%7Brequest_id%7D/decline",
+      "operationId": "kDriveDeclineAFileAccessRequestV2",
+      "summary": "Decline a file access request",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Request"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40012
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40012
+          ]
+        },
+        {
+          "name": "request_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 46660
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46660
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetDriveActivitiesOfAllTheUsersV2",
@@ -360,7 +1108,559 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/activities",
+      "operationId": "kDriveGetDriveActivitiesOfAllTheUsersV2",
+      "summary": "Get drive activities of all the users",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 88544
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            88544
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "file.sharelink",
+            "enum": [
+              "source",
+              "entity",
+              "user",
+              "file",
+              "file.capabilities",
+              "file.path",
+              "file.sorted_name",
+              "file.dropbox",
+              "file.dropbox.capabilities",
+              "file.is_favorite",
+              "file.sharelink",
+              "file.categories",
+              "file.conversion_capabilities",
+              "file.external_import",
+              "parent",
+              "parent.path",
+              "parent.sorted_name",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "parent",
+            "parent.path",
+            "parent.sorted_name",
+            "total"
+          ],
+          "values": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "parent",
+            "parent.path",
+            "parent.sorted_name",
+            "total"
+          ],
+          "examples": [
+            "file.sharelink"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "it"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "it"
+          ]
+        },
+        {
+          "name": "actions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "actions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "acl_insert",
+                "acl_main_users_insert",
+                "acl_main_users_remove",
+                "acl_main_users_update",
+                "acl_remove",
+                "acl_team_insert",
+                "acl_team_remove",
+                "acl_team_update",
+                "acl_update",
+                "acl_user_insert",
+                "acl_user_remove",
+                "acl_user_update",
+                "category_create",
+                "category_delete",
+                "category_update",
+                "collaborative_folder_access",
+                "collaborative_folder_create",
+                "collaborative_folder_delete",
+                "collaborative_folder_update",
+                "collaborative_user_access",
+                "collaborative_user_create",
+                "collaborative_user_delete",
+                "comment_create",
+                "comment_delete",
+                "comment_like",
+                "comment_resolve",
+                "comment_unlike",
+                "comment_update",
+                "exchange_pro_create",
+                "file_access",
+                "file_categorize",
+                "file_color_delete",
+                "file_color_update",
+                "file_create",
+                "file_delete",
+                "file_favorite_create",
+                "file_favorite_remove",
+                "file_ia_categorize",
+                "file_move",
+                "file_move_out",
+                "file_rename",
+                "file_rename_alias",
+                "file_restore",
+                "file_restore_inherited",
+                "file_share_create",
+                "file_share_delete",
+                "file_share_update",
+                "file_trash",
+                "file_trash_inherited",
+                "file_uncategorize",
+                "file_update",
+                "file_update_mime_type",
+                "maintenance_added",
+                "maintenance_removed",
+                "rewind_ended",
+                "rewind_started",
+                "share_link_create",
+                "share_link_delete",
+                "share_link_show",
+                "share_link_update",
+                "trash_empty",
+                "trash_empty_auto",
+                "update_trash_settings",
+                "user_connected",
+                "user_create",
+                "user_delete",
+                "user_restore",
+                "user_update"
+              ],
+              "type": "string",
+              "description": "Logged interaction type of activities on the drive or file.<note><strong>acl_insert</strong>: Technical: when a new group access to a file/directory is create.</note><note><strong>acl_main_users_insert</strong>: Logged when the main kDrive team access to a file/directory is created.</note><note><strong>acl_main_users_remove</strong>: Logged when the main kDrive team to a file/directory is removed.</note><note><strong>acl_main_users_update</strong>: Logged when the main kDrive team to a file/directory is modified.</note><note><strong>acl_remove</strong>: Technical: when a group access to a file/directory is removed.</note><note><strong>acl_team_insert</strong>: Logged when a team access to a file/directory is created.</note><note><strong>acl_team_remove</strong>: Logged when a team access to a file/directory is removed.</note><note><strong>acl_team_update</strong>: Logged when a team access to a file/directory is modified.</note><note><strong>acl_update</strong>: Technical: when a group access to a file/directory is modified.</note><note><strong>acl_user_insert</strong>: Logged when an user/admin access to a file/directory is created.</note><note><strong>acl_user_remove</strong>: Logged when an user/admin access to a file/directory is removed.</note><note><strong>acl_user_update</strong>: Logged when an user/admin access to a file/directory is modified.</note><note><strong>category_create</strong>: Logged when a new category is added.</note><note><strong>category_delete</strong>: Logged when a category is deleted.</note><note><strong>category_update</strong>: Logged when a category is renamed.</note><note><strong>collaborative_folder_access</strong>: Logged when an user/guest access to the dropbox.</note><note><strong>collaborative_folder_create</strong>: Logged when an user create a dropbox.</note><note><strong>collaborative_folder_delete</strong>: Logged when an user delete the dropbox.</note><note><strong>collaborative_folder_update</strong>: Logged when an user update settings of the dropbox.</note><note><strong>collaborative_user_access</strong>: Logged when an user/guest upload to the dropbox.</note><note><strong>collaborative_user_create</strong>: Logged when an user/guest add his information before uploading to the dropbox.</note><note><strong>collaborative_user_delete</strong>: Logged when an user remove the directory to the dropbox.</note><note><strong>comment_create</strong>: Logged when an user/admin add a comment on a file.</note><note><strong>comment_delete</strong>: Logged when an user/admin delete a comment on a file.</note><note><strong>comment_like</strong>: Logged when an user/admin like a comment on a file.</note><note><strong>comment_resolve</strong>: Logged when an user/admin resolve a comment on a file.</note><note><strong>comment_unlike</strong>: Logged when an user/admin unlike a comment on a file.</note><note><strong>comment_update</strong>: Logged when an user/admin update a comment on a file.</note><note><strong>exchange_pro_create</strong>: Technical: no used.</note><note><strong>file_access</strong>: Logged when an user/guest access to the file.</note><note><strong>file_categorize</strong>: Logged when a category is added to the file/directory.</note><note><strong>file_color_delete</strong>: Logged when a directory color is removed.</note><note><strong>file_color_update</strong>: Logged when a directory color changed.</note><note><strong>file_create</strong>: Logged when on the first file creation.</note><note><strong>file_delete</strong>: Logged when the file is deleted.</note><note><strong>file_favorite_create</strong>: Logged when a file/directory is flagged as favorites.</note><note><strong>file_favorite_remove</strong>: Logged when a file/directory is unflagged from favorites.</note><note><strong>file_ia_categorize</strong>: Logged when a file is categorized by the ia.</note><note><strong>file_move</strong>: Logged when the file is added inside a directory.</note><note><strong>file_move_out</strong>: Logged when the file is removed from a directory.</note><note><strong>file_rename</strong>: Logged when the file is renamed.</note><note><strong>file_rename_alias</strong>: Logged when a root file is renamed by an external user (only visible for the external user).</note><note><strong>file_restore</strong>: Logged when the file is restored from the trash.</note><note><strong>file_share_create</strong>: Logged when an external user access to a file/directory is created.</note><note><strong>file_share_delete</strong>: Logged when an external user access to a file/directory is removed.</note><note><strong>file_share_update</strong>: Logged when an external user access to a file/directory is modified to another permission.</note><note><strong>file_trash</strong>: Logged when the file is sent to trash.</note><note><strong>file_uncategorize</strong>: Logged when a category is removed to the file/directory.</note><note><strong>file_update</strong>: Logged when the file is updated.</note><note><strong>file_update_mime_type</strong>: Logged when a file mime_type is updated.</note><note><strong>rewind_ended</strong>: Logged when the user ended a rewind.</note><note><strong>rewind_started</strong>: Logged when the user started a rewind.</note><note><strong>share_link_create</strong>: Logged when a public share link to a file/directory is created.</note><note><strong>share_link_delete</strong>: Logged when a public share link to a file/directory is deleted.</note><note><strong>share_link_show</strong>: Logged when a public share link to a file/directory is seen by someone else.</note><note><strong>share_link_update</strong>: Logged when a public share link to a file/directory is modified.</note><note><strong>trash_empty</strong>: Logged when the user empties the trash.</note><note><strong>trash_empty_auto</strong>: Logged when the trash empties old files automatically.</note><note><strong>update_trash_settings</strong>: Logged when the user changes trash the settings.</note><note><strong>user_connected</strong>: Logged when an user is connected to the drive.</note><note><strong>user_create</strong>: Logged when an user/admin is added to the drive.</note><note><strong>user_delete</strong>: Logged when an user/admin has been removed of the drive.</note><note><strong>user_restore</strong>: Logged when an user/admin has been restored of the drive.</note><note><strong>user_update</strong>: Logged when an user/admin information has changed.</note>",
+              "example": "acl_insert"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "children",
+              "file",
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "children",
+            "file",
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "files",
+            "maxItems": 500,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "List of files for which to retrieve activities",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "type": "integer",
+            "example": 11062
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11062
+          ]
+        },
+        {
+          "name": "terms",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "terms",
+            "minLength": 3,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "type": "integer",
+            "example": 44960
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44960
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 54319
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            54319
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 215
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            215
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at"
+            ]
+          },
+          "enumValues": [
+            "created_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListReportsV2",
@@ -403,7 +1703,274 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/activities/reports",
+      "operationId": "kDriveListReportsV2",
+      "summary": "List reports",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity",
+        "Report"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 37232
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            37232
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "filters",
+            "enum": [
+              "filters",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "filters",
+            "total"
+          ],
+          "values": [
+            "filters",
+            "total"
+          ],
+          "examples": [
+            "filters"
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 38138
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            38138
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 897
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            897
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at",
+              "start_at",
+              "end_at",
+              "status",
+              "size"
+            ]
+          },
+          "enumValues": [
+            "created_at",
+            "start_at",
+            "end_at",
+            "status",
+            "size"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateReportV2",
@@ -443,7 +2010,86 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/activities/reports",
+      "operationId": "kDriveCreateReportV2",
+      "summary": "Create report",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity",
+        "Report"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23508
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23508
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "it"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "it"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteReportV2",
@@ -480,7 +2126,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/activities/reports/%7Breport_id%7D",
+      "operationId": "kDriveDeleteReportV2",
+      "summary": "Delete report",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity",
+        "Report"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93644
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93644
+          ]
+        },
+        {
+          "name": "report_id",
+          "in": "path",
+          "required": true,
+          "description": "Report identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41127
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41127
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetReportV2",
@@ -523,7 +2232,168 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/activities/reports/%7Breport_id%7D",
+      "operationId": "kDriveGetReportV2",
+      "summary": "Get report",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity",
+        "Report"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70249
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70249
+          ]
+        },
+        {
+          "name": "report_id",
+          "in": "path",
+          "required": true,
+          "description": "Report identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 11675
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11675
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "filters",
+            "enum": [
+              "filters",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "filters",
+            "total"
+          ],
+          "values": [
+            "filters",
+            "total"
+          ],
+          "examples": [
+            "filters"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 26772
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            26772
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 26
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            26
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveExportReportV2",
@@ -561,7 +2431,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/activities/reports/%7Breport_id%7D/export",
+      "operationId": "kDriveExportReportV2",
+      "summary": "Export report",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity",
+        "Report"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6430
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6430
+          ]
+        },
+        {
+          "name": "report_id",
+          "in": "path",
+          "required": true,
+          "description": "Report identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2067
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2067
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUndoActionV2",
@@ -595,7 +2528,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/cancel",
+      "operationId": "kDriveUndoActionV2",
+      "summary": "Undo action",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Action"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 81505
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            81505
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetAllCategoriesV2",
@@ -627,7 +2606,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/categories",
+      "operationId": "kDriveGetAllCategoriesV2",
+      "summary": "Get All Categories",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72239
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72239
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateCategoryV2",
@@ -661,7 +2684,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/categories",
+      "operationId": "kDriveCreateCategoryV2",
+      "summary": "Create Category",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2553
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2553
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteCategoryV2",
@@ -698,7 +2765,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveDeleteCategoryV2",
+      "summary": "Delete Category",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54142
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54142
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33452
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33452
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveEditCategoryV2",
@@ -737,7 +2866,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveEditCategoryV2",
+      "summary": "Edit Category",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78785
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78785
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 30282
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            30282
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetV2",
@@ -769,7 +2960,52 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/categories/rights",
+      "operationId": "kDriveGetV2",
+      "summary": "Get",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category",
+        "Right"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 50001
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            50001
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateCreateV2",
@@ -803,7 +3039,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/categories/rights",
+      "operationId": "kDriveUpdateCreateV2",
+      "summary": "Update/Create",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category",
+        "Right"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61243
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61243
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveTrashV2",
@@ -840,7 +3122,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D",
+      "operationId": "kDriveTrashV2",
+      "summary": "Trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 77284
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77284
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13151
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13151
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetMultiaccessV2",
@@ -883,7 +3228,101 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access",
+      "operationId": "kDriveGetMultiaccessV2",
+      "summary": "Get multi-access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35571
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35571
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 86205
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86205
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "user",
+              "invitation_drive",
+              "parent_access"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "invitation_drive",
+            "parent_access"
+          ],
+          "values": [
+            "user",
+            "invitation_drive",
+            "parent_access"
+          ],
+          "examples": [
+            "user"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddMultiaccessV2",
@@ -933,7 +3372,131 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access",
+      "operationId": "kDriveAddMultiaccessV2",
+      "summary": "Add multi-access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26283
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26283
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 97284
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            97284
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "user"
+            ]
+          },
+          "enumValues": [
+            "user"
+          ],
+          "values": [
+            "user"
+          ],
+          "examples": [
+            "user"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "en"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "en"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAllowExternalApplicationsV2",
@@ -972,7 +3535,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/applications",
+      "operationId": "kDriveAllowExternalApplicationsV2",
+      "summary": "Allow external applications",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17942
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17942
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33444
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33444
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCheckAccessChangeV2",
@@ -1011,7 +3637,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/check",
+      "operationId": "kDriveCheckAccessChangeV2",
+      "summary": "Check access change",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 1131
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1131
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 28474
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            28474
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveForceWriteAccessV2",
@@ -1048,7 +3737,73 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/force",
+      "operationId": "kDriveForceWriteAccessV2",
+      "summary": "Force write access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54343
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54343
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 67695
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            67695
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveInvitationGetAccessV2",
@@ -1085,7 +3840,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/invitations",
+      "operationId": "kDriveInvitationGetAccessV2",
+      "summary": "Invitation > get access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Invitation"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 25122
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            25122
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45301
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45301
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddAccessV2",
@@ -1135,7 +3954,134 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/invitations",
+      "operationId": "kDriveAddAccessV2",
+      "summary": "Add access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Invitation"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32066
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32066
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 96083
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            96083
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "user",
+              "invitation_drive"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "invitation_drive"
+          ],
+          "values": [
+            "user",
+            "invitation_drive"
+          ],
+          "examples": [
+            "user"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "nl"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "nl"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCheckAccessV2",
@@ -1174,7 +4120,72 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/invitations/check",
+      "operationId": "kDriveCheckAccessV2",
+      "summary": "Check access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Invitation"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40326
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40326
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 10526
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10526
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetRequestedFileAccessFromAFileIdV2",
@@ -1217,7 +4228,96 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/requests",
+      "operationId": "kDriveGetRequestedFileAccessFromAFileIdV2",
+      "summary": "Get requested file access from a file id",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Request"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71799
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71799
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72242
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72242
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "",
+            "enum": [
+              ""
+            ]
+          },
+          "enumValues": [
+            ""
+          ],
+          "values": [
+            ""
+          ],
+          "examples": [
+            ""
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateANewFileAccessRequestV2",
@@ -1262,7 +4362,96 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/requests",
+      "operationId": "kDriveCreateANewFileAccessRequestV2",
+      "summary": "Create a new file access request",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Request"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93928
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93928
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91174
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91174
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "",
+            "enum": [
+              ""
+            ]
+          },
+          "enumValues": [
+            ""
+          ],
+          "values": [
+            ""
+          ],
+          "examples": [
+            ""
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSynchronizeWithParentRightsV2",
@@ -1299,7 +4488,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/sync-parent",
+      "operationId": "kDriveSynchronizeWithParentRightsV2",
+      "summary": "Synchronize with parent rights",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23962
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23962
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 75496
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75496
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetAccessV2",
@@ -1336,7 +4589,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/teams",
+      "operationId": "kDriveGetAccessV2",
+      "summary": "Get access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 98735
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            98735
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71108
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "post_2_drive_drive_id_files_file_id_access_teams",
@@ -1386,7 +4703,134 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/teams",
+      "operationId": null,
+      "summary": "Add access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 12865
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            12865
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54440
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54440
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "user",
+              "invitation_drive"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "invitation_drive"
+          ],
+          "values": [
+            "user",
+            "invitation_drive"
+          ],
+          "examples": [
+            "user"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "pt"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "pt"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveAccessV2",
@@ -1428,7 +4872,90 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/teams/%7Bteam_id%7D",
+      "operationId": "kDriveRemoveAccessV2",
+      "summary": "Remove access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 60705
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            60705
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41936
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41936
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "Team identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 50830
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            50830
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateAccessV2",
@@ -1472,7 +4999,90 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/teams/%7Bteam_id%7D",
+      "operationId": "kDriveUpdateAccessV2",
+      "summary": "Update access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45589
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45589
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91708
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91708
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "Team identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27531
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27531
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_files_file_id_access_users",
@@ -1509,7 +5119,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/users",
+      "operationId": null,
+      "summary": "get access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 34462
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            34462
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61949
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61949
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "post_2_drive_drive_id_files_file_id_access_users",
@@ -1559,7 +5233,136 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/users",
+      "operationId": null,
+      "summary": "add access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92680
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92680
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29955
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29955
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "invitation_drive",
+            "enum": [
+              "user",
+              "invitation_drive"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "invitation_drive"
+          ],
+          "values": [
+            "user",
+            "invitation_drive"
+          ],
+          "examples": [
+            "invitation_drive"
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "fr"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "fr"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "403",
+        "404",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "delete_2_drive_drive_id_files_file_id_access_users_user_id",
@@ -1601,7 +5404,90 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/users/%7Buser_id%7D",
+      "operationId": null,
+      "summary": "Remove access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93741
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93741
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41014
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41014
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84816
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84816
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "put_2_drive_drive_id_files_file_id_access_users_user_id",
@@ -1645,7 +5531,90 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/access/users/%7Buser_id%7D",
+      "operationId": null,
+      "summary": "Update access",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Access",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54876
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54876
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29137
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29137
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 77608
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77608
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveCategoriesOnFileV2",
@@ -1682,7 +5651,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/categories",
+      "operationId": "kDriveRemoveCategoriesOnFileV2",
+      "summary": "Remove Categories on File",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61802
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61802
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 63711
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            63711
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveCategoryOnFileV2",
@@ -1724,7 +5755,87 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveRemoveCategoryOnFileV2",
+      "summary": "Remove Category on File",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52798
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52798
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2173
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2173
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 59512
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            59512
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddCategoryOnFileV2",
@@ -1766,7 +5877,87 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveAddCategoryOnFileV2",
+      "summary": "Add Category on File",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 28950
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            28950
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 34420
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            34420
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93249
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93249
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveValidatesAnAIGeneratedCategoryV2",
@@ -1810,7 +6001,87 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/categories/%7Bcategory_id%7D/ai-feedback",
+      "operationId": "kDriveValidatesAnAIGeneratedCategoryV2",
+      "summary": "Validates an AI generated Category",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92049
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92049
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 36147
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            36147
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26158
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26158
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFileCommentsV2",
@@ -1853,7 +6124,274 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments",
+      "operationId": "kDriveGetFileCommentsV2",
+      "summary": "Get file comments",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27007
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27007
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 18889
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            18889
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "user",
+              "likes",
+              "responses",
+              "responses.user",
+              "responses.likes",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes",
+            "total"
+          ],
+          "values": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes",
+            "total"
+          ],
+          "examples": [
+            "user"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 7942
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            7942
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 376
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            376
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at"
+            ]
+          },
+          "enumValues": [
+            "created_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddCommentV2",
@@ -1898,7 +6436,107 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments",
+      "operationId": "kDriveAddCommentV2",
+      "summary": "Add comment",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3947
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3947
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3664
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3664
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "likes",
+            "enum": [
+              "user",
+              "likes",
+              "responses",
+              "responses.user",
+              "responses.likes"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "values": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "examples": [
+            "likes"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteCommentV2",
@@ -1940,7 +6578,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D",
+      "operationId": "kDriveDeleteCommentV2",
+      "summary": "Delete comment",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33561
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33561
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56665
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56665
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetCommentReplyV2",
@@ -1988,7 +6707,293 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D",
+      "operationId": "kDriveGetCommentReplyV2",
+      "summary": "Get comment reply",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 10954
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10954
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            82108
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "responses",
+            "enum": [
+              "user",
+              "likes",
+              "responses",
+              "responses.user",
+              "responses.likes",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes",
+            "total"
+          ],
+          "values": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes",
+            "total"
+          ],
+          "examples": [
+            "responses"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 44442
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            44442
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 678
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            678
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at"
+            ]
+          },
+          "enumValues": [
+            "created_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddCommentReplyV2",
@@ -2038,7 +7043,125 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D",
+      "operationId": "kDriveAddCommentReplyV2",
+      "summary": "Add comment reply",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6989
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6989
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 5721
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5721
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "likes",
+            "enum": [
+              "user",
+              "likes",
+              "responses",
+              "responses.user",
+              "responses.likes"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "values": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "examples": [
+            "likes"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveModifyCommentV2",
@@ -2088,7 +7211,125 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D",
+      "operationId": "kDriveModifyCommentV2",
+      "summary": "Modify comment",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79948
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79948
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 31304
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31304
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "responses.likes",
+            "enum": [
+              "user",
+              "likes",
+              "responses",
+              "responses.user",
+              "responses.likes"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "values": [
+            "user",
+            "likes",
+            "responses",
+            "responses.user",
+            "responses.likes"
+          ],
+          "examples": [
+            "responses.likes"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveLikeCommentV2",
@@ -2130,7 +7371,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D/like",
+      "operationId": "kDriveLikeCommentV2",
+      "summary": "Like comment",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61123
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61123
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 62200
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            62200
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUnlikeCommentV2",
@@ -2172,7 +7494,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/comments/%7Bcomment_id%7D/unlike",
+      "operationId": "kDriveUnlikeCommentV2",
+      "summary": "Unlike comment",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Comment"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 9444
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            9444
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 55412
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55412
+          ]
+        },
+        {
+          "name": "comment_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCopyToDriveV2",
@@ -2211,7 +7614,72 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/copy-to-drive",
+      "operationId": "kDriveCopyToDriveV2",
+      "summary": "Copy to Drive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_files_file_id_download",
@@ -2261,7 +7729,117 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/download",
+      "operationId": null,
+      "summary": "Download",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13097
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13097
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29259
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29259
+          ]
+        },
+        {
+          "name": "as",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "as",
+            "enum": [
+              "pdf",
+              "text"
+            ],
+            "type": "string",
+            "description": "Convert file before download",
+            "example": "text"
+          },
+          "enumValues": [
+            "pdf",
+            "text"
+          ],
+          "values": [],
+          "examples": [
+            "text"
+          ]
+        },
+        {
+          "name": "x-kdrive-file-password",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "x-kdrive-file-password",
+            "type": "string",
+            "description": "File password to open it for conversion, if the file is password-protected",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteDropboxV2",
@@ -2298,7 +7876,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/dropbox",
+      "operationId": "kDriveDeleteDropboxV2",
+      "summary": "Delete dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 49177
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            49177
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44995
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44995
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetDropboxV2",
@@ -2341,7 +7981,109 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/dropbox",
+      "operationId": "kDriveGetDropboxV2",
+      "summary": "Get dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39507
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39507
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78507
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78507
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "capabilities",
+            "enum": [
+              "user",
+              "capabilities",
+              "directory",
+              "directory.capabilities",
+              "directory.path",
+              "directory.parents"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "capabilities",
+            "directory",
+            "directory.capabilities",
+            "directory.path",
+            "directory.parents"
+          ],
+          "values": [
+            "user",
+            "capabilities",
+            "directory",
+            "directory.capabilities",
+            "directory.path",
+            "directory.parents"
+          ],
+          "examples": [
+            "capabilities"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveConvertAFolderIntoADropboxV2",
@@ -2380,7 +8122,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/dropbox",
+      "operationId": "kDriveConvertAFolderIntoADropboxV2",
+      "summary": "Convert a folder into a dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91121
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91121
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61781
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61781
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateDropboxV2",
@@ -2419,7 +8224,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/dropbox",
+      "operationId": "kDriveUpdateDropboxV2",
+      "summary": "Update dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84403
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84403
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39143
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39143
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDropboxInviteV2",
@@ -2458,7 +8325,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/dropbox/invite",
+      "operationId": "kDriveDropboxInviteV2",
+      "summary": "Dropbox invite",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22065
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22065
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 15960
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            15960
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUnfavoriteFileV2",
@@ -2495,7 +8424,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/favorite",
+      "operationId": "kDriveUnfavoriteFileV2",
+      "summary": "Unfavorite file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Favorite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84491
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84491
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39655
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39655
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveFavoriteFileV2",
@@ -2532,7 +8523,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/favorite",
+      "operationId": "kDriveFavoriteFileV2",
+      "summary": "Favorite file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Favorite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 86607
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86607
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29090
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29090
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveHashV2",
@@ -2569,7 +8622,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/hash",
+      "operationId": "kDriveHashV2",
+      "summary": "Hash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73665
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73665
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 25729
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            25729
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveSharelinkV2",
@@ -2606,7 +8721,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/link",
+      "operationId": "kDriveRemoveSharelinkV2",
+      "summary": "Remove share-link",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 48976
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            48976
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23907
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23907
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetSharelinkV2",
@@ -2649,7 +8827,95 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/link",
+      "operationId": "kDriveGetSharelinkV2",
+      "summary": "Get share-link",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 83528
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            83528
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87136
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87136
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "views",
+            "enum": [
+              "views"
+            ]
+          },
+          "enumValues": [
+            "views"
+          ],
+          "values": [
+            "views"
+          ],
+          "examples": [
+            "views"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateSharelinkV2",
@@ -2694,7 +8960,95 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/link",
+      "operationId": "kDriveCreateSharelinkV2",
+      "summary": "Create share-link",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 50650
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            50650
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93139
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93139
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "views",
+            "enum": [
+              "views"
+            ]
+          },
+          "enumValues": [
+            "views"
+          ],
+          "values": [
+            "views"
+          ],
+          "examples": [
+            "views"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateSharelinkV2",
@@ -2733,7 +9087,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/link",
+      "operationId": "kDriveUpdateSharelinkV2",
+      "summary": "Update share-link",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35995
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35995
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71221
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71221
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveShareLinkInviteV2",
@@ -2772,7 +9189,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/link/invite",
+      "operationId": "kDriveShareLinkInviteV2",
+      "summary": "Share link invite",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44170
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44170
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82968
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            82968
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDrivePreviewV2",
@@ -2837,7 +9317,182 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/preview",
+      "operationId": "kDrivePreviewV2",
+      "summary": "Preview",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4677
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4677
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 97025
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            97025
+          ]
+        },
+        {
+          "name": "as",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "as",
+            "enum": [
+              "pdf",
+              "text"
+            ],
+            "type": "string",
+            "description": "Convert file before preview",
+            "example": "text"
+          },
+          "enumValues": [
+            "pdf",
+            "text"
+          ],
+          "values": [],
+          "examples": [
+            "text"
+          ]
+        },
+        {
+          "name": "height",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "height",
+            "maximum": 10000,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The height of the preview. <note>This parameter only works on image</note>",
+            "example": 1297
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1297
+          ]
+        },
+        {
+          "name": "quality",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "quality",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The quality of the preview. <note>This parameter only works on image</note>",
+            "example": 4
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4
+          ]
+        },
+        {
+          "name": "width",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "width",
+            "maximum": 10000,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The width of the preview. <note>This parameter only works on image</note>",
+            "example": 1496
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1496
+          ]
+        },
+        {
+          "name": "x-kdrive-file-password",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "x-kdrive-file-password",
+            "type": "string",
+            "description": "File password to open it for conversion, if the file is password-protected",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRenameV2",
@@ -2876,7 +9531,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/rename",
+      "operationId": "kDriveRenameV2",
+      "summary": "Rename",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89989
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89989
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7077
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7077
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetSizeV2",
@@ -2919,7 +9636,95 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/sizes",
+      "operationId": "kDriveGetSizeV2",
+      "summary": "Get size",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 5369
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5369
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 30130
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            30130
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetAFileTemporaryURLV2",
@@ -2962,7 +9767,92 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/temporary_url",
+      "operationId": "kDriveGetAFileTemporaryURLV2",
+      "summary": "Get a file Temporary URL",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52416
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52416
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71868
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71868
+          ]
+        },
+        {
+          "name": "duration",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "duration",
+            "maximum": 86400,
+            "minimum": 60,
+            "type": "integer",
+            "description": "How long before this link expires, in seconds",
+            "example": 25882
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            25882
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveThumbnailV2",
@@ -3011,7 +9901,113 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/thumbnail",
+      "operationId": "kDriveThumbnailV2",
+      "summary": "Thumbnail",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51990
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51990
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 66312
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            66312
+          ]
+        },
+        {
+          "name": "height",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "height",
+            "maximum": 400,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The height of the thumbnail.",
+            "example": 303
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            303
+          ]
+        },
+        {
+          "name": "width",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "width",
+            "maximum": 400,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The width of the thumbnail.",
+            "example": 162
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            162
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteAllV2",
@@ -3048,7 +10044,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions",
+      "operationId": "kDriveDeleteAllV2",
+      "summary": "Delete all",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 76713
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            76713
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43690
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43690
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListV2",
@@ -3085,7 +10144,169 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions",
+      "operationId": "kDriveListV2",
+      "summary": "List",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44574
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44574
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52804
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52804
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at",
+              "last_modified_at",
+              "keep_forever"
+            ]
+          },
+          "enumValues": [
+            "created_at",
+            "last_modified_at",
+            "keep_forever"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteV2",
@@ -3127,7 +10348,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D",
+      "operationId": "kDriveDeleteV2",
+      "summary": "Delete",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 24316
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            24316
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 68940
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            68940
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 10171
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10171
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_files_file_id_versions_version_id",
@@ -3169,7 +10471,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D",
+      "operationId": null,
+      "summary": "Get",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35455
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35455
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90752
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90752
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 10048
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10048
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateV2",
@@ -3213,7 +10596,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D",
+      "operationId": "kDriveUpdateV2",
+      "summary": "Update",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26912
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26912
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74539
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74539
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 36071
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            36071
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_files_file_id_versions_version_id_download",
@@ -3256,7 +10720,88 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D/download",
+      "operationId": null,
+      "summary": "Download",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 58223
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            58223
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 62055
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            62055
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 14391
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            14391
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRestoreV2",
@@ -3304,7 +10849,188 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D/restore",
+      "operationId": "kDriveRestoreV2",
+      "summary": "Restore",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7278
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7278
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87640
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87640
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3714
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3714
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "sharelink",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "sharelink"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRestoreToDirectoryV2",
@@ -3359,7 +11085,206 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D/restore/%7Bdestination_directory_id%7D",
+      "operationId": "kDriveRestoreToDirectoryV2",
+      "summary": "Restore to Directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54813
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54813
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 24461
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            24461
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70414
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70414
+          ]
+        },
+        {
+          "name": "destination_directory_id",
+          "in": "path",
+          "required": true,
+          "description": "Directory identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47384
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47384
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "lock",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "lock"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateCurrentV2",
@@ -3398,7 +11323,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/current",
+      "operationId": "kDriveUpdateCurrentV2",
+      "summary": "Update current",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6682
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6682
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 76307
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            76307
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_files_archives_archive_uuid",
@@ -3436,7 +11424,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/files/archives/%7Barchive_uuid%7D",
+      "operationId": null,
+      "summary": "Download archive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Archive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69767
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69767
+          ]
+        },
+        {
+          "name": "archive_uuid",
+          "in": "path",
+          "required": true,
+          "description": "Archive uuid",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveCategoryOnFilesV2",
@@ -3475,7 +11526,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/files/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveRemoveCategoryOnFilesV2",
+      "summary": "Remove Category on Files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61171
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61171
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 9112
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            9112
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAddCategoryOnFilesV2",
@@ -3514,7 +11627,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/categories/%7Bcategory_id%7D",
+      "operationId": "kDriveAddCategoryOnFilesV2",
+      "summary": "Add category on files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 15676
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            15676
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 83471
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            83471
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCheckFilesExistenceV2",
@@ -3548,7 +11723,50 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/files/exists",
+      "operationId": "kDriveCheckFilesExistenceV2",
+      "summary": "Check file's existence",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 58940
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            58940
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCleanImportsHistoryV2",
@@ -3580,7 +11798,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/imports",
+      "operationId": "kDriveCleanImportsHistoryV2",
+      "summary": "Clean imports history",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 57387
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            57387
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListImportsV2",
@@ -3618,7 +11880,147 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/imports",
+      "operationId": "kDriveListImportsV2",
+      "summary": "List imports",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19409
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19409
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "total",
+            "enum": [
+              "total"
+            ]
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [
+            "total"
+          ],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 91769
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            91769
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 21
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            21
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteImportV2",
@@ -3655,7 +12057,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/imports/%7Bimport_id%7D",
+      "operationId": "kDriveDeleteImportV2",
+      "summary": "Delete import",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 97737
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            97737
+          ]
+        },
+        {
+          "name": "import_id",
+          "in": "path",
+          "required": true,
+          "description": "External import identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92338
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92338
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListErroredImportFilesV2",
@@ -3698,7 +12163,165 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/imports/%7Bimport_id%7D",
+      "operationId": "kDriveListErroredImportFilesV2",
+      "summary": "List errored import files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19802
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19802
+          ]
+        },
+        {
+          "name": "import_id",
+          "in": "path",
+          "required": true,
+          "description": "External import identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87379
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87379
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "total",
+            "enum": [
+              "total"
+            ]
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [
+            "total"
+          ],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 78013
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            78013
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 662
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            662
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCancelImportV2",
@@ -3735,7 +12358,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/imports/%7Bimport_id%7D/cancel",
+      "operationId": "kDriveCancelImportV2",
+      "summary": "Cancel import",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74467
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74467
+          ]
+        },
+        {
+          "name": "import_id",
+          "in": "path",
+          "required": true,
+          "description": "External import identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16749
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16749
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveImportKDriveV2",
@@ -3769,7 +12454,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/imports/kdrive",
+      "operationId": "kDriveImportKDriveV2",
+      "summary": "Import kDrive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17443
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17443
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveImportOAuth2AppV2",
@@ -3803,7 +12534,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/imports/oauth",
+      "operationId": "kDriveImportOAuth2AppV2",
+      "summary": "Import OAuth2 app",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19717
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19717
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListEligibleDrivesV2",
@@ -3851,7 +12628,123 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/imports/oauth/drives",
+      "operationId": "kDriveListEligibleDrivesV2",
+      "summary": "List eligible drives",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19528
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19528
+          ]
+        },
+        {
+          "name": "access_token_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "access_token_id",
+            "type": "integer",
+            "description": "ID of the authentication token for the application",
+            "example": 8173
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8173
+          ]
+        },
+        {
+          "name": "application",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "application",
+            "enum": [
+              "dropbox",
+              "onedrive"
+            ],
+            "type": "string",
+            "description": "Supported service or third-party service identifier for external import.<note><strong>dropbox</strong>: Import from Dropbox.</note><note><strong>onedrive</strong>: Import from Microsoft OneDrive.</note>",
+            "example": "dropbox"
+          },
+          "enumValues": [
+            "dropbox",
+            "onedrive"
+          ],
+          "values": [],
+          "examples": [
+            "dropbox"
+          ]
+        },
+        {
+          "name": "auth_code",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "auth_code",
+            "maxLength": 12288,
+            "minLength": 40,
+            "pattern": "^[a-zA-Z0-9\\-._~\\+!\\/\\*]+\\$*$",
+            "type": "string",
+            "description": "Authentication code of the application",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveImportKDriveSharelinkV2",
@@ -3885,7 +12778,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/imports/sharelink",
+      "operationId": "kDriveImportKDriveSharelinkV2",
+      "summary": "Import kDrive sharelink",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22739
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22739
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveImportWebDAVAppV2",
@@ -3919,7 +12858,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/imports/webdav",
+      "operationId": "kDriveImportWebDAVAppV2",
+      "summary": "Import WebDAV app",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "External import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51442
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51442
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "422",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdatePreferencesV2",
@@ -3953,7 +12938,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/preferences",
+      "operationId": "kDriveUpdatePreferencesV2",
+      "summary": "Update Preferences",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65658
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65658
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetDrivesSettingsV2",
@@ -3985,7 +13014,50 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/settings",
+      "operationId": "kDriveGetDrivesSettingsV2",
+      "summary": "Get drive's settings",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22065
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22065
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateIASettingsV2",
@@ -4019,7 +13091,55 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/settings/ai",
+      "operationId": "kDriveUpdateIASettingsV2",
+      "summary": "Update IA settings",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 49595
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            49595
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "403",
+        "404",
+        "417",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateShareLinkSettingsV2",
@@ -4053,7 +13173,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/settings/link",
+      "operationId": "kDriveUpdateShareLinkSettingsV2",
+      "summary": "Update ShareLink settings",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 24633
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            24633
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateOfficeSettingsV2",
@@ -4087,7 +13253,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/settings/office",
+      "operationId": "kDriveUpdateOfficeSettingsV2",
+      "summary": "Update Office settings",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80595
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80595
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateTrashSettingsV2",
@@ -4121,7 +13333,53 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/settings/trash",
+      "operationId": "kDriveUpdateTrashSettingsV2",
+      "summary": "Update trash settings",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7864
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7864
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveChartActivitiesV2",
@@ -4174,7 +13432,142 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities",
+      "operationId": "kDriveChartActivitiesV2",
+      "summary": "Chart : Activities",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 46891
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46891
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 114869388336
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            114869388336
+          ]
+        },
+        {
+          "name": "interval",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "interval",
+            "maximum": 720,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Statistics hours interval between from and until",
+            "example": 170
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            170
+          ]
+        },
+        {
+          "name": "metric",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "metric",
+            "enum": [
+              "devices",
+              "shared_files",
+              "users"
+            ],
+            "type": "string",
+            "example": "users"
+          },
+          "enumValues": [
+            "devices",
+            "shared_files",
+            "users"
+          ],
+          "values": [],
+          "examples": [
+            "users"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 215397109026
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            215397109026
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveExportActivitiesV2",
@@ -4228,7 +13621,142 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities/export",
+      "operationId": "kDriveExportActivitiesV2",
+      "summary": "Export : Activities",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54433
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54433
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 114610841422
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            114610841422
+          ]
+        },
+        {
+          "name": "interval",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "interval",
+            "maximum": 720,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Statistics hours interval between from and until",
+            "example": 610
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            610
+          ]
+        },
+        {
+          "name": "metric",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "metric",
+            "enum": [
+              "devices",
+              "shared_files",
+              "users"
+            ],
+            "type": "string",
+            "example": "shared_files"
+          },
+          "enumValues": [
+            "devices",
+            "shared_files",
+            "users"
+          ],
+          "values": [],
+          "examples": [
+            "shared_files"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 188592901374
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            188592901374
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveActivitiesShareLinksV2",
@@ -4301,7 +13829,404 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities/links",
+      "operationId": "kDriveActivitiesShareLinksV2",
+      "summary": "Activities : ShareLinks",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51889
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51889
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "total",
+            "enum": [
+              "file",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "file",
+            "total"
+          ],
+          "values": [
+            "file",
+            "total"
+          ],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 160343221026
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            160343221026
+          ]
+        },
+        {
+          "name": "max_view",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "max_view",
+            "type": "integer",
+            "description": "Filter result by a maximum view",
+            "example": 46662
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46662
+          ]
+        },
+        {
+          "name": "min_view",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "min_view",
+            "type": "integer",
+            "description": "Filter result by a minimum view",
+            "example": 99832
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99832
+          ]
+        },
+        {
+          "name": "rights",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "rights",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "inherit",
+                "password",
+                "public"
+              ],
+              "type": "string",
+              "description": "Rights required to view the share link.<note><strong>inherit</strong>: Share link is accessible only by users of the drive.</note><note><strong>password</strong>: Share link is public but protected by a password.</note><note><strong>public</strong>: Share link is public, no restriction set.</note>",
+              "example": "inherit"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "description": " Search the exact match of share link filename when file is asked.",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 202756392150
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            202756392150
+          ]
+        },
+        {
+          "name": "valid_until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "valid_until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Filter result by valid_until date",
+            "nullable": true,
+            "example": 192605628982
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            192605628982
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 61907
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            61907
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 262
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            262
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "unique_views",
+              "views",
+              "files.path",
+              "relevance"
+            ]
+          },
+          "enumValues": [
+            "unique_views",
+            "views",
+            "files.path",
+            "relevance"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[unique_views]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[unique_views]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveExportShareLinksActivitiesV2",
@@ -4364,7 +14289,185 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities/links/export",
+      "operationId": "kDriveExportShareLinksActivitiesV2",
+      "summary": "Export : ShareLinks Activities",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41775
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41775
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 81508718286
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            81508718286
+          ]
+        },
+        {
+          "name": "max_view",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "max_view",
+            "type": "integer",
+            "description": "Filter result by a maximum view",
+            "example": 1686
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1686
+          ]
+        },
+        {
+          "name": "min_view",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "min_view",
+            "type": "integer",
+            "description": "Filter result by a minimum view",
+            "example": 2394
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2394
+          ]
+        },
+        {
+          "name": "rights",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "rights",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "inherit",
+                "password",
+                "public"
+              ],
+              "type": "string",
+              "description": "Rights required to view the share link.<note><strong>inherit</strong>: Share link is accessible only by users of the drive.</note><note><strong>password</strong>: Share link is public but protected by a password.</note><note><strong>public</strong>: Share link is public, no restriction set.</note>",
+              "example": "inherit"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 111073669350
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            111073669350
+          ]
+        },
+        {
+          "name": "valid_until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "valid_until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Filter result by valid_until date",
+            "nullable": true,
+            "example": 27458365290
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27458365290
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveActivitiesSharedFilesV2",
@@ -4407,7 +14510,92 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities/shared_files",
+      "operationId": "kDriveActivitiesSharedFilesV2",
+      "summary": "Activities : Shared files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8048
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8048
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 247705424988
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            247705424988
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 84000241104
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84000241104
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveActivitiesUsersV2",
@@ -4450,7 +14638,92 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/activities/users",
+      "operationId": "kDriveActivitiesUsersV2",
+      "summary": "Activities : Users",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27461
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27461
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 116591659637
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            116591659637
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 55641672228
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55641672228
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveChartFilesSizeV2",
@@ -4503,7 +14776,144 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/sizes",
+      "operationId": "kDriveChartFilesSizeV2",
+      "summary": "Chart : files size",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90153
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90153
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 78443932713
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78443932713
+          ]
+        },
+        {
+          "name": "interval",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "interval",
+            "maximum": 720,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Statistics hours interval between from and until",
+            "example": 435
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            435
+          ]
+        },
+        {
+          "name": "metrics",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "metrics",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "files",
+                "trash",
+                "versions"
+              ],
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 157335957888
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            157335957888
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveExportFilesSizeV2",
@@ -4557,7 +14967,144 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/statistics/sizes/export",
+      "operationId": "kDriveExportFilesSizeV2",
+      "summary": "Export : files size",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 5863
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5863
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date from which to get statistics in unix-timestamp format",
+            "example": 42338770731
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            42338770731
+          ]
+        },
+        {
+          "name": "interval",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "interval",
+            "maximum": 720,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Statistics hours interval between from and until",
+            "example": 375
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            375
+          ]
+        },
+        {
+          "name": "metrics",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "metrics",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "files",
+                "trash",
+                "versions"
+              ],
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Date until when to get statistics in unix-timestamp format",
+            "example": 228143515705
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            228143515705
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveEmptyTrashV2",
@@ -4589,7 +15136,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/trash",
+      "operationId": "kDriveEmptyTrashV2",
+      "summary": "Empty trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72257
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72257
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRemoveFileV2",
@@ -4626,7 +15217,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D",
+      "operationId": "kDriveRemoveFileV2",
+      "summary": "Remove file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84520
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84520
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3270
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3270
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCountDirectoryFileInTrashedDirectoryV2",
@@ -4663,7 +15316,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D/count",
+      "operationId": "kDriveCountDirectoryFileInTrashedDirectoryV2",
+      "summary": "Count Directory/File in trashed Directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 38938
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            38938
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51637
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51637
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRestoreFileV2",
@@ -4702,7 +15417,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D/restore",
+      "operationId": "kDriveRestoreFileV2",
+      "summary": "Restore file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82705
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            82705
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 95105
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95105
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetThumbnailV2",
@@ -4751,7 +15528,113 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D/thumbnail",
+      "operationId": "kDriveGetThumbnailV2",
+      "summary": "Get thumbnail",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40593
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40593
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93714
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93714
+          ]
+        },
+        {
+          "name": "height",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "height",
+            "maximum": 400,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The height of the thumbnail.",
+            "example": 264
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            264
+          ]
+        },
+        {
+          "name": "width",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "width",
+            "maximum": 400,
+            "minimum": 10,
+            "type": "integer",
+            "description": "The width of the thumbnail.",
+            "example": 343
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            343
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCountDirectoryFileInTrashV2",
@@ -4783,7 +15666,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/trash/count",
+      "operationId": "kDriveCountDirectoryFileInTrashV2",
+      "summary": "Count Directory/File in Trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78364
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78364
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCancelByPathV2",
@@ -4817,7 +15744,52 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/upload",
+      "operationId": "kDriveCancelByPathV2",
+      "summary": "Cancel by path",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 46409
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46409
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCancelSessionV2",
@@ -4854,7 +15826,72 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/upload/session/%7Bsession_token%7D",
+      "operationId": "kDriveCancelSessionV2",
+      "summary": "Cancel session",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 67639
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            67639
+          ]
+        },
+        {
+          "name": "session_token",
+          "in": "path",
+          "required": true,
+          "description": "Session token uuid",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80057
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80057
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveBatchCancelSessionsV2",
@@ -4892,7 +15929,79 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/upload/session/batch",
+      "operationId": "kDriveBatchCancelSessionsV2",
+      "summary": "Batch : cancel sessions",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 31384
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31384
+          ]
+        },
+        {
+          "name": "tokens",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "tokens",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[47][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "description": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "429",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "get_2_drive_drive_id_users",
@@ -4950,7 +16059,389 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/users",
+      "operationId": null,
+      "summary": "Get users",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 46179
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46179
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "drive",
+            "enum": [
+              "capabilities",
+              "categories_permissions",
+              "private_storage",
+              "teams",
+              "security",
+              "drive",
+              "drive.k_suite",
+              "drive.pack",
+              "drive.pack.capabilities",
+              "drive.rights",
+              "drive.settings",
+              "drive.account",
+              "usage",
+              "limits",
+              "total"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "categories_permissions",
+            "private_storage",
+            "teams",
+            "security",
+            "drive",
+            "drive.k_suite",
+            "drive.pack",
+            "drive.pack.capabilities",
+            "drive.rights",
+            "drive.settings",
+            "drive.account",
+            "usage",
+            "limits",
+            "total"
+          ],
+          "values": [
+            "capabilities",
+            "categories_permissions",
+            "private_storage",
+            "teams",
+            "security",
+            "drive",
+            "drive.k_suite",
+            "drive.pack",
+            "drive.pack.capabilities",
+            "drive.rights",
+            "drive.settings",
+            "drive.account",
+            "usage",
+            "limits",
+            "total"
+          ],
+          "examples": [
+            "drive"
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "description": "Search user by his first name, last name or email",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "status",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "active",
+                "deleted",
+                "locked",
+                "pending",
+                "withdrawn"
+              ],
+              "type": "string"
+            },
+            "description": "Status of the resource `{name}`",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "admin",
+                "external",
+                "user"
+              ],
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "user_ids",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "user_ids",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "User identifiers",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 53615
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            53615
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": "10",
+            "example": 557
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            557
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "display_name",
+              "first_name",
+              "last_name"
+            ]
+          },
+          "enumValues": [
+            "display_name",
+            "first_name",
+            "last_name"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[display_name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[display_name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateUserV2",
@@ -4990,7 +16481,79 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/users",
+      "operationId": "kDriveCreateUserV2",
+      "summary": "Create user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 20931
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            20931
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "deleted",
+            "enum": [
+              "security",
+              "deleted"
+            ]
+          },
+          "enumValues": [
+            "security",
+            "deleted"
+          ],
+          "values": [
+            "security",
+            "deleted"
+          ],
+          "examples": [
+            "deleted"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteUserV2",
@@ -5029,7 +16592,68 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D",
+      "operationId": "kDriveDeleteUserV2",
+      "summary": "Delete user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65614
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65614
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6521
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6521
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetUserV2",
@@ -5066,7 +16690,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D",
+      "operationId": "kDriveGetUserV2",
+      "summary": "Get user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87424
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87424
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91870
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91870
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateUserV2",
@@ -5105,7 +16791,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D",
+      "operationId": "kDriveUpdateUserV2",
+      "summary": "Update user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 66582
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            66582
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13524
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13524
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "409",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveLockUserV2",
@@ -5142,7 +16891,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D/lock",
+      "operationId": "kDriveLockUserV2",
+      "summary": "Lock user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39726
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39726
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32359
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32359
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateUserManagerRightV2",
@@ -5181,7 +16992,68 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D/manager",
+      "operationId": "kDriveUpdateUserManagerRightV2",
+      "summary": "Update user manager right",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 97458
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            97458
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32162
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32162
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUnlockUserV2",
@@ -5218,7 +17090,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/users/%7Buser_id%7D/unlock",
+      "operationId": "kDriveUnlockUserV2",
+      "summary": "Unlock user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 96134
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            96134
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "User Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89283
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89283
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetUserInvitationV2",
@@ -5271,7 +17205,235 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/users/invitation",
+      "operationId": "kDriveGetUserInvitationV2",
+      "summary": "Get user invitation",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80968
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80968
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "drive",
+            "enum": [
+              "total",
+              "drive",
+              "user",
+              "invited"
+            ]
+          },
+          "enumValues": [
+            "total",
+            "drive",
+            "user",
+            "invited"
+          ],
+          "values": [
+            "total",
+            "drive",
+            "user",
+            "invited"
+          ],
+          "examples": [
+            "drive"
+          ]
+        },
+        {
+          "name": "emails",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "emails",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "status",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "accepted",
+                "cancelled",
+                "expired",
+                "pending",
+                "rejected"
+              ],
+              "type": "string",
+              "description": "External file import status.<note><strong>accepted</strong>: Invitation has been accepted.</note><note><strong>cancelled</strong>: Invitation has been cancelled.</note><note><strong>expired</strong>: Invitation is expired.</note><note><strong>pending</strong>: Invitation still pending.</note><note><strong>rejected</strong>: Invitation has been rejected.</note>",
+              "example": "accepted"
+            },
+            "description": "Status of the resource `{name}`",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "user_ids",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "user_ids",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 35797
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            35797
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 9
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            9
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDeleteInvitationV2",
@@ -5314,7 +17476,87 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/drive/%7Bdrive_id%7D/users/invitation/%7Binvitation_id%7D",
+      "operationId": "kDriveDeleteInvitationV2",
+      "summary": "Delete invitation",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32305
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32305
+          ]
+        },
+        {
+          "name": "invitation_id",
+          "in": "path",
+          "required": true,
+          "description": "Invitation identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19398
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19398
+          ]
+        },
+        {
+          "name": "send_email",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "send_email",
+            "type": "boolean",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetInvitationInformationV2",
@@ -5351,7 +17593,68 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/drive/%7Bdrive_id%7D/users/invitation/%7Binvitation_id%7D",
+      "operationId": "kDriveGetInvitationInformationV2",
+      "summary": "Get invitation information",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 319
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            319
+          ]
+        },
+        {
+          "name": "invitation_id",
+          "in": "path",
+          "required": true,
+          "description": "Invitation identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 59849
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            59849
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateAnInvitationV2",
@@ -5390,7 +17693,69 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/drive/%7Bdrive_id%7D/users/invitation/%7Binvitation_id%7D",
+      "operationId": "kDriveUpdateAnInvitationV2",
+      "summary": "Update an invitation",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 58321
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            58321
+          ]
+        },
+        {
+          "name": "invitation_id",
+          "in": "path",
+          "required": true,
+          "description": "Invitation identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 99085
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99085
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSendInvitationV2",
@@ -5427,7 +17792,68 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/drive/%7Bdrive_id%7D/users/invitation/%7Binvitation_id%7D/send",
+      "operationId": "kDriveSendInvitationV2",
+      "summary": "Send invitation",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 58504
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            58504
+          ]
+        },
+        {
+          "name": "invitation_id",
+          "in": "path",
+          "required": true,
+          "description": "Invitation identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43380
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43380
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetUsersPreferenceV2",
@@ -5459,7 +17885,8 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": null
   },
   {
     "operationId": "kDriveSetUsersPreferenceV2",
@@ -5487,7 +17914,8 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": null
   },
   {
     "operationId": "kDriveGetUsersV2",
@@ -5529,7 +17957,8 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": null
   },
   {
     "operationId": "kDriveGetDrivesV2",
@@ -5582,7 +18011,8 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": null
   },
   {
     "operationId": "kDriveGetDriveActivitiesOfAllTheUsersV3",
@@ -5685,7 +18115,522 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/activities",
+      "operationId": "kDriveGetDriveActivitiesOfAllTheUsersV3",
+      "summary": "Get drive activities of all the users",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 53717
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            53717
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "user",
+            "enum": [
+              "source",
+              "entity",
+              "user",
+              "file",
+              "file.capabilities",
+              "file.path",
+              "file.sorted_name",
+              "file.dropbox",
+              "file.dropbox.capabilities",
+              "file.is_favorite",
+              "file.sharelink",
+              "file.categories",
+              "file.conversion_capabilities",
+              "file.external_import",
+              "file.supported_by",
+              "parent",
+              "parent.path",
+              "parent.sorted_name"
+            ]
+          },
+          "enumValues": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "values": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "examples": [
+            "user"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 608
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            608
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "created_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[created_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "lang",
+          "in": "query",
+          "required": true,
+          "description": "Override the language of the request, in most cases when an e-mail is triggered in the request.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it",
+              "nl",
+              "pt"
+            ],
+            "type": "string",
+            "example": "fr"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it",
+            "nl",
+            "pt"
+          ],
+          "values": [],
+          "examples": [
+            "fr"
+          ]
+        },
+        {
+          "name": "actions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "actions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "acl_insert",
+                "acl_main_users_insert",
+                "acl_main_users_remove",
+                "acl_main_users_update",
+                "acl_remove",
+                "acl_team_insert",
+                "acl_team_remove",
+                "acl_team_update",
+                "acl_update",
+                "acl_user_insert",
+                "acl_user_remove",
+                "acl_user_update",
+                "category_create",
+                "category_delete",
+                "category_update",
+                "collaborative_folder_access",
+                "collaborative_folder_create",
+                "collaborative_folder_delete",
+                "collaborative_folder_update",
+                "collaborative_user_access",
+                "collaborative_user_create",
+                "collaborative_user_delete",
+                "comment_create",
+                "comment_delete",
+                "comment_like",
+                "comment_resolve",
+                "comment_unlike",
+                "comment_update",
+                "exchange_pro_create",
+                "file_access",
+                "file_categorize",
+                "file_color_delete",
+                "file_color_update",
+                "file_create",
+                "file_delete",
+                "file_favorite_create",
+                "file_favorite_remove",
+                "file_ia_categorize",
+                "file_move",
+                "file_move_out",
+                "file_rename",
+                "file_rename_alias",
+                "file_restore",
+                "file_restore_inherited",
+                "file_share_create",
+                "file_share_delete",
+                "file_share_update",
+                "file_trash",
+                "file_trash_inherited",
+                "file_uncategorize",
+                "file_update",
+                "file_update_mime_type",
+                "maintenance_added",
+                "maintenance_removed",
+                "rewind_ended",
+                "rewind_started",
+                "share_link_create",
+                "share_link_delete",
+                "share_link_show",
+                "share_link_update",
+                "trash_empty",
+                "trash_empty_auto",
+                "update_trash_settings",
+                "user_connected",
+                "user_create",
+                "user_delete",
+                "user_restore",
+                "user_update"
+              ],
+              "type": "string",
+              "description": "Logged interaction type of activities on the drive or file.<note><strong>acl_insert</strong>: Technical: when a new group access to a file/directory is create.</note><note><strong>acl_main_users_insert</strong>: Logged when the main kDrive team access to a file/directory is created.</note><note><strong>acl_main_users_remove</strong>: Logged when the main kDrive team to a file/directory is removed.</note><note><strong>acl_main_users_update</strong>: Logged when the main kDrive team to a file/directory is modified.</note><note><strong>acl_remove</strong>: Technical: when a group access to a file/directory is removed.</note><note><strong>acl_team_insert</strong>: Logged when a team access to a file/directory is created.</note><note><strong>acl_team_remove</strong>: Logged when a team access to a file/directory is removed.</note><note><strong>acl_team_update</strong>: Logged when a team access to a file/directory is modified.</note><note><strong>acl_update</strong>: Technical: when a group access to a file/directory is modified.</note><note><strong>acl_user_insert</strong>: Logged when an user/admin access to a file/directory is created.</note><note><strong>acl_user_remove</strong>: Logged when an user/admin access to a file/directory is removed.</note><note><strong>acl_user_update</strong>: Logged when an user/admin access to a file/directory is modified.</note><note><strong>category_create</strong>: Logged when a new category is added.</note><note><strong>category_delete</strong>: Logged when a category is deleted.</note><note><strong>category_update</strong>: Logged when a category is renamed.</note><note><strong>collaborative_folder_access</strong>: Logged when an user/guest access to the dropbox.</note><note><strong>collaborative_folder_create</strong>: Logged when an user create a dropbox.</note><note><strong>collaborative_folder_delete</strong>: Logged when an user delete the dropbox.</note><note><strong>collaborative_folder_update</strong>: Logged when an user update settings of the dropbox.</note><note><strong>collaborative_user_access</strong>: Logged when an user/guest upload to the dropbox.</note><note><strong>collaborative_user_create</strong>: Logged when an user/guest add his information before uploading to the dropbox.</note><note><strong>collaborative_user_delete</strong>: Logged when an user remove the directory to the dropbox.</note><note><strong>comment_create</strong>: Logged when an user/admin add a comment on a file.</note><note><strong>comment_delete</strong>: Logged when an user/admin delete a comment on a file.</note><note><strong>comment_like</strong>: Logged when an user/admin like a comment on a file.</note><note><strong>comment_resolve</strong>: Logged when an user/admin resolve a comment on a file.</note><note><strong>comment_unlike</strong>: Logged when an user/admin unlike a comment on a file.</note><note><strong>comment_update</strong>: Logged when an user/admin update a comment on a file.</note><note><strong>exchange_pro_create</strong>: Technical: no used.</note><note><strong>file_access</strong>: Logged when an user/guest access to the file.</note><note><strong>file_categorize</strong>: Logged when a category is added to the file/directory.</note><note><strong>file_color_delete</strong>: Logged when a directory color is removed.</note><note><strong>file_color_update</strong>: Logged when a directory color changed.</note><note><strong>file_create</strong>: Logged when on the first file creation.</note><note><strong>file_delete</strong>: Logged when the file is deleted.</note><note><strong>file_favorite_create</strong>: Logged when a file/directory is flagged as favorites.</note><note><strong>file_favorite_remove</strong>: Logged when a file/directory is unflagged from favorites.</note><note><strong>file_ia_categorize</strong>: Logged when a file is categorized by the ia.</note><note><strong>file_move</strong>: Logged when the file is added inside a directory.</note><note><strong>file_move_out</strong>: Logged when the file is removed from a directory.</note><note><strong>file_rename</strong>: Logged when the file is renamed.</note><note><strong>file_rename_alias</strong>: Logged when a root file is renamed by an external user (only visible for the external user).</note><note><strong>file_restore</strong>: Logged when the file is restored from the trash.</note><note><strong>file_share_create</strong>: Logged when an external user access to a file/directory is created.</note><note><strong>file_share_delete</strong>: Logged when an external user access to a file/directory is removed.</note><note><strong>file_share_update</strong>: Logged when an external user access to a file/directory is modified to another permission.</note><note><strong>file_trash</strong>: Logged when the file is sent to trash.</note><note><strong>file_uncategorize</strong>: Logged when a category is removed to the file/directory.</note><note><strong>file_update</strong>: Logged when the file is updated.</note><note><strong>file_update_mime_type</strong>: Logged when a file mime_type is updated.</note><note><strong>rewind_ended</strong>: Logged when the user ended a rewind.</note><note><strong>rewind_started</strong>: Logged when the user started a rewind.</note><note><strong>share_link_create</strong>: Logged when a public share link to a file/directory is created.</note><note><strong>share_link_delete</strong>: Logged when a public share link to a file/directory is deleted.</note><note><strong>share_link_show</strong>: Logged when a public share link to a file/directory is seen by someone else.</note><note><strong>share_link_update</strong>: Logged when a public share link to a file/directory is modified.</note><note><strong>trash_empty</strong>: Logged when the user empties the trash.</note><note><strong>trash_empty_auto</strong>: Logged when the trash empties old files automatically.</note><note><strong>update_trash_settings</strong>: Logged when the user changes trash the settings.</note><note><strong>user_connected</strong>: Logged when an user is connected to the drive.</note><note><strong>user_create</strong>: Logged when an user/admin is added to the drive.</note><note><strong>user_delete</strong>: Logged when an user/admin has been removed of the drive.</note><note><strong>user_restore</strong>: Logged when an user/admin has been restored of the drive.</note><note><strong>user_update</strong>: Logged when an user/admin information has changed.</note>",
+              "example": "acl_insert"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "children",
+              "file",
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "children"
+          },
+          "enumValues": [
+            "children",
+            "file",
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "children"
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "files",
+            "maxItems": 500,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "List of files for which to retrieve activities",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "type": "integer",
+            "example": 69038
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69038
+          ]
+        },
+        {
+          "name": "terms",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "terms",
+            "minLength": 3,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "type": "integer",
+            "example": 95387
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95387
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetTotalCountDriveActivitiesOfAllTheUsersV3",
@@ -5753,7 +18698,283 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/activities/total",
+      "operationId": "kDriveGetTotalCountDriveActivitiesOfAllTheUsersV3",
+      "summary": "Get total count drive activities of all the users",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 31821
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31821
+          ]
+        },
+        {
+          "name": "actions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "actions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "acl_insert",
+                "acl_main_users_insert",
+                "acl_main_users_remove",
+                "acl_main_users_update",
+                "acl_remove",
+                "acl_team_insert",
+                "acl_team_remove",
+                "acl_team_update",
+                "acl_update",
+                "acl_user_insert",
+                "acl_user_remove",
+                "acl_user_update",
+                "category_create",
+                "category_delete",
+                "category_update",
+                "collaborative_folder_access",
+                "collaborative_folder_create",
+                "collaborative_folder_delete",
+                "collaborative_folder_update",
+                "collaborative_user_access",
+                "collaborative_user_create",
+                "collaborative_user_delete",
+                "comment_create",
+                "comment_delete",
+                "comment_like",
+                "comment_resolve",
+                "comment_unlike",
+                "comment_update",
+                "exchange_pro_create",
+                "file_access",
+                "file_categorize",
+                "file_color_delete",
+                "file_color_update",
+                "file_create",
+                "file_delete",
+                "file_favorite_create",
+                "file_favorite_remove",
+                "file_ia_categorize",
+                "file_move",
+                "file_move_out",
+                "file_rename",
+                "file_rename_alias",
+                "file_restore",
+                "file_restore_inherited",
+                "file_share_create",
+                "file_share_delete",
+                "file_share_update",
+                "file_trash",
+                "file_trash_inherited",
+                "file_uncategorize",
+                "file_update",
+                "file_update_mime_type",
+                "maintenance_added",
+                "maintenance_removed",
+                "rewind_ended",
+                "rewind_started",
+                "share_link_create",
+                "share_link_delete",
+                "share_link_show",
+                "share_link_update",
+                "trash_empty",
+                "trash_empty_auto",
+                "update_trash_settings",
+                "user_connected",
+                "user_create",
+                "user_delete",
+                "user_restore",
+                "user_update"
+              ],
+              "type": "string",
+              "description": "Logged interaction type of activities on the drive or file.<note><strong>acl_insert</strong>: Technical: when a new group access to a file/directory is create.</note><note><strong>acl_main_users_insert</strong>: Logged when the main kDrive team access to a file/directory is created.</note><note><strong>acl_main_users_remove</strong>: Logged when the main kDrive team to a file/directory is removed.</note><note><strong>acl_main_users_update</strong>: Logged when the main kDrive team to a file/directory is modified.</note><note><strong>acl_remove</strong>: Technical: when a group access to a file/directory is removed.</note><note><strong>acl_team_insert</strong>: Logged when a team access to a file/directory is created.</note><note><strong>acl_team_remove</strong>: Logged when a team access to a file/directory is removed.</note><note><strong>acl_team_update</strong>: Logged when a team access to a file/directory is modified.</note><note><strong>acl_update</strong>: Technical: when a group access to a file/directory is modified.</note><note><strong>acl_user_insert</strong>: Logged when an user/admin access to a file/directory is created.</note><note><strong>acl_user_remove</strong>: Logged when an user/admin access to a file/directory is removed.</note><note><strong>acl_user_update</strong>: Logged when an user/admin access to a file/directory is modified.</note><note><strong>category_create</strong>: Logged when a new category is added.</note><note><strong>category_delete</strong>: Logged when a category is deleted.</note><note><strong>category_update</strong>: Logged when a category is renamed.</note><note><strong>collaborative_folder_access</strong>: Logged when an user/guest access to the dropbox.</note><note><strong>collaborative_folder_create</strong>: Logged when an user create a dropbox.</note><note><strong>collaborative_folder_delete</strong>: Logged when an user delete the dropbox.</note><note><strong>collaborative_folder_update</strong>: Logged when an user update settings of the dropbox.</note><note><strong>collaborative_user_access</strong>: Logged when an user/guest upload to the dropbox.</note><note><strong>collaborative_user_create</strong>: Logged when an user/guest add his information before uploading to the dropbox.</note><note><strong>collaborative_user_delete</strong>: Logged when an user remove the directory to the dropbox.</note><note><strong>comment_create</strong>: Logged when an user/admin add a comment on a file.</note><note><strong>comment_delete</strong>: Logged when an user/admin delete a comment on a file.</note><note><strong>comment_like</strong>: Logged when an user/admin like a comment on a file.</note><note><strong>comment_resolve</strong>: Logged when an user/admin resolve a comment on a file.</note><note><strong>comment_unlike</strong>: Logged when an user/admin unlike a comment on a file.</note><note><strong>comment_update</strong>: Logged when an user/admin update a comment on a file.</note><note><strong>exchange_pro_create</strong>: Technical: no used.</note><note><strong>file_access</strong>: Logged when an user/guest access to the file.</note><note><strong>file_categorize</strong>: Logged when a category is added to the file/directory.</note><note><strong>file_color_delete</strong>: Logged when a directory color is removed.</note><note><strong>file_color_update</strong>: Logged when a directory color changed.</note><note><strong>file_create</strong>: Logged when on the first file creation.</note><note><strong>file_delete</strong>: Logged when the file is deleted.</note><note><strong>file_favorite_create</strong>: Logged when a file/directory is flagged as favorites.</note><note><strong>file_favorite_remove</strong>: Logged when a file/directory is unflagged from favorites.</note><note><strong>file_ia_categorize</strong>: Logged when a file is categorized by the ia.</note><note><strong>file_move</strong>: Logged when the file is added inside a directory.</note><note><strong>file_move_out</strong>: Logged when the file is removed from a directory.</note><note><strong>file_rename</strong>: Logged when the file is renamed.</note><note><strong>file_rename_alias</strong>: Logged when a root file is renamed by an external user (only visible for the external user).</note><note><strong>file_restore</strong>: Logged when the file is restored from the trash.</note><note><strong>file_share_create</strong>: Logged when an external user access to a file/directory is created.</note><note><strong>file_share_delete</strong>: Logged when an external user access to a file/directory is removed.</note><note><strong>file_share_update</strong>: Logged when an external user access to a file/directory is modified to another permission.</note><note><strong>file_trash</strong>: Logged when the file is sent to trash.</note><note><strong>file_uncategorize</strong>: Logged when a category is removed to the file/directory.</note><note><strong>file_update</strong>: Logged when the file is updated.</note><note><strong>file_update_mime_type</strong>: Logged when a file mime_type is updated.</note><note><strong>rewind_ended</strong>: Logged when the user ended a rewind.</note><note><strong>rewind_started</strong>: Logged when the user started a rewind.</note><note><strong>share_link_create</strong>: Logged when a public share link to a file/directory is created.</note><note><strong>share_link_delete</strong>: Logged when a public share link to a file/directory is deleted.</note><note><strong>share_link_show</strong>: Logged when a public share link to a file/directory is seen by someone else.</note><note><strong>share_link_update</strong>: Logged when a public share link to a file/directory is modified.</note><note><strong>trash_empty</strong>: Logged when the user empties the trash.</note><note><strong>trash_empty_auto</strong>: Logged when the trash empties old files automatically.</note><note><strong>update_trash_settings</strong>: Logged when the user changes trash the settings.</note><note><strong>user_connected</strong>: Logged when an user is connected to the drive.</note><note><strong>user_create</strong>: Logged when an user/admin is added to the drive.</note><note><strong>user_delete</strong>: Logged when an user/admin has been removed of the drive.</note><note><strong>user_restore</strong>: Logged when an user/admin has been restored of the drive.</note><note><strong>user_update</strong>: Logged when an user/admin information has changed.</note>",
+              "example": "acl_insert"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "children",
+              "file",
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "children",
+            "file",
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "files",
+            "maxItems": 500,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "List of files for which to retrieve activities",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "type": "integer",
+            "example": 67739
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            67739
+          ]
+        },
+        {
+          "name": "terms",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "terms",
+            "minLength": 3,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "type": "integer",
+            "example": 74424
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74424
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFilesFromCategoryV3",
@@ -5821,7 +19042,307 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/categories/%7Bcategory_id%7D/files",
+      "operationId": "kDriveGetFilesFromCategoryV3",
+      "summary": "Get Files from Category",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Category"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 25548
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            25548
+          ]
+        },
+        {
+          "name": "category_id",
+          "in": "path",
+          "required": true,
+          "description": "Category Identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 85171
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            85171
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "conversion_capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "conversion_capabilities"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 609
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            609
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFileDirectoryV3",
@@ -5864,7 +19385,172 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D",
+      "operationId": "kDriveGetFileDirectoryV3",
+      "summary": "Get File/Directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47554
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47554
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91916
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91916
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "etag",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "etag"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFileActivitiesV3",
@@ -5962,7 +19648,447 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/activities",
+      "operationId": "kDriveGetFileActivitiesV3",
+      "summary": "Get file activities",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41648
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41648
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52065
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52065
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "file.sharelink",
+            "enum": [
+              "source",
+              "entity",
+              "user",
+              "file",
+              "file.capabilities",
+              "file.path",
+              "file.sorted_name",
+              "file.dropbox",
+              "file.dropbox.capabilities",
+              "file.is_favorite",
+              "file.sharelink",
+              "file.categories",
+              "file.conversion_capabilities",
+              "file.external_import",
+              "file.supported_by",
+              "parent",
+              "parent.path",
+              "parent.sorted_name"
+            ]
+          },
+          "enumValues": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "values": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "examples": [
+            "file.sharelink"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 126
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            126
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "created_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[created_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "actions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "actions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "collaborative_folder_access",
+                "collaborative_folder_create",
+                "collaborative_folder_delete",
+                "collaborative_folder_update",
+                "collaborative_user_access",
+                "collaborative_user_create",
+                "collaborative_user_delete",
+                "comment_create",
+                "comment_delete",
+                "comment_like",
+                "comment_resolve",
+                "comment_unlike",
+                "comment_update",
+                "file_access",
+                "file_categorize",
+                "file_color_delete",
+                "file_color_update",
+                "file_create",
+                "file_delete",
+                "file_favorite_create",
+                "file_favorite_remove",
+                "file_ia_categorize",
+                "file_move",
+                "file_move_out",
+                "file_rename",
+                "file_rename_alias",
+                "file_restore",
+                "file_share_create",
+                "file_share_delete",
+                "file_share_update",
+                "file_trash",
+                "file_uncategorize",
+                "file_update",
+                "share_link_create",
+                "share_link_delete",
+                "share_link_show",
+                "share_link_update"
+              ],
+              "type": "string",
+              "description": "Logged interaction type of activities on the drive or file.<note><strong>collaborative_folder_access</strong>: Logged when an user/guest access to the dropbox.</note><note><strong>collaborative_folder_create</strong>: Logged when an user create a dropbox.</note><note><strong>collaborative_folder_delete</strong>: Logged when an user delete the dropbox.</note><note><strong>collaborative_folder_update</strong>: Logged when an user update settings of the dropbox.</note><note><strong>collaborative_user_access</strong>: Logged when an user/guest upload to the dropbox.</note><note><strong>collaborative_user_create</strong>: Logged when an user/guest add his information before uploading to the dropbox.</note><note><strong>collaborative_user_delete</strong>: Logged when an user remove the directory to the dropbox.</note><note><strong>comment_create</strong>: Logged when an user/admin add a comment on a file.</note><note><strong>comment_delete</strong>: Logged when an user/admin delete a comment on a file.</note><note><strong>comment_like</strong>: Logged when an user/admin like a comment on a file.</note><note><strong>comment_resolve</strong>: Logged when an user/admin resolve a comment on a file.</note><note><strong>comment_unlike</strong>: Logged when an user/admin unlike a comment on a file.</note><note><strong>comment_update</strong>: Logged when an user/admin update a comment on a file.</note><note><strong>file_access</strong>: Logged when an user/guest access to the file.</note><note><strong>file_categorize</strong>: Logged when a category is added to the file/directory.</note><note><strong>file_color_delete</strong>: Logged when a directory color is removed.</note><note><strong>file_color_update</strong>: Logged when a directory color changed.</note><note><strong>file_create</strong>: Logged when on the first file creation.</note><note><strong>file_delete</strong>: Logged when the file is deleted.</note><note><strong>file_favorite_create</strong>: Logged when a file/directory is flagged as favorites.</note><note><strong>file_favorite_remove</strong>: Logged when a file/directory is unflagged from favorites.</note><note><strong>file_ia_categorize</strong>: Logged when a file is categorized by the ia.</note><note><strong>file_move</strong>: Logged when the file is added inside a directory.</note><note><strong>file_move_out</strong>: Logged when the file is removed from a directory.</note><note><strong>file_rename</strong>: Logged when the file is renamed.</note><note><strong>file_rename_alias</strong>: Logged when a root file is renamed by an external user (only visible for the external user).</note><note><strong>file_restore</strong>: Logged when the file is restored from the trash.</note><note><strong>file_share_create</strong>: Logged when an external user access to a file/directory is created.</note><note><strong>file_share_delete</strong>: Logged when an external user access to a file/directory is removed.</note><note><strong>file_share_update</strong>: Logged when an external user access to a file/directory is modified to another permission.</note><note><strong>file_trash</strong>: Logged when the file is sent to trash.</note><note><strong>file_uncategorize</strong>: Logged when a category is removed to the file/directory.</note><note><strong>file_update</strong>: Logged when the file is updated.</note><note><strong>share_link_create</strong>: Logged when a public share link to a file/directory is created.</note><note><strong>share_link_delete</strong>: Logged when a public share link to a file/directory is deleted.</note><note><strong>share_link_show</strong>: Logged when a public share link to a file/directory is seen by someone else.</note><note><strong>share_link_update</strong>: Logged when a public share link to a file/directory is modified.</note>",
+              "example": "collaborative_folder_access"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "children",
+              "file",
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "folder"
+          },
+          "enumValues": [
+            "children",
+            "file",
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "folder"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "type": "integer",
+            "example": 16849
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16849
+          ]
+        },
+        {
+          "name": "terms",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "terms",
+            "minLength": 3,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "type": "integer",
+            "example": 10664
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10664
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveConvertFileV3",
@@ -6011,7 +20137,192 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/convert",
+      "operationId": "kDriveConvertFileV3",
+      "summary": "Convert File",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35775
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35775
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16612
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16612
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.path",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "parents.path"
+          ]
+        },
+        {
+          "name": "x-kdrive-file-password",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "x-kdrive-file-password",
+            "type": "string",
+            "description": "File password to open it for conversion, if the file is password-protected",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCopyToDirectoryV3",
@@ -6061,7 +20372,191 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/copy/%7Bdestination_directory_id%7D",
+      "operationId": "kDriveCopyToDirectoryV3",
+      "summary": "Copy to Directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84418
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84418
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 18627
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            18627
+          ]
+        },
+        {
+          "name": "destination_directory_id",
+          "in": "path",
+          "required": true,
+          "description": "Destination Directory identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 9212
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            9212
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "dropbox.capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "dropbox.capabilities"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCountElementInDirectoryV3",
@@ -6104,7 +20599,97 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/count",
+      "operationId": "kDriveCountElementInDirectoryV3",
+      "summary": "Count element in directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73458
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73458
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72789
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72789
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "Specifies how elements are counted within given folder. Choose either to count only within the specified folder (folder) or to include subfolders in the count (unlimited). The default mode is folder.<ul><small><li><strong>folder:</strong> Count elements only in the specified folder, excluding subfolders.</li><li><strong>unlimited:</strong> Count elements in the specified folder and all subfolders.</li></small></ul>",
+            "example": "folder"
+          },
+          "enumValues": [
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "folder"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateDirectoryV3",
@@ -6149,7 +20734,173 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/directory",
+      "operationId": "kDriveCreateDirectoryV3",
+      "summary": "Create directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32088
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32088
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "categories.category",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "categories.category"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveDuplicateV3",
@@ -6194,7 +20945,172 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/duplicate",
+      "operationId": "kDriveDuplicateV3",
+      "summary": "Duplicate",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 60034
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            60034
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79934
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79934
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "activity",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "activity"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateDefaultFileV3",
@@ -6239,7 +21155,173 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/file",
+      "operationId": "kDriveCreateDefaultFileV3",
+      "summary": "Create default file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19975
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19975
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.sorted_name",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "parents.sorted_name"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFilesInDirectoryV3",
@@ -6317,7 +21399,364 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/files",
+      "operationId": "kDriveGetFilesInDirectoryV3",
+      "summary": "Get files in directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 38510
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            38510
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 63659
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            63659
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "sharelink.views",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "sharelink.views"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 345
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            345
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "child",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "Cannot be used on file_id `1`.",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "child",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUpdateModificationDateV3",
@@ -6356,7 +21795,70 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/last-modified",
+      "operationId": "kDriveUpdateModificationDateV3",
+      "summary": "Update modification date",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 42104
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            42104
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41744
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41744
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUnlockV3",
@@ -6404,7 +21906,109 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/lock",
+      "operationId": "kDriveUnlockV3",
+      "summary": "Unlock",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 75812
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75812
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4160
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4160
+          ]
+        },
+        {
+          "name": "path",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "path",
+            "type": "string",
+            "description": "File's path to unlock",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "token",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "token",
+            "type": "string",
+            "description": "The lock token, provided when the file is locked",
+            "example": "x-token"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "x-token"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveMoveV3",
@@ -6448,7 +22052,89 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/move/%7Bdestination_directory_id%7D",
+      "operationId": "kDriveMoveV3",
+      "summary": "Move",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6605
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6605
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22041
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22041
+          ]
+        },
+        {
+          "name": "destination_directory_id",
+          "in": "path",
+          "required": true,
+          "description": "Destination Directory identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 94264
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            94264
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetSubFiledirectoryByFilenameV3",
@@ -6496,7 +22182,192 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/name",
+      "operationId": "kDriveGetSubFiledirectoryByFilenameV3",
+      "summary": "Get sub file/directory by filename",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6936
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6936
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 62318
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            62318
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "rewind",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "rewind"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "Name of the File/Directory",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListV3",
@@ -6533,7 +22404,239 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions",
+      "operationId": "kDriveListV3",
+      "summary": "List",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56345
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56345
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 36145
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            36145
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 33400
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            33400
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "maximum": 1000,
+            "minimum": 1,
+            "default": 10,
+            "example": 139
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            139
+          ]
+        },
+        {
+          "name": "total",
+          "in": "query",
+          "required": false,
+          "description": "If set to true, return the total number of items. Total pages (<strong>pages</strong>) in response is also returned.\n<note>You can also use ?with=total parameter</note>\n",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "type": "boolean",
+            "x-with": [
+              "total"
+            ],
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "created_at",
+              "last_modified_at",
+              "keep_forever"
+            ]
+          },
+          "enumValues": [
+            "created_at",
+            "last_modified_at",
+            "keep_forever"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[created_at]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[created_at]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRestoreV3",
@@ -6581,7 +22684,191 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D/restore",
+      "operationId": "kDriveRestoreV3",
+      "summary": "Restore",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 55656
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55656
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78011
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78011
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40435
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40435
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "capabilities"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveRestoreToDirectoryV3",
@@ -6636,7 +22923,209 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/%7Bfile_id%7D/versions/%7Bversion_id%7D/restore/%7Bdestination_directory_id%7D",
+      "operationId": "kDriveRestoreToDirectoryV3",
+      "summary": "Restore to Directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Version"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 50529
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            50529
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "File identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52144
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52144
+          ]
+        },
+        {
+          "name": "version_id",
+          "in": "path",
+          "required": true,
+          "description": "Version identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43978
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43978
+          ]
+        },
+        {
+          "name": "destination_directory_id",
+          "in": "path",
+          "required": true,
+          "description": "Directory identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4713
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4713
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "is_favorite",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "is_favorite"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetRootActivitiesV3",
@@ -6729,7 +23218,429 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/activities",
+      "operationId": "kDriveGetRootActivitiesV3",
+      "summary": "Get root activities",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Activity"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19390
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19390
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "file.sharelink",
+            "enum": [
+              "source",
+              "entity",
+              "user",
+              "file",
+              "file.capabilities",
+              "file.path",
+              "file.sorted_name",
+              "file.dropbox",
+              "file.dropbox.capabilities",
+              "file.is_favorite",
+              "file.sharelink",
+              "file.categories",
+              "file.conversion_capabilities",
+              "file.external_import",
+              "file.supported_by",
+              "parent",
+              "parent.path",
+              "parent.sorted_name"
+            ]
+          },
+          "enumValues": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "values": [
+            "source",
+            "entity",
+            "user",
+            "file",
+            "file.capabilities",
+            "file.path",
+            "file.sorted_name",
+            "file.dropbox",
+            "file.dropbox.capabilities",
+            "file.is_favorite",
+            "file.sharelink",
+            "file.categories",
+            "file.conversion_capabilities",
+            "file.external_import",
+            "file.supported_by",
+            "parent",
+            "parent.path",
+            "parent.sorted_name"
+          ],
+          "examples": [
+            "file.sharelink"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 212
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            212
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "created_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[created_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "actions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "actions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "collaborative_folder_access",
+                "collaborative_folder_create",
+                "collaborative_folder_delete",
+                "collaborative_folder_update",
+                "collaborative_user_access",
+                "collaborative_user_create",
+                "collaborative_user_delete",
+                "comment_create",
+                "comment_delete",
+                "comment_like",
+                "comment_resolve",
+                "comment_unlike",
+                "comment_update",
+                "file_access",
+                "file_categorize",
+                "file_color_delete",
+                "file_color_update",
+                "file_create",
+                "file_delete",
+                "file_favorite_create",
+                "file_favorite_remove",
+                "file_ia_categorize",
+                "file_move",
+                "file_move_out",
+                "file_rename",
+                "file_rename_alias",
+                "file_restore",
+                "file_share_create",
+                "file_share_delete",
+                "file_share_update",
+                "file_trash",
+                "file_uncategorize",
+                "file_update",
+                "share_link_create",
+                "share_link_delete",
+                "share_link_show",
+                "share_link_update"
+              ],
+              "type": "string",
+              "description": "Logged interaction type of activities on the drive or file.<note><strong>collaborative_folder_access</strong>: Logged when an user/guest access to the dropbox.</note><note><strong>collaborative_folder_create</strong>: Logged when an user create a dropbox.</note><note><strong>collaborative_folder_delete</strong>: Logged when an user delete the dropbox.</note><note><strong>collaborative_folder_update</strong>: Logged when an user update settings of the dropbox.</note><note><strong>collaborative_user_access</strong>: Logged when an user/guest upload to the dropbox.</note><note><strong>collaborative_user_create</strong>: Logged when an user/guest add his information before uploading to the dropbox.</note><note><strong>collaborative_user_delete</strong>: Logged when an user remove the directory to the dropbox.</note><note><strong>comment_create</strong>: Logged when an user/admin add a comment on a file.</note><note><strong>comment_delete</strong>: Logged when an user/admin delete a comment on a file.</note><note><strong>comment_like</strong>: Logged when an user/admin like a comment on a file.</note><note><strong>comment_resolve</strong>: Logged when an user/admin resolve a comment on a file.</note><note><strong>comment_unlike</strong>: Logged when an user/admin unlike a comment on a file.</note><note><strong>comment_update</strong>: Logged when an user/admin update a comment on a file.</note><note><strong>file_access</strong>: Logged when an user/guest access to the file.</note><note><strong>file_categorize</strong>: Logged when a category is added to the file/directory.</note><note><strong>file_color_delete</strong>: Logged when a directory color is removed.</note><note><strong>file_color_update</strong>: Logged when a directory color changed.</note><note><strong>file_create</strong>: Logged when on the first file creation.</note><note><strong>file_delete</strong>: Logged when the file is deleted.</note><note><strong>file_favorite_create</strong>: Logged when a file/directory is flagged as favorites.</note><note><strong>file_favorite_remove</strong>: Logged when a file/directory is unflagged from favorites.</note><note><strong>file_ia_categorize</strong>: Logged when a file is categorized by the ia.</note><note><strong>file_move</strong>: Logged when the file is added inside a directory.</note><note><strong>file_move_out</strong>: Logged when the file is removed from a directory.</note><note><strong>file_rename</strong>: Logged when the file is renamed.</note><note><strong>file_rename_alias</strong>: Logged when a root file is renamed by an external user (only visible for the external user).</note><note><strong>file_restore</strong>: Logged when the file is restored from the trash.</note><note><strong>file_share_create</strong>: Logged when an external user access to a file/directory is created.</note><note><strong>file_share_delete</strong>: Logged when an external user access to a file/directory is removed.</note><note><strong>file_share_update</strong>: Logged when an external user access to a file/directory is modified to another permission.</note><note><strong>file_trash</strong>: Logged when the file is sent to trash.</note><note><strong>file_uncategorize</strong>: Logged when a category is removed to the file/directory.</note><note><strong>file_update</strong>: Logged when the file is updated.</note><note><strong>share_link_create</strong>: Logged when a public share link to a file/directory is created.</note><note><strong>share_link_delete</strong>: Logged when a public share link to a file/directory is deleted.</note><note><strong>share_link_show</strong>: Logged when a public share link to a file/directory is seen by someone else.</note><note><strong>share_link_update</strong>: Logged when a public share link to a file/directory is modified.</note>",
+              "example": "collaborative_folder_access"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "children",
+              "file",
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "example": "children"
+          },
+          "enumValues": [
+            "children",
+            "file",
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "children"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "from",
+            "type": "integer",
+            "example": 63751
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            63751
+          ]
+        },
+        {
+          "name": "terms",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "terms",
+            "minLength": 3,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "until",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "until",
+            "type": "integer",
+            "example": 86594
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86594
+          ]
+        },
+        {
+          "name": "users",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "users",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveBuildArchiveV3",
@@ -6763,7 +23674,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/archives",
+      "operationId": "kDriveBuildArchiveV3",
+      "summary": "Build archive",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Archive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51570
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51570
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetDropboxesV3",
@@ -6831,7 +23786,323 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/dropboxes",
+      "operationId": "kDriveGetDropboxesV3",
+      "summary": "Get drop-boxes",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 34475
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            34475
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "capabilities"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 471
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            471
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "created_at",
+                "expires_at",
+                "has_password",
+                "last_import",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateANewDropboxV3",
@@ -6865,7 +24136,51 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/dropboxes",
+      "operationId": "kDriveCreateANewDropboxV3",
+      "summary": "Create a new Dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Dropbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43308
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43308
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFavoriteFilesListV3",
@@ -6933,7 +24248,319 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/favorites",
+      "operationId": "kDriveGetFavoriteFilesListV3",
+      "summary": "Get favorite files list",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Favorite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87318
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87318
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.path",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "parents.path"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 343
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            343
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetLargestFilesV3",
@@ -6996,7 +24623,281 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/largest",
+      "operationId": "kDriveGetLargestFilesV3",
+      "summary": "Get largest files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70740
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70740
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "hash",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "hash"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 904
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            904
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "size"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[size]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetLastModifiedFilesV3",
@@ -7059,7 +24960,281 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/last_modified",
+      "operationId": "kDriveGetLastModifiedFilesV3",
+      "summary": "Get last modified files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 75588
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75588
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "hash",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "hash"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 422
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            422
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetSharelinkFilesV3",
@@ -7132,7 +25307,354 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/links",
+      "operationId": "kDriveGetSharelinkFilesV3",
+      "summary": "Get share-link files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Share link",
+        "Manage"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 81716
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            81716
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.path",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "parents.path"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 298
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            298
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "created_at",
+                "expires_at",
+                "has_password",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "shared_by",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "right",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "right",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "inherit",
+                "password",
+                "public"
+              ],
+              "type": "string",
+              "description": "Rights required to view the share link.<note><strong>inherit</strong>: Share link is accessible only by users of the drive.</note><note><strong>password</strong>: Share link is public but protected by a password.</note><note><strong>public</strong>: Share link is public, no restriction set.</note>",
+              "example": "inherit"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetMostVersionedFilesV3",
@@ -7195,7 +25717,281 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/most_versions",
+      "operationId": "kDriveGetMostVersionedFilesV3",
+      "summary": "Get most versioned files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89234
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89234
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "users",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "users"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 191
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            191
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "nb_version"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[nb_version]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetMySharedFilesV3",
@@ -7263,7 +26059,318 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/my_shared",
+      "operationId": "kDriveGetMySharedFilesV3",
+      "summary": "Get my shared files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47310
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47310
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "sharelink",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "sharelink"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 479
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            479
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveListTheMostRecentFilesOrDirectoriesUsedByTheUserV3",
@@ -7331,7 +26438,311 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/recents",
+      "operationId": "kDriveListTheMostRecentFilesOrDirectoriesUsedByTheUserV3",
+      "summary": "List the most recent files or directories used by the user",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "version",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "version"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 818
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            818
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[updated_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchFiledirectoryV3",
@@ -7454,7 +26865,605 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search",
+      "operationId": "kDriveSearchFiledirectoryV3",
+      "summary": "Search file/directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69045
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69045
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "rewind",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "rewind"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 240
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            240
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 53938
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            53938
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "maxLength": 200,
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "child",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "To search files recursively (use <strong>unlimited</strong>) or to search files in the first directory (use <strong>child</strong>)",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "child",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        },
+        {
+          "name": "directory_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "directory_id",
+            "type": "integer",
+            "description": "The directory identifier, to search inside a specific directory, default is the root directory",
+            "example": 53162
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            53162
+          ]
+        },
+        {
+          "name": "extensions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "extensions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "A wanted file extension"
+            },
+            "description": "The wanted array of file extensions",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "modified_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_after. Filter `File` modified after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 34302776142
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            34302776142
+          ]
+        },
+        {
+          "name": "modified_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "modified_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Modification time of the `File`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "modified_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_before. Filter `File` modified before timestamp.",
+            "example": 199966353290
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            199966353290
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "DEPRECATED - The searched pattern only in file name|example:file name",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "archive",
+                "audio",
+                "code",
+                "diagram",
+                "dir",
+                "email",
+                "file",
+                "font",
+                "form",
+                "image",
+                "model",
+                "pdf",
+                "presentation",
+                "spreadsheet",
+                "text",
+                "unknown",
+                "video"
+              ],
+              "type": "string",
+              "description": "The wanted file type.<note><strong>archive</strong>: Archive file.</note><note><strong>audio</strong>: Audio only file.</note><note><strong>code</strong>: Text file recognized as code.</note><note><strong>diagram</strong>: Diagram file.</note><note><strong>dir</strong>: Directory.</note><note><strong>email</strong>: Bundled email file.</note><note><strong>file</strong>: Deprecated. Use unknown instead.</note><note><strong>font</strong>: Text file recognized as font.</note><note><strong>form</strong>: Form file.</note><note><strong>image</strong>: Image file.</note><note><strong>model</strong>: 3D file.</note><note><strong>pdf</strong>: PDF file.</note><note><strong>presentation</strong>: Presentation/slides file.</note><note><strong>spreadsheet</strong>: Spreadsheet file.</note><note><strong>text</strong>: Generic text file.</note><note><strong>unknown</strong>: Generic file, not recognized as any of the other type.</note><note><strong>video</strong>: Video file; may contain other stream types such as audio or subtitles.</note>",
+              "example": "archive"
+            },
+            "description": "The wanted array of file types",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchDropboxV3",
@@ -7577,7 +27586,618 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/dropboxes",
+      "operationId": "kDriveSearchDropboxV3",
+      "summary": "Search Dropbox",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 48108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            48108
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "dropbox.capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "dropbox.capabilities"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 759
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            759
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 64711
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64711
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "created_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "created_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`created_at` must be set as custom in order to use created_after. Filter `Dropbox` created after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 172859373683
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            172859373683
+          ]
+        },
+        {
+          "name": "created_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "created_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Creation time of the `Dropbox`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "created_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "created_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`created_at` must be set as custom in order to use created_before. Filter `Dropbox` created before timestamp.",
+            "example": 239139486562
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            239139486562
+          ]
+        },
+        {
+          "name": "expires",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expires",
+            "enum": [
+              "any",
+              "no",
+              "yes"
+            ],
+            "type": "string",
+            "description": "Whether the `Dropbox` has an expiration date",
+            "example": "any"
+          },
+          "enumValues": [
+            "any",
+            "no",
+            "yes"
+          ],
+          "values": [],
+          "examples": [
+            "any"
+          ]
+        },
+        {
+          "name": "has_password",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "has_password",
+            "enum": [
+              "any",
+              "no",
+              "yes"
+            ],
+            "type": "string",
+            "description": "Whether the `Dropbox` has password protection",
+            "example": "any"
+          },
+          "enumValues": [
+            "any",
+            "no",
+            "yes"
+          ],
+          "values": [],
+          "examples": [
+            "any"
+          ]
+        },
+        {
+          "name": "last_import_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "last_import_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`last_import_at` must be set as custom in order to use last_import_after. Filter ``Dropbox`` last imported in after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 178003356869
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            178003356869
+          ]
+        },
+        {
+          "name": "last_import_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "last_import_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Last import time of the ``Dropbox``.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "last_import_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "last_import_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`last_import_at` must be set as custom in order to use last_import_before. Filter ``Dropbox`` last imported in before timestamp.",
+            "example": 188766922446
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            188766922446
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchFavoriteV3",
@@ -7700,7 +28320,605 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/favorites",
+      "operationId": "kDriveSearchFavoriteV3",
+      "summary": "Search Favorite",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 41664
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            41664
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "path",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "path"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 520
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            520
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 99752
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99752
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "maxLength": 200,
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "child",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "To search files recursively (use <strong>unlimited</strong>) or to search files in the first directory (use <strong>child</strong>)",
+            "example": "child"
+          },
+          "enumValues": [
+            "child",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "child"
+          ]
+        },
+        {
+          "name": "directory_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "directory_id",
+            "type": "integer",
+            "description": "The directory identifier, to search inside a specific directory, default is the root directory",
+            "example": 45129
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45129
+          ]
+        },
+        {
+          "name": "extensions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "extensions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "A wanted file extension"
+            },
+            "description": "The wanted array of file extensions",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "modified_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_after. Filter `File` modified after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 77853900567
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77853900567
+          ]
+        },
+        {
+          "name": "modified_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "modified_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Modification time of the `File`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "modified_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_before. Filter `File` modified before timestamp.",
+            "example": 45702751939
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45702751939
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "DEPRECATED - The searched pattern only in file name|example:file name",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "archive",
+                "audio",
+                "code",
+                "diagram",
+                "dir",
+                "email",
+                "file",
+                "font",
+                "form",
+                "image",
+                "model",
+                "pdf",
+                "presentation",
+                "spreadsheet",
+                "text",
+                "unknown",
+                "video"
+              ],
+              "type": "string",
+              "description": "The wanted file type.<note><strong>archive</strong>: Archive file.</note><note><strong>audio</strong>: Audio only file.</note><note><strong>code</strong>: Text file recognized as code.</note><note><strong>diagram</strong>: Diagram file.</note><note><strong>dir</strong>: Directory.</note><note><strong>email</strong>: Bundled email file.</note><note><strong>file</strong>: Deprecated. Use unknown instead.</note><note><strong>font</strong>: Text file recognized as font.</note><note><strong>form</strong>: Form file.</note><note><strong>image</strong>: Image file.</note><note><strong>model</strong>: 3D file.</note><note><strong>pdf</strong>: PDF file.</note><note><strong>presentation</strong>: Presentation/slides file.</note><note><strong>spreadsheet</strong>: Spreadsheet file.</note><note><strong>text</strong>: Generic text file.</note><note><strong>unknown</strong>: Generic file, not recognized as any of the other type.</note><note><strong>video</strong>: Video file; may contain other stream types such as audio or subtitles.</note>",
+              "example": "archive"
+            },
+            "description": "The wanted array of file types",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchSharelinkV3",
@@ -7808,7 +29026,525 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/links",
+      "operationId": "kDriveSearchSharelinkV3",
+      "summary": "Search Sharelink",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2926
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2926
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "capabilities",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "capabilities"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            108
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 28482
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            28482
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "created_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "created_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`created_at` must be set as custom in order to use created_after. Filter `Sharelink` created after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 46281664719
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46281664719
+          ]
+        },
+        {
+          "name": "created_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "created_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Creation time of the `Sharelink`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "created_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "created_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`created_at` must be set as custom in order to use created_before. Filter `Sharelink` created before timestamp.",
+            "example": 145951328240
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            145951328240
+          ]
+        },
+        {
+          "name": "expires",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expires",
+            "enum": [
+              "any",
+              "no",
+              "yes"
+            ],
+            "type": "string",
+            "description": "Whether the `Dropbox` has an expiration date",
+            "example": "no"
+          },
+          "enumValues": [
+            "any",
+            "no",
+            "yes"
+          ],
+          "values": [],
+          "examples": [
+            "no"
+          ]
+        },
+        {
+          "name": "has_password",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "has_password",
+            "enum": [
+              "any",
+              "no",
+              "yes"
+            ],
+            "type": "string",
+            "description": "Whether the `Dropbox` has password protection",
+            "example": "any"
+          },
+          "enumValues": [
+            "any",
+            "no",
+            "yes"
+          ],
+          "values": [],
+          "examples": [
+            "any"
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchMySharedV3",
@@ -7931,7 +29667,605 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/my_shared",
+      "operationId": "kDriveSearchMySharedV3",
+      "summary": "Search My Shared",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32501
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32501
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.sorted_name",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "parents.sorted_name"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 872
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            872
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 39425
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39425
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "maxLength": 200,
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "child",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "To search files recursively (use <strong>unlimited</strong>) or to search files in the first directory (use <strong>child</strong>)",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "child",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        },
+        {
+          "name": "directory_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "directory_id",
+            "type": "integer",
+            "description": "The directory identifier, to search inside a specific directory, default is the root directory",
+            "example": 95308
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95308
+          ]
+        },
+        {
+          "name": "extensions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "extensions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "A wanted file extension"
+            },
+            "description": "The wanted array of file extensions",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "modified_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_after. Filter `File` modified after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 73566491026
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73566491026
+          ]
+        },
+        {
+          "name": "modified_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "modified_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Modification time of the `File`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "modified_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_before. Filter `File` modified before timestamp.",
+            "example": 172392434484
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            172392434484
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "DEPRECATED - The searched pattern only in file name|example:file name",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "archive",
+                "audio",
+                "code",
+                "diagram",
+                "dir",
+                "email",
+                "file",
+                "font",
+                "form",
+                "image",
+                "model",
+                "pdf",
+                "presentation",
+                "spreadsheet",
+                "text",
+                "unknown",
+                "video"
+              ],
+              "type": "string",
+              "description": "The wanted file type.<note><strong>archive</strong>: Archive file.</note><note><strong>audio</strong>: Audio only file.</note><note><strong>code</strong>: Text file recognized as code.</note><note><strong>diagram</strong>: Diagram file.</note><note><strong>dir</strong>: Directory.</note><note><strong>email</strong>: Bundled email file.</note><note><strong>file</strong>: Deprecated. Use unknown instead.</note><note><strong>font</strong>: Text file recognized as font.</note><note><strong>form</strong>: Form file.</note><note><strong>image</strong>: Image file.</note><note><strong>model</strong>: 3D file.</note><note><strong>pdf</strong>: PDF file.</note><note><strong>presentation</strong>: Presentation/slides file.</note><note><strong>spreadsheet</strong>: Spreadsheet file.</note><note><strong>text</strong>: Generic text file.</note><note><strong>unknown</strong>: Generic file, not recognized as any of the other type.</note><note><strong>video</strong>: Video file; may contain other stream types such as audio or subtitles.</note>",
+              "example": "archive"
+            },
+            "description": "The wanted array of file types",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchSharedV3",
@@ -8054,7 +30388,608 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/shared_with_me",
+      "operationId": "kDriveSearchSharedV3",
+      "summary": "Search Shared",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92475
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92475
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.sorted_name",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag",
+              "relevance"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag",
+            "relevance"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag",
+            "relevance"
+          ],
+          "examples": [
+            "parents.sorted_name"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 572
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            572
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 35884
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35884
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "maxLength": 200,
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "child",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "To search files recursively (use <strong>unlimited</strong>) or to search files in the first directory (use <strong>child</strong>)",
+            "example": "child"
+          },
+          "enumValues": [
+            "child",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "child"
+          ]
+        },
+        {
+          "name": "directory_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "directory_id",
+            "type": "integer",
+            "description": "The directory identifier, to search inside a specific directory, default is the root directory",
+            "example": 11927
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11927
+          ]
+        },
+        {
+          "name": "extensions",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "extensions",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "A wanted file extension"
+            },
+            "description": "The wanted array of file extensions",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "modified_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_after. Filter `File` modified after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 172740246066
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            172740246066
+          ]
+        },
+        {
+          "name": "modified_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "modified_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Modification time of the `File`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "modified_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "modified_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`modified_at` must be set as custom in order to use modified_before. Filter `File` modified before timestamp.",
+            "example": 93668684058
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93668684058
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "DEPRECATED - The searched pattern only in file name|example:file name",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "archive",
+                "audio",
+                "code",
+                "diagram",
+                "dir",
+                "email",
+                "file",
+                "font",
+                "form",
+                "image",
+                "model",
+                "pdf",
+                "presentation",
+                "spreadsheet",
+                "text",
+                "unknown",
+                "video"
+              ],
+              "type": "string",
+              "description": "The wanted file type.<note><strong>archive</strong>: Archive file.</note><note><strong>audio</strong>: Audio only file.</note><note><strong>code</strong>: Text file recognized as code.</note><note><strong>diagram</strong>: Diagram file.</note><note><strong>dir</strong>: Directory.</note><note><strong>email</strong>: Bundled email file.</note><note><strong>file</strong>: Deprecated. Use unknown instead.</note><note><strong>font</strong>: Text file recognized as font.</note><note><strong>form</strong>: Form file.</note><note><strong>image</strong>: Image file.</note><note><strong>model</strong>: 3D file.</note><note><strong>pdf</strong>: PDF file.</note><note><strong>presentation</strong>: Presentation/slides file.</note><note><strong>spreadsheet</strong>: Spreadsheet file.</note><note><strong>text</strong>: Generic text file.</note><note><strong>unknown</strong>: Generic file, not recognized as any of the other type.</note><note><strong>video</strong>: Video file; may contain other stream types such as audio or subtitles.</note>",
+              "example": "archive"
+            },
+            "description": "The wanted array of file types",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveSearchTrashV3",
@@ -8162,7 +31097,532 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/search/trash",
+      "operationId": "kDriveSearchTrashV3",
+      "summary": "Search Trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Search"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79815
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79815
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "lock",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "lock"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 662
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            662
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "last_modified_at",
+                "relevance"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[last_modified_at]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "author_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "author_id",
+            "type": "integer",
+            "description": "The author of the file",
+            "example": 93031
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93031
+          ]
+        },
+        {
+          "name": "category",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "category",
+            "type": "string",
+            "description": "Category pattern, patterns accepted are <b>()&|</b> and combined category ids, to manage complex computing operation :\n                <note><strong>&</strong> as synonym of AND</note>\n                <note><strong>|</strong> as synonym of OR</note>\n                <note><strong>()</strong> to handle priority</note>",
+            "example": "(1&2)|3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "(1&2)|3"
+          ]
+        },
+        {
+          "name": "deleted_after",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "deleted_after",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`deleted_at` must be set as custom in order to use deleted_after. Filter `File` deleted after timestamp. Its minimum value is drive creation timestamp.",
+            "example": 67504684777
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            67504684777
+          ]
+        },
+        {
+          "name": "deleted_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "deleted_at",
+            "enum": [
+              "custom",
+              "last_12_months",
+              "last_24_hours",
+              "last_30_days",
+              "last_7_days",
+              "last_90_days",
+              "last_month",
+              "last_week",
+              "last_year",
+              "this_month",
+              "this_week",
+              "this_year",
+              "today",
+              "yesterday"
+            ],
+            "type": "string",
+            "description": "Deletion time of the `File`.<note><strong>custom</strong>: Custom period from `{attribute}_after` to `{attribute}_before` params.</note><note><strong>last_12_months</strong>: Last 12 months.</note><note><strong>last_24_hours</strong>: Last 24 hours.</note><note><strong>last_30_days</strong>: Last 30 days.</note><note><strong>last_7_days</strong>: Last 7 days.</note><note><strong>last_90_days</strong>: Last 90 days.</note><note><strong>last_month</strong>: Previous month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>last_week</strong>: Previous week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>last_year</strong>: Previous year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>this_month</strong>: Current month, from the first day at 00:00:00 to the last day at 23:59:59.</note><note><strong>this_week</strong>: Current week, from Monday at 00:00:00 to Sunday at 23:59:59.</note><note><strong>this_year</strong>: Current year, from January 1st at 00:00:00 to December 31st at 23:59:59.</note><note><strong>today</strong>: Current day, from 00:00:00 to 23:59:59.</note><note><strong>yesterday</strong>: Previous day, from 00:00:00 to 23:59:59.</note>",
+            "example": "custom"
+          },
+          "enumValues": [
+            "custom",
+            "last_12_months",
+            "last_24_hours",
+            "last_30_days",
+            "last_7_days",
+            "last_90_days",
+            "last_month",
+            "last_week",
+            "last_year",
+            "this_month",
+            "this_week",
+            "this_year",
+            "today",
+            "yesterday"
+          ],
+          "values": [],
+          "examples": [
+            "custom"
+          ]
+        },
+        {
+          "name": "deleted_before",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "deleted_before",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "`deleted_at` must be set as custom in order to use deleted_before. Filter `File` deleted before timestamp.",
+            "example": 46730149225
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46730149225
+          ]
+        },
+        {
+          "name": "deleted_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "deleted_by",
+            "type": "integer",
+            "description": "Who deleted the file, if `kind` is trash.",
+            "example": 15401
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            15401
+          ]
+        },
+        {
+          "name": "query",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query",
+            "type": "string",
+            "description": "The searched pattern. It should be at least 3 characters long to get relevant results.",
+            "example": "file name"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file name"
+          ]
+        },
+        {
+          "name": "query_scope",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "query_scope",
+            "enum": [
+              "all",
+              "content",
+              "filename"
+            ],
+            "type": "string",
+            "description": "Defines the scope of the given search query.<note><strong>all</strong>: Content and filename.</note><note><strong>content</strong>: Content only. Available only when the Drive has the `can_use_content_search` capability.</note><note><strong>filename</strong>: Filename only. Available only when the Drive has the `can_use_content_search` capability.</note>",
+            "nullable": true,
+            "example": "all"
+          },
+          "enumValues": [
+            "all",
+            "content",
+            "filename"
+          ],
+          "values": [],
+          "examples": [
+            "all"
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "archive",
+                "audio",
+                "code",
+                "diagram",
+                "dir",
+                "email",
+                "file",
+                "font",
+                "form",
+                "image",
+                "model",
+                "pdf",
+                "presentation",
+                "spreadsheet",
+                "text",
+                "unknown",
+                "video"
+              ],
+              "type": "string",
+              "description": "The wanted file type.<note><strong>archive</strong>: Archive file.</note><note><strong>audio</strong>: Audio only file.</note><note><strong>code</strong>: Text file recognized as code.</note><note><strong>diagram</strong>: Diagram file.</note><note><strong>dir</strong>: Directory.</note><note><strong>email</strong>: Bundled email file.</note><note><strong>file</strong>: Deprecated. Use unknown instead.</note><note><strong>font</strong>: Text file recognized as font.</note><note><strong>form</strong>: Form file.</note><note><strong>image</strong>: Image file.</note><note><strong>model</strong>: 3D file.</note><note><strong>pdf</strong>: PDF file.</note><note><strong>presentation</strong>: Presentation/slides file.</note><note><strong>spreadsheet</strong>: Spreadsheet file.</note><note><strong>text</strong>: Generic text file.</note><note><strong>unknown</strong>: Generic file, not recognized as any of the other type.</note><note><strong>video</strong>: Video file; may contain other stream types such as audio or subtitles.</note>",
+              "example": "archive"
+            },
+            "description": "The wanted array of file types",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetSharedFilesV3",
@@ -8230,7 +31690,319 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/files/shared_with_me",
+      "operationId": "kDriveGetSharedFilesV3",
+      "summary": "Get shared files",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 12816
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            12816
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "external_import",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "external_import"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 299
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            299
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCreateTeamDirectoryV3",
@@ -8270,7 +32042,153 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/files/team_directory",
+      "operationId": "kDriveCreateTeamDirectoryV3",
+      "summary": "Create team directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 30810
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            30810
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "dropbox",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "dropbox"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFilesOfTrashV3",
@@ -8338,7 +32256,320 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/trash",
+      "operationId": "kDriveGetFilesOfTrashV3",
+      "summary": "Get files of trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44894
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44894
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "dropbox",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "dropbox"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 55
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "deleted_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetTrashedFileV3",
@@ -8375,7 +32606,177 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D",
+      "operationId": "kDriveGetTrashedFileV3",
+      "summary": "Get trashed file",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": true,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56810
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56810
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 64357
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64357
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "type",
+              "path",
+              "name",
+              "size",
+              "added_at",
+              "last_modified_at",
+              "mime_type",
+              "deleted_at"
+            ]
+          },
+          "enumValues": [
+            "type",
+            "path",
+            "name",
+            "size",
+            "added_at",
+            "last_modified_at",
+            "mime_type",
+            "deleted_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[type]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[type]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCountDirectoriesfilesInTrashV3",
@@ -8418,7 +32819,96 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D/count",
+      "operationId": "kDriveCountDirectoriesfilesInTrashV3",
+      "summary": "Count directories/files in trash",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22796
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22796
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "depth",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "depth",
+            "enum": [
+              "folder",
+              "unlimited"
+            ],
+            "type": "string",
+            "description": "Specifies how elements are counted within given folder. Choose either to count only within the specified folder (folder) or to include subfolders in the count (unlimited). The default mode is folder.<ul><small><li><strong>folder:</strong> Count elements only in the specified folder, excluding subfolders.</li><li><strong>unlimited:</strong> Count elements in the specified folder and all subfolders.</li></small></ul>",
+            "example": "unlimited"
+          },
+          "enumValues": [
+            "folder",
+            "unlimited"
+          ],
+          "values": [],
+          "examples": [
+            "unlimited"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetFilesOfTrashedDirectoryV3",
@@ -8491,7 +32981,338 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/trash/%7Bfile_id%7D/files",
+      "operationId": "kDriveGetFilesOfTrashedDirectoryV3",
+      "summary": "Get files of trashed directory",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "Trash"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "the drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 21603
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            21603
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "path",
+          "required": true,
+          "description": "the file identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 28986
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            28986
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "sharelink",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "sharelink"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 993
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            993
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "added_at",
+                "deleted_at",
+                "last_modified_at",
+                "mime_type",
+                "name",
+                "revised_at",
+                "size",
+                "type",
+                "updated_at"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[type]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "type",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "dir",
+                "file",
+                "vault"
+              ],
+              "type": "string",
+              "description": "The file type structure either a File, a Directory or a Vault",
+              "example": "file"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveUploadV3",
@@ -8592,7 +33413,421 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload",
+      "operationId": "kDriveUploadV3",
+      "summary": "Upload",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4311
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4311
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "version",
+            "enum": [
+              "capabilities",
+              "dropbox",
+              "dropbox.capabilities",
+              "external_import",
+              "rewind",
+              "supported_by",
+              "version",
+              "conversion_capabilities",
+              "hash",
+              "path",
+              "sorted_name",
+              "parents.path",
+              "parents.sorted_name",
+              "users",
+              "teams",
+              "is_favorite",
+              "sharelink",
+              "sharelink.views",
+              "lock",
+              "activity",
+              "parents",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "categories",
+              "categories.category",
+              "etag"
+            ]
+          },
+          "enumValues": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "values": [
+            "capabilities",
+            "dropbox",
+            "dropbox.capabilities",
+            "external_import",
+            "rewind",
+            "supported_by",
+            "version",
+            "conversion_capabilities",
+            "hash",
+            "path",
+            "sorted_name",
+            "parents.path",
+            "parents.sorted_name",
+            "users",
+            "teams",
+            "is_favorite",
+            "sharelink",
+            "sharelink.views",
+            "lock",
+            "activity",
+            "parents",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "categories",
+            "categories.category",
+            "etag"
+          ],
+          "examples": [
+            "version"
+          ]
+        },
+        {
+          "name": "If-Match",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "If-Match",
+            "maxLength": 32,
+            "pattern": "^(?:[a-fA-F0-9]{16,32}|blank)$",
+            "type": "string",
+            "description": "Specify a ETag (Entity tag) who is the identifier for a specific version of file.",
+            "nullable": true,
+            "example": "9e22d98e554fe8df"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "9e22d98e554fe8df"
+          ]
+        },
+        {
+          "name": "client_token",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "client_token",
+            "maxLength": 36,
+            "minLength": 16,
+            "pattern": "^[\\w!-]+$",
+            "type": "string",
+            "description": "Specify a client_token generated on client side, if an upload has already been made with the same token, the correspondent file will be returned.",
+            "nullable": true,
+            "example": "29a46444-cdd4-42ad-88af-be63e06403bc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "29a46444-cdd4-42ad-88af-be63e06403bc"
+          ]
+        },
+        {
+          "name": "conflict",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "conflict",
+            "enum": [
+              "error",
+              "rename",
+              "version"
+            ],
+            "type": "string",
+            "description": "Select what to do when a file with the same name already exists. The default conflict mode is error.<li><small><ul><strong>error</strong> : An error is returned without creating the file/session.</ul><ul><strong>rename</strong> : Rename the new file with an available name (ex. `file.txt` to `file(3).txt`).</ul><ul><strong>version</strong> : Replace the content of the existing file (create a new version of the file).</ul></small></li>",
+            "example": "version"
+          },
+          "enumValues": [
+            "error",
+            "rename",
+            "version"
+          ],
+          "values": [],
+          "examples": [
+            "version"
+          ]
+        },
+        {
+          "name": "created_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "created_at",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Override the creation date metadata of the new file.<note>The value of this field will be capped at 24h from the current time.</note>",
+            "example": 1781206196
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1781206196
+          ]
+        },
+        {
+          "name": "directory_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "directory_id",
+            "type": "integer",
+            "description": "The directory destination root of the new file. Must be a directory.\n                        <note>If the identifier is unknown you can use only <strong>directory_path</strong>.</note>\n                        <note>You can get your root private folder ID from <a href='/docs/api/get/3/drive/{drive_id}/files/{file_id}/files'>3/drive/{drive_id}/files/{file_id}/files</a>.\n                        <note>Required without <strong>directory_path</strong></note>",
+            "example": "1000"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1000"
+          ]
+        },
+        {
+          "name": "directory_path",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "directory_path",
+            "type": "string",
+            "description": "The destination path of the new file. If the <strong> directory_id</strong> is provided the directory path is used as a relative path, otherwise it will be used as an absolute path. The destination should be a directory.\n                        <note>If the directory path does not exist, folders are created automatically.</note>\n                        <note>The path is a destination path, the file name should not be provided at the end.</note>\n                        <note>Required without <strong>directory_id</strong>.</note>",
+            "nullable": true,
+            "example": "/Directory/SubDirectory"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "/Directory/SubDirectory"
+          ]
+        },
+        {
+          "name": "file_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "file_id",
+            "type": "integer",
+            "description": "File identifier of uploaded file.\n                        <note>This is an alternative to replace a file by its identifier, if this mode is used <strong>file_name</strong>, <strong>directory_id</strong>, <strong>conflict</strong> and <strong>directory_path</strong> params are automatically computed and cannot be provided.</note>\n                        <note>If you don't know the identifier, or you want to upload a new file, you should provide a filename and a directory destination.</note>",
+            "example": "1001"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1001"
+          ]
+        },
+        {
+          "name": "file_name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "file_name",
+            "maxLength": 255,
+            "type": "string",
+            "description": "The name of the file to create.\n                        <note>Slashes will be replaced by colons.</note>\n                        <note>Maximum bytes size is 255</note>",
+            "example": "file.txt"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "file.txt"
+          ]
+        },
+        {
+          "name": "last_modified_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "last_modified_at",
+            "maximum": 253402300799,
+            "type": "integer",
+            "description": "Override the update date metadata of the new file.<note>The value of this field will be capped at 24h from the current time.</note>",
+            "example": 134957084545
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            134957084545
+          ]
+        },
+        {
+          "name": "symbolic_link",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "symbolic_link",
+            "type": "string",
+            "description": "Specify a symbolic link target, if the upload is a symbolic link.",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "total_chunk_hash",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "total_chunk_hash",
+            "pattern": "^((md5|sha1|sha256|sha512|xxh3|xxh32|xxh64|xxh128):)?[a-f0-9]+$",
+            "type": "string",
+            "description": "The hash of the content of the file. If provided and the uploaded content does not match this hash, an error will be returned. For a multi-chunk upload use the hash of the concatenation of the chunk's hashes.<note>Supported hashing algorithm: md5, sha1, sha256, sha512, xxh3, xxh32, xxh64, xxh128</note>",
+            "example": "xxh3:00ec7bec63e548df"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "xxh3:00ec7bec63e548df"
+          ]
+        },
+        {
+          "name": "total_size",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "total_size",
+            "maximum": 1000000000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "Expected total size of the file to upload. If the uploaded content does not match this size, an error will be returned.<note>the unit of size is defined in Bytes.</note>",
+            "example": 43066632
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43066632
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404",
+        "409",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCancelSessionV3",
@@ -8629,7 +33864,71 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/3/drive/%7Bdrive_id%7D/upload/session/%7Bsession_token%7D",
+      "operationId": "kDriveCancelSessionV3",
+      "summary": "Cancel session",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 31232
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31232
+          ]
+        },
+        {
+          "name": "session_token",
+          "in": "path",
+          "required": true,
+          "description": "Session token uuid",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79856
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79856
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveAppendChunkToSessionV3",
@@ -8684,7 +33983,136 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload/session/%7Bsession_token%7D/chunk",
+      "operationId": "kDriveAppendChunkToSessionV3",
+      "summary": "Append chunk to session",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23728
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23728
+          ]
+        },
+        {
+          "name": "session_token",
+          "in": "path",
+          "required": true,
+          "description": "Session token uuid",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "chunk_hash",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "chunk_hash",
+            "pattern": "^((md5|sha1|sha256|sha512|xxh3|xxh32|xxh64|xxh128):)?[a-f0-9]+$",
+            "type": "string",
+            "description": "The hash of the current chunk. If provided and the uploaded content does not match this hash, an error will be returned.<note>Supported hashing algorithm: md5, sha1, sha256, sha512, xxh3, xxh32, xxh64, xxh128</note>",
+            "example": "xxh3:00ec7bec63e548df"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "xxh3:00ec7bec63e548df"
+          ]
+        },
+        {
+          "name": "chunk_number",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "chunk_number",
+            "maximum": 10000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The index of the current chunk, <note>The index start at 1</note>",
+            "example": "3"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "3"
+          ]
+        },
+        {
+          "name": "chunk_size",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "chunk_size",
+            "maximum": 1000000000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The size of the current chunk, <note>the unit of size is defined in Bytes</note><note>Please note that the chunk size should be between 1000000 and 1000000000 bytes, except for the last one, which can be smaller as it is the final chunk</note>",
+            "example": "200000"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "200000"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveCloseSessionV3",
@@ -8729,7 +34157,136 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload/session/%7Bsession_token%7D/finish",
+      "operationId": "kDriveCloseSessionV3",
+      "summary": "Close session",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92612
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92612
+          ]
+        },
+        {
+          "name": "session_token",
+          "in": "path",
+          "required": true,
+          "description": "Session token uuid",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.teams",
+            "enum": [
+              "parents",
+              "parents.path",
+              "parents.sorted_name",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "supported_by",
+              "path",
+              "sorted_name",
+              "capabilities",
+              "conversion_capabilities",
+              "lock",
+              "users",
+              "teams"
+            ]
+          },
+          "enumValues": [
+            "parents",
+            "parents.path",
+            "parents.sorted_name",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "supported_by",
+            "path",
+            "sorted_name",
+            "capabilities",
+            "conversion_capabilities",
+            "lock",
+            "users",
+            "teams"
+          ],
+          "values": [
+            "parents",
+            "parents.path",
+            "parents.sorted_name",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "supported_by",
+            "path",
+            "sorted_name",
+            "capabilities",
+            "conversion_capabilities",
+            "lock",
+            "users",
+            "teams"
+          ],
+          "examples": [
+            "parents.teams"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveBatchCancelSessionsV3",
@@ -8767,7 +34324,79 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/3/drive/%7Bdrive_id%7D/upload/session/batch",
+      "operationId": "kDriveBatchCancelSessionsV3",
+      "summary": "Batch : cancel sessions",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 5741
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5741
+          ]
+        },
+        {
+          "name": "tokens",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "tokens",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "pattern": "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[47][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}$",
+              "type": "string",
+              "description": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxx"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "429",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveBatchCloseSessionsV3",
@@ -8807,7 +34436,118 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload/session/batch/finish",
+      "operationId": "kDriveBatchCloseSessionsV3",
+      "summary": "Batch : close sessions",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 21257
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            21257
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "parents.capabilities",
+            "enum": [
+              "parents",
+              "parents.path",
+              "parents.sorted_name",
+              "parents.capabilities",
+              "parents.users",
+              "parents.teams",
+              "supported_by",
+              "path",
+              "sorted_name",
+              "capabilities",
+              "conversion_capabilities",
+              "lock",
+              "users",
+              "teams"
+            ]
+          },
+          "enumValues": [
+            "parents",
+            "parents.path",
+            "parents.sorted_name",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "supported_by",
+            "path",
+            "sorted_name",
+            "capabilities",
+            "conversion_capabilities",
+            "lock",
+            "users",
+            "teams"
+          ],
+          "values": [
+            "parents",
+            "parents.path",
+            "parents.sorted_name",
+            "parents.capabilities",
+            "parents.users",
+            "parents.teams",
+            "supported_by",
+            "path",
+            "sorted_name",
+            "capabilities",
+            "conversion_capabilities",
+            "lock",
+            "users",
+            "teams"
+          ],
+          "examples": [
+            "parents.capabilities"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "429",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveBatchStartSessionsV3",
@@ -8847,7 +34587,82 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload/session/batch/start",
+      "operationId": "kDriveBatchStartSessionsV3",
+      "summary": "Batch : start sessions",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52577
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52577
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "conversion_capabilities",
+            "enum": [
+              "parents",
+              "conversion_capabilities"
+            ]
+          },
+          "enumValues": [
+            "parents",
+            "conversion_capabilities"
+          ],
+          "values": [
+            "parents",
+            "conversion_capabilities"
+          ],
+          "examples": [
+            "conversion_capabilities"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "429",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveStartSessionV3",
@@ -8893,7 +34708,106 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/upload/session/start",
+      "operationId": "kDriveStartSessionV3",
+      "summary": "Start session",
+      "categoryPath": [
+        "kDrive",
+        "Drive",
+        "Files",
+        "File/Directory",
+        "Upload",
+        "Session"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 68323
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            68323
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "conversion_capabilities",
+            "enum": [
+              "parents",
+              "conversion_capabilities"
+            ]
+          },
+          "enumValues": [
+            "parents",
+            "conversion_capabilities"
+          ],
+          "values": [
+            "parents",
+            "conversion_capabilities"
+          ],
+          "examples": [
+            "conversion_capabilities"
+          ]
+        },
+        {
+          "name": "If-Match",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "If-Match",
+            "maxLength": 32,
+            "pattern": "^(?:[a-fA-F0-9]{16,32}|blank)$",
+            "type": "string",
+            "description": "Specify a ETag (Entity tag) who is the identifier for a specific version of file.",
+            "nullable": true,
+            "example": "9e22d98e554fe8df"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "9e22d98e554fe8df"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "409",
+        "503"
+      ]
+    }
   },
   {
     "operationId": "kDriveGetUsersV3",
@@ -8976,7 +34890,320 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/3/drive/%7Bdrive_id%7D/users",
+      "operationId": "kDriveGetUsersV3",
+      "summary": "Get users",
+      "categoryPath": [
+        "kDrive",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39444
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39444
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "drive_user.private_storage",
+            "enum": [
+              "teams",
+              "security",
+              "drive_user",
+              "drive_user.private_storage"
+            ]
+          },
+          "enumValues": [
+            "teams",
+            "security",
+            "drive_user",
+            "drive_user.private_storage"
+          ],
+          "values": [
+            "teams",
+            "security",
+            "drive_user",
+            "drive_user.private_storage"
+          ],
+          "examples": [
+            "drive_user.private_storage"
+          ]
+        },
+        {
+          "name": "cursor",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "cursor",
+            "type": "string",
+            "description": "The `cursor` parameter must be provided to fetch the subsequent batch of results. It essentially acts as a marker, indicating the point at which to begin retrieving the next set or page of the list",
+            "x-optional": true,
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "limit",
+            "maximum": 1000,
+            "minimum": 5,
+            "type": "integer",
+            "description": "The maximum number of items returned",
+            "default": 10,
+            "x-optional": true,
+            "example": 422
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            422
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "items": {
+              "enum": [
+                "display_name",
+                "first_name",
+                "last_name"
+              ],
+              "type": "string",
+              "description": "The `order_by` parameter accepts values corresponding to the items attributes, allowing you to specify the field by which the list should be sorted",
+              "x-optional": true
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "description": "Specifies the default sorting direction for any `order_by` parameters provided",
+            "x-optional": true,
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "items": {
+              "enum": [
+                "asc",
+                "desc"
+              ],
+              "type": "string",
+              "description": "Specifies the sorting direction for a specific order_by, it should be used with the `order_by` key like `order_for[display_name]=asc`"
+            },
+            "x-optional": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "description": "Search user by his first name, last name or email",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "status",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "active",
+                "deleted",
+                "locked",
+                "pending",
+                "withdrawn"
+              ],
+              "type": "string"
+            },
+            "description": "Status of the resource `{name}`",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "account",
+                "admin",
+                "expired",
+                "external",
+                "pending",
+                "user"
+              ],
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "user_ids",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "user_ids",
+            "maxItems": 100,
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "User identifiers",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403"
+      ]
+    }
   },
   {
     "operationId": "kDriveWakeASleepingDriveUpV3",
@@ -9008,6 +35235,50 @@ export const kdriveOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/3/drive/%7Bdrive_id%7D/wake",
+      "operationId": "kDriveWakeASleepingDriveUpV3",
+      "summary": "Wake a sleeping drive up",
+      "categoryPath": [
+        "kDrive",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 3,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "Drive identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33148
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33148
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "500",
+        "503"
+      ]
+    }
   }
 ];

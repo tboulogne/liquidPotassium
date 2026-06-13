@@ -84,8 +84,8 @@ The committed root spec is the immutable source:
 - Tooling copy: `spec/infomaniak.raw.json`
 - Normalized output: `spec/infomaniak.normalized.json`
 - Normalization report: `spec/normalization-report.json`
-- Planned docs snapshot: `spec/infomaniak.docs-snapshot.json`
-- Planned docs enrichment report: `spec/docs-enrichment-report.json`
+- Docs snapshot: `spec/infomaniak.docs-snapshot.json`
+- Docs enrichment report: `spec/docs-enrichment-report.json`
 - Generated TypeScript and tests: `src/generated`, `tests/generated`
 
 Commands:
@@ -94,18 +94,19 @@ Commands:
 npm run normalize
 npm run generate
 npm run check:generated
+npm run check:docs
 ```
 
 `check:generated` re-runs normalization and generation, then fails if generated outputs differ from the committed state.
 
-The planned docs-enrichment flow adds:
+The docs-enrichment flow is:
 
 ```bash
 npm run docs:fetch
 npm run docs:check
 ```
 
-Docs are fetched only into a committed snapshot for generation; SDK runtime and tests must not fetch documentation pages.
+Docs are fetched only into a committed snapshot for generation; SDK runtime and tests must not fetch documentation pages. `check:docs` re-runs `docs:check` without network access and fails if the committed enrichment report drifts.
 
 ## Testing Rules
 
@@ -113,6 +114,7 @@ Tests and CI must not perform real network calls. Runtime HTTP goes through inje
 
 ```bash
 npm run check:no-network
+npm run check:docs
 npm run typecheck
 npm test
 npm run test:coverage

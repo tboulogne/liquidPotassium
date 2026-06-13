@@ -24,7 +24,28 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai",
+      "operationId": "AI/ToolsListAllYourLLMAPI",
+      "summary": "List all your LLM API",
+      "categoryPath": [
+        "AI Tools",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsListAllConsumptions",
@@ -54,7 +75,265 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai/%7Bproduct_id%7D/consumptions",
+      "operationId": "AI/ToolsListAllConsumptions",
+      "summary": "List all consumptions",
+      "categoryPath": [
+        "AI Tools",
+        "Product management",
+        "Consumptions"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45124
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45124
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22511
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            22511
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 63048
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            63048
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 26900
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            26900
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 68398
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            68398
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "date",
+              "prompt_count",
+              "cost"
+            ]
+          },
+          "enumValues": [
+            "date",
+            "prompt_count",
+            "cost"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[date]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[date]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCustomizingRealisticHumanPhotos",
@@ -86,7 +365,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/ai/%7Bproduct_id%7D/images/generations/photo_maker",
+      "operationId": "AI/ToolsCustomizingRealisticHumanPhotos",
+      "summary": "Customizing Realistic Human Photos",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "Images"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17209
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17209
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateTranscription",
@@ -118,7 +439,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/ai/%7Bproduct_id%7D/openai/audio/transcriptions",
+      "operationId": "AI/ToolsCreateTranscription",
+      "summary": "Create transcription",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 57958
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            57958
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateChatCompletiondeprecated",
@@ -150,7 +513,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": true,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/ai/%7Bproduct_id%7D/openai/chat/completions",
+      "operationId": "AI/ToolsCreateChatCompletiondeprecated",
+      "summary": "Create chat completion (deprecated)",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 88721
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            88721
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateImage",
@@ -182,7 +587,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/ai/%7Bproduct_id%7D/openai/images/generations",
+      "operationId": "AI/ToolsCreateImage",
+      "summary": "Create image",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 58625
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            58625
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsListModelsdeprecated",
@@ -212,7 +659,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": true,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai/%7Bproduct_id%7D/openai/models",
+      "operationId": "AI/ToolsListModelsdeprecated",
+      "summary": "List models (deprecated)",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4783
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4783
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateEmbeddingsdeprecated",
@@ -244,7 +733,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": true,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/ai/%7Bproduct_id%7D/openai/v1/embeddings",
+      "operationId": "AI/ToolsCreateEmbeddingsdeprecated",
+      "summary": "Create embeddings (deprecated)",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89841
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89841
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsGetTheResultOfAnAsyncModelBatch",
@@ -279,7 +810,66 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai/%7Bproduct_id%7D/results/%7Bbatch_id%7D",
+      "operationId": "AI/ToolsGetTheResultOfAnAsyncModelBatch",
+      "summary": "Get the result of an async model batch",
+      "categoryPath": [
+        "AI Tools",
+        "Results"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84419
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84419
+          ]
+        },
+        {
+          "name": "batch_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsDownloadTheOutputResultOfAnAsyncModelBatch",
@@ -314,7 +904,66 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai/%7Bproduct_id%7D/results/%7Bbatch_id%7D/download",
+      "operationId": "AI/ToolsDownloadTheOutputResultOfAnAsyncModelBatch",
+      "summary": "Download the output result of an async model batch",
+      "categoryPath": [
+        "AI Tools",
+        "Results"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73910
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73910
+          ]
+        },
+        {
+          "name": "batch_id",
+          "in": "path",
+          "required": true,
+          "description": "The batch id.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsListModels",
@@ -338,7 +987,125 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/ai/models",
+      "operationId": "AI/ToolsListModels",
+      "summary": "List models",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V1",
+        "Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "type"
+            ]
+          },
+          "enumValues": [
+            "type"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[type]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[type]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateRerankingsV2",
@@ -370,7 +1137,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/ai/%7Bproduct_id%7D/cohere/v2/rerank",
+      "operationId": "AI/ToolsCreateRerankingsV2",
+      "summary": "Create rerankings",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V2",
+        "Cohere-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 14837
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            14837
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateChatCompletionV2",
@@ -402,7 +1211,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/ai/%7Bproduct_id%7D/openai/v1/chat/completions",
+      "operationId": "AI/ToolsCreateChatCompletionV2",
+      "summary": "Create chat completion",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V2",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61942
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61942
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateCompletionV2",
@@ -434,7 +1285,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/ai/%7Bproduct_id%7D/openai/v1/completions",
+      "operationId": "AI/ToolsCreateCompletionV2",
+      "summary": "Create completion",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V2",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16534
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16534
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsCreateEmbeddingsV2",
@@ -466,7 +1359,49 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/ai/%7Bproduct_id%7D/openai/v1/embeddings",
+      "operationId": "AI/ToolsCreateEmbeddingsV2",
+      "summary": "Create embeddings",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V2",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13020
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13020
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "AI/ToolsListModelsV2",
@@ -496,6 +1431,48 @@ export const aiOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/ai/%7Bproduct_id%7D/openai/v1/models",
+      "operationId": "AI/ToolsListModelsV2",
+      "summary": "List models",
+      "categoryPath": [
+        "AI Tools",
+        "Usage",
+        "V2",
+        "OpenAI-compatible"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "product_id",
+          "in": "path",
+          "required": true,
+          "description": "*AI Tools* product identifier: use [GET `/1/ai`](/docs/api/get/1/ai) to retrieve your product identifier.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51293
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51293
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   }
 ];

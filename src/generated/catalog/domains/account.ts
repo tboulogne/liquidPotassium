@@ -32,7 +32,190 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts",
+      "operationId": "Core/ResourcesListAccounts",
+      "summary": "List accounts",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "order",
+            "enum": [
+              "language",
+              "addresses",
+              "timezone",
+              "logo",
+              "order",
+              "demo",
+              "partnerships",
+              "invoicing_config",
+              "user_removal_info",
+              "student",
+              "ksuite_ids",
+              "my_ksuite",
+              "restricted_owner",
+              "videos"
+            ]
+          },
+          "enumValues": [
+            "language",
+            "addresses",
+            "timezone",
+            "logo",
+            "order",
+            "demo",
+            "partnerships",
+            "invoicing_config",
+            "user_removal_info",
+            "student",
+            "ksuite_ids",
+            "my_ksuite",
+            "restricted_owner",
+            "videos"
+          ],
+          "values": [
+            "language",
+            "addresses",
+            "timezone",
+            "logo",
+            "order",
+            "demo",
+            "partnerships",
+            "invoicing_config",
+            "user_removal_info",
+            "student",
+            "ksuite_ids",
+            "my_ksuite",
+            "restricted_owner",
+            "videos"
+          ],
+          "examples": [
+            "order"
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "name"
+            ]
+          },
+          "enumValues": [
+            "name"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAnAccount",
@@ -70,7 +253,111 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount_id%7D",
+      "operationId": "Core/ResourcesDisplayAnAccount",
+      "summary": "Display an account",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16984
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16984
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "student",
+            "enum": [
+              "language",
+              "addresses",
+              "timezone",
+              "logo",
+              "order",
+              "unverified_domains",
+              "demo",
+              "#invitations",
+              "invoicing_config",
+              "student",
+              "my_ksuite",
+              "restricted_owner",
+              "has_onboarding_branding"
+            ]
+          },
+          "enumValues": [
+            "language",
+            "addresses",
+            "timezone",
+            "logo",
+            "order",
+            "unverified_domains",
+            "demo",
+            "#invitations",
+            "invoicing_config",
+            "student",
+            "my_ksuite",
+            "restricted_owner",
+            "has_onboarding_branding"
+          ],
+          "values": [
+            "language",
+            "addresses",
+            "timezone",
+            "logo",
+            "order",
+            "unverified_domains",
+            "demo",
+            "#invitations",
+            "invoicing_config",
+            "student",
+            "my_ksuite",
+            "restricted_owner",
+            "has_onboarding_branding"
+          ],
+          "examples": [
+            "student"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListBasicTeamsInformationOfAnAccount",
@@ -108,7 +395,75 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount_id%7D/basic/teams",
+      "operationId": "Core/ResourcesListBasicTeamsInformationOfAnAccount",
+      "summary": "List basic teams information of an account",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43873
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43873
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "#users",
+            "enum": [
+              "#users"
+            ]
+          },
+          "enumValues": [
+            "#users"
+          ],
+          "values": [
+            "#users"
+          ],
+          "examples": [
+            "#users"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListAccountsProducts",
@@ -151,7 +506,360 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount_id%7D/products",
+      "operationId": "Core/ResourcesListAccountsProducts",
+      "summary": "List account's products",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 83245
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            83245
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "status",
+            "enum": [
+              "fqdn",
+              "status",
+              "transfer",
+              "flags",
+              "renew",
+              "tags"
+            ]
+          },
+          "enumValues": [
+            "fqdn",
+            "status",
+            "transfer",
+            "flags",
+            "renew",
+            "tags"
+          ],
+          "values": [
+            "fqdn",
+            "status",
+            "transfer",
+            "flags",
+            "renew",
+            "tags"
+          ],
+          "examples": [
+            "status"
+          ]
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "title": "filter",
+            "type": "object",
+            "properties": {
+              "customer_name": {
+                "title": "customer_name",
+                "type": "string",
+                "description": "Customer name of the resource `{name}`"
+              },
+              "internal_name": {
+                "title": "internal_name",
+                "type": "string"
+              },
+              "name": {
+                "title": "name",
+                "type": "string",
+                "description": "Name of the resource `{name}`"
+              },
+              "service_id": {
+                "title": "service_id",
+                "minimum": 1,
+                "enum": [
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  7,
+                  8,
+                  14,
+                  15,
+                  17,
+                  18,
+                  21,
+                  22,
+                  23,
+                  24,
+                  25,
+                  26,
+                  27,
+                  28,
+                  29,
+                  31,
+                  33,
+                  34,
+                  35,
+                  37,
+                  38,
+                  39,
+                  40,
+                  41,
+                  42,
+                  43,
+                  44,
+                  48,
+                  50,
+                  51,
+                  52,
+                  54,
+                  55,
+                  57,
+                  58,
+                  59,
+                  60,
+                  61,
+                  62
+                ],
+                "type": "integer",
+                "description": "Unique identifier of the `service` that is related to the resource `{name}`"
+              },
+              "excluded_service_ids": {
+                "title": "excluded_service_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    14,
+                    15,
+                    17,
+                    18,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    31,
+                    33,
+                    34,
+                    35,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    48,
+                    50,
+                    51,
+                    52,
+                    54,
+                    55,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62
+                  ],
+                  "type": "integer"
+                }
+              },
+              "expirations": {
+                "title": "expirations",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "service_ids": {
+                "title": "service_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    14,
+                    15,
+                    17,
+                    18,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    31,
+                    33,
+                    34,
+                    35,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    48,
+                    50,
+                    51,
+                    52,
+                    54,
+                    55,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62
+                  ],
+                  "type": "integer"
+                }
+              },
+              "service_names": {
+                "title": "service_names",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "enum": [
+                    "accreditation",
+                    "ai_tools",
+                    "banner",
+                    "billetterie",
+                    "certificate",
+                    "chk",
+                    "custom_url",
+                    "dedicated_hosting",
+                    "domain_name",
+                    "domain_privacy",
+                    "drive",
+                    "fast_anycast",
+                    "free_mail",
+                    "hebergement",
+                    "hebergement_mysql",
+                    "hebergement_web",
+                    "hosting_3",
+                    "invitation",
+                    "jelastic",
+                    "kchat",
+                    "ksuite",
+                    "mail",
+                    "mailbox",
+                    "mailing",
+                    "my_ksuite",
+                    "nas",
+                    "other",
+                    "partner_cashback",
+                    "public_cloud",
+                    "radio",
+                    "radio_flux",
+                    "radio_tera",
+                    "radiostations",
+                    "radiov2",
+                    "renewal_warranty",
+                    "service_infrastructure",
+                    "stockage_backup",
+                    "support_premium",
+                    "swiss_backup",
+                    "video",
+                    "video_hardware",
+                    "vod",
+                    "vps",
+                    "website_builder"
+                  ],
+                  "type": "string"
+                }
+              },
+              "tags": {
+                "title": "tags",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListServices",
@@ -183,7 +891,50 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount_id%7D/services",
+      "operationId": "Core/ResourcesListServices",
+      "summary": "List services",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40459
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40459
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAListingOfTagsForAnAccount",
@@ -221,7 +972,172 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount_id%7D/tags",
+      "operationId": "Core/ResourcesDisplayAListingOfTagsForAnAccount",
+      "summary": "Display a listing of tags for an account",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "The account identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "products",
+            "enum": [
+              "products"
+            ]
+          },
+          "enumValues": [
+            "products"
+          ],
+          "values": [
+            "products"
+          ],
+          "examples": [
+            "products"
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "id",
+              "name",
+              "products"
+            ]
+          },
+          "enumValues": [
+            "id",
+            "name",
+            "products"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[id]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[id]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesInviteAUser",
@@ -261,7 +1177,78 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations",
+      "operationId": "Core/ResourcesInviteAUser",
+      "summary": "Invite a User",
+      "categoryPath": [
+        "Core Resources",
+        "User Management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89663
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89663
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "teams",
+            "enum": [
+              "qr_code",
+              "teams"
+            ]
+          },
+          "enumValues": [
+            "qr_code",
+            "teams"
+          ],
+          "values": [
+            "qr_code",
+            "teams"
+          ],
+          "examples": [
+            "teams"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCancelAnInvitation",
@@ -298,7 +1285,69 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D",
+      "operationId": "Core/ResourcesCancelAnInvitation",
+      "summary": "Cancel an Invitation",
+      "categoryPath": [
+        "Core Resources",
+        "User Management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19018
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19018
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the User Invitation",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73616
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73616
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAnInvitationOfAnAccount",
@@ -341,7 +1390,104 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D",
+      "operationId": "Core/ResourcesDisplayAnInvitationOfAnAccount",
+      "summary": "Display an invitation of an account",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65242
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65242
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45081
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45081
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "app_accesses",
+            "enum": [
+              "teams",
+              "ksuite",
+              "app_accesses",
+              "permissions",
+              "qr_code"
+            ]
+          },
+          "enumValues": [
+            "teams",
+            "ksuite",
+            "app_accesses",
+            "permissions",
+            "qr_code"
+          ],
+          "values": [
+            "teams",
+            "ksuite",
+            "app_accesses",
+            "permissions",
+            "qr_code"
+          ],
+          "examples": [
+            "app_accesses"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesPatchAnInvitation",
@@ -380,7 +1526,67 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D",
+      "operationId": "Core/ResourcesPatchAnInvitation",
+      "summary": "Patch an invitation",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91725
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91725
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 77776
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77776
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListCustomers",
@@ -423,7 +1629,256 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/b2b",
+      "operationId": "Core/ResourcesListCustomers",
+      "summary": "List customers",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "B2B"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "customer",
+            "enum": [
+              "customer"
+            ]
+          },
+          "enumValues": [
+            "customer"
+          ],
+          "values": [
+            "customer"
+          ],
+          "examples": [
+            "customer"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 31726
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            31726
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 50564
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            50564
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "desc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAssignCustomers",
@@ -462,7 +1917,70 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/b2b",
+      "operationId": "Core/ResourcesAssignCustomers",
+      "summary": "Assign customers",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "B2B"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35504
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35504
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 64070
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64070
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUnassignCustomers",
@@ -504,7 +2022,86 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/b2b/%7Bpartnership_id%7D",
+      "operationId": "Core/ResourcesUnassignCustomers",
+      "summary": "Unassign customers",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "B2B"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "partnership_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAddADriveAccess",
@@ -543,7 +2140,72 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/drive",
+      "operationId": "Core/ResourcesAddADriveAccess",
+      "summary": "Add a drive access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33447
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33447
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33148
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            33148
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "403",
+        "409",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "delete_1_accounts_account_invitations_invitation_drive_drive_id",
@@ -585,7 +2247,90 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/drive/%7Bdrive_id%7D",
+      "operationId": null,
+      "summary": "Revoke a drive access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "409",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateDriveAccess",
@@ -629,7 +2374,88 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/drive/%7Bdrive_id%7D",
+      "operationId": "Core/ResourcesUpdateDriveAccess",
+      "summary": "Update drive access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Drive"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 38624
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            38624
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51275
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51275
+          ]
+        },
+        {
+          "name": "drive_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateAKChatAccess",
@@ -668,7 +2494,69 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/kchat",
+      "operationId": "Core/ResourcesUpdateAKChatAccess",
+      "summary": "Update a kChat access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "KChat"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74114
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74114
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 55949
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55949
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesRevokeKSuiteAccess",
@@ -705,7 +2593,72 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/ksuite",
+      "operationId": "Core/ResourcesRevokeKSuiteAccess",
+      "summary": "Revoke kSuite access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "kSuite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "409",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCreateAKSuiteAccess",
@@ -744,7 +2697,72 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/ksuite",
+      "operationId": "Core/ResourcesCreateAKSuiteAccess",
+      "summary": "Create a kSuite access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "kSuite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "404",
+        "422",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesRevokeADriveAccess",
@@ -792,7 +2810,108 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/mailbox/%7Bmail_id%7D",
+      "operationId": "Core/ResourcesRevokeADriveAccess",
+      "summary": "Revoke a drive access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Mailbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mail_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "mailbox_name",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "409",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateAMailboxAccess",
@@ -836,7 +2955,87 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/mailbox/%7Bmail_id%7D",
+      "operationId": "Core/ResourcesUpdateAMailboxAccess",
+      "summary": "Update a mailbox access",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Mailbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69629
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69629
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52963
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52963
+          ]
+        },
+        {
+          "name": "mail_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_accounts_account_invitations_invitation_mailbox_mail_id",
@@ -880,7 +3079,88 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/mailbox/%7Bmail_id%7D",
+      "operationId": null,
+      "summary": "",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Mailbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mail_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "403",
+        "409"
+      ]
+    }
   },
   {
     "operationId": "Core/Resources",
@@ -919,7 +3199,68 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/invitations/%7Binvitation%7D/mailbox/invite",
+      "operationId": "Core/Resources",
+      "summary": "",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations",
+        "Mailbox"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesGetUsersInvitations",
@@ -962,7 +3303,95 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/invitations/users/%7Buser%7D",
+      "operationId": "Core/ResourcesGetUsersInvitations",
+      "summary": "Get users invitations",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3990
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3990
+          ]
+        },
+        {
+          "name": "user",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 1650
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1650
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "type",
+            "enum": [
+              "admin",
+              "normal",
+              "owner"
+            ],
+            "type": "string",
+            "example": "admin"
+          },
+          "enumValues": [
+            "admin",
+            "normal",
+            "owner"
+          ],
+          "values": [],
+          "examples": [
+            "admin"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCreateATag",
@@ -996,7 +3425,48 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/tags",
+      "operationId": "Core/ResourcesCreateATag",
+      "summary": "Create a tag",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteATag",
@@ -1033,7 +3503,67 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/tags/%7Btag%7D",
+      "operationId": "Core/ResourcesDeleteATag",
+      "summary": "Delete a tag",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16775
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16775
+          ]
+        },
+        {
+          "name": "tag",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27660
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27660
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateATag",
@@ -1072,7 +3602,67 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/accounts/%7Baccount%7D/tags/%7Btag%7D",
+      "operationId": "Core/ResourcesUpdateATag",
+      "summary": "Update a tag",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74901
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74901
+          ]
+        },
+        {
+          "name": "tag",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40891
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40891
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListTeams",
@@ -1120,7 +3710,353 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/teams",
+      "operationId": "Core/ResourcesListTeams",
+      "summary": "List Teams",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52716
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52716
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "#products",
+            "enum": [
+              "created_by",
+              "owned_by",
+              "app_access",
+              "permissions",
+              "products",
+              "users",
+              "#users",
+              "#products",
+              "#products_by_service"
+            ]
+          },
+          "enumValues": [
+            "created_by",
+            "owned_by",
+            "app_access",
+            "permissions",
+            "products",
+            "users",
+            "#users",
+            "#products",
+            "#products_by_service"
+          ],
+          "values": [
+            "created_by",
+            "owned_by",
+            "app_access",
+            "permissions",
+            "products",
+            "users",
+            "#users",
+            "#products",
+            "#products_by_service"
+          ],
+          "examples": [
+            "#products"
+          ]
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "title": "filter",
+            "type": "object",
+            "properties": {
+              "created_by_ids": {
+                "title": "created_by_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "owned_by_ids": {
+                "title": "owned_by_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                },
+                "description": "Array of user IDs who are owners of the team"
+              },
+              "team_ids": {
+                "title": "team_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              },
+              "user_ids": {
+                "title": "user_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 14362
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            14362
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 33648
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            33648
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "name",
+              "created_at",
+              "user_count",
+              "product_count"
+            ]
+          },
+          "enumValues": [
+            "name",
+            "created_at",
+            "user_count",
+            "product_count"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCreateATeam",
@@ -1154,7 +4090,52 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/teams",
+      "operationId": "Core/ResourcesCreateATeam",
+      "summary": "Create a Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26510
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26510
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteATeam",
@@ -1191,7 +4172,70 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/teams/%7Bteam%7D",
+      "operationId": "Core/ResourcesDeleteATeam",
+      "summary": "Delete a Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79937
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79937
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 54000
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54000
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesGetATeam",
@@ -1234,7 +4278,118 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/teams/%7Bteam%7D",
+      "operationId": "Core/ResourcesGetATeam",
+      "summary": "Get a Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73392
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73392
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29506
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29506
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "users",
+            "enum": [
+              "created_by",
+              "owned_by",
+              "app_access",
+              "permissions",
+              "products",
+              "users",
+              "#users",
+              "#products",
+              "#products_by_service"
+            ]
+          },
+          "enumValues": [
+            "created_by",
+            "owned_by",
+            "app_access",
+            "permissions",
+            "products",
+            "users",
+            "#users",
+            "#products",
+            "#products_by_service"
+          ],
+          "values": [
+            "created_by",
+            "owned_by",
+            "app_access",
+            "permissions",
+            "products",
+            "users",
+            "#users",
+            "#products",
+            "#products_by_service"
+          ],
+          "examples": [
+            "users"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateATeam",
@@ -1273,7 +4428,70 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/accounts/%7Baccount%7D/teams/%7Bteam%7D",
+      "operationId": "Core/ResourcesUpdateATeam",
+      "summary": "Update a Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92388
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92388
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70989
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70989
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesRemoveUsersFromTeam",
@@ -1316,7 +4534,96 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/accounts/%7Baccount%7D/teams/%7Bteam%7D/users",
+      "operationId": "Core/ResourcesRemoveUsersFromTeam",
+      "summary": "Remove Users from Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93683
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93683
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35778
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35778
+          ]
+        },
+        {
+          "name": "user_ids",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "user_ids",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minimum": 1,
+              "type": "integer"
+            },
+            "description": "The user identifiers to add to the team.",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListTeamUsers",
@@ -1359,7 +4666,261 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/%7Baccount%7D/teams/%7Bteam%7D/users",
+      "operationId": "Core/ResourcesListTeamUsers",
+      "summary": "List Team Users",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23453
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23453
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3733
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3733
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "description": "The name or the email of a user.",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 56785
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            56785
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 96841
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            96841
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "display_name",
+              "last_login_at"
+            ]
+          },
+          "enumValues": [
+            "display_name",
+            "last_login_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[display_name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[display_name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAddUsersToTeam",
@@ -1398,7 +4959,70 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/accounts/%7Baccount%7D/teams/%7Bteam%7D/users",
+      "operationId": "Core/ResourcesAddUsersToTeam",
+      "summary": "Add Users to Team",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Teams",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Account",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 61830
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            61830
+          ]
+        },
+        {
+          "name": "team",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Team",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 135
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            135
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListCurrentAccountsProducts",
@@ -1435,7 +5059,278 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/accounts/current/products",
+      "operationId": "Core/ResourcesListCurrentAccountsProducts",
+      "summary": "List current account's products",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "fqdn",
+            "enum": [
+              "fqdn",
+              "flags"
+            ]
+          },
+          "enumValues": [
+            "fqdn",
+            "flags"
+          ],
+          "values": [
+            "fqdn",
+            "flags"
+          ],
+          "examples": [
+            "fqdn"
+          ]
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "title": "filter",
+            "type": "object",
+            "properties": {
+              "customer_name": {
+                "title": "customer_name",
+                "type": "string",
+                "description": "Customer name of the resource `{name}`"
+              },
+              "internal_name": {
+                "title": "internal_name",
+                "type": "string"
+              },
+              "name": {
+                "title": "name",
+                "type": "string",
+                "description": "Name of the resource `{name}`"
+              },
+              "excluded_service_ids": {
+                "title": "excluded_service_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    14,
+                    15,
+                    17,
+                    18,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    31,
+                    33,
+                    34,
+                    35,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    48,
+                    50,
+                    51,
+                    52,
+                    54,
+                    55,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62
+                  ],
+                  "type": "integer"
+                }
+              },
+              "expirations": {
+                "title": "expirations",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minLength": 1,
+                  "type": "string"
+                }
+              },
+              "service_ids": {
+                "title": "service_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "enum": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    14,
+                    15,
+                    17,
+                    18,
+                    21,
+                    22,
+                    23,
+                    24,
+                    25,
+                    26,
+                    27,
+                    28,
+                    29,
+                    31,
+                    33,
+                    34,
+                    35,
+                    37,
+                    38,
+                    39,
+                    40,
+                    41,
+                    42,
+                    43,
+                    44,
+                    48,
+                    50,
+                    51,
+                    52,
+                    54,
+                    55,
+                    57,
+                    58,
+                    59,
+                    60,
+                    61,
+                    62
+                  ],
+                  "type": "integer"
+                }
+              },
+              "service_names": {
+                "title": "service_names",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "enum": [
+                    "accreditation",
+                    "ai_tools",
+                    "banner",
+                    "billetterie",
+                    "certificate",
+                    "chk",
+                    "custom_url",
+                    "dedicated_hosting",
+                    "domain_name",
+                    "domain_privacy",
+                    "drive",
+                    "fast_anycast",
+                    "free_mail",
+                    "hebergement",
+                    "hebergement_mysql",
+                    "hebergement_web",
+                    "hosting_3",
+                    "invitation",
+                    "jelastic",
+                    "kchat",
+                    "ksuite",
+                    "mail",
+                    "mailbox",
+                    "mailing",
+                    "my_ksuite",
+                    "nas",
+                    "other",
+                    "partner_cashback",
+                    "public_cloud",
+                    "radio",
+                    "radio_flux",
+                    "radio_tera",
+                    "radiostations",
+                    "radiov2",
+                    "renewal_warranty",
+                    "service_infrastructure",
+                    "stockage_backup",
+                    "support_premium",
+                    "swiss_backup",
+                    "video",
+                    "video_hardware",
+                    "vod",
+                    "vps",
+                    "website_builder"
+                  ],
+                  "type": "string"
+                }
+              },
+              "tags": {
+                "title": "tags",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "minimum": 1,
+                  "type": "integer"
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListUsersV2",
@@ -1493,7 +5388,425 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/accounts/%7Baccount%7D/users",
+      "operationId": "Core/ResourcesListUsersV2",
+      "summary": "List users",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35437
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            35437
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "drive_infos",
+            "enum": [
+              "teams",
+              "security",
+              "app_access",
+              "permissions",
+              "products",
+              "pending_invitations",
+              "invitation_details",
+              "drive_infos",
+              "kchat_infos"
+            ]
+          },
+          "enumValues": [
+            "teams",
+            "security",
+            "app_access",
+            "permissions",
+            "products",
+            "pending_invitations",
+            "invitation_details",
+            "drive_infos",
+            "kchat_infos"
+          ],
+          "values": [
+            "teams",
+            "security",
+            "app_access",
+            "permissions",
+            "products",
+            "pending_invitations",
+            "invitation_details",
+            "drive_infos",
+            "kchat_infos"
+          ],
+          "examples": [
+            "drive_infos"
+          ]
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "title": "filter",
+            "type": "object",
+            "properties": {
+              "drive_id": {
+                "title": "drive_id",
+                "type": "integer"
+              },
+              "has_billing_access": {
+                "title": "has_billing_access",
+                "type": "boolean"
+              },
+              "has_empty_access": {
+                "title": "has_empty_access",
+                "type": "boolean"
+              },
+              "has_kchat": {
+                "title": "has_kchat",
+                "type": "boolean"
+              },
+              "has_ksuite": {
+                "title": "has_ksuite",
+                "type": "boolean"
+              },
+              "has_no_app_access": {
+                "title": "has_no_app_access",
+                "type": "boolean"
+              },
+              "has_otp": {
+                "title": "has_otp",
+                "type": "boolean"
+              },
+              "invitation_status": {
+                "title": "invitation_status",
+                "type": "string"
+              },
+              "mail_ids": {
+                "title": "mail_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "type": "integer"
+                }
+              },
+              "role_type": {
+                "title": "role_type",
+                "type": "string"
+              },
+              "state_in_account": {
+                "title": "state_in_account",
+                "enum": [
+                  "pending",
+                  "valid"
+                ],
+                "type": "string"
+              },
+              "team_ids": {
+                "title": "team_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "type": "integer"
+                }
+              },
+              "user_ids": {
+                "title": "user_ids",
+                "type": "array",
+                "items": {
+                  "title": "item",
+                  "type": "integer"
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_by",
+            "type": "array",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order_for",
+            "type": "array",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 39315
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            39315
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 21667
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            21667
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "email",
+              "first_name",
+              "last_name",
+              "role_type",
+              "state_in_account",
+              "last_login_at"
+            ]
+          },
+          "enumValues": [
+            "email",
+            "first_name",
+            "last_name",
+            "role_type",
+            "state_in_account",
+            "last_login_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[email]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[email]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListAppAccessesV2",
@@ -1530,6 +5843,67 @@ export const accountOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/accounts/%7Baccount%7D/users/%7Buser%7D/app_accesses",
+      "operationId": "Core/ResourcesListAppAccessesV2",
+      "summary": "List app accesses",
+      "categoryPath": [
+        "Core Resources",
+        "User Management",
+        "Accounts"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 11588
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11588
+          ]
+        },
+        {
+          "name": "user",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 36407
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            36407
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   }
 ];

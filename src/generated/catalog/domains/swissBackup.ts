@@ -32,7 +32,272 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups",
+      "operationId": null,
+      "summary": "List all Swiss Backups",
+      "categoryPath": [
+        "Swiss Backup",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "query",
+          "required": true,
+          "description": "The account identifier",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "account_id",
+            "type": "integer",
+            "description": "Unique identifier of the `account` that is related to the resource `{name}`",
+            "example": 93431
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93431
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+            "type": "integer",
+            "example": 23486
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            23486
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+            "type": "integer",
+            "example": 47131
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            47131
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 2292
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            2292
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 81937
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            81937
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "customer_name",
+              "internal_name",
+              "expired_at"
+            ]
+          },
+          "enumValues": [
+            "customer_name",
+            "internal_name",
+            "expired_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[customer_name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[customer_name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_swiss_backup_id",
@@ -64,7 +329,49 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/%7Bswiss_backup_id%7D",
+      "operationId": null,
+      "summary": "Swiss Backup information",
+      "categoryPath": [
+        "Swiss Backup",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 21087
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            21087
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_swiss_backups_swiss_backup_id",
@@ -104,7 +411,69 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/swiss_backups/%7Bswiss_backup_id%7D",
+      "operationId": null,
+      "summary": "Update a Swiss Backup",
+      "categoryPath": [
+        "Swiss Backup",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78431
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78431
+          ]
+        },
+        {
+          "name": "account_id",
+          "in": "query",
+          "required": true,
+          "description": "Unique identifier of the `account`",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 95380
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95380
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "422",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_swiss_backup_id_acronis_informations",
@@ -136,7 +505,50 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/%7Bswiss_backup_id%7D/acronis_informations",
+      "operationId": null,
+      "summary": "Acronis information",
+      "categoryPath": [
+        "Swiss Backup",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92301
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92301
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_admin",
@@ -170,7 +582,49 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/admin",
+      "operationId": null,
+      "summary": "Create administrator",
+      "categoryPath": [
+        "Swiss Backup",
+        "Administrator"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90267
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90267
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "403"
+      ]
+    }
   },
   {
     "operationId": "put_1_swiss_backups_swiss_backup_id_admin",
@@ -204,7 +658,50 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/swiss_backups/%7Bswiss_backup_id%7D/admin",
+      "operationId": null,
+      "summary": "Update administrator",
+      "categoryPath": [
+        "Swiss Backup",
+        "Administrator"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78108
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_admin_request_password",
@@ -236,7 +733,51 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/admin/request_password",
+      "operationId": null,
+      "summary": "Request administrator password",
+      "categoryPath": [
+        "Swiss Backup",
+        "Passwords"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70905
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70905
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_swiss_backup_id_slots",
@@ -268,7 +809,48 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/%7Bswiss_backup_id%7D/slots",
+      "operationId": null,
+      "summary": "List all slots",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43869
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43869
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_slots",
@@ -302,7 +884,48 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/slots",
+      "operationId": null,
+      "summary": "Create",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79874
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79874
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "delete_1_swiss_backups_swiss_backup_id_slots_slot_id",
@@ -339,7 +962,68 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D",
+      "operationId": null,
+      "summary": "Delete",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 73714
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            73714
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8764
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8764
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_swiss_backup_id_slots_slot_id",
@@ -376,7 +1060,67 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D",
+      "operationId": null,
+      "summary": "Slot information",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 14193
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            14193
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91558
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91558
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_swiss_backups_swiss_backup_id_slots_slot_id",
@@ -415,7 +1159,68 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D",
+      "operationId": null,
+      "summary": "Update",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91752
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91752
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 96198
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            96198
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_slots_slot_id_disable",
@@ -452,7 +1257,67 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D/disable",
+      "operationId": null,
+      "summary": "Disable",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82418
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            82418
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65958
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65958
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_slots_slot_id_enable",
@@ -489,7 +1354,67 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D/enable",
+      "operationId": null,
+      "summary": "Enable",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71283
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71283
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 86962
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86962
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_swiss_backup_id_slots_slot_id_rclone",
@@ -527,7 +1452,67 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D/rclone",
+      "operationId": null,
+      "summary": "RClone details",
+      "categoryPath": [
+        "Swiss Backup",
+        "Slots"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 62824
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            62824
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44804
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44804
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "post_1_swiss_backups_swiss_backup_id_slots_slot_id_request_password",
@@ -564,7 +1549,69 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/swiss_backups/%7Bswiss_backup_id%7D/slots/%7Bslot_id%7D/request_password",
+      "operationId": null,
+      "summary": "Request slot password",
+      "categoryPath": [
+        "Swiss Backup",
+        "Passwords"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "swiss_backup_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Swiss Backup to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22074
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22074
+          ]
+        },
+        {
+          "name": "slot_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Slot to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8974
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8974
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_calculate",
@@ -636,7 +1683,203 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/calculate",
+      "operationId": null,
+      "summary": "Calculate the price",
+      "categoryPath": [
+        "Swiss Backup",
+        "Billing"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "currency_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "currency_id",
+            "type": "integer",
+            "example": 3201
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3201
+          ]
+        },
+        {
+          "name": "due_at",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "due_at",
+            "type": "string",
+            "description": "Contract end date",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "is_demo",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "is_demo",
+            "type": "boolean",
+            "description": "True if the product is a trial",
+            "example": "false"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "false"
+          ]
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "size",
+            "type": "integer",
+            "description": "Total storage size of the Swiss Backup product (Bytes)",
+            "example": "200000000000"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "200000000000"
+          ]
+        },
+        {
+          "name": "slot",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "slot",
+            "type": "integer",
+            "example": 31629
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31629
+          ]
+        },
+        {
+          "name": "slot_mobile",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "slot_mobile",
+            "type": "integer",
+            "example": 32218
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32218
+          ]
+        },
+        {
+          "name": "slot_server",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "slot_server",
+            "type": "integer",
+            "example": 36320
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            36320
+          ]
+        },
+        {
+          "name": "slot_virtual",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "slot_virtual",
+            "type": "integer",
+            "example": 54961
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            54961
+          ]
+        },
+        {
+          "name": "slot_workstation",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "slot_workstation",
+            "type": "integer",
+            "example": 51802
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51802
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_swiss_backups_pricing",
@@ -683,6 +1926,106 @@ export const swissBackupOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/swiss_backups/pricing",
+      "operationId": null,
+      "summary": "List prices and discounts",
+      "categoryPath": [
+        "Swiss Backup",
+        "Billing"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "query",
+          "required": false,
+          "description": "The account identifier",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "account_id",
+            "type": "integer",
+            "description": "Unique identifier of the `account` that is related to the resource `{name}`",
+            "example": 52971
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52971
+          ]
+        },
+        {
+          "name": "currency_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "currency_id",
+            "type": "integer",
+            "example": 75570
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75570
+          ]
+        },
+        {
+          "name": "swiss_backup_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "swiss_backup_id",
+            "type": "integer",
+            "example": 28789
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            28789
+          ]
+        },
+        {
+          "name": "with_renewal",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "with_renewal",
+            "type": "boolean",
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   }
 ];

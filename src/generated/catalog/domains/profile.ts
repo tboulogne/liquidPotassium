@@ -32,7 +32,60 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile",
+      "operationId": "Core/ResourcesListUserInformationV2",
+      "summary": "List user information",
+      "categoryPath": [
+        "Core Resources",
+        "Profile"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "phones",
+            "enum": [
+              "emails",
+              "phones",
+              "security"
+            ]
+          },
+          "enumValues": [
+            "emails",
+            "phones",
+            "security"
+          ],
+          "values": [
+            "emails",
+            "phones",
+            "security"
+          ],
+          "examples": [
+            "phones"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateProfileInformationV2",
@@ -66,7 +119,53 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/2/profile",
+      "operationId": "Core/ResourcesUpdateProfileInformationV2",
+      "summary": "Update profile information",
+      "categoryPath": [
+        "Core Resources",
+        "Profile"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "dry_run",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "dry_run",
+            "type": "boolean",
+            "description": "Ensures that the request passes the system validation",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "422",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListAuthenticatorPasskeysV2",
@@ -92,7 +191,34 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/2fa/authenticator/passkeys",
+      "operationId": "Core/ResourcesListAuthenticatorPasskeysV2",
+      "summary": "List Authenticator Passkeys",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Two Factor",
+        "Authenticator",
+        "Passkeys"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteAnAuthenticatorPasskeyV2",
@@ -130,7 +256,73 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/profile/2fa/authenticator/passkeys/%7Bpasskey%7D",
+      "operationId": "Core/ResourcesDeleteAnAuthenticatorPasskeyV2",
+      "summary": "Delete an Authenticator Passkey",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Two Factor",
+        "Authenticator",
+        "Passkeys"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "passkey",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the Passkey",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "password",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "password",
+            "type": "string",
+            "example": "5t\\M{XmCZsy:w"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "5t\\M{XmCZsy:w"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListApplicationsPasswordsV2",
@@ -156,7 +348,31 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/applications/passwords",
+      "operationId": "Core/ResourcesListApplicationsPasswordsV2",
+      "summary": "List applications passwords",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Applications Passwords"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAddAnApplicationPasswordV2",
@@ -182,7 +398,30 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/profile/applications/passwords",
+      "operationId": "Core/ResourcesAddAnApplicationPasswordV2",
+      "summary": "Add an application password",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Applications Passwords"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "201",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAnApplicationPasswordV2",
@@ -214,7 +453,50 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/applications/passwords/%7Bpassword_id%7D",
+      "operationId": "Core/ResourcesDisplayAnApplicationPasswordV2",
+      "summary": "Display an application password",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Applications Passwords"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "password_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the password to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 18086
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            18086
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteProfilesAvatarV2",
@@ -240,7 +522,31 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/profile/avatar",
+      "operationId": "Core/ResourcesDeleteProfilesAvatarV2",
+      "summary": "Delete profile's avatar",
+      "categoryPath": [
+        "Core Resources",
+        "Profile"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAddUpdateProfilesAvatarV2",
@@ -268,7 +574,32 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/profile/avatar",
+      "operationId": "Core/ResourcesAddUpdateProfilesAvatarV2",
+      "summary": "Add / Update profile's avatar",
+      "categoryPath": [
+        "Core Resources",
+        "Profile"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "422",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListEmailsV2",
@@ -294,7 +625,31 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/emails",
+      "operationId": "Core/ResourcesListEmailsV2",
+      "summary": "List emails",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Emails"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteAnEmailV2",
@@ -331,7 +686,69 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/profile/emails/%7Bemail_type%7D/%7Bemail_id%7D",
+      "operationId": "Core/ResourcesDeleteAnEmailV2",
+      "summary": "Delete an email",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Emails"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "email_type",
+          "in": "path",
+          "required": true,
+          "description": "The email type (email|email_request) to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "email_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the email to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93465
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93465
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAnEmailV2",
@@ -368,7 +785,68 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/emails/%7Bemail_type%7D/%7Bemail_id%7D",
+      "operationId": "Core/ResourcesDisplayAnEmailV2",
+      "summary": "Display an email",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Emails"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "email_type",
+          "in": "path",
+          "required": true,
+          "description": "The email type (email|email_request) to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "email_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the email to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26143
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26143
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesGetRelatedWorkspaceUsersV2",
@@ -394,7 +872,29 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/ksuites/mailboxes",
+      "operationId": "Core/ResourcesGetRelatedWorkspaceUsersV2",
+      "summary": "Get related workspace users",
+      "categoryPath": [
+        "Core Resources",
+        "kSuite",
+        "Workspace"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesAttachAMailboxToCurrentUserV2",
@@ -422,7 +922,32 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/profile/ksuites/mailboxes",
+      "operationId": "Core/ResourcesAttachAMailboxToCurrentUserV2",
+      "summary": "Attach a mailbox to current user",
+      "categoryPath": [
+        "Core Resources",
+        "kSuite",
+        "Workspace"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "201",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUnlinkAMailboxFromCurrentUserV2",
@@ -454,7 +979,49 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/profile/ksuites/mailboxes/%7Bmailbox_id%7D",
+      "operationId": "Core/ResourcesUnlinkAMailboxFromCurrentUserV2",
+      "summary": "Unlink a mailbox from current user",
+      "categoryPath": [
+        "Core Resources",
+        "kSuite",
+        "Workspace"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mailbox_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesSetMailboxAsPrimaryV2",
@@ -486,7 +1053,50 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/profile/ksuites/mailboxes/%7Bmailbox_id%7D/set_primary",
+      "operationId": "Core/ResourcesSetMailboxAsPrimaryV2",
+      "summary": "Set mailbox as primary",
+      "categoryPath": [
+        "Core Resources",
+        "kSuite",
+        "Workspace"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mailbox_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesUpdateMailboxCredentialPasswordV2",
@@ -520,7 +1130,50 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/profile/ksuites/mailboxes/%7Bmailbox_id%7D/update_password",
+      "operationId": "Core/ResourcesUpdateMailboxCredentialPasswordV2",
+      "summary": "Update mailbox credential password",
+      "categoryPath": [
+        "Core Resources",
+        "kSuite",
+        "Workspace"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mailbox_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListPhonesV2",
@@ -546,7 +1199,31 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/phones",
+      "operationId": "Core/ResourcesListPhonesV2",
+      "summary": "List phones",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Phones"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDeleteAPhoneV2",
@@ -578,7 +1255,51 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/profile/phones/%7Bphone_id%7D",
+      "operationId": "Core/ResourcesDeleteAPhoneV2",
+      "summary": "Delete a phone",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Phones"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "phone_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the phone to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45333
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45333
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAPhoneV2",
@@ -610,6 +1331,49 @@ export const profileOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/profile/phones/%7Bphone_id%7D",
+      "operationId": "Core/ResourcesDisplayAPhoneV2",
+      "summary": "Display a phone",
+      "categoryPath": [
+        "Core Resources",
+        "Profile",
+        "Phones"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "phone_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the phone to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 99603
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99603
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   }
 ];

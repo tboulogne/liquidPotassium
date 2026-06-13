@@ -24,7 +24,7 @@ This runs:
 - Keep `infomaniak_api_1781289971.json` immutable unless deliberately updating the upstream Infomaniak OpenAPI source.
 - Re-run `npm run normalize` after any normalizer change.
 - Re-run `npm run generate` after any normalized spec or generator change.
-- When docs enrichment is implemented, re-run `npm run docs:fetch` only when intentionally refreshing the official Infomaniak docs snapshot, then run `npm run docs:check`.
+- Re-run `npm run docs:fetch` only when intentionally refreshing the official Infomaniak docs snapshot, then run `npm run check:docs`.
 - Commit generated files and endpoint tests with the generator change that produced them.
 - Confirm `spec/normalization-report.json` has no unresolved refs and no warnings.
 - Confirm docs-derived examples, enums, and resource-discovery metadata do not contain real tokens, private customer data, or account-specific secrets.

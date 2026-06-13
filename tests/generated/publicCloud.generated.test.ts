@@ -12,6 +12,14 @@ interface CapturedCall {
   request: OperationRequest | undefined;
 }
 
+interface DocsSnapshotOperation {
+  key: string;
+  docsUrl: string;
+  operationId: string | null;
+  categoryPath: readonly string[];
+  meta: { responses?: Record<string, unknown> };
+}
+
 function createCapturingClient(calls: CapturedCall[]): GeneratedOperationClient {
   return {
     async requestOperation(operationId, request) {
@@ -22,13 +30,16 @@ function createCapturingClient(calls: CapturedCall[]): GeneratedOperationClient 
 }
 
 describe("generated publicCloud endpoints", () => {
-  it("matches normalized spec metadata and wrapper dispatch for every operation", async () => {
+  it("matches normalized spec metadata, docs enrichment, and wrapper dispatch for every operation", async () => {
     const normalized = JSON.parse(await readFile("spec/infomaniak.normalized.json", "utf8")) as { paths: Record<string, Record<string, { operationId?: string }>> };
+    const docsSnapshot = JSON.parse(await readFile("spec/infomaniak.docs-snapshot.json", "utf8")) as { operations: DocsSnapshotOperation[] };
+    const docsByKey = new Map(docsSnapshot.operations.map((operation) => [operation.key, operation]));
     const calls: CapturedCall[] = [];
     const wrappers = createPubliccloudOperations(createCapturingClient(calls));
 
     for (const operation of publicCloudOperations) {
       const normalizedOperation = normalized.paths[operation.path]?.[operation.method.toLowerCase()];
+      const docsOperation = docsByKey.get(`${operation.method.toLowerCase()} ${operation.path}`);
       expect(normalizedOperation?.operationId).toBe(operation.operationId);
       expect(operation.domain).toBe("publicCloud");
       expect(operation.method).toMatch(/^(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|TRACE)$/);
@@ -37,6 +48,10 @@ describe("generated publicCloud endpoints", () => {
       expect(Array.isArray(operation.queryParameters)).toBe(true);
       expect(Array.isArray(operation.requestContentTypes)).toBe(true);
       expect(Array.isArray(operation.responseContentTypes)).toBe(true);
+      expect(operation.docs?.url ?? null).toBe(docsOperation?.docsUrl ?? null);
+      expect(operation.docs?.operationId ?? null).toBe(docsOperation?.operationId ?? null);
+      expect(operation.docs?.categoryPath ?? null).toEqual(docsOperation?.categoryPath ?? null);
+      expect(operation.docs?.responseStatuses ?? []).toEqual(Object.keys(docsOperation?.meta.responses ?? {}).sort((left, right) => left.localeCompare(right, undefined, { numeric: true })));
 
       const wrapper = wrappers[operation.functionName as keyof typeof wrappers];
       expect(wrapper).toBeTypeOf("function");

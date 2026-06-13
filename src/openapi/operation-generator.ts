@@ -1,9 +1,55 @@
 import { HTTP_METHODS, type JsonObject } from "./normalize.js";
+import type { DocsOperationEntry, DocsSnapshot } from "./docs-snapshot.js";
+
+export type OperationDocsJsonValue =
+  | string
+  | number
+  | boolean
+  | null
+  | OperationDocsJsonValue[]
+  | { [key: string]: OperationDocsJsonValue };
 
 export interface OperationParameterMetadata {
   name: string;
   in: "path" | "query" | "header" | "cookie";
   required: boolean;
+}
+
+export interface OperationDocsCapabilityMetadata {
+  name: string;
+  description: string;
+  values: string[];
+}
+
+export interface OperationDocsParameterMetadata {
+  name: string;
+  in: string;
+  required: boolean;
+  description: string;
+  style: string | null;
+  explode: boolean | null;
+  schemaType: string | null;
+  schema: OperationDocsJsonValue;
+  enumValues: OperationDocsJsonValue[];
+  values: OperationDocsJsonValue[];
+  examples: OperationDocsJsonValue[];
+}
+
+export interface OperationDocsMetadata {
+  url: string;
+  operationId: string | null;
+  summary: string;
+  categoryPath: string[];
+  staff: boolean;
+  beta: boolean;
+  publicCloud: boolean;
+  paginable: boolean | null;
+  sortable: boolean | null;
+  authUser: boolean | null;
+  version: string | number | null;
+  capabilities: OperationDocsCapabilityMetadata[];
+  parameters: OperationDocsParameterMetadata[];
+  responseStatuses: string[];
 }
 
 export interface OperationMetadata {
@@ -25,6 +71,7 @@ export interface OperationMetadata {
   responseContentTypes: string[];
   deprecated: boolean;
   auth: string[];
+  docs: OperationDocsMetadata | null;
 }
 
 export interface DomainMetadata {
@@ -40,10 +87,11 @@ interface ParameterLike {
 
 const parameterBuckets = ["path", "query", "header", "cookie"] as const;
 
-export function buildOperationCatalog(spec: JsonObject): OperationMetadata[] {
+export function buildOperationCatalog(spec: JsonObject, docsSnapshot?: DocsSnapshot | null): OperationMetadata[] {
   const operations: OperationMetadata[] = [];
   const paths = asObject(spec.paths, "paths");
   const functionNamesByDomain = new Map<string, Set<string>>();
+  const docsByKey = buildDocsByOperationKey(docsSnapshot);
 
   for (const [path, pathItemValue] of Object.entries(paths)) {
     const pathItem = asObject(pathItemValue, `paths.${path}`);
@@ -59,6 +107,7 @@ export function buildOperationCatalog(spec: JsonObject): OperationMetadata[] {
       const allParameters = [...sharedParameters, ...readParameters(operation.parameters)];
       const buckets = bucketParameters(allParameters);
       const functionName = uniqueFunctionName(toFunctionName(operationId), domain, functionNamesByDomain);
+      const docsEntry = docsByKey.get(operationKey(method, path));
 
       operations.push({
         operationId,
@@ -79,6 +128,7 @@ export function buildOperationCatalog(spec: JsonObject): OperationMetadata[] {
         responseContentTypes: readContentTypes(operation, "response"),
         deprecated: operation.deprecated === true,
         auth: readAuth(operation.security),
+        docs: readOperationDocsMetadata(docsEntry),
       });
     }
   }
@@ -143,7 +193,7 @@ function renderOperationsIndex(domains: readonly DomainMetadata[]): string {
 }
 
 function renderCatalogTypes(): string {
-  return `${generatedHeader()}export interface OperationParameterMetadata {\n  name: string;\n  in: "path" | "query" | "header" | "cookie";\n  required: boolean;\n}\n\nexport interface OperationMetadata {\n  operationId: string;\n  functionName: string;\n  originalOperationId: string | null;\n  domain: string;\n  method: string;\n  path: string;\n  summary: string;\n  description: string;\n  tags: readonly string[];\n  mutating: boolean;\n  pathParameters: readonly OperationParameterMetadata[];\n  queryParameters: readonly OperationParameterMetadata[];\n  headerParameters: readonly OperationParameterMetadata[];\n  cookieParameters: readonly OperationParameterMetadata[];\n  requestContentTypes: readonly string[];\n  responseContentTypes: readonly string[];\n  deprecated: boolean;\n  auth: readonly string[];\n}\n\nexport interface DomainMetadata {\n  domain: string;\n  operationCount: number;\n}\n`;
+  return `${generatedHeader()}export type OperationDocsJsonValue =\n  | string\n  | number\n  | boolean\n  | null\n  | readonly OperationDocsJsonValue[]\n  | { readonly [key: string]: OperationDocsJsonValue };\n\nexport interface OperationParameterMetadata {\n  name: string;\n  in: "path" | "query" | "header" | "cookie";\n  required: boolean;\n}\n\nexport interface OperationDocsCapabilityMetadata {\n  name: string;\n  description: string;\n  values: readonly string[];\n}\n\nexport interface OperationDocsParameterMetadata {\n  name: string;\n  in: string;\n  required: boolean;\n  description: string;\n  style: string | null;\n  explode: boolean | null;\n  schemaType: string | null;\n  schema: OperationDocsJsonValue;\n  enumValues: readonly OperationDocsJsonValue[];\n  values: readonly OperationDocsJsonValue[];\n  examples: readonly OperationDocsJsonValue[];\n}\n\nexport interface OperationDocsMetadata {\n  url: string;\n  operationId: string | null;\n  summary: string;\n  categoryPath: readonly string[];\n  staff: boolean;\n  beta: boolean;\n  publicCloud: boolean;\n  paginable: boolean | null;\n  sortable: boolean | null;\n  authUser: boolean | null;\n  version: string | number | null;\n  capabilities: readonly OperationDocsCapabilityMetadata[];\n  parameters: readonly OperationDocsParameterMetadata[];\n  responseStatuses: readonly string[];\n}\n\nexport interface OperationMetadata {\n  operationId: string;\n  functionName: string;\n  originalOperationId: string | null;\n  domain: string;\n  method: string;\n  path: string;\n  summary: string;\n  description: string;\n  tags: readonly string[];\n  mutating: boolean;\n  pathParameters: readonly OperationParameterMetadata[];\n  queryParameters: readonly OperationParameterMetadata[];\n  headerParameters: readonly OperationParameterMetadata[];\n  cookieParameters: readonly OperationParameterMetadata[];\n  requestContentTypes: readonly string[];\n  responseContentTypes: readonly string[];\n  deprecated: boolean;\n  auth: readonly string[];\n  docs: OperationDocsMetadata | null;\n}\n\nexport interface DomainMetadata {\n  domain: string;\n  operationCount: number;\n}\n`;
 }
 
 function renderOperationWrappers(domain: string, operations: readonly OperationMetadata[]): string {
@@ -161,7 +211,7 @@ function renderOperationsRoot(domains: readonly DomainMetadata[]): string {
 
 function renderEndpointTest(domain: string): string {
   const createName = `create${pascalCase(domain)}Operations`;
-  return `${generatedHeader()}import { readFile } from "node:fs/promises";\n\nimport { describe, expect, it } from "vitest";\n\nimport type { GeneratedOperationClient, OperationRequest } from "../../src/client/generated-operation-client.js";\nimport { ${domain}Operations } from "../../src/generated/catalog/domains/${domain}.js";\nimport { ${createName} } from "../../src/generated/operations/${domain}.js";\n\ninterface CapturedCall {\n  operationId: string;\n  request: OperationRequest | undefined;\n}\n\nfunction createCapturingClient(calls: CapturedCall[]): GeneratedOperationClient {\n  return {\n    async requestOperation(operationId, request) {\n      calls.push({ operationId, request });\n      return { operationId, request };\n    },\n  };\n}\n\ndescribe("generated ${domain} endpoints", () => {\n  it("matches normalized spec metadata and wrapper dispatch for every operation", async () => {\n    const normalized = JSON.parse(await readFile("spec/infomaniak.normalized.json", "utf8")) as { paths: Record<string, Record<string, { operationId?: string }>> };\n    const calls: CapturedCall[] = [];\n    const wrappers = ${createName}(createCapturingClient(calls));\n\n    for (const operation of ${domain}Operations) {\n      const normalizedOperation = normalized.paths[operation.path]?.[operation.method.toLowerCase()];\n      expect(normalizedOperation?.operationId).toBe(operation.operationId);\n      expect(operation.domain).toBe(${JSON.stringify(domain)});\n      expect(operation.method).toMatch(/^(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|TRACE)$/);\n      expect(operation.path).toMatch(/^\\//);\n      expect(Array.isArray(operation.pathParameters)).toBe(true);\n      expect(Array.isArray(operation.queryParameters)).toBe(true);\n      expect(Array.isArray(operation.requestContentTypes)).toBe(true);\n      expect(Array.isArray(operation.responseContentTypes)).toBe(true);\n\n      const wrapper = wrappers[operation.functionName as keyof typeof wrappers];\n      expect(wrapper).toBeTypeOf("function");\n      await wrapper({ query: { sample: "value" } });\n      expect(calls.at(-1)).toEqual({ operationId: operation.operationId, request: { query: { sample: "value" } } });\n    }\n  });\n});\n`;
+  return `${generatedHeader()}import { readFile } from "node:fs/promises";\n\nimport { describe, expect, it } from "vitest";\n\nimport type { GeneratedOperationClient, OperationRequest } from "../../src/client/generated-operation-client.js";\nimport { ${domain}Operations } from "../../src/generated/catalog/domains/${domain}.js";\nimport { ${createName} } from "../../src/generated/operations/${domain}.js";\n\ninterface CapturedCall {\n  operationId: string;\n  request: OperationRequest | undefined;\n}\n\ninterface DocsSnapshotOperation {\n  key: string;\n  docsUrl: string;\n  operationId: string | null;\n  categoryPath: readonly string[];\n  meta: { responses?: Record<string, unknown> };\n}\n\nfunction createCapturingClient(calls: CapturedCall[]): GeneratedOperationClient {\n  return {\n    async requestOperation(operationId, request) {\n      calls.push({ operationId, request });\n      return { operationId, request };\n    },\n  };\n}\n\ndescribe("generated ${domain} endpoints", () => {\n  it("matches normalized spec metadata, docs enrichment, and wrapper dispatch for every operation", async () => {\n    const normalized = JSON.parse(await readFile("spec/infomaniak.normalized.json", "utf8")) as { paths: Record<string, Record<string, { operationId?: string }>> };\n    const docsSnapshot = JSON.parse(await readFile("spec/infomaniak.docs-snapshot.json", "utf8")) as { operations: DocsSnapshotOperation[] };\n    const docsByKey = new Map(docsSnapshot.operations.map((operation) => [operation.key, operation]));\n    const calls: CapturedCall[] = [];\n    const wrappers = ${createName}(createCapturingClient(calls));\n\n    for (const operation of ${domain}Operations) {\n      const normalizedOperation = normalized.paths[operation.path]?.[operation.method.toLowerCase()];\n      const docsOperation = docsByKey.get(\`\${operation.method.toLowerCase()} \${operation.path}\`);\n      expect(normalizedOperation?.operationId).toBe(operation.operationId);\n      expect(operation.domain).toBe(${JSON.stringify(domain)});\n      expect(operation.method).toMatch(/^(GET|POST|PUT|PATCH|DELETE|HEAD|OPTIONS|TRACE)$/);\n      expect(operation.path).toMatch(/^\\//);\n      expect(Array.isArray(operation.pathParameters)).toBe(true);\n      expect(Array.isArray(operation.queryParameters)).toBe(true);\n      expect(Array.isArray(operation.requestContentTypes)).toBe(true);\n      expect(Array.isArray(operation.responseContentTypes)).toBe(true);\n      expect(operation.docs?.url ?? null).toBe(docsOperation?.docsUrl ?? null);\n      expect(operation.docs?.operationId ?? null).toBe(docsOperation?.operationId ?? null);\n      expect(operation.docs?.categoryPath ?? null).toEqual(docsOperation?.categoryPath ?? null);\n      expect(operation.docs?.responseStatuses ?? []).toEqual(Object.keys(docsOperation?.meta.responses ?? {}).sort((left, right) => left.localeCompare(right, undefined, { numeric: true })));\n\n      const wrapper = wrappers[operation.functionName as keyof typeof wrappers];\n      expect(wrapper).toBeTypeOf("function");\n      await wrapper({ query: { sample: "value" } });\n      expect(calls.at(-1)).toEqual({ operationId: operation.operationId, request: { query: { sample: "value" } } });\n    }\n  });\n});\n`;
 }
 
 function readParameters(value: unknown): OperationParameterMetadata[] {
@@ -213,6 +263,168 @@ function readAuth(security: unknown): string[] {
     }
   }
   return [...auth].sort();
+}
+
+function buildDocsByOperationKey(docsSnapshot?: DocsSnapshot | null): ReadonlyMap<string, DocsOperationEntry> {
+  const operations = Array.isArray(docsSnapshot?.operations) ? docsSnapshot.operations : [];
+  return new Map(operations.map((operation) => [operation.key, operation]));
+}
+
+function readOperationDocsMetadata(entry: DocsOperationEntry | undefined): OperationDocsMetadata | null {
+  if (!entry) {
+    return null;
+  }
+  return {
+    url: entry.docsUrl,
+    operationId: entry.operationId,
+    summary: entry.summary,
+    categoryPath: [...entry.categoryPath],
+    staff: entry.staff,
+    beta: entry.meta.xIsBeta === true,
+    publicCloud: entry.meta.xIsPublicCloud === true,
+    paginable: readNullableBoolean(entry.meta.xPaginable),
+    sortable: readNullableBoolean(entry.meta.xSortable),
+    authUser: readNullableBoolean(entry.meta.xAuthUser),
+    version: readVersion(entry.meta.xVersion),
+    capabilities: readCapabilities(entry.meta.xCapabilities),
+    parameters: readDocsParameters(entry.meta.parameters),
+    responseStatuses: readResponseStatuses(entry.meta.responses),
+  };
+}
+
+function readDocsParameters(parameters: readonly unknown[]): OperationDocsParameterMetadata[] {
+  return parameters.flatMap((parameter) => {
+    if (!isJsonObject(parameter) || typeof parameter.name !== "string" || typeof parameter.in !== "string") {
+      return [];
+    }
+    const schema = isJsonObject(parameter.schema) ? parameter.schema : undefined;
+    return [
+      {
+        name: parameter.name,
+        in: parameter.in,
+        required: parameter.required === true,
+        description: readOptionalString(parameter.description),
+        style: readStringOrNull(parameter.style),
+        explode: readNullableBoolean(parameter.explode),
+        schemaType: readSchemaType(schema),
+        schema: toJsonValue(schema ?? null),
+        enumValues: readJsonValueArray(schema?.enum),
+        values: readJsonValueArray(parameter["x-values"]),
+        examples: readExamples(parameter, schema),
+      },
+    ];
+  });
+}
+
+function readCapabilities(value: unknown): OperationDocsCapabilityMetadata[] {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+  return value.flatMap((capability) => {
+    if (!isJsonObject(capability) || typeof capability.name !== "string") {
+      return [];
+    }
+    return [
+      {
+        name: capability.name,
+        description: readOptionalString(capability.description),
+        values: readStringArray(capability.values),
+      },
+    ];
+  });
+}
+
+function readResponseStatuses(value: unknown): string[] {
+  if (!isJsonObject(value)) {
+    return [];
+  }
+  return Object.keys(value).sort((left, right) => left.localeCompare(right, undefined, { numeric: true }));
+}
+
+function readExamples(parameter: JsonObject, schema: JsonObject | undefined): OperationDocsJsonValue[] {
+  const examples: OperationDocsJsonValue[] = [];
+  addJsonValue(examples, parameter.example);
+  addJsonValue(examples, schema?.example);
+  if (Array.isArray(parameter.examples)) {
+    for (const example of parameter.examples) {
+      addJsonValue(examples, example);
+    }
+  } else if (isJsonObject(parameter.examples)) {
+    for (const example of Object.values(parameter.examples)) {
+      const exampleValue = isJsonObject(example) && "value" in example ? example.value : example;
+      addJsonValue(examples, exampleValue);
+    }
+  }
+  return uniqueJsonValues(examples);
+}
+
+function addJsonValue(values: OperationDocsJsonValue[], value: unknown): void {
+  if (value !== undefined) {
+    values.push(toJsonValue(value));
+  }
+}
+
+function uniqueJsonValues(values: readonly OperationDocsJsonValue[]): OperationDocsJsonValue[] {
+  const seen = new Set<string>();
+  const output: OperationDocsJsonValue[] = [];
+  for (const value of values) {
+    const key = JSON.stringify(value);
+    if (seen.has(key)) {
+      continue;
+    }
+    seen.add(key);
+    output.push(value);
+  }
+  return output;
+}
+
+function readJsonValueArray(value: unknown): OperationDocsJsonValue[] {
+  return Array.isArray(value) ? value.map(toJsonValue) : [];
+}
+
+function readSchemaType(schema: JsonObject | undefined): string | null {
+  if (!schema) {
+    return null;
+  }
+  if (typeof schema.type === "string") {
+    return schema.type;
+  }
+  if (Array.isArray(schema.type)) {
+    return schema.type.filter((value): value is string => typeof value === "string").sort().join(" | ") || null;
+  }
+  if (typeof schema["x-ref"] === "string") {
+    return schema["x-ref"];
+  }
+  return null;
+}
+
+function readNullableBoolean(value: unknown): boolean | null {
+  return typeof value === "boolean" ? value : null;
+}
+
+function readVersion(value: unknown): string | number | null {
+  return typeof value === "string" || typeof value === "number" ? value : null;
+}
+
+function readStringOrNull(value: unknown): string | null {
+  return typeof value === "string" ? value : null;
+}
+
+function toJsonValue(value: unknown): OperationDocsJsonValue {
+  if (value === null || typeof value === "string" || typeof value === "number" || typeof value === "boolean") {
+    return value;
+  }
+  if (Array.isArray(value)) {
+    return value.map(toJsonValue);
+  }
+  if (isJsonObject(value)) {
+    return Object.fromEntries(Object.entries(value).map(([key, item]) => [key, toJsonValue(item)]));
+  }
+  return null;
+}
+
+function operationKey(method: string, path: string): string {
+  return `${method.toLowerCase()} ${path}`;
 }
 
 function uniqueFunctionName(baseName: string, domain: string, namesByDomain: Map<string, Set<string>>): string {

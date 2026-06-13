@@ -23,5 +23,13 @@ export {
   renderGeneratedEndpointTests,
   renderOperationWrapperSources,
 } from "./openapi/operation-generator.js";
-export type { DomainMetadata, OperationMetadata, OperationParameterMetadata } from "./generated/catalog/types.js";
+export type {
+  DomainMetadata,
+  OperationDocsCapabilityMetadata,
+  OperationDocsJsonValue,
+  OperationDocsMetadata,
+  OperationDocsParameterMetadata,
+  OperationMetadata,
+  OperationParameterMetadata,
+} from "./generated/catalog/types.js";
 export { normalizeOpenApiSpec, type JsonObject, type NormalizationReport } from "./openapi/normalize.js";

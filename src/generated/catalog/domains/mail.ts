@@ -38,7 +38,73 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/auto_replies",
+      "operationId": "Mail/ServicesListAutoReplies",
+      "summary": "List auto replies",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Auto Reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 39554
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            39554
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "reply",
+            "enum": [
+              "reply"
+            ]
+          },
+          "enumValues": [
+            "reply"
+          ],
+          "values": [
+            "reply"
+          ],
+          "examples": [
+            "reply"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateAutoReply",
@@ -72,7 +138,49 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/auto_replies",
+      "operationId": "Mail/ServicesCreateAutoReply",
+      "summary": "Create auto reply",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Auto Reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 22685
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            22685
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAutoReply",
@@ -109,7 +217,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/auto_replies/%7Bauto_reply_id%7D",
+      "operationId": "Mail/ServicesDeleteAutoReply",
+      "summary": "Delete auto reply",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Auto Reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8064
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8064
+          ]
+        },
+        {
+          "name": "auto_reply_id",
+          "in": "path",
+          "required": true,
+          "description": "Auto reply identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 5048
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5048
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowASpecificAutoReply",
@@ -146,7 +314,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/auto_replies/%7Bauto_reply_id%7D",
+      "operationId": "Mail/ServicesShowASpecificAutoReply",
+      "summary": "Show a specific auto reply",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Auto Reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56482
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56482
+          ]
+        },
+        {
+          "name": "auto_reply_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17406
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17406
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAutoReply",
@@ -185,7 +412,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/auto_replies/%7Bauto_reply_id%7D",
+      "operationId": "Mail/ServicesUpdateAutoReply",
+      "summary": "Update auto reply",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Auto Reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90856
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90856
+          ]
+        },
+        {
+          "name": "auto_reply_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMailAutoReply identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 75275
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75275
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateUpdateBimi",
@@ -219,7 +507,49 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/bimi",
+      "operationId": "Mail/ServicesCreateUpdateBimi",
+      "summary": "Create/Update Bimi",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Bimi"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListFiltersModel",
@@ -251,7 +581,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/filters",
+      "operationId": "Mail/ServicesListFiltersModel",
+      "summary": "List filters model",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Filters Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72425
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72425
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateAFilterModel",
@@ -285,7 +656,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/filters",
+      "operationId": "Mail/ServicesCreateAFilterModel",
+      "summary": "Create a filter model",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Filters Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAFilterModel",
@@ -324,7 +736,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/filters/%7Bfilter_id%7D",
+      "operationId": "Mail/ServicesDeleteAFilterModel",
+      "summary": "Delete a filter model",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Filters Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "filter_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowAFilterModel",
@@ -361,7 +832,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/filters/%7Bfilter_id%7D",
+      "operationId": "Mail/ServicesShowAFilterModel",
+      "summary": "Show a filter model",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Filters Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The identifier of the concerned mail service",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "filter_id",
+          "in": "path",
+          "required": true,
+          "description": "The identifier of the concerned filter",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAFilterModel",
@@ -400,7 +930,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/filters/%7Bfilter_id%7D",
+      "operationId": "Mail/ServicesUpdateAFilterModel",
+      "summary": "Update a filter model",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Filters Models"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "filter_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListMailboxes",
@@ -453,7 +1043,474 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes",
+      "operationId": "Mail/ServicesListMailboxes",
+      "summary": "List mailboxes",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69738
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69738
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "filter_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "count_mailbox_senders",
+            "enum": [
+              "full_name",
+              "authorized_senders",
+              "blocked_senders",
+              "has_auto_responder",
+              "auto_responder",
+              "redirection",
+              "has_move_spam",
+              "aliases",
+              "last_login",
+              "password_last_changed_at",
+              "created_at",
+              "users",
+              "teams",
+              "smtpban",
+              "has_dkim_signature",
+              "is_removable",
+              "auth",
+              "permissions",
+              "has_operation_in_progress",
+              "full_aliases",
+              "mailbox_id",
+              "signature_models",
+              "size",
+              "size_refresh",
+              "has_mail_filtering",
+              "mail_filtering_folder_commercials",
+              "mail_filtering_folder_social_networks",
+              "workspace_security",
+              "count_signatures",
+              "count_mailbox_senders",
+              "count_invitations",
+              "count_devices",
+              "has_legacy_device",
+              "has_multi_password"
+            ]
+          },
+          "enumValues": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "teams",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "signature_models",
+            "size",
+            "size_refresh",
+            "has_mail_filtering",
+            "mail_filtering_folder_commercials",
+            "mail_filtering_folder_social_networks",
+            "workspace_security",
+            "count_signatures",
+            "count_mailbox_senders",
+            "count_invitations",
+            "count_devices",
+            "has_legacy_device",
+            "has_multi_password"
+          ],
+          "values": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "teams",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "signature_models",
+            "size",
+            "size_refresh",
+            "has_mail_filtering",
+            "mail_filtering_folder_commercials",
+            "mail_filtering_folder_social_networks",
+            "workspace_security",
+            "count_signatures",
+            "count_mailbox_senders",
+            "count_invitations",
+            "count_devices",
+            "has_legacy_device",
+            "has_multi_password"
+          ],
+          "examples": [
+            "count_mailbox_senders"
+          ]
+        },
+        {
+          "name": "filter",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "title": "filter",
+            "maxItems": 99,
+            "type": "object",
+            "properties": {
+              "has_alias": {
+                "title": "has_alias",
+                "type": "boolean"
+              },
+              "has_anti_spam": {
+                "title": "has_anti_spam",
+                "type": "boolean"
+              },
+              "has_redirection": {
+                "title": "has_redirection",
+                "type": "boolean"
+              },
+              "has_responder": {
+                "title": "has_responder",
+                "type": "boolean"
+              },
+              "is_using_imap": {
+                "title": "is_using_imap",
+                "type": "boolean"
+              },
+              "is_using_pop3": {
+                "title": "is_using_pop3",
+                "type": "boolean"
+              },
+              "last_login_at": {
+                "title": "last_login_at",
+                "type": "integer",
+                "description": "Timestamp `{name}` has been logged"
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43939
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            43939
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13204
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            13204
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 84735
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            84735
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 35223
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            35223
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "mailIDN",
+              "created_at"
+            ]
+          },
+          "enumValues": [
+            "mailIDN",
+            "created_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[mailIDN]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[mailIDN]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAMailbox",
@@ -493,7 +1550,133 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes",
+      "operationId": "Mail/ServicesAddAMailbox",
+      "summary": "Add a mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 66245
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            66245
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "created_at",
+            "enum": [
+              "full_name",
+              "authorized_senders",
+              "blocked_senders",
+              "has_auto_responder",
+              "auto_responder",
+              "redirection",
+              "has_move_spam",
+              "aliases",
+              "last_login",
+              "password_last_changed_at",
+              "created_at",
+              "users",
+              "smtpban",
+              "has_dkim_signature",
+              "is_removable",
+              "auth",
+              "permissions",
+              "has_operation_in_progress",
+              "full_aliases",
+              "mailbox_id",
+              "signature_models"
+            ]
+          },
+          "enumValues": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "signature_models"
+          ],
+          "values": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "signature_models"
+          ],
+          "examples": [
+            "created_at"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAMailbox",
@@ -530,7 +1713,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D",
+      "operationId": "Mail/ServicesDeleteAMailbox",
+      "summary": "Delete a mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72353
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72353
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDisplayAMailbox",
@@ -578,7 +1822,225 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D",
+      "operationId": "Mail/ServicesDisplayAMailbox",
+      "summary": "Display a mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51211
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            51211
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "external_mail_flag_enabled",
+            "enum": [
+              "full_name",
+              "authorized_senders",
+              "blocked_senders",
+              "has_auto_responder",
+              "auto_responder",
+              "redirection",
+              "has_move_spam",
+              "aliases",
+              "last_login",
+              "password_last_changed_at",
+              "created_at",
+              "users",
+              "teams",
+              "smtpban",
+              "has_dkim_signature",
+              "is_removable",
+              "auth",
+              "permissions",
+              "has_operation_in_progress",
+              "full_aliases",
+              "mailbox_id",
+              "has_mail_filtering",
+              "mail_filtering_folder_commercials",
+              "mail_filtering_folder_social_networks",
+              "size",
+              "size_refresh",
+              "workspace_security",
+              "count_signatures",
+              "count_invitations",
+              "external_mail_flag_enabled",
+              "count_devices",
+              "has_legacy_device",
+              "has_multi_password",
+              "access_rights",
+              "account_user",
+              "count_users"
+            ]
+          },
+          "enumValues": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "teams",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "has_mail_filtering",
+            "mail_filtering_folder_commercials",
+            "mail_filtering_folder_social_networks",
+            "size",
+            "size_refresh",
+            "workspace_security",
+            "count_signatures",
+            "count_invitations",
+            "external_mail_flag_enabled",
+            "count_devices",
+            "has_legacy_device",
+            "has_multi_password",
+            "access_rights",
+            "account_user",
+            "count_users"
+          ],
+          "values": [
+            "full_name",
+            "authorized_senders",
+            "blocked_senders",
+            "has_auto_responder",
+            "auto_responder",
+            "redirection",
+            "has_move_spam",
+            "aliases",
+            "last_login",
+            "password_last_changed_at",
+            "created_at",
+            "users",
+            "teams",
+            "smtpban",
+            "has_dkim_signature",
+            "is_removable",
+            "auth",
+            "permissions",
+            "has_operation_in_progress",
+            "full_aliases",
+            "mailbox_id",
+            "has_mail_filtering",
+            "mail_filtering_folder_commercials",
+            "mail_filtering_folder_social_networks",
+            "size",
+            "size_refresh",
+            "workspace_security",
+            "count_signatures",
+            "count_invitations",
+            "external_mail_flag_enabled",
+            "count_devices",
+            "has_legacy_device",
+            "has_multi_password",
+            "access_rights",
+            "account_user",
+            "count_users"
+          ],
+          "examples": [
+            "external_mail_flag_enabled"
+          ]
+        },
+        {
+          "name": "unit",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "unit",
+            "enum": [
+              "B",
+              "MB",
+              "kB"
+            ],
+            "type": "string",
+            "description": "Specifies the storage unit for the mailbox.<note><strong>b</strong>: Return the unit size in Bytes.</note><note><strong>mb</strong>: Return the unit size in Megabytes.</note><note><strong>kb</strong>: Return the unit size in Kilobytes.</note>",
+            "example": "B"
+          },
+          "enumValues": [
+            "B",
+            "MB",
+            "kB"
+          ],
+          "values": [],
+          "examples": [
+            "B"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail_ServicesUpdateAMailbox_patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name",
@@ -617,7 +2079,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D",
+      "operationId": "Mail/ServicesUpdateAMailbox",
+      "summary": "Update a mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 38872
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            38872
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAMailbox",
@@ -656,7 +2179,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D",
+      "operationId": "Mail/ServicesUpdateAMailbox",
+      "summary": "Update a mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailbox management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 59060
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            59060
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAliases",
@@ -693,7 +2277,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases",
+      "operationId": "Mail/ServicesListAliases",
+      "summary": "List aliases",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Aliases"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56903
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56903
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAnAlias",
@@ -732,7 +2376,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases",
+      "operationId": "Mail/ServicesAddAnAlias",
+      "summary": "Add an alias",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Aliases"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 70019
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            70019
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAliases",
@@ -771,7 +2477,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases",
+      "operationId": "Mail/ServicesUpdateAliases",
+      "summary": "Update aliases",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Aliases"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 11761
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11761
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAnAlias",
@@ -813,7 +2581,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/aliases/%7Balias%7D",
+      "operationId": "Mail/ServicesDeleteAnAlias",
+      "summary": "Delete an alias",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Aliases"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27042
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27042
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "alias",
+          "in": "path",
+          "required": true,
+          "description": "Alias to remove.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAFilter",
@@ -856,7 +2704,89 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters",
+      "operationId": "Mail/ServicesDeleteAFilter",
+      "summary": "Delete a filter",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 85955
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            85955
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "Name of the filter",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListFilters",
@@ -893,7 +2823,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters",
+      "operationId": "Mail/ServicesListFilters",
+      "summary": "List filters",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65884
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65884
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAFilter",
@@ -932,7 +2922,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters",
+      "operationId": "Mail/ServicesUpdateAFilter",
+      "summary": "Update a filter",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 87060
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            87060
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAFilter",
@@ -971,7 +3023,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters",
+      "operationId": "Mail/ServicesAddAFilter",
+      "summary": "Add a filter",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74809
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74809
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_reorder",
@@ -1010,7 +3123,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/reorder",
+      "operationId": null,
+      "summary": "Reorder filters",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23453
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23453
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAScript",
@@ -1053,7 +3228,89 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/scripts",
+      "operationId": "Mail/ServicesDeleteAScript",
+      "summary": "Delete a script",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 3779
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            3779
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "Filter name",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAScript",
@@ -1092,7 +3349,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/scripts",
+      "operationId": "Mail/ServicesUpdateAScript",
+      "summary": "Update a script",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13590
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13590
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAScript",
@@ -1131,7 +3449,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/scripts",
+      "operationId": "Mail/ServicesAddAScript",
+      "summary": "Add a script",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26380
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26380
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_scripts_set_activation",
@@ -1170,7 +3549,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/scripts/set_activation",
+      "operationId": null,
+      "summary": "Enable / disable script",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 93321
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            93321
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_filters_set_activation",
@@ -1209,7 +3650,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/filters/set_activation",
+      "operationId": null,
+      "summary": "Enable / disable filter",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Sieve filters"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 30752
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            30752
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders",
@@ -1246,7 +3749,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/folders",
+      "operationId": null,
+      "summary": "List folders",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Folders"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 75910
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            75910
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateFolders",
@@ -1285,7 +3848,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/folders",
+      "operationId": "Mail/ServicesUpdateFolders",
+      "summary": "Update folders",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Folders"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 60684
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            60684
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders_spam",
@@ -1322,7 +3946,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/folders/spam",
+      "operationId": null,
+      "summary": "Purge spam folder",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Folders"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 31506
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            31506
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auth_folders_trash",
@@ -1359,7 +4043,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auth/folders/trash",
+      "operationId": null,
+      "summary": "Empty trash folder",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Folders"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13223
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13223
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAutoRepliesModels",
@@ -1396,7 +4140,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/model",
+      "operationId": "Mail/ServicesListAutoRepliesModels",
+      "summary": "List auto replies models",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45054
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45054
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAutoReplyModel",
@@ -1435,7 +4239,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/model",
+      "operationId": "Mail/ServicesAddAutoReplyModel",
+      "summary": "Add auto reply model",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 96149
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            96149
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auto_reply_model_model_id",
@@ -1477,7 +4341,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/model/%7Bmodel_id%7D",
+      "operationId": null,
+      "summary": "Update auto reply model",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26794
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26794
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "model_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowAutoReplyModel",
@@ -1525,7 +4467,111 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/model/%7Bmodel_id%7D",
+      "operationId": "Mail/ServicesShowAutoReplyModel",
+      "summary": "Show auto reply model",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44944
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44944
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "model_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "reply",
+            "enum": [
+              "reply"
+            ]
+          },
+          "enumValues": [
+            "reply"
+          ],
+          "values": [
+            "reply"
+          ],
+          "examples": [
+            "reply"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAutoReplyModel",
@@ -1569,7 +4615,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/model/%7Bmodel_id%7D",
+      "operationId": "Mail/ServicesUpdateAutoReplyModel",
+      "summary": "Update auto reply model",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 37140
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            37140
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "model_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_auto_reply_reset",
@@ -1606,7 +4730,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/auto_reply/reset",
+      "operationId": null,
+      "summary": "Reset an auto reply",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Auto reply"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19778
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19778
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAllForwardings",
@@ -1643,7 +4828,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/forwarding_addresses",
+      "operationId": "Mail/ServicesDeleteAllForwardings",
+      "summary": "Delete all forwardings",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Forwarding"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 97723
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            97723
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListForwarding",
@@ -1680,7 +4926,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/forwarding_addresses",
+      "operationId": "Mail/ServicesListForwarding",
+      "summary": "List forwarding",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Forwarding"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27414
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27414
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddAForwarding",
@@ -1719,7 +5025,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/forwarding_addresses",
+      "operationId": "Mail/ServicesAddAForwarding",
+      "summary": "Add a forwarding",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Forwarding"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 68964
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            68964
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateAForwarding",
@@ -1758,7 +5125,69 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/forwarding_addresses",
+      "operationId": "Mail/ServicesUpdateAForwarding",
+      "summary": "Update a forwarding",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Forwarding"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56976
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56976
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAForwarding",
@@ -1800,7 +5229,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/forwarding_addresses/%7Bredirect_addresses%7D",
+      "operationId": "Mail/ServicesDeleteAForwarding",
+      "summary": "Delete a forwarding",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Forwarding"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 68964
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            68964
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirect_addresses",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAnInvitation",
@@ -1842,7 +5351,86 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/invitations/%7Bkey%7D",
+      "operationId": "Mail/ServicesDeleteAnInvitation",
+      "summary": "Delete an invitation",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71204
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            71204
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_invitations_key",
@@ -1886,7 +5474,86 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/invitations/%7Bkey%7D",
+      "operationId": null,
+      "summary": "Update invitation permission",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Users"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2071
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2071
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "key",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAllSignatures",
@@ -1929,7 +5596,97 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures",
+      "operationId": "Mail/ServicesListAllSignatures",
+      "summary": "List all Signatures",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13573
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13573
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "details",
+            "enum": [
+              "all_users",
+              "form_data",
+              "details"
+            ]
+          },
+          "enumValues": [
+            "all_users",
+            "form_data",
+            "details"
+          ],
+          "values": [
+            "all_users",
+            "form_data",
+            "details"
+          ],
+          "examples": [
+            "details"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateSignature",
@@ -1968,7 +5725,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures",
+      "operationId": "Mail/ServicesCreateSignature",
+      "summary": "Create signature",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 55680
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55680
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteASignature",
@@ -2010,7 +5826,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/%7Bsignature%7D",
+      "operationId": "Mail/ServicesDeleteASignature",
+      "summary": "Delete a signature",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 42051
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            42051
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the signature to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 49747
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            49747
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowASignature",
@@ -2052,7 +5946,84 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/%7Bsignature%7D",
+      "operationId": "Mail/ServicesShowASignature",
+      "summary": "Show a signature",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7337
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7337
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the signature to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 95409
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95409
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_signatures_signature",
@@ -2096,7 +6067,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/%7Bsignature%7D",
+      "operationId": null,
+      "summary": "Update a specific signature",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 86364
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86364
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the signature to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 14557
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            14557
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesSetDefaultSignature",
@@ -2135,7 +6184,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/set_defaults",
+      "operationId": "Mail/ServicesSetDefaultSignature",
+      "summary": "Set default signature",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 99061
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99061
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListTemplates",
@@ -2172,7 +6280,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/templates",
+      "operationId": "Mail/ServicesListTemplates",
+      "summary": "List templates",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23400
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23400
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowOneTemplate",
@@ -2214,7 +6381,84 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/templates/%7Bsignature_template%7D",
+      "operationId": "Mail/ServicesShowOneTemplate",
+      "summary": "Show one template",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19729
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19729
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The unique name of the mailbox.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature_template",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier of the signature template.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name_signatures_upload",
@@ -2253,7 +6497,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailboxes/%7Bmailbox_name%7D/signatures/upload",
+      "operationId": null,
+      "summary": "Upload image",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Signatures"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 91987
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            91987
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAllTheMailingLists",
@@ -2291,7 +6595,79 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists",
+      "operationId": "Mail/ServicesListAllTheMailingLists",
+      "summary": "List all the mailing lists",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "messages",
+            "enum": [
+              "config",
+              "messages",
+              "moderators"
+            ]
+          },
+          "enumValues": [
+            "config",
+            "messages",
+            "moderators"
+          ],
+          "values": [
+            "config",
+            "messages",
+            "moderators"
+          ],
+          "examples": [
+            "messages"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateAMailingList",
@@ -2325,7 +6701,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists",
+      "operationId": "Mail/ServicesCreateAMailingList",
+      "summary": "Create a mailing list",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAMailingList",
@@ -2362,7 +6779,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D",
+      "operationId": "Mail/ServicesDeleteAMailingList",
+      "summary": "Delete a mailing list",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowOneMailingList",
@@ -2405,7 +6882,97 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D",
+      "operationId": "Mail/ServicesShowOneMailingList",
+      "summary": "Show one mailing list",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "moderators",
+            "enum": [
+              "config",
+              "messages",
+              "moderators"
+            ]
+          },
+          "enumValues": [
+            "config",
+            "messages",
+            "moderators"
+          ],
+          "values": [
+            "config",
+            "messages",
+            "moderators"
+          ],
+          "examples": [
+            "moderators"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "patch_1_mail_hostings_mail_hosting_id_mailing_lists_mailing_list_name",
@@ -2444,7 +7011,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D",
+      "operationId": null,
+      "summary": "Update mailing list parameters",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesGenerateAFormForAMailingList",
@@ -2483,7 +7110,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/form",
+      "operationId": "Mail/ServicesGenerateAFormForAMailingList",
+      "summary": "Generate a form for a mailing list",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesSendAMailThroughAMailingList",
@@ -2522,7 +7208,65 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/send",
+      "operationId": "Mail/ServicesSendAMailThroughAMailingList",
+      "summary": "Send a mail through a mailing list",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesRemoveASubscriber",
@@ -2565,7 +7309,89 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/subscribers",
+      "operationId": "Mail/ServicesRemoveASubscriber",
+      "summary": "Remove a subscriber",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List",
+        "Subscribers"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "emails",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "emails",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAllSubscribers",
@@ -2608,7 +7434,263 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/subscribers",
+      "operationId": "Mail/ServicesAllSubscribers",
+      "summary": "All subscribers",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List",
+        "Subscribers"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 73292
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            73292
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 5775
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            5775
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "mail_idn",
+              "full_name",
+              "mailIDN",
+              "errors.count",
+              "errors.last_error"
+            ]
+          },
+          "enumValues": [
+            "mail_idn",
+            "full_name",
+            "mailIDN",
+            "errors.count",
+            "errors.last_error"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[mail_idn]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[mail_idn]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "patch_1_mail_hostings_mail_hosting_id_mailing_lists_mailing_list_name_subscribers",
@@ -2647,7 +7729,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/subscribers",
+      "operationId": null,
+      "summary": "Update subscriber parameters/details",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List",
+        "Subscribers"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddANewSubscriber",
@@ -2686,7 +7829,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/subscribers",
+      "operationId": "Mail/ServicesAddANewSubscriber",
+      "summary": "Add a new subscriber",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List",
+        "Subscribers"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesImportSubscribers",
@@ -2725,7 +7928,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/mailing_lists/%7Bmailing_list_name%7D/subscribers/import",
+      "operationId": "Mail/ServicesImportSubscribers",
+      "summary": "Import subscribers",
+      "categoryPath": [
+        "Mail Services",
+        "Mailing List",
+        "Subscribers"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "mailing_list_name",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListPreferences",
@@ -2757,7 +8021,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/preferences",
+      "operationId": "Mail/ServicesListPreferences",
+      "summary": "List preferences",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Preferences"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 74580
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            74580
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdatePreferences",
@@ -2791,7 +8096,50 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bmail_hosting_id%7D/preferences",
+      "operationId": "Mail/ServicesUpdatePreferences",
+      "summary": "Update preferences",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Preferences"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListRedirections",
@@ -2834,7 +8182,111 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/redirections",
+      "operationId": "Mail/ServicesListRedirections",
+      "summary": "List redirections",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "ServiceMail identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44081
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44081
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order_by",
+            "enum": [
+              "created_at",
+              "id",
+              "name",
+              "send_confirmation_requests_enabled",
+              "send_confirmation_requests_state",
+              "state",
+              "updated_at"
+            ],
+            "type": "string",
+            "example": "id"
+          },
+          "enumValues": [
+            "created_at",
+            "id",
+            "name",
+            "send_confirmation_requests_enabled",
+            "send_confirmation_requests_state",
+            "state",
+            "updated_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order_dir",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "order_dir",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "desc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateRedirection",
@@ -2868,7 +8320,49 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/redirections",
+      "operationId": "Mail/ServicesCreateRedirection",
+      "summary": "Create redirection",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteRedirection",
@@ -2905,7 +8399,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D",
+      "operationId": "Mail/ServicesDeleteRedirection",
+      "summary": "Delete redirection",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowDetails",
@@ -2942,7 +8495,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D",
+      "operationId": "Mail/ServicesShowDetails",
+      "summary": "Show details",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateRedirection",
@@ -2981,7 +8593,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D",
+      "operationId": "Mail/ServicesUpdateRedirection",
+      "summary": "Update redirection",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesEnableRedirection",
@@ -3018,7 +8689,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/enable",
+      "operationId": "Mail/ServicesEnableRedirection",
+      "summary": "Enable redirection",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "The mail service identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 34564
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            34564
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "The redirection identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesSendConfirmationRequest",
@@ -3055,7 +8785,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/send-confirmation-requests",
+      "operationId": "Mail/ServicesSendConfirmationRequest",
+      "summary": "Send confirmation request",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesRemoveATarget",
@@ -3092,7 +8881,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/targets",
+      "operationId": "Mail/ServicesRemoveATarget",
+      "summary": "Remove a target",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections",
+        "Target"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesGetAllTargets",
@@ -3129,7 +8978,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/targets",
+      "operationId": "Mail/ServicesGetAllTargets",
+      "summary": "Get all targets",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections",
+        "Target"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesAddNewTarget",
@@ -3168,7 +9077,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/targets",
+      "operationId": "Mail/ServicesAddNewTarget",
+      "summary": "Add new target",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections",
+        "Target"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesResendConfirmationEmail",
@@ -3210,7 +9179,86 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/redirections/%7Bredirection_id%7D/targets/%7Btarget_id%7D/resend-confirmation-request",
+      "operationId": "Mail/ServicesResendConfirmationEmail",
+      "summary": "Resend confirmation email",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Redirections",
+        "Target"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "redirection_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "target_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAllTemplates",
@@ -3248,7 +9296,247 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates",
+      "operationId": "Mail/ServicesListAllTemplates",
+      "summary": "List all Templates",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "form_data",
+            "enum": [
+              "details",
+              "form_data"
+            ]
+          },
+          "enumValues": [
+            "details",
+            "form_data"
+          ],
+          "values": [
+            "details",
+            "form_data"
+          ],
+          "examples": [
+            "form_data"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 31513
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            31513
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 67563
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            67563
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "name",
+              "status"
+            ]
+          },
+          "enumValues": [
+            "name",
+            "status"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[name]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[name]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateATemplate",
@@ -3282,7 +9570,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates",
+      "operationId": "Mail/ServicesCreateATemplate",
+      "summary": "Create a template",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDelete",
@@ -3319,7 +9648,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/%7Bsignature_template%7D",
+      "operationId": "Mail/ServicesDelete",
+      "summary": "Delete",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature_template",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowASignatureTemplate",
@@ -3362,7 +9750,94 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/%7Bsignature_template%7D",
+      "operationId": "Mail/ServicesShowASignatureTemplate",
+      "summary": "Show a signature template",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature_template",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "form_data",
+            "enum": [
+              "details",
+              "form_data"
+            ]
+          },
+          "enumValues": [
+            "details",
+            "form_data"
+          ],
+          "values": [
+            "details",
+            "form_data"
+          ],
+          "examples": [
+            "form_data"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdate",
@@ -3401,7 +9876,66 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/%7Bsignature_template%7D",
+      "operationId": "Mail/ServicesUpdate",
+      "summary": "Update",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature_template",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateASignatureForAllUsers",
@@ -3438,7 +9972,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/%7Bsignature_template%7D/create_signatures",
+      "operationId": "Mail/ServicesCreateASignatureForAllUsers",
+      "summary": "Create a signature for all users",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "signature_template",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesShowDefault",
@@ -3476,7 +10070,76 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/default",
+      "operationId": "Mail/ServicesShowDefault",
+      "summary": "Show default",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "details",
+            "enum": [
+              "details",
+              "form_data"
+            ]
+          },
+          "enumValues": [
+            "details",
+            "form_data"
+          ],
+          "values": [
+            "details",
+            "form_data"
+          ],
+          "examples": [
+            "details"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUploadImage",
@@ -3510,7 +10173,49 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bmail_hosting_id%7D/signatures/templates/upload",
+      "operationId": "Mail/ServicesUploadImage",
+      "summary": "Upload image",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Signatures templates"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mail_hosting_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListDeviceByUser",
@@ -3553,7 +10258,174 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/accesses/devices/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesListDeviceByUser",
+      "summary": "List device by user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69793
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69793
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16569
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16569
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "access_rights",
+            "enum": [
+              "mailbox",
+              "accesses",
+              "access_rights"
+            ]
+          },
+          "enumValues": [
+            "mailbox",
+            "accesses",
+            "access_rights"
+          ],
+          "values": [
+            "mailbox",
+            "accesses",
+            "access_rights"
+          ],
+          "examples": [
+            "access_rights"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 71010
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            71010
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 21443
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            21443
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAllAccount",
@@ -3585,7 +10457,48 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/accounts",
+      "operationId": "Mail/ServicesListAllAccount",
+      "summary": "List All Account",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Tools"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80342
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80342
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCanRotateDkim",
@@ -3617,7 +10530,51 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/diagnostic/dkim/rotate",
+      "operationId": "Mail/ServicesCanRotateDkim",
+      "summary": "Can Rotate Dkim",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Diagnostic",
+        "Dkim"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19314
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19314
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "424"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesRotateDkim",
@@ -3649,7 +10606,52 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/diagnostic/dkim/rotate",
+      "operationId": "Mail/ServicesRotateDkim",
+      "summary": "Rotate Dkim",
+      "categoryPath": [
+        "Mail Services",
+        "Service Mail",
+        "Diagnostic",
+        "Dkim"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89413
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            89413
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "412",
+        "424"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteDeviceAccessesForMailbox",
@@ -3686,7 +10688,68 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices",
+      "operationId": "Mail/ServicesDeleteDeviceAccessesForMailbox",
+      "summary": "Delete device accesses for mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40279
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40279
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListDeviceAccess",
@@ -3749,7 +10812,362 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices",
+      "operationId": "Mail/ServicesListDeviceAccess",
+      "summary": "List device access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 17964
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            17964
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "access_rights",
+            "enum": [
+              "user",
+              "creator",
+              "access_rights"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "creator",
+            "access_rights"
+          ],
+          "values": [
+            "user",
+            "creator",
+            "access_rights"
+          ],
+          "examples": [
+            "access_rights"
+          ]
+        },
+        {
+          "name": "no_user",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "no_user",
+            "type": "boolean",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "type",
+            "enum": [
+              "computer",
+              "legacy",
+              "other",
+              "phone",
+              "tablet"
+            ],
+            "type": "string",
+            "description": "Specifies the type of the device.<note><strong>computer</strong>: The device is a computer.</note><note><strong>legacy</strong>: The device'password is a legacy password used by all users before the feature of multiples password.</note><note><strong>other</strong>: The device is an other type.</note><note><strong>phone</strong>: The device is a phone.</note><note><strong>tablet</strong>: The device is a tablet.</note>",
+            "example": "computer"
+          },
+          "enumValues": [
+            "computer",
+            "legacy",
+            "other",
+            "phone",
+            "tablet"
+          ],
+          "values": [],
+          "examples": [
+            "computer"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "user_id",
+            "type": "integer",
+            "example": 16942
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16942
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 44786
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            44786
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 171
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            171
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "type",
+              "label",
+              "user"
+            ]
+          },
+          "enumValues": [
+            "type",
+            "label",
+            "user"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[type]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[type]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateDeviceAccess",
@@ -3794,7 +11212,95 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices",
+      "operationId": "Mail/ServicesCreateDeviceAccess",
+      "summary": "Create device access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 164
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            164
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "device",
+            "enum": [
+              "device"
+            ]
+          },
+          "enumValues": [
+            "device"
+          ],
+          "values": [
+            "device"
+          ],
+          "examples": [
+            "device"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404",
+        "409",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteDeviceAccess",
@@ -3842,7 +11348,105 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices/%7Bdevice_access%7D",
+      "operationId": "Mail/ServicesDeleteDeviceAccess",
+      "summary": "Delete device access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 59494
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            59494
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "device_access",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the device access to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 11587
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            11587
+          ]
+        },
+        {
+          "name": "notify_user",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "notify_user",
+            "type": "boolean",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdatePasswordDeviceAccess",
@@ -3886,7 +11490,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices/%7Bdevice_access%7D",
+      "operationId": "Mail/ServicesUpdatePasswordDeviceAccess",
+      "summary": "Update password device access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84053
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84053
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "device_access",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the device access to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45154
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45154
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteDeviceAccessForAUser",
@@ -3928,7 +11610,86 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesDeleteDeviceAccessForAUser",
+      "summary": "Delete device access for a user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84539
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84539
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52432
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52432
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListDeviceAccessForAUser",
@@ -3976,7 +11737,290 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/devices/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesListDeviceAccessForAUser",
+      "summary": "List device access for a user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 9222
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            9222
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 24539
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            24539
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "creator",
+            "enum": [
+              "user",
+              "creator",
+              "access_rights"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "creator",
+            "access_rights"
+          ],
+          "values": [
+            "user",
+            "creator",
+            "access_rights"
+          ],
+          "examples": [
+            "creator"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 42135
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            42135
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 66495
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            66495
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "type",
+              "label",
+              "user"
+            ]
+          },
+          "enumValues": [
+            "type",
+            "label",
+            "user"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[type]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[type]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListAccessAndInvitations",
@@ -4024,7 +12068,301 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail",
+      "operationId": "Mail/ServicesListAccessAndInvitations",
+      "summary": "List access and invitations",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79613
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79613
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "mailbox",
+            "enum": [
+              "creator",
+              "access_rights",
+              "mailbox",
+              "ksuite",
+              "has_device",
+              "#users"
+            ]
+          },
+          "enumValues": [
+            "creator",
+            "access_rights",
+            "mailbox",
+            "ksuite",
+            "has_device",
+            "#users"
+          ],
+          "values": [
+            "creator",
+            "access_rights",
+            "mailbox",
+            "ksuite",
+            "has_device",
+            "#users"
+          ],
+          "examples": [
+            "mailbox"
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 97343
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            97343
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 87609
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            87609
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "user",
+              "name",
+              "last_used_at"
+            ]
+          },
+          "enumValues": [
+            "user",
+            "name",
+            "last_used_at"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[user]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[user]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateWebmailAccess",
@@ -4063,7 +12401,70 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail",
+      "operationId": "Mail/ServicesCreateWebmailAccess",
+      "summary": "Create webmail access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "User"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 48324
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            48324
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "409",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesBulkCreateWebmailAccesses",
@@ -4102,7 +12503,70 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": true,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/bulk",
+      "operationId": "Mail/ServicesBulkCreateWebmailAccesses",
+      "summary": "Bulk Create webmail accesses",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "User"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 18400
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            18400
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "409",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesCreateWebmailAccessLink",
@@ -4141,7 +12605,67 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/invitations",
+      "operationId": "Mail/ServicesCreateWebmailAccessLink",
+      "summary": "Create webmail access link",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 81756
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            81756
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesSendWebmailAccessLinkByEmail",
@@ -4185,7 +12709,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/invitations/%7Binvitation_webmail%7D/send",
+      "operationId": "Mail/ServicesSendWebmailAccessLinkByEmail",
+      "summary": "Send webmail access link by e-mail",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Invitations"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40676
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40676
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "invitation_webmail",
+          "in": "path",
+          "required": true,
+          "description": "The identifier of the invitation.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "429",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteWebmailTeamAccess",
@@ -4227,7 +12831,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/teams/%7Bteam_id%7D",
+      "operationId": "Mail/ServicesDeleteWebmailTeamAccess",
+      "summary": "Delete webmail team access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "Team"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8996
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8996
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the team to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 8530
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            8530
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateWebmailTeamAccess",
@@ -4271,7 +12955,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/teams/%7Bteam_id%7D",
+      "operationId": "Mail/ServicesUpdateWebmailTeamAccess",
+      "summary": "Update webmail team access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "Team"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 83905
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            83905
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the team to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80353
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80353
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesGetUserAccessesForTeam",
@@ -4313,7 +13077,85 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/teams/%7Bteam_id%7D/individual_users",
+      "operationId": "Mail/ServicesGetUserAccessesForTeam",
+      "summary": "Get user Accesses for Team",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 64490
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64490
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the team to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 69668
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            69668
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_mail_hostings_service_mail_mailboxes_mailbox_name_accesses_webmail_teams_bulk",
@@ -4352,7 +13194,70 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/teams/bulk",
+      "operationId": null,
+      "summary": "Bulk Create webmail accesses",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "Team"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44281
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44281
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "409",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListUsersHavingAccess",
@@ -4400,7 +13305,189 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/users",
+      "operationId": "Mail/ServicesListUsersHavingAccess",
+      "summary": "List users having access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 92188
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            92188
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "permissions",
+            "enum": [
+              "permissions"
+            ]
+          },
+          "enumValues": [
+            "permissions"
+          ],
+          "values": [
+            "permissions"
+          ],
+          "examples": [
+            "permissions"
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 12888
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            12888
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 34702
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            34702
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteWebmailAccess",
@@ -4442,7 +13529,89 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesDeleteWebmailAccess",
+      "summary": "Delete webmail access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "User"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 43204
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            43204
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45020
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45020
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateWebmailAccess",
@@ -4486,7 +13655,87 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesUpdateWebmailAccess",
+      "summary": "Update webmail access",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "User"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 40446
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            40446
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 96493
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            96493
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesGetTeamAccessesForUser",
@@ -4534,7 +13783,110 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/users/%7Buser_id%7D/team_accesses",
+      "operationId": "Mail/ServicesGetTeamAccessesForUser",
+      "summary": "Get Team Accesses for User",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2812
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2812
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45469
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45469
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "#users",
+            "enum": [
+              "#users"
+            ]
+          },
+          "enumValues": [
+            "#users"
+          ],
+          "values": [
+            "#users"
+          ],
+          "examples": [
+            "#users"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_mail_hostings_service_mail_mailboxes_mailbox_name_accesses_webmail_users_bulk",
@@ -4573,7 +13925,70 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox_name%7D/accesses/webmail/users/bulk",
+      "operationId": null,
+      "summary": "Bulk Create webmail accesses",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "User"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 38322
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            38322
+          ]
+        },
+        {
+          "name": "mailbox_name",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "409",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListEmailImports",
@@ -4616,7 +14031,262 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/%7Bservice_mail%7D/mailboxes/%7Bmailbox%7D/email_imports",
+      "operationId": "Mail/ServicesListEmailImports",
+      "summary": "List email imports",
+      "categoryPath": [
+        "Mail Services",
+        "Email Import"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "service_mail",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the mail hosting to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 95498
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95498
+          ]
+        },
+        {
+          "name": "mailbox",
+          "in": "path",
+          "required": true,
+          "description": "The username (that is the part before the @) of the email address you want to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "maxLength": 255,
+            "minLength": 1,
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 41664
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            41664
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 9376
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            9376
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ],
+            "enum": [
+              "source",
+              "started_at",
+              "finished_at",
+              "state"
+            ]
+          },
+          "enumValues": [
+            "source",
+            "started_at",
+            "finished_at",
+            "state"
+          ],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "order_for[source]=asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "order_for[source]=asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteDevicesForCurrentUser",
@@ -4642,7 +14312,31 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/accesses/devices",
+      "operationId": "Mail/ServicesDeleteDevicesForCurrentUser",
+      "summary": "Delete devices for current user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListDevice",
@@ -4674,7 +14368,144 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/accesses/devices",
+      "operationId": "Mail/ServicesListDevice",
+      "summary": "List device",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "access_rights",
+            "enum": [
+              "mailbox",
+              "accesses",
+              "count_accesses",
+              "last_connection",
+              "access_rights"
+            ]
+          },
+          "enumValues": [
+            "mailbox",
+            "accesses",
+            "count_accesses",
+            "last_connection",
+            "access_rights"
+          ],
+          "values": [
+            "mailbox",
+            "accesses",
+            "count_accesses",
+            "last_connection",
+            "access_rights"
+          ],
+          "examples": [
+            "access_rights"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 65883
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            65883
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 36716
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            36716
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteDeviceAccessesForDevice",
@@ -4706,7 +14537,50 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/accesses/devices/%7Bdevice%7D",
+      "operationId": "Mail/ServicesDeleteDeviceAccessesForDevice",
+      "summary": "Delete device accesses for device",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "device",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the device to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47019
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47019
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesUpdateDevice",
@@ -4740,7 +14614,51 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/mail_hostings/accesses/devices/%7Bdevice%7D",
+      "operationId": "Mail/ServicesUpdateDevice",
+      "summary": "Update Device",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Devices"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "device",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the device to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7218
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7218
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "409",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListOfAccessesForTheCurrentUser",
@@ -4772,7 +14690,141 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/accesses/webmail",
+      "operationId": "Mail/ServicesListOfAccessesForTheCurrentUser",
+      "summary": "List of accesses for the current user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "mailbox",
+            "enum": [
+              "mailbox",
+              "ksuite",
+              "access_rights",
+              "has_multi_password"
+            ]
+          },
+          "enumValues": [
+            "mailbox",
+            "ksuite",
+            "access_rights",
+            "has_multi_password"
+          ],
+          "values": [
+            "mailbox",
+            "ksuite",
+            "access_rights",
+            "has_multi_password"
+          ],
+          "examples": [
+            "mailbox"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 74810
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            74810
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 48070
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            48070
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListOfTeamAccessesForATeam",
@@ -4815,7 +14867,172 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/accesses/webmail/accounts/%7Baccount_id%7D/teams/%7Bteam_id%7D",
+      "operationId": "Mail/ServicesListOfTeamAccessesForATeam",
+      "summary": "List of team accesses for a team",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail",
+        "Team"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90757
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90757
+          ]
+        },
+        {
+          "name": "team_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 538
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            538
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "mailbox",
+            "enum": [
+              "mailbox",
+              "ksuite"
+            ]
+          },
+          "enumValues": [
+            "mailbox",
+            "ksuite"
+          ],
+          "values": [
+            "mailbox",
+            "ksuite"
+          ],
+          "examples": [
+            "mailbox"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 79378
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            79378
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 79087
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            79087
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesListOfAccessesForAnAccountAndAUser",
@@ -4858,7 +15075,177 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/mail_hostings/accesses/webmail/accounts/%7Baccount_id%7D/users/%7Buser_id%7D",
+      "operationId": "Mail/ServicesListOfAccessesForAnAccountAndAUser",
+      "summary": "List of accesses for an account and a user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the account to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47702
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47702
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the user to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 55456
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            55456
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "mailbox",
+            "enum": [
+              "mailbox",
+              "ksuite",
+              "access_rights",
+              "has_multi_password"
+            ]
+          },
+          "enumValues": [
+            "mailbox",
+            "ksuite",
+            "access_rights",
+            "has_multi_password"
+          ],
+          "values": [
+            "mailbox",
+            "ksuite",
+            "access_rights",
+            "has_multi_password"
+          ],
+          "examples": [
+            "mailbox"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 27585
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            27585
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 57757
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            57757
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesDeleteAccessToAMailboxForTheCurrentUser",
@@ -4890,7 +15277,52 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/mail_hostings/accesses/webmail/mailboxes/%7Bmailbox_id%7D",
+      "operationId": "Mail/ServicesDeleteAccessToAMailboxForTheCurrentUser",
+      "summary": "Delete access to a mailbox for the current user",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mailbox_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Mail/ServicesSetPrimaryMailbox",
@@ -4922,6 +15354,49 @@ export const mailOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/mail_hostings/accesses/webmail/mailboxes/%7Bmailbox_id%7D/set_primary",
+      "operationId": "Mail/ServicesSetPrimaryMailbox",
+      "summary": "Set Primary Mailbox",
+      "categoryPath": [
+        "Mail Services",
+        "Mailboxes",
+        "Accesses",
+        "Webmail"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mailbox_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the email address.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90825
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90825
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   }
 ];

@@ -30,7 +30,48 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/actions",
+      "operationId": "Core/ResourcesListAvailableActions",
+      "summary": "List available actions",
+      "categoryPath": [
+        "Core Resources",
+        "Actions"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_actions_action_id",
@@ -60,7 +101,48 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/actions/%7Baction_id%7D",
+      "operationId": null,
+      "summary": "List available actions",
+      "categoryPath": [
+        "Core Resources",
+        "Actions"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "action_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the action to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82998
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            82998
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesGetApplicationList",
@@ -84,7 +166,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "Core/ResourcesGetApplication",
@@ -114,7 +197,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "get_1_app_information_applications_version_types",
@@ -138,7 +222,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "Core/ResourcesGetSupportedStoreList",
@@ -162,7 +247,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "Core_ResourcesGetSupportedStoreList_get_1_app_information_versions_appStore",
@@ -186,7 +272,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "Core/ResourcesGetApplicationWithAssociatedVersionsDetails",
@@ -226,7 +313,8 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "Core/ResourcesListTasks",
@@ -250,7 +338,236 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/async/tasks",
+      "operationId": "Core/ResourcesListTasks",
+      "summary": "List tasks",
+      "categoryPath": [
+        "Core Resources",
+        "Tasks"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19493
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            19493
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 62437
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            62437
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 11259
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            11259
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 9863
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            9863
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc",
+            "desc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "desc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayATask",
@@ -280,7 +597,47 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/async/tasks/%7Btask_uuid%7D",
+      "operationId": "Core/ResourcesDisplayATask",
+      "summary": "Display a task",
+      "categoryPath": [
+        "Core Resources",
+        "Tasks"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "task_uuid",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (UUID) of the task to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListCountries",
@@ -320,7 +677,296 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/countries",
+      "operationId": "Core/ResourcesListCountries",
+      "summary": "List countries",
+      "categoryPath": [
+        "Core Resources",
+        "Countries"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "only_enabled",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "only_enabled",
+            "type": "boolean",
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        },
+        {
+          "name": "only_enabled_exception",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "only_enabled_exception",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "integer"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 82346
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            82346
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 33500
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            33500
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 46236
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            46236
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 19576
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            19576
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayACountry",
@@ -350,7 +996,47 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/countries/%7Bcountry_id%7D",
+      "operationId": "Core/ResourcesDisplayACountry",
+      "summary": "Display a country",
+      "categoryPath": [
+        "Core Resources",
+        "Countries"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "country_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the country to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 44190
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            44190
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListLanguages",
@@ -374,7 +1060,235 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/languages",
+      "operationId": "Core/ResourcesListLanguages",
+      "summary": "List languages",
+      "categoryPath": [
+        "Core Resources",
+        "Languages"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32593
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            32593
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 89333
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            89333
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 20230
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            20230
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 42916
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            42916
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "desc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayALanguage",
@@ -404,7 +1318,47 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/languages/%7Blanguage_id%7D",
+      "operationId": "Core/ResourcesDisplayALanguage",
+      "summary": "Display a language",
+      "categoryPath": [
+        "Core Resources",
+        "Languages"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "language_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the language to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 45567
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            45567
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_my_ksuite_my_k_suite_id",
@@ -440,7 +1394,85 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/my_ksuite/%7Bmy_k_suite_id%7D",
+      "operationId": null,
+      "summary": "Show MyKSuite",
+      "categoryPath": [
+        "Core Resources",
+        "My kSuite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "my_k_suite_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "pack",
+            "enum": [
+              "pack",
+              "drive",
+              "mail",
+              "has_auto_renew",
+              "can_trial"
+            ]
+          },
+          "enumValues": [
+            "pack",
+            "drive",
+            "mail",
+            "has_auto_renew",
+            "can_trial"
+          ],
+          "values": [
+            "pack",
+            "drive",
+            "mail",
+            "has_auto_renew",
+            "can_trial"
+          ],
+          "examples": [
+            "pack"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCancelUnsubscribe",
@@ -470,7 +1502,49 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/my_ksuite/%7Bmy_k_suite_id%7D/cancel_unsubscribe",
+      "operationId": "Core/ResourcesCancelUnsubscribe",
+      "summary": "Cancel unsubscribe",
+      "categoryPath": [
+        "Core Resources",
+        "My kSuite",
+        "Product management"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "my_k_suite_id",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesCurrentMyKSuite",
@@ -500,7 +1574,68 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/my_ksuite/current",
+      "operationId": "Core/ResourcesCurrentMyKSuite",
+      "summary": "Current MyKSuite",
+      "categoryPath": [
+        "Core Resources",
+        "My kSuite"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "has_auto_renew",
+            "enum": [
+              "pack",
+              "drive",
+              "mail",
+              "has_auto_renew",
+              "can_trial"
+            ]
+          },
+          "enumValues": [
+            "pack",
+            "drive",
+            "mail",
+            "has_auto_renew",
+            "can_trial"
+          ],
+          "values": [
+            "pack",
+            "drive",
+            "mail",
+            "has_auto_renew",
+            "can_trial"
+          ],
+          "examples": [
+            "has_auto_renew"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_products",
@@ -565,7 +1700,507 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/products",
+      "operationId": null,
+      "summary": "List products",
+      "categoryPath": [
+        "Core Resources",
+        "Products"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "fqdn",
+            "enum": [
+              "fqdn"
+            ]
+          },
+          "enumValues": [
+            "fqdn"
+          ],
+          "values": [
+            "fqdn"
+          ],
+          "examples": [
+            "fqdn"
+          ]
+        },
+        {
+          "name": "account_id",
+          "in": "query",
+          "required": false,
+          "description": "The account identifier",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "account_id",
+            "type": "integer",
+            "description": "Unique identifier of the `account` that is related to the resource `{name}`",
+            "example": "1234"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1234"
+          ]
+        },
+        {
+          "name": "customer_name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "customer_name",
+            "type": "string",
+            "description": "Customer name of the resource `{name}`",
+            "example": "My kDrive"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "My kDrive"
+          ]
+        },
+        {
+          "name": "fqdn",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "fqdn",
+            "type": "string",
+            "example": "www.my-domain.ch"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "www.my-domain.ch"
+          ]
+        },
+        {
+          "name": "internal_name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "internal_name",
+            "type": "string",
+            "example": "My kDrive"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "My kDrive"
+          ]
+        },
+        {
+          "name": "product_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "product_id",
+            "type": "integer",
+            "description": "Unique identifier of the `product` that is related to the resource `{name}`",
+            "example": "1234"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1234"
+          ]
+        },
+        {
+          "name": "service_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "service_id",
+            "enum": [
+              1,
+              2,
+              3,
+              4,
+              6,
+              7,
+              10,
+              14,
+              15,
+              18,
+              23,
+              25,
+              26,
+              29,
+              30,
+              31,
+              34,
+              35,
+              37,
+              40,
+              43,
+              48,
+              50,
+              52,
+              58
+            ],
+            "type": "integer",
+            "description": "Unique identifier of the `service` that is related to the resource `{name}`",
+            "example": "40"
+          },
+          "enumValues": [
+            1,
+            2,
+            3,
+            4,
+            6,
+            7,
+            10,
+            14,
+            15,
+            18,
+            23,
+            25,
+            26,
+            29,
+            30,
+            31,
+            34,
+            35,
+            37,
+            40,
+            43,
+            48,
+            50,
+            52,
+            58
+          ],
+          "values": [],
+          "examples": [
+            "40"
+          ]
+        },
+        {
+          "name": "service_name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "service_name",
+            "enum": [
+              "ai_tools",
+              "backup",
+              "certificate",
+              "cloud",
+              "cloud_hd",
+              "custom_url",
+              "dedicated_server",
+              "domain",
+              "drive",
+              "e_ticketing",
+              "email_hosting",
+              "hosting",
+              "housing",
+              "invitation",
+              "jelastic",
+              "ksuite",
+              "mailing",
+              "nas",
+              "public_cloud",
+              "radio",
+              "swiss_backup",
+              "video",
+              "vod",
+              "web_hosting",
+              "website_builder"
+            ],
+            "type": "string",
+            "description": "Name of the service",
+            "example": "drive"
+          },
+          "enumValues": [
+            "ai_tools",
+            "backup",
+            "certificate",
+            "cloud",
+            "cloud_hd",
+            "custom_url",
+            "dedicated_server",
+            "domain",
+            "drive",
+            "e_ticketing",
+            "email_hosting",
+            "hosting",
+            "housing",
+            "invitation",
+            "jelastic",
+            "ksuite",
+            "mailing",
+            "nas",
+            "public_cloud",
+            "radio",
+            "swiss_backup",
+            "video",
+            "vod",
+            "web_hosting",
+            "website_builder"
+          ],
+          "values": [],
+          "examples": [
+            "drive"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 71456
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            71456
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32825
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            32825
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 91823
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            91823
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 43108
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            43108
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "desc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "desc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListTimezones",
@@ -595,7 +2230,254 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/timezones",
+      "operationId": "Core/ResourcesListTimezones",
+      "summary": "List timezones",
+      "categoryPath": [
+        "Core Resources",
+        "Timezones"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": true,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "offsetable",
+          "description": "Limit a request's results and define from which item you want the results\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        },
+        {
+          "name": "sortable",
+          "description": "",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "search",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "search",
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "limit",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 35241
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            35241
+          ]
+        },
+        {
+          "name": "skip",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 51432
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2,
+            51432
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 27648
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            27648
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 20482
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            20482
+          ]
+        },
+        {
+          "name": "order_by",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+          "style": "form",
+          "explode": false,
+          "schemaType": null,
+          "schema": {
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            ]
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "id"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "type": "string",
+            "default": "asc",
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            "asc"
+          ]
+        },
+        {
+          "name": "order_for",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+          "style": "deepObject",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+            "type": "object",
+            "enum": [
+              "asc",
+              "desc"
+            ],
+            "example": "asc"
+          },
+          "enumValues": [
+            "asc",
+            "desc"
+          ],
+          "values": [],
+          "examples": [
+            {
+              "id": "asc"
+            },
+            "asc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayATimezone",
@@ -625,7 +2507,47 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/timezones/%7Btimezone_id%7D",
+      "operationId": "Core/ResourcesDisplayATimezone",
+      "summary": "Display a timezone",
+      "categoryPath": [
+        "Core Resources",
+        "Timezones"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "timezone_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the timezone to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 25052
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            25052
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_2_events",
@@ -700,7 +2622,269 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/events",
+      "operationId": null,
+      "summary": "List events",
+      "categoryPath": [
+        "Core Resources",
+        "Events"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "date_from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "date_from",
+            "type": "integer",
+            "format": "timestamp",
+            "example": 95729
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            95729
+          ]
+        },
+        {
+          "name": "date_to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "date_to",
+            "type": "integer",
+            "format": "timestamp",
+            "example": 1243
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            1243
+          ]
+        },
+        {
+          "name": "event_type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "event_type",
+            "enum": [
+              "internal",
+              "public",
+              "server",
+              "streaming"
+            ],
+            "type": "string",
+            "example": "server"
+          },
+          "enumValues": [
+            "internal",
+            "public",
+            "server",
+            "streaming"
+          ],
+          "values": [],
+          "examples": [
+            "server"
+          ]
+        },
+        {
+          "name": "is_cyberattack",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "is_cyberattack",
+            "type": "boolean",
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        },
+        {
+          "name": "locale",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "locale",
+            "enum": [
+              "de",
+              "en",
+              "es",
+              "fr",
+              "it"
+            ],
+            "type": "string",
+            "description": "Represents a language identifier and a region identifier",
+            "example": "en"
+          },
+          "enumValues": [
+            "de",
+            "en",
+            "es",
+            "fr",
+            "it"
+          ],
+          "values": [],
+          "examples": [
+            "en"
+          ]
+        },
+        {
+          "name": "show_auto",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "show_auto",
+            "type": "boolean",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "status",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "status",
+            "enum": [
+              "inprogress",
+              "planned",
+              "reviewed",
+              "terminated"
+            ],
+            "type": "string",
+            "description": "Status of the resource `{name}`",
+            "example": "reviewed"
+          },
+          "enumValues": [
+            "inprogress",
+            "planned",
+            "reviewed",
+            "terminated"
+          ],
+          "values": [],
+          "examples": [
+            "reviewed"
+          ]
+        },
+        {
+          "name": "user_id",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "user_id",
+            "type": "integer",
+            "nullable": true,
+            "example": 64179
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            64179
+          ]
+        },
+        {
+          "name": "with_trashed",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "with_trashed",
+            "type": "boolean",
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "event_types",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "event_types",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "enum": [
+                "internal",
+                "public",
+                "server",
+                "streaming"
+              ],
+              "type": "string"
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesDisplayAnEventV2",
@@ -730,7 +2914,47 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/events/%7Bevent_id%7D",
+      "operationId": "Core/ResourcesDisplayAnEventV2",
+      "summary": "Display an event",
+      "categoryPath": [
+        "Core Resources",
+        "Events"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "event_id",
+          "in": "path",
+          "required": true,
+          "description": "The unique identifier (ID) of the event to request.",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 18800
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            18800
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "Core/ResourcesListPublicCloudStatusV2",
@@ -754,6 +2978,28 @@ export const coreOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/events/public-cloud-status",
+      "operationId": "Core/ResourcesListPublicCloudStatusV2",
+      "summary": "List Public Cloud status",
+      "categoryPath": [
+        "Core Resources",
+        "Events",
+        "Public Cloud Status"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   }
 ];

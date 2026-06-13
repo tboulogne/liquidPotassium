@@ -35,6 +35,10 @@ describe("operation catalog", () => {
     const conferenceMatches = searchOperations("conference");
     const settingsMatches = searchOperations({ query: "fetch room settings", domain: "kmeet", limit: 1 });
     const originalIdMatches = searchOperations({ query: "Mail/ServicesUpdateAMailbox", method: "patch" });
+    const docsUrlMatches = searchOperations({
+      query: "developer.infomaniak.com/docs/api/get/1/kmeet/rooms/%7Broom_id%7D/settings",
+      domain: "kmeet",
+    });
     const emptySearch = searchOperations();
 
     expect(conferenceMatches.some((operation) => operation.operationId === "post_1_kmeet_rooms")).toBe(true);
@@ -43,6 +47,7 @@ describe("operation catalog", () => {
     expect(originalIdMatches.map((operation) => operation.operationId)).toEqual([
       "Mail_ServicesUpdateAMailbox_patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name",
     ]);
+    expect(docsUrlMatches.map((operation) => operation.operationId)).toEqual(["get_1_kmeet_rooms_room_id_settings"]);
     expect(emptySearch).toHaveLength(1429);
   });
 
@@ -65,6 +70,11 @@ describe("operation catalog", () => {
     expect(description.parameters.query).toEqual([]);
     expect(description.parameters.header).toEqual([]);
     expect(description.parameters.cookie).toEqual([]);
+    expect(description.docs).toMatchObject({
+      url: "https://developer.infomaniak.com/docs/api/get/1/kmeet/rooms/%7Broom_id%7D/settings",
+      categoryPath: ["kMeet", "Room settings"],
+      responseStatuses: ["200", "403", "404"],
+    });
     expect(operationCatalog.describeOperation("post_1_kmeet_rooms").summary).toBe("Plan a conference");
   });
 

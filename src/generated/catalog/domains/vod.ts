@@ -24,7 +24,31 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/category",
+      "operationId": null,
+      "summary": "Lists all available categories",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel",
@@ -54,7 +78,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel",
+      "operationId": null,
+      "summary": "List channels",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel",
@@ -84,7 +149,49 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D",
+      "operationId": null,
+      "summary": "Returns a channel",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel",
@@ -114,7 +221,49 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D",
+      "operationId": null,
+      "summary": "Updates a channel",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_browse",
@@ -146,7 +295,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/browse",
+      "operationId": null,
+      "summary": "Moves one or many medias/folders to trash",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "204"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse",
@@ -176,7 +368,53 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse",
+      "operationId": null,
+      "summary": "Lists all children of the channel's root folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_browse_file",
@@ -211,7 +449,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D",
+      "operationId": null,
+      "summary": "Moves a media/folder to trash",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "204"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_file",
@@ -246,7 +545,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D",
+      "operationId": null,
+      "summary": "Lists all children of a given folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_browse_file",
@@ -283,7 +646,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D",
+      "operationId": null,
+      "summary": "Updates a media/folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_file_breadcrumb",
@@ -313,7 +740,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D/breadcrumb",
+      "operationId": null,
+      "summary": "Returns the breadcrumb of the media/folder up to root ancestor",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_file_copy",
@@ -350,7 +818,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D/copy",
+      "operationId": null,
+      "summary": "Duplicates a media/folder to a given folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_file_export",
@@ -385,7 +917,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D/export",
+      "operationId": null,
+      "summary": "Exports a media to an external platform",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_file_move",
@@ -422,7 +1013,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D/move",
+      "operationId": null,
+      "summary": "Moves a media/folder to a given folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_file_tree",
@@ -452,7 +1107,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/%7Bfile%7D/tree",
+      "operationId": null,
+      "summary": "Returns the tree of the folder with all its children, recursively",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_breadcrumb",
@@ -482,7 +1178,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/breadcrumb",
+      "operationId": null,
+      "summary": "Returns the breadcrumb of the media/folder up to root ancestor",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_copy",
@@ -514,7 +1251,52 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/copy",
+      "operationId": null,
+      "summary": "Duplicates one or many medias/folders to a given folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_export",
@@ -544,7 +1326,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/export",
+      "operationId": null,
+      "summary": "Exports one or many medias to an external platform",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_move",
@@ -576,7 +1401,52 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/move",
+      "operationId": null,
+      "summary": "Moves one or many medias/folders to a given folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_browse_trash",
@@ -606,7 +1476,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/browse/trash",
+      "operationId": null,
+      "summary": "Deletes one or many medias/folders from trash, permanently",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_trash",
@@ -636,7 +1549,52 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/trash",
+      "operationId": null,
+      "summary": "Lists all medias/folders in trash",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_browse_trash_file",
@@ -671,7 +1629,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/browse/trash/%7Bfile%7D",
+      "operationId": null,
+      "summary": "Deletes a media/folder from trash, permanently",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "204"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_browse_trash_file_restore",
@@ -706,7 +1725,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/browse/trash/%7Bfile%7D/restore",
+      "operationId": null,
+      "summary": "Restores a media/folder from trash to its original location",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_browse_trash_restore",
@@ -736,7 +1819,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/browse/trash/restore",
+      "operationId": null,
+      "summary": "Restores one or many medias/folders from trash to their original location",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_browse_tree",
@@ -766,7 +1892,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/browse/tree",
+      "operationId": null,
+      "summary": "Returns the tree of the folder with all its children, recursively",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_browse_update",
@@ -798,7 +1965,52 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/browse/update",
+      "operationId": null,
+      "summary": "Updates one or many medias/folders",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Browse"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_callback",
@@ -828,7 +2040,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/callback",
+      "operationId": null,
+      "summary": "Deletes one or many callbacks",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_callback",
@@ -858,7 +2113,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/callback",
+      "operationId": null,
+      "summary": "Lists all callbacks",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_callback",
@@ -888,7 +2186,49 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/callback",
+      "operationId": null,
+      "summary": "Creates a new callback",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_callback",
@@ -918,7 +2258,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/callback",
+      "operationId": null,
+      "summary": "Updates one or many callbacks",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_callback_callback",
@@ -953,7 +2336,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/callback/%7Bcallback%7D",
+      "operationId": null,
+      "summary": "Deletes a callback",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_callback_callback",
@@ -988,7 +2430,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/callback/%7Bcallback%7D",
+      "operationId": null,
+      "summary": "Returns a callback",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_callback_callback",
@@ -1023,7 +2525,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/callback/%7Bcallback%7D",
+      "operationId": null,
+      "summary": "Updates a callback",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_callback_log",
@@ -1053,7 +2615,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/callback/log",
+      "operationId": null,
+      "summary": "Deletes one or many callback logs",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "CallbackLog"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_callback_log",
@@ -1083,7 +2688,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/callback/log",
+      "operationId": null,
+      "summary": "Lists all callback logs",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "CallbackLog"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_callback_log_callbackLog",
@@ -1118,7 +2766,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/callback/log/%7BcallbackLog%7D",
+      "operationId": null,
+      "summary": "Deletes a callback log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "CallbackLog"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "callbackLog",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_callback_log_callbackLog",
@@ -1153,7 +2860,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/callback/log/%7BcallbackLog%7D",
+      "operationId": null,
+      "summary": "Returns a callback log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "CallbackLog"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "callbackLog",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_disk_usage",
@@ -1183,7 +2950,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/disk-usage",
+      "operationId": null,
+      "summary": "Returns the disk usage (in bytes) for the given channel",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_encoding",
@@ -1213,7 +3021,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/encoding",
+      "operationId": null,
+      "summary": "Deletes one or many players",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_encoding",
@@ -1243,7 +3092,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/encoding",
+      "operationId": null,
+      "summary": "Lists all encodings",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_encoding",
@@ -1273,7 +3165,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/encoding",
+      "operationId": null,
+      "summary": "Creates a new encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_encoding_encoding",
@@ -1308,7 +3243,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/encoding/%7Bencoding%7D",
+      "operationId": null,
+      "summary": "Deletes an encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_encoding_encoding",
@@ -1343,7 +3338,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/encoding/%7Bencoding%7D",
+      "operationId": null,
+      "summary": "Returns an encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_encoding_encoding",
@@ -1378,7 +3433,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/encoding/%7Bencoding%7D",
+      "operationId": null,
+      "summary": "Updates an encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_folder",
@@ -1414,7 +3529,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/folder",
+      "operationId": null,
+      "summary": "List all folders",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "media_duration",
+            "enum": [
+              "allowed_country",
+              "disallowed_country",
+              "effectiveEncodings",
+              "media_count",
+              "media_duration"
+            ]
+          },
+          "enumValues": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "values": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "examples": [
+            "allowed_country,disallowed_country,effectiveEncodings,media_count,media_duration",
+            "media_duration"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_folder",
@@ -1444,7 +3642,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/folder",
+      "operationId": null,
+      "summary": "Creates a new folder in the channel's root folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_folder_folder",
@@ -1479,7 +3718,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D",
+      "operationId": null,
+      "summary": "Deletes a folder with all its children, recursively",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "204"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_folder_folder",
@@ -1525,7 +3825,127 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D",
+      "operationId": null,
+      "summary": "Returns a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "media_duration",
+            "enum": [
+              "allowed_country",
+              "disallowed_country",
+              "effectiveEncodings",
+              "media_count",
+              "media_duration"
+            ]
+          },
+          "enumValues": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "values": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "examples": [
+            "allowed_country,disallowed_country,effectiveEncodings,media_count,media_duration",
+            "media_duration"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$folder, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_folder_folder",
@@ -1562,7 +3982,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D",
+      "operationId": null,
+      "summary": "Creates a new folder in the parent folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_folder_folder",
@@ -1599,7 +4083,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D",
+      "operationId": null,
+      "summary": "Updates a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_folder_folder_encoding",
@@ -1634,7 +4182,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/encoding",
+      "operationId": null,
+      "summary": "Remove encodings from folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_folder_folder_encoding",
@@ -1669,7 +4276,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/encoding",
+      "operationId": null,
+      "summary": "Adds one or many given encodings to a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_folder_folder_encoding_encoding",
@@ -1709,7 +4375,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/encoding/%7Bencoding%7D",
+      "operationId": null,
+      "summary": "Removes an encoding from a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_folder_folder_encoding_encoding",
@@ -1749,7 +4492,85 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/encoding/%7Bencoding%7D",
+      "operationId": null,
+      "summary": "Appends an encoding to a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_folder_folder_logo",
@@ -1784,7 +4605,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/logo",
+      "operationId": null,
+      "summary": "delete logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_folder_folder_logo_logo",
@@ -1824,7 +4704,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/logo/%7Blogo%7D",
+      "operationId": null,
+      "summary": "add logo to a folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_folder_folder_playlist",
@@ -1865,7 +4822,106 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/playlist",
+      "operationId": null,
+      "summary": "Lists all playlists having a given folder attached",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "medias_count",
+            "enum": [
+              "image",
+              "files",
+              "medias_count",
+              "medias_duration"
+            ]
+          },
+          "enumValues": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "values": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "examples": [
+            "image,files,medias_count,medias_duration",
+            "medias_count"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_folder_folder_user_activity_log",
@@ -1900,7 +4956,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/folder/%7Bfolder%7D/user-activity-log",
+      "operationId": null,
+      "summary": "Get folder user activity log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "UserActivity"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_folder_root",
@@ -1936,7 +5051,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/folder/root",
+      "operationId": null,
+      "summary": "Returns the channel's root folder",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "media_count",
+            "enum": [
+              "allowed_country",
+              "disallowed_country",
+              "effectiveEncodings",
+              "media_count",
+              "media_duration"
+            ]
+          },
+          "enumValues": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "values": [
+            "allowed_country",
+            "disallowed_country",
+            "effectiveEncodings",
+            "media_count",
+            "media_duration"
+          ],
+          "examples": [
+            "allowed_country,disallowed_country,effectiveEncodings,media_count,media_duration",
+            "media_count"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_ftp_user",
@@ -1966,7 +5164,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/ftp/user",
+      "operationId": null,
+      "summary": "Lists all FTP users",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "FtpUser"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_ftp_user",
@@ -1996,7 +5237,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/ftp/user",
+      "operationId": null,
+      "summary": "Creates a new FTP user",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "FtpUser"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_ftp_user_ftpUser",
@@ -2031,7 +5313,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/ftp/user/%7BftpUser%7D",
+      "operationId": null,
+      "summary": "Deletes a FTP user",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "FtpUser"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ftpUser",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_ftp_user_ftpUser",
@@ -2066,7 +5407,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/ftp/user/%7BftpUser%7D",
+      "operationId": null,
+      "summary": "Returns a FTP user",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "FtpUser"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ftpUser",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_ftp_user_ftpUser",
@@ -2101,7 +5502,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/ftp/user/%7BftpUser%7D",
+      "operationId": null,
+      "summary": "Updates a FTP user",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "FtpUser"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ftpUser",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_journal",
@@ -2131,7 +5592,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/journal",
+      "operationId": null,
+      "summary": "Lists all event",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_logo",
@@ -2161,7 +5663,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/logo",
+      "operationId": null,
+      "summary": "Deletes logos",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_logo",
@@ -2191,7 +5734,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/logo",
+      "operationId": null,
+      "summary": "List logos",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_logo",
@@ -2221,7 +5805,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/logo",
+      "operationId": null,
+      "summary": "Create a logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_logo_logo",
@@ -2256,7 +5881,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/logo/%7Blogo%7D",
+      "operationId": null,
+      "summary": "Delete logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_logo_logo",
@@ -2291,7 +5975,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/logo/%7Blogo%7D",
+      "operationId": null,
+      "summary": "Display logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_logo_logo",
@@ -2326,7 +6069,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/logo/%7Blogo%7D",
+      "operationId": null,
+      "summary": "Updates logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_logo_logo_attach",
@@ -2361,7 +6163,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/logo/%7Blogo%7D/attach",
+      "operationId": null,
+      "summary": "Sets a logo either for media or folders",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_logo_detach",
@@ -2391,7 +6252,49 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/logo/detach",
+      "operationId": null,
+      "summary": "Detach logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media",
@@ -2427,7 +6330,108 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media",
+      "operationId": null,
+      "summary": "Lists all medias",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "state",
+            "enum": [
+              "manifests",
+              "source",
+              "state",
+              "preview",
+              "sample",
+              "shot_boundaries",
+              "thumbnail",
+              "poster",
+              "encodings",
+              "progress",
+              "playbacks"
+            ]
+          },
+          "enumValues": [
+            "manifests",
+            "source",
+            "state",
+            "preview",
+            "sample",
+            "shot_boundaries",
+            "thumbnail",
+            "poster",
+            "encodings",
+            "progress",
+            "playbacks"
+          ],
+          "values": [
+            "manifests",
+            "source",
+            "state",
+            "preview",
+            "sample",
+            "shot_boundaries",
+            "thumbnail",
+            "poster",
+            "encodings",
+            "progress",
+            "playbacks"
+          ],
+          "examples": [
+            "manifests,source,state,preview,sample,shot_boundaries,thumbnail,poster,encodings,progress,playbacks",
+            "state"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media",
@@ -2457,7 +6461,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media",
+      "operationId": null,
+      "summary": "Updates one or many medias",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media",
@@ -2492,7 +6539,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D",
+      "operationId": null,
+      "summary": "Deletes a media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "204"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media",
@@ -2538,7 +6646,145 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D",
+      "operationId": null,
+      "summary": "Returns a media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "shot_boundaries",
+            "enum": [
+              "manifests",
+              "source",
+              "state",
+              "preview",
+              "sample",
+              "shot_boundaries",
+              "thumbnail",
+              "poster",
+              "encodings",
+              "progress",
+              "playbacks"
+            ]
+          },
+          "enumValues": [
+            "manifests",
+            "source",
+            "state",
+            "preview",
+            "sample",
+            "shot_boundaries",
+            "thumbnail",
+            "poster",
+            "encodings",
+            "progress",
+            "playbacks"
+          ],
+          "values": [
+            "manifests",
+            "source",
+            "state",
+            "preview",
+            "sample",
+            "shot_boundaries",
+            "thumbnail",
+            "poster",
+            "encodings",
+            "progress",
+            "playbacks"
+          ],
+          "examples": [
+            "manifests,source,state,preview,sample,shot_boundaries,thumbnail,poster,encodings,progress,playbacks",
+            "shot_boundaries"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$media, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media",
@@ -2575,7 +6821,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D",
+      "operationId": null,
+      "summary": "Updates a media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media_chapter",
@@ -2610,7 +6920,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter",
+      "operationId": null,
+      "summary": "Deletes one or many chapters",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_chapter",
@@ -2651,7 +7022,96 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter",
+      "operationId": null,
+      "summary": "Lists all chapters of a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "image",
+            "enum": [
+              "image"
+            ]
+          },
+          "enumValues": [
+            "image"
+          ],
+          "values": [
+            "image"
+          ],
+          "examples": [
+            "image"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_chapter",
@@ -2688,7 +7148,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter",
+      "operationId": null,
+      "summary": "Creates a new chapter to a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media_chapter",
@@ -2723,7 +7247,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter",
+      "operationId": null,
+      "summary": "Updates one or many chapters",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media_chapter_chapter",
@@ -2763,7 +7348,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter/%7Bchapter%7D",
+      "operationId": null,
+      "summary": "Deletes a chapter",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "chapter",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_chapter_chapter",
@@ -2814,7 +7476,133 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter/%7Bchapter%7D",
+      "operationId": null,
+      "summary": "Returns a chapter",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "image",
+            "enum": [
+              "image"
+            ]
+          },
+          "enumValues": [
+            "image"
+          ],
+          "values": [
+            "image"
+          ],
+          "examples": [
+            "image"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "chapter",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$media, $chapter, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media_chapter_chapter",
@@ -2856,7 +7644,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/chapter/%7Bchapter%7D",
+      "operationId": null,
+      "summary": "Updates a chapter",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "chapter",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_cut",
@@ -2891,7 +7762,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/cut",
+      "operationId": null,
+      "summary": "List media cuts",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Cut"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_cut",
@@ -2944,7 +7874,128 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/cut",
+      "operationId": null,
+      "summary": "Cut a media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Cut"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "new",
+          "in": "query",
+          "required": false,
+          "description": "creates a new trimmed media if set to 1",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "time in seconds where the trim starts, in multiples of 2",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "2",
+            "example"
+          ]
+        },
+        {
+          "name": "duration",
+          "in": "query",
+          "required": false,
+          "description": "duration of the trim in seconds, in multiples of 2, is (endTime-startTrimTime)",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "24",
+            "example"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": false,
+          "description": "channel id",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": false,
+          "description": "media uuid",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media_logo",
@@ -2979,7 +8030,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/logo",
+      "operationId": null,
+      "summary": "Attach logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_logo_logo",
@@ -3019,7 +8129,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/logo/%7Blogo%7D",
+      "operationId": null,
+      "summary": "Attach logo",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_playlist",
@@ -3054,7 +8241,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/playlist",
+      "operationId": null,
+      "summary": "Lists all playlists having a given media attached",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media_subtitle",
@@ -3089,7 +8335,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle",
+      "operationId": null,
+      "summary": "Deletes many subtitles",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_subtitle",
@@ -3124,7 +8431,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle",
+      "operationId": null,
+      "summary": "Lists all subtitles of a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_subtitle",
@@ -3159,7 +8526,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle",
+      "operationId": null,
+      "summary": "Generate subtitle from media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media_subtitle",
@@ -3194,7 +8620,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle",
+      "operationId": null,
+      "summary": "Updates one or many subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_subtitle_language",
@@ -3234,7 +8720,85 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Blanguage%7D",
+      "operationId": null,
+      "summary": "Creates a new subtitle to a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "language",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_subtitle_language_import",
@@ -3274,7 +8838,86 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Blanguage%7D/import",
+      "operationId": null,
+      "summary": "Creates a new subtitle to a given media, from a provided file",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "language",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_media_media_subtitle_subtitle",
@@ -3314,7 +8957,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D",
+      "operationId": null,
+      "summary": "Deletes a subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_subtitle_subtitle",
@@ -3354,7 +9074,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D",
+      "operationId": null,
+      "summary": "Returns a subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media_subtitle_subtitle",
@@ -3394,7 +9191,86 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D",
+      "operationId": null,
+      "summary": "Updates a subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_media_media_subtitle_subtitle_default",
@@ -3434,7 +9310,86 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D/default",
+      "operationId": null,
+      "summary": "set a default subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_subtitle_subtitle_summarize",
@@ -3474,7 +9429,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D/summarize",
+      "operationId": null,
+      "summary": "Get summary from subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_subtitle_subtitle_summarize",
@@ -3514,7 +9546,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D/summarize",
+      "operationId": null,
+      "summary": "Get custom summary from media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_subtitle_subtitle_translate",
@@ -3556,7 +9665,85 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/%7Bsubtitle%7D/translate",
+      "operationId": null,
+      "summary": "Translate Subtitle",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_subtitle_summarize",
@@ -3591,7 +9778,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/subtitle/summarize",
+      "operationId": null,
+      "summary": "Get summary from media as description",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Subtitles"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_thumbnail",
@@ -3626,7 +9872,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/thumbnail",
+      "operationId": null,
+      "summary": "Returns the media poster",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Thumbnail"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_thumbnail",
@@ -3669,7 +9974,91 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/thumbnail",
+      "operationId": null,
+      "summary": "Replaces the thumbnail & poster for a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Thumbnail"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "file",
+          "in": "query",
+          "required": true,
+          "description": "The thumbnail file",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "uploaded file within multipart/form-data ( ex: using <form method=post enctype='multipart/form-data'><input type=file name=file> )",
+            "example"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "media uuid : 1jhv....",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_thumbstrip",
@@ -3704,7 +10093,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/thumbstrip",
+      "operationId": null,
+      "summary": "Get new thumbstrip thumbnail ( for medias older than 2024, async job )",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_media_media_user_activity_log",
@@ -3739,7 +10188,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/user-activity-log",
+      "operationId": null,
+      "summary": "Get media user activity log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "UserActivity"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_media_media_waveform",
@@ -3774,7 +10282,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/media/%7Bmedia%7D/waveform",
+      "operationId": null,
+      "summary": "Get new more precise waveform ( for medias older than 2024, async job )",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_player",
@@ -3804,7 +10372,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/player",
+      "operationId": null,
+      "summary": "Deletes one or many players",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_player",
@@ -3840,7 +10449,96 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/player",
+      "operationId": null,
+      "summary": "Lists all players",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "geoip_image",
+            "enum": [
+              "files",
+              "logo_image",
+              "preload_image",
+              "interrupt_image",
+              "geoip_image",
+              "restrict_image",
+              "is_channel_default"
+            ]
+          },
+          "enumValues": [
+            "files",
+            "logo_image",
+            "preload_image",
+            "interrupt_image",
+            "geoip_image",
+            "restrict_image",
+            "is_channel_default"
+          ],
+          "values": [
+            "files",
+            "logo_image",
+            "preload_image",
+            "interrupt_image",
+            "geoip_image",
+            "restrict_image",
+            "is_channel_default"
+          ],
+          "examples": [
+            "files,logo_image,preload_image,interrupt_image,geoip_image,restrict_image,is_channel_default",
+            "geoip_image"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_player",
@@ -3870,7 +10568,49 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/player",
+      "operationId": null,
+      "summary": "Creates a new player",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_player_player",
@@ -3905,7 +10645,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D",
+      "operationId": null,
+      "summary": "Deletes a player",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "403"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_player_player",
@@ -3951,7 +10752,133 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D",
+      "operationId": null,
+      "summary": "Returns a player",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "logo_image",
+            "enum": [
+              "files",
+              "logo_image",
+              "preload_image",
+              "interrupt_image",
+              "geoip_image",
+              "restrict_image",
+              "is_channel_default"
+            ]
+          },
+          "enumValues": [
+            "files",
+            "logo_image",
+            "preload_image",
+            "interrupt_image",
+            "geoip_image",
+            "restrict_image",
+            "is_channel_default"
+          ],
+          "values": [
+            "files",
+            "logo_image",
+            "preload_image",
+            "interrupt_image",
+            "geoip_image",
+            "restrict_image",
+            "is_channel_default"
+          ],
+          "examples": [
+            "files,logo_image,preload_image,interrupt_image,geoip_image,restrict_image,is_channel_default",
+            "logo_image"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$player, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_player_player",
@@ -3988,7 +10915,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D",
+      "operationId": null,
+      "summary": "Updates a player",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_player_player_ad",
@@ -4023,7 +11014,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad",
+      "operationId": null,
+      "summary": "Deletes one or many ads",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_player_player_ad",
@@ -4058,7 +11108,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad",
+      "operationId": null,
+      "summary": "Lists all ads",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_player_player_ad",
@@ -4093,7 +11202,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad",
+      "operationId": null,
+      "summary": "Creates a new ad",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_player_player_ad_ad",
@@ -4133,7 +11301,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad/%7Bad%7D",
+      "operationId": null,
+      "summary": "Deletes a ad",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_player_player_ad_ad",
@@ -4173,7 +11418,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad/%7Bad%7D",
+      "operationId": null,
+      "summary": "Returns a ad",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_player_player_ad_ad",
@@ -4213,7 +11535,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/ad/%7Bad%7D",
+      "operationId": null,
+      "summary": "Updates a ad",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_player_player_copy",
@@ -4248,7 +11647,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/player/%7Bplayer%7D/copy",
+      "operationId": null,
+      "summary": "Duplicates a player",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_playlist",
@@ -4278,7 +11736,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/playlist",
+      "operationId": null,
+      "summary": "Deletes one or many playlists",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_playlist",
@@ -4314,7 +11813,87 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/playlist",
+      "operationId": null,
+      "summary": "Lists all playlists",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "medias_count",
+            "enum": [
+              "image",
+              "files",
+              "medias_count",
+              "medias_duration"
+            ]
+          },
+          "enumValues": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "values": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "examples": [
+            "image,files,medias_count,medias_duration",
+            "medias_count"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist",
@@ -4344,7 +11923,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist",
+      "operationId": null,
+      "summary": "Creates a new playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_playlist_playlist",
@@ -4379,7 +12001,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D",
+      "operationId": null,
+      "summary": "Deletes a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_playlist_playlist",
@@ -4425,7 +12106,124 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D",
+      "operationId": null,
+      "summary": "Returns a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "image",
+            "enum": [
+              "image",
+              "files",
+              "medias_count",
+              "medias_duration"
+            ]
+          },
+          "enumValues": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "values": [
+            "image",
+            "files",
+            "medias_count",
+            "medias_duration"
+          ],
+          "examples": [
+            "image,files,medias_count,medias_duration",
+            "image"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$playlist, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "patch_1_vod_channel_channel_playlist_playlist",
@@ -4460,7 +12258,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/patch/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D",
+      "operationId": null,
+      "summary": "Updates a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_playlist_playlist",
@@ -4495,7 +12354,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D",
+      "operationId": null,
+      "summary": "Updates a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_attach",
@@ -4530,7 +12450,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/attach",
+      "operationId": null,
+      "summary": "Adds one or many given medias/folders to a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_playlist_playlist_browse_folder",
@@ -4570,7 +12551,8 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_copy",
@@ -4605,7 +12587,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/copy",
+      "operationId": null,
+      "summary": "Duplicates a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_playlist_playlist_detach",
@@ -4640,7 +12683,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/detach",
+      "operationId": null,
+      "summary": "Removes one or many given medias/folders from a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_playlist_playlist_image",
@@ -4675,7 +12779,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/image",
+      "operationId": null,
+      "summary": "Deletes a playlist Image",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_playlist_playlist_image",
@@ -4710,7 +12873,67 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/image",
+      "operationId": null,
+      "summary": "Returns a playlist image",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_playlist_playlist_media",
@@ -4745,7 +12968,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/media",
+      "operationId": null,
+      "summary": "Lists all medias of a playlist",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_media_move_after",
@@ -4780,7 +13064,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/media/move/after",
+      "operationId": null,
+      "summary": "Moves one or many given medias after a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_media_move_before",
@@ -4815,7 +13160,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/media/move/before",
+      "operationId": null,
+      "summary": "Moves one or many given medias before a given media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_media_move_down",
@@ -4850,7 +13256,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/media/move/down",
+      "operationId": null,
+      "summary": "Moves one or many given medias one position down",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_playlist_media_move_up",
@@ -4885,7 +13352,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/%7Bplaylist%7D/media/move/up",
+      "operationId": null,
+      "summary": "Moves one or many given medias one position up",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_playlist_attach",
@@ -4915,7 +13443,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/playlist/attach",
+      "operationId": null,
+      "summary": "Adds one or many given medias/folders to one or many playlists",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_playlist_detach",
@@ -4945,7 +13516,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/playlist/detach",
+      "operationId": null,
+      "summary": "Removes one or many given medias/folders from one or many playlists",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_share",
@@ -4975,7 +13589,50 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/share",
+      "operationId": null,
+      "summary": "Lists all shares",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_share",
@@ -5007,7 +13664,52 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/share",
+      "operationId": null,
+      "summary": "Creates a new share to a given target",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "delete_1_vod_channel_channel_share_share",
@@ -5042,7 +13744,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/1/vod/channel/%7Bchannel%7D/share/%7Bshare%7D",
+      "operationId": null,
+      "summary": "Deletes a share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_share_share",
@@ -5088,7 +13849,130 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/share/%7Bshare%7D",
+      "operationId": null,
+      "summary": "Returns a share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "with",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "target_id",
+            "enum": [
+              "links",
+              "target_id",
+              "target_type",
+              "player",
+              "manifests",
+              "target"
+            ]
+          },
+          "enumValues": [
+            "links",
+            "target_id",
+            "target_type",
+            "player",
+            "manifests",
+            "target"
+          ],
+          "values": [
+            "links",
+            "target_id",
+            "target_type",
+            "player",
+            "manifests",
+            "target"
+          ],
+          "examples": [
+            "links,target_id,target_type,player,manifests,target",
+            "target_id"
+          ]
+        },
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "$share, new OptionsHttp($request",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_share_share",
@@ -5123,7 +14007,68 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/share/%7Bshare%7D",
+      "operationId": null,
+      "summary": "Updates a share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_share_share_token",
@@ -5160,7 +14105,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/share/%7Bshare%7D/token",
+      "operationId": null,
+      "summary": "Create a token from a share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_avg_time",
@@ -5190,7 +14199,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/avg_time",
+      "operationId": null,
+      "summary": "Get average time",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_consumption",
@@ -5220,7 +14293,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/consumption",
+      "operationId": null,
+      "summary": "Get channel consumption",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_consumption_encodings_histogram",
@@ -5250,7 +14387,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/consumption/encodings/histogram",
+      "operationId": null,
+      "summary": "Get channel consumption per encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "Histogram grouped by 1d,1h,1m ..",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1d",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media",
@@ -5280,7 +14500,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media",
+      "operationId": null,
+      "summary": "Get channel top medias",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_consumption",
@@ -5315,7 +14599,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/consumption",
+      "operationId": null,
+      "summary": "Get media consumption",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_consumption_encodings_histogram",
@@ -5350,7 +14717,109 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/consumption/encodings/histogram",
+      "operationId": null,
+      "summary": "Get media consumption per encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "Histogram grouped by 1d,1h,1m ..",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1d",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_geolocation_clusters",
@@ -5385,7 +14854,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/geolocation/clusters",
+      "operationId": null,
+      "summary": "Get media top clusters",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_geolocation_countries",
@@ -5420,7 +14953,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/geolocation/countries",
+      "operationId": null,
+      "summary": "Get media top countries",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_technologies_browsers_shares",
@@ -5455,7 +15052,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/technologies/browsers/shares",
+      "operationId": null,
+      "summary": "Get browser shares per media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_technologies_os_shares",
@@ -5490,7 +15170,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/technologies/os/shares",
+      "operationId": null,
+      "summary": "Get os shares per media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_technologies_playback_shares",
@@ -5525,7 +15288,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/technologies/playback/shares",
+      "operationId": null,
+      "summary": "Get playbacks shares per media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_technologies_players_shares",
@@ -5560,7 +15406,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/technologies/players/shares",
+      "operationId": null,
+      "summary": "Get players shares per media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewers",
@@ -5601,7 +15530,109 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewers",
+      "operationId": null,
+      "summary": "Get media viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "medias",
+          "in": "query",
+          "required": true,
+          "description": "Valid Media identifiers separated with comma ,",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "?medias=1jhvl1uq4j94b,1jhvl1uq4j94c",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewers_encodings_histogram",
@@ -5636,7 +15667,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewers/encodings/histogram",
+      "operationId": null,
+      "summary": "Get media viewers per encoding histogram",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewers_encodings_shares",
@@ -5671,7 +15785,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewers/encodings/shares",
+      "operationId": null,
+      "summary": "Get media viewers per encoding share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewers_uniques",
@@ -5712,7 +15909,109 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewers/uniques",
+      "operationId": null,
+      "summary": "Get media unique viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "medias",
+          "in": "query",
+          "required": true,
+          "description": "Valid Media identifiers separated with comma ,",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "?medias=1jhvl1uq4j94b,1jhvl1uq4j94c",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewing",
@@ -5747,7 +16046,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewing",
+      "operationId": null,
+      "summary": "Get media viewing time",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_media_media_viewing_encodings_histogram",
@@ -5782,7 +16164,109 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/media/%7Bmedia%7D/viewing/encodings/histogram",
+      "operationId": null,
+      "summary": "Get viewing time per encoding and media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2uqa5v8a",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "Histogram grouped by 1d,1h,1m ..",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1d",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_technologies_browsers_shares",
@@ -5812,7 +16296,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/technologies/browsers/shares",
+      "operationId": null,
+      "summary": "Get channel browser shares",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_technologies_os_shares",
@@ -5842,7 +16390,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/technologies/os/shares",
+      "operationId": null,
+      "summary": "Get channel os shares",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_technologies_playback_shares",
@@ -5872,7 +16484,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/technologies/playback/shares",
+      "operationId": null,
+      "summary": "Get channel playbacks shares",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_technologies_players_shares",
@@ -5902,7 +16578,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/technologies/players/shares",
+      "operationId": null,
+      "summary": "Get channel players shares",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_time_ip",
@@ -5932,7 +16672,72 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/time_ip",
+      "operationId": null,
+      "summary": "Get consumed time per ip",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404",
+        "500"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers",
@@ -5962,7 +16767,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers",
+      "operationId": null,
+      "summary": "Get channel viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_encodings_histogram",
@@ -5992,7 +16861,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/encodings/histogram",
+      "operationId": null,
+      "summary": "Get channel viewers per encoding histogram",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_encodings_shares",
@@ -6022,7 +16955,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/encodings/shares",
+      "operationId": null,
+      "summary": "Get channel viewers per encoding share",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_histogram",
@@ -6052,7 +17049,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/histogram",
+      "operationId": null,
+      "summary": "Get channel viewers histogram",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "Histogram grouped by 1d,1h,1m ..",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1d",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_medias",
@@ -6088,7 +17168,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/medias",
+      "operationId": null,
+      "summary": "Get media viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "medias",
+          "in": "query",
+          "required": true,
+          "description": "Valid Media identifiers separated with comma ,",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "?medias=1jhvl1uq4j94b,1jhvl1uq4j94c",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_uniques",
@@ -6118,7 +17281,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/uniques",
+      "operationId": null,
+      "summary": "Get channel unique viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewers_uniques_medias",
@@ -6154,7 +17381,90 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewers/uniques/medias",
+      "operationId": null,
+      "summary": "Get media unique viewers",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "medias",
+          "in": "query",
+          "required": true,
+          "description": "Valid Media identifiers separated with comma ,",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "?medias=1jhvl1uq4j94b,1jhvl1uq4j94c",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewing",
@@ -6184,7 +17494,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewing",
+      "operationId": null,
+      "summary": "Get channel viewing time",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_statistics_viewing_encodings_histogram",
@@ -6214,7 +17588,71 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/statistics/viewing/encodings/histogram",
+      "operationId": null,
+      "summary": "Get channel viewing time per encoding",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "begin date timestamp",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1640390400",
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_upload",
@@ -6244,7 +17682,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/upload",
+      "operationId": null,
+      "summary": "List uploads",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Upload"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_1_vod_channel_channel_upload",
@@ -6283,7 +17762,89 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/vod/channel/%7Bchannel%7D/upload",
+      "operationId": null,
+      "summary": "Create new Media",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Upload"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "channel id : 6349",
+            "example"
+          ]
+        },
+        {
+          "name": "Digest",
+          "in": "header",
+          "required": false,
+          "description": "Digest: algorythmn checksum",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "Digest: sha-256=X48E9qOokqqrvdts8nOJRJN3OWDUoyWxBf7kbu9DBPE=,unixsum=30637",
+            "example"
+          ]
+        },
+        {
+          "name": "file",
+          "in": "formData",
+          "required": false,
+          "description": "uploaded file",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "400",
+        "401",
+        "404"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_channel_channel_user_activity_log",
@@ -6313,7 +17874,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/channel/%7Bchannel%7D/user-activity-log",
+      "operationId": null,
+      "summary": "Get channel user activity log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "UserActivity"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "put_1_vod_channel_channel_user_activity_log",
@@ -6343,7 +17945,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/1/vod/channel/%7Bchannel%7D/user-activity-log",
+      "operationId": null,
+      "summary": "Put user activity log",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "UserActivity"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "object",
+          "schema": {
+            "type": "object",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_country",
@@ -6367,7 +18010,31 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/country",
+      "operationId": null,
+      "summary": "Lists all available countries",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_encoding_constraint",
@@ -6391,7 +18058,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/encoding/constraint",
+      "operationId": null,
+      "summary": "List major encoding constraints that should be respected",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_encoding_profile",
@@ -6415,7 +18104,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/encoding/profile",
+      "operationId": null,
+      "summary": "List encoding profiles",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_language",
@@ -6439,7 +18150,31 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/language",
+      "operationId": null,
+      "summary": "Lists all available languages",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "400",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_vod_search",
@@ -6463,7 +18198,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/vod/search",
+      "operationId": null,
+      "summary": "Finds and returns anything matching a given query",
+      "categoryPath": [
+        "VOD",
+        "V2",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListChannelsV2",
@@ -6495,7 +18252,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/accounts/%7Baccount%7D/channels",
+      "operationId": "VODListChannelsV2",
+      "summary": "List channels",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "account",
+          "in": "path",
+          "required": true,
+          "description": "The Account unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 20328
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            20328
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 96678
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            96678
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 23268
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            23268
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteAdvertisementV2",
@@ -6527,7 +18401,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/ads/%7Bad%7D",
+      "operationId": "VODDeleteAdvertisementV2",
+      "summary": "Delete advertisement",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "The Ad unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowAdDetailsV2",
@@ -6559,7 +18474,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/ads/%7Bad%7D",
+      "operationId": "VODShowAdDetailsV2",
+      "summary": "Show ad details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "The Ad unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateAdvertisementV2",
@@ -6593,7 +18549,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/ads/%7Bad%7D",
+      "operationId": "VODUpdateAdvertisementV2",
+      "summary": "Update advertisement",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "ad",
+          "in": "path",
+          "required": true,
+          "description": "The Ad unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetAlertV2",
@@ -6625,7 +18622,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/alerts/%7Balert%7D",
+      "operationId": "VODGetAlertV2",
+      "summary": "Get alert",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Alert"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "alert",
+          "in": "path",
+          "required": true,
+          "description": "The Alert unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBrowseFolderV2",
@@ -6668,7 +18706,89 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/browse/%7Bfolder%7D",
+      "operationId": "VODBrowseFolderV2",
+      "summary": "Browse folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "deep",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "deep",
+            "type": "boolean",
+            "nullable": true,
+            "example": false
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            false
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "files",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Bvf</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetFolderBreadcrumbV2",
@@ -6700,7 +18820,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/browse/%7Bfolder%7D/breadcrumb",
+      "operationId": "VODGetFolderBreadcrumbV2",
+      "summary": "Get folder breadcrumb",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetFolderTreeV2",
@@ -6732,7 +18893,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/browse/%7Bfolder%7D/tree",
+      "operationId": "VODGetFolderTreeV2",
+      "summary": "Get folder tree",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteCallbackV2",
@@ -6764,7 +18966,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/callbacks/%7Bcallback%7D",
+      "operationId": "VODDeleteCallbackV2",
+      "summary": "Delete callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "The Callback unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowCallbackDetailsV2",
@@ -6796,7 +19039,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/callbacks/%7Bcallback%7D",
+      "operationId": "VODShowCallbackDetailsV2",
+      "summary": "Show callback details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "The Callback unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateCallbackDetailsV2",
@@ -6830,7 +19114,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/callbacks/%7Bcallback%7D",
+      "operationId": "VODUpdateCallbackDetailsV2",
+      "summary": "Update callback details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "callback",
+          "in": "path",
+          "required": true,
+          "description": "The Callback unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListCategoriesV2",
@@ -6856,7 +19181,106 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/categories",
+      "operationId": "VODListCategoriesV2",
+      "summary": "List categories",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Category"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 89610
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            89610
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 35444
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            35444
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowChannelDetailsV2",
@@ -6888,7 +19312,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D",
+      "operationId": "VODShowChannelDetailsV2",
+      "summary": "Show channel details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 309
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            309
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListAlertsV2",
@@ -6920,7 +19385,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/alerts",
+      "operationId": "VODListAlertsV2",
+      "summary": "List alerts",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Alert"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 32571
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            32571
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 43337
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            43337
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 65654
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            65654
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDiscardFilesV2",
@@ -6958,7 +19540,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/browse",
+      "operationId": "VODDiscardFilesV2",
+      "summary": "Discard file(s)",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72908
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72908
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "files",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Bvf</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBrowseChannelRootV2",
@@ -7001,7 +19644,165 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/browse",
+      "operationId": "VODBrowseChannelRootV2",
+      "summary": "Browse channel root",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 19020
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            19020
+          ]
+        },
+        {
+          "name": "deep",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "deep",
+            "type": "boolean",
+            "nullable": true,
+            "example": true
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            true
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "files",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Bvf</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 12769
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            12769
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 6759
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            6759
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetRootBreadcrumbV2",
@@ -7033,7 +19834,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/browse/breadcrumb",
+      "operationId": "VODGetRootBreadcrumbV2",
+      "summary": "Get root breadcrumb",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 27803
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            27803
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODMoveFilesV2",
@@ -7067,7 +19909,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/browse/move",
+      "operationId": "VODMoveFilesV2",
+      "summary": "Move file(s)",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 67557
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            67557
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODRestoreFilesV2",
@@ -7101,7 +19984,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/browse/restore",
+      "operationId": "VODRestoreFilesV2",
+      "summary": "Restore file(s)",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 37084
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            37084
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODEmptyTrashV2",
@@ -7139,7 +20063,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/browse/trash",
+      "operationId": "VODEmptyTrashV2",
+      "summary": "Empty trash",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 99752
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99752
+          ]
+        },
+        {
+          "name": "files",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "files",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Bvf</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBrowseTrashV2",
@@ -7171,7 +20157,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/browse/trash",
+      "operationId": "VODBrowseTrashV2",
+      "summary": "Browse trash",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 308
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            308
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 80786
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            80786
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 28441
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            28441
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetRootTreeV2",
@@ -7203,7 +20306,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/browse/tree",
+      "operationId": "VODGetRootTreeV2",
+      "summary": "Get root tree",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Filesystem"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7586
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7586
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListCallbacksV2",
@@ -7235,7 +20379,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/callbacks",
+      "operationId": "VODListCallbacksV2",
+      "summary": "List callbacks",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 68449
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            68449
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateCallbackV2",
@@ -7269,7 +20454,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/callbacks",
+      "operationId": "VODCreateCallbackV2",
+      "summary": "Create callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Callback"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 80443
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            80443
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODGetChannelUsedDiskSpaceV2",
@@ -7307,7 +20533,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/disk-usage",
+      "operationId": "VODGetChannelUsedDiskSpaceV2",
+      "summary": "Get channel used disk space",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 77489
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77489
+          ]
+        },
+        {
+          "name": "format",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "format",
+            "type": "string",
+            "description": "Any valid byte unit, with or without precision specified (tries to format bytes in the most readable unit if nothing is specified):<br/><note><strong>YB</strong>: Yotta Byte</note><note><strong>ZB</strong>: Zetta Byte</note><note><strong>EB</strong>: Exa Byte</note><note><strong>PB</strong>: Peta Byte</note><note><strong>TB</strong>: Tera Byte</note><note><strong>GB</strong>: Giga Byte</note><note><strong>MB</strong>: Mega Byte</note><note><strong>kB</strong>: Kilo Byte</note><note><strong>B</strong>: Byte</note><note><strong>no</strong>: No formatting (raw number of bytes)</note>A precision (digits after '.') may be added with the following notation:<br/><note><strong>6</strong>: 1.322123MB</note><note><strong>/6</strong>: 1.322123MB</note><note><strong>MB/6</strong>: 1.322123MB</note><note><strong>MB/000000</strong>: 1.322123MB</note><note><strong>GB/9</strong>: 0.001322123GB</note>",
+            "nullable": true,
+            "example": "MB/6"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "MB/6"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetTrashDiskUsageV2",
@@ -7345,7 +20633,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/disk-usage/trash",
+      "operationId": "VODGetTrashDiskUsageV2",
+      "summary": "Get trash disk usage",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65826
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65826
+          ]
+        },
+        {
+          "name": "format",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "format",
+            "type": "string",
+            "description": "Any valid byte unit, with or without precision specified (tries to format bytes in the most readable unit if nothing is specified):<br/><note><strong>YB</strong>: Yotta Byte</note><note><strong>ZB</strong>: Zetta Byte</note><note><strong>EB</strong>: Exa Byte</note><note><strong>PB</strong>: Peta Byte</note><note><strong>TB</strong>: Tera Byte</note><note><strong>GB</strong>: Giga Byte</note><note><strong>MB</strong>: Mega Byte</note><note><strong>kB</strong>: Kilo Byte</note><note><strong>B</strong>: Byte</note><note><strong>no</strong>: No formatting (raw number of bytes)</note>A precision (digits after '.') may be added with the following notation:<br/><note><strong>6</strong>: 1.322123MB</note><note><strong>/6</strong>: 1.322123MB</note><note><strong>MB/6</strong>: 1.322123MB</note><note><strong>MB/000000</strong>: 1.322123MB</note><note><strong>GB/9</strong>: 0.001322123GB</note>",
+            "nullable": true,
+            "example": "MB/6"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "MB/6"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteEncodingsV2",
@@ -7383,7 +20733,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/encodings",
+      "operationId": "VODBulkDeleteEncodingsV2",
+      "summary": "Bulk delete encodings",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26347
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26347
+          ]
+        },
+        {
+          "name": "encodings",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "encodings",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Encoding</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListEncodingsV2",
@@ -7415,7 +20826,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/encodings",
+      "operationId": "VODListEncodingsV2",
+      "summary": "List encodings",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79320
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79320
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 70293
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            70293
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 1110
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            1110
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateEncodingV2",
@@ -7449,7 +20977,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/encodings",
+      "operationId": "VODCreateEncodingV2",
+      "summary": "Create encoding",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29836
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29836
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODListFoldersV2",
@@ -7481,7 +21050,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/folders",
+      "operationId": "VODListFoldersV2",
+      "summary": "List folders",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26071
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26071
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 64422
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            64422
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 90712
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            90712
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateFolderV2",
@@ -7515,7 +21201,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/folders",
+      "operationId": "VODCreateFolderV2",
+      "summary": "Create folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 7773
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            7773
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODShowRootFolderV2",
@@ -7547,7 +21274,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/folders/root",
+      "operationId": "VODShowRootFolderV2",
+      "summary": "Show root folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16327
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16327
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListFTPUsersV2",
@@ -7579,7 +21347,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/ftpusers",
+      "operationId": "VODListFTPUsersV2",
+      "summary": "List FTP users",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 23166
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            23166
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 10129
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            10129
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 19287
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            19287
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateFTPUserV2",
@@ -7613,7 +21498,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/ftpusers",
+      "operationId": "VODCreateFTPUserV2",
+      "summary": "Create FTP user",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 86658
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            86658
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODGetJournalV2",
@@ -7645,7 +21571,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/journal",
+      "operationId": "VODGetJournalV2",
+      "summary": "Get journal",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Journal"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 4987
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            4987
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 83925
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            83925
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 96663
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            96663
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteLabelsV2",
@@ -7683,7 +21726,81 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/labels",
+      "operationId": "VODBulkDeleteLabelsV2",
+      "summary": "Bulk delete labels",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 21186
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            21186
+          ]
+        },
+        {
+          "name": "labels",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "labels",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "name",
+                  "minLength": 1,
+                  "type": "string",
+                  "description": "a string free of XSS payloads",
+                  "example": "\"Hello World\"",
+                  "required": true
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListLabelsV2",
@@ -7715,7 +21832,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/labels",
+      "operationId": "VODListLabelsV2",
+      "summary": "List labels",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 90495
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            90495
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 73749
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            73749
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 59267
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            59267
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkAttachLabelsV2",
@@ -7749,7 +21983,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/labels",
+      "operationId": "VODBulkAttachLabelsV2",
+      "summary": "Bulk attach labels",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 57939
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            57939
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteLogosV2",
@@ -7817,7 +22092,194 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/logos",
+      "operationId": "VODBulkDeleteLogosV2",
+      "summary": "Bulk delete logos",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 16634
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            16634
+          ]
+        },
+        {
+          "name": "height",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "height",
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The height of Logo",
+            "example": "785"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "785"
+          ]
+        },
+        {
+          "name": "margin_x",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "margin_x",
+            "type": "integer",
+            "description": "The margin on the x-axis of the Logo",
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        },
+        {
+          "name": "margin_y",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "margin_y",
+            "type": "integer",
+            "description": "The margin on the y-axis of the Logo",
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        },
+        {
+          "name": "mode",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "mode",
+            "type": "string",
+            "description": "The {name} mode<note><strong>overlay</strong>: The logo is added on top of the video by a player configuration</note><note><strong>embed</strong>: The logo is directly encoded in the video</note>",
+            "example": "overlay"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "overlay"
+          ]
+        },
+        {
+          "name": "position",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "position",
+            "type": "string",
+            "description": "The anchor of the {name}<note><strong>top_left</strong>: Positioned at the top left corner</note><note><strong>top_middle</strong>: Positioned at the top middle</note><note><strong>top_right</strong>: Positioned at the top right corner</note><note><strong>center_left</strong>: Positioned at the center left</note><note><strong>center_middle</strong>: Positioned at the center middle</note><note><strong>center_right</strong>: Positioned at the center right</note><note><strong>bottom_left</strong>: Positioned at the bottom left corner</note><note><strong>bottom_middle</strong>: Positioned at the bottom middle</note><note><strong>bottom_right</strong>: Positioned at the bottom right corner</note>",
+            "example": "top_left"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "top_left"
+          ]
+        },
+        {
+          "name": "size",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "size",
+            "maximum": 100,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The size of the {name} in percentage",
+            "example": "100"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "100"
+          ]
+        },
+        {
+          "name": "width",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "width",
+            "maximum": 65535,
+            "minimum": 1,
+            "type": "integer",
+            "description": "The width of Logo",
+            "example": "673"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "673"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListLogosV2",
@@ -7849,7 +22311,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/logos",
+      "operationId": "VODListLogosV2",
+      "summary": "List logos",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 29639
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            29639
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 23711
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            23711
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 92877
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            92877
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateANewLogoV2",
@@ -7883,7 +22462,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/logos",
+      "operationId": "VODCreateANewLogoV2",
+      "summary": "Create a new logo",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84085
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84085
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODListMediaV2",
@@ -7915,7 +22535,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/media",
+      "operationId": "VODListMediaV2",
+      "summary": "List media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 98646
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            98646
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 37429
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            37429
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 77600
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            77600
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetMediaStatusesCountersV2",
@@ -7947,7 +22684,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/media/status",
+      "operationId": "VODGetMediaStatusesCountersV2",
+      "summary": "Get media statuses counters",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 81570
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            81570
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 5741
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            5741
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 33699
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            33699
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteMetadataV2",
@@ -7985,7 +22839,81 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/metadata",
+      "operationId": "VODBulkDeleteMetadataV2",
+      "summary": "Bulk delete metadata",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Metadata"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84046
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84046
+          ]
+        },
+        {
+          "name": "metadata",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "metadata",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "object",
+              "properties": {
+                "name": {
+                  "title": "name",
+                  "minLength": 1,
+                  "type": "string",
+                  "description": "a string free of XSS payloads",
+                  "example": "\"Hello World\"",
+                  "required": true
+                }
+              }
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListMetadataV2",
@@ -8017,7 +22945,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/metadata",
+      "operationId": "VODListMetadataV2",
+      "summary": "List metadata",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Metadata"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 24721
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            24721
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 59785
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            59785
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkAttachMetadataV2",
@@ -8051,7 +23096,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/metadata",
+      "operationId": "VODBulkAttachMetadataV2",
+      "summary": "Bulk attach metadata",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Metadata"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 13283
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            13283
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteMixtapesV2",
@@ -8089,7 +23175,74 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/mixtapes",
+      "operationId": "VODBulkDeleteMixtapesV2",
+      "summary": "Bulk delete mixtapes",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 6706
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            6706
+          ]
+        },
+        {
+          "name": "mixtapes",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "mixtapes",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "minLength": 1,
+              "type": "string",
+              "description": "a simple string",
+              "example": "\"toto\""
+            },
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListMixtapesV2",
@@ -8167,7 +23320,361 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/mixtapes",
+      "operationId": "VODListMixtapesV2",
+      "summary": "List mixtapes",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 65350
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            65350
+          ]
+        },
+        {
+          "name": "color",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "color",
+            "type": "string",
+            "description": "Mixtape color",
+            "example": "#FFCC00"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "#FFCC00"
+          ]
+        },
+        {
+          "name": "criteria",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "criteria",
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "description",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "description",
+            "maxLength": 65535,
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "mixtapes",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "mixtapes",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Mixtape</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "The name of the Mixtape",
+            "example": "my product"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "my product"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "object",
+              "properties": {
+                "direction": {
+                  "title": "direction",
+                  "enum": [
+                    "\"asc\"",
+                    "\"desc\""
+                  ],
+                  "type": "string",
+                  "nullable": true
+                },
+                "key": {
+                  "title": "key",
+                  "enum": [
+                    "collected_at",
+                    "created_at",
+                    "description",
+                    "discarded_at",
+                    "duration",
+                    "id",
+                    "name",
+                    "published",
+                    "streams",
+                    "updated_at",
+                    "validated"
+                  ],
+                  "type": "string",
+                  "description": "The key of Mixtape",
+                  "required": true
+                },
+                "natural": {
+                  "title": "natural",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "reverse": {
+                  "title": "reverse",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "soundex": {
+                  "title": "soundex",
+                  "type": "boolean",
+                  "nullable": true
+                }
+              },
+              "description": "Allowed array or object keys"
+            },
+            "description": " Specify the order for the desired queried Media",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "type",
+            "type": "string",
+            "description": "The type of {name}<note><strong>standard</strong>: Mixtape default: créée/éditée directement comme une mixtape classique</note><note><strong>generated</strong>: Mixtape produite dynamiquement par une autre application</note><note><strong>composite</strong>: Mixtape qui référence d’autres mixtape</note>",
+            "example": "standard"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "standard"
+          ]
+        },
+        {
+          "name": "validity",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "validity",
+            "maximum": 31536000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "The {name} validity duration (in seconds)",
+            "example": "3600"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "3600"
+          ]
+        },
+        {
+          "name": "validity_strategy",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "validity_strategy",
+            "type": "string",
+            "description": "The strategy to apply for validity adjustment<note><strong>only_increase</strong>: Only increases the {model} validity if the requested duration is greater than the current one</note><note><strong>only_decrease</strong>: Only decreases the {model} validity if the requested duration is less than the current one</note>",
+            "nullable": true,
+            "example": "only_decrease"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "only_decrease"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 50208
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            50208
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 64368
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            64368
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateAMixtapeV2",
@@ -8201,7 +23708,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/mixtapes",
+      "operationId": "VODCreateAMixtapeV2",
+      "summary": "Create a mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 99624
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            99624
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeletePlayersV2",
@@ -8239,7 +23787,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/players",
+      "operationId": "VODBulkDeletePlayersV2",
+      "summary": "Bulk delete players",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 46582
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            46582
+          ]
+        },
+        {
+          "name": "players",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "players",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Player</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListPlayersV2",
@@ -8271,7 +23880,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/players",
+      "operationId": "VODListPlayersV2",
+      "summary": "List players",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 77258
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            77258
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 11711
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            11711
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 27649
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            27649
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreatePlayerV2",
@@ -8305,7 +24031,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/players",
+      "operationId": "VODCreatePlayerV2",
+      "summary": "Create player",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 2714
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            2714
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODListPlaylistsV2",
@@ -8337,7 +24104,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/playlists",
+      "operationId": "VODListPlaylistsV2",
+      "summary": "List playlists",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 79896
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            79896
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 48129
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            48129
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 62222
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            62222
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "post_2_vod_channels_channel_services",
@@ -8371,7 +24255,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/channels/%7Bchannel%7D/services",
+      "operationId": null,
+      "summary": "Sync linked services",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "LinkedSvc"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 72515
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            72515
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteSharesV2",
@@ -8409,7 +24334,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/channels/%7Bchannel%7D/shares",
+      "operationId": "VODBulkDeleteSharesV2",
+      "summary": "Bulk delete shares",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 59136
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            59136
+          ]
+        },
+        {
+          "name": "shares",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "shares",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Share</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListChannelSharesV2",
@@ -8452,7 +24439,168 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/channels/%7Bchannel%7D/shares",
+      "operationId": "VODListChannelSharesV2",
+      "summary": "List channel shares",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 60216
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            60216
+          ]
+        },
+        {
+          "name": "expired_since",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expired_since",
+            "pattern": "^\\d+[YyMdhims]{1}$",
+            "type": "string",
+            "description": "The expiry interval in the past",
+            "nullable": true,
+            "example": "10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10d"
+          ]
+        },
+        {
+          "name": "expires_in",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expires_in",
+            "pattern": "^\\d+[YyMdhims]{1}$",
+            "type": "string",
+            "description": "The expiry interval in the future",
+            "nullable": true,
+            "example": "10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10d"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 49500
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            49500
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 64529
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            64529
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowChapterDetailsV2",
@@ -8484,7 +24632,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/chapters/%7Bchapter%7D",
+      "operationId": "VODShowChapterDetailsV2",
+      "summary": "Show chapter details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "chapter",
+          "in": "path",
+          "required": true,
+          "description": "The Chapter unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 22142
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            22142
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 19323
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            19323
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListCountriesV2",
@@ -8510,7 +24775,106 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/countries",
+      "operationId": "VODListCountriesV2",
+      "summary": "List countries",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Country"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 43018
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            43018
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 45249
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            45249
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetFolderDiskUsageV2",
@@ -8548,7 +24912,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/disk-usage/%7Bfolder%7D",
+      "operationId": "VODGetFolderDiskUsageV2",
+      "summary": "Get folder disk usage",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Channel"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "format",
+            "type": "string",
+            "description": "Any valid byte unit, with or without precision specified (tries to format bytes in the most readable unit if nothing is specified):<br/><note><strong>YB</strong>: Yotta Byte</note><note><strong>ZB</strong>: Zetta Byte</note><note><strong>EB</strong>: Exa Byte</note><note><strong>PB</strong>: Peta Byte</note><note><strong>TB</strong>: Tera Byte</note><note><strong>GB</strong>: Giga Byte</note><note><strong>MB</strong>: Mega Byte</note><note><strong>kB</strong>: Kilo Byte</note><note><strong>B</strong>: Byte</note><note><strong>no</strong>: No formatting (raw number of bytes)</note>A precision (digits after '.') may be added with the following notation:<br/><note><strong>6</strong>: 1.322123MB</note><note><strong>/6</strong>: 1.322123MB</note><note><strong>MB/6</strong>: 1.322123MB</note><note><strong>MB/000000</strong>: 1.322123MB</note><note><strong>GB/9</strong>: 0.001322123GB</note>",
+            "nullable": true,
+            "example": "MB/6"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "MB/6"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteEncodingV2",
@@ -8580,7 +25006,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/encodings/%7Bencoding%7D",
+      "operationId": "VODDeleteEncodingV2",
+      "summary": "Delete encoding",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "The Encoding unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowEncodingDetailsV2",
@@ -8612,7 +25079,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/encodings/%7Bencoding%7D",
+      "operationId": "VODShowEncodingDetailsV2",
+      "summary": "Show encoding details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "The Encoding unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateEncodingV2",
@@ -8646,7 +25154,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/encodings/%7Bencoding%7D",
+      "operationId": "VODUpdateEncodingV2",
+      "summary": "Update encoding",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "encoding",
+          "in": "path",
+          "required": true,
+          "description": "The Encoding unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListEncodingConstraintsV2",
@@ -8672,7 +25221,29 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/encodings/constraints",
+      "operationId": "VODListEncodingConstraintsV2",
+      "summary": "List encoding constraints",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListEncodingProfilesV2",
@@ -8698,7 +25269,29 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/encodings/profiles",
+      "operationId": "VODListEncodingProfilesV2",
+      "summary": "List encoding profiles",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Encoding"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteAFolderV2",
@@ -8730,7 +25323,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/folders/%7Bfolder%7D",
+      "operationId": "VODDeleteAFolderV2",
+      "summary": "Delete a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowFolderDetailsV2",
@@ -8762,7 +25396,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/folders/%7Bfolder%7D",
+      "operationId": "VODShowFolderDetailsV2",
+      "summary": "Show folder details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateFolderDetailsV2",
@@ -8796,7 +25471,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D",
+      "operationId": "VODUpdateFolderDetailsV2",
+      "summary": "Update folder details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDetachEncodingsFromAFolderV2",
@@ -8834,7 +25550,74 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/folders/%7Bfolder%7D/encodings",
+      "operationId": "VODDetachEncodingsFromAFolderV2",
+      "summary": "Detach encodings from a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "encodings",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "encodings",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "Identifier of an existing Encoding",
+              "example": "1jhvl2upwoctc"
+            },
+            "description": "The encodings associated with the Folder",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODSynchronizeEncodingsForAFolderV2",
@@ -8868,7 +25651,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/folders/%7Bfolder%7D/encodings",
+      "operationId": "VODSynchronizeEncodingsForAFolderV2",
+      "summary": "Synchronize encodings for a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAttachEncodingsToAFolderV2",
@@ -8902,7 +25726,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D/encodings",
+      "operationId": "VODAttachEncodingsToAFolderV2",
+      "summary": "Attach encodings to a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDetachLabelsFromAFolderV2",
@@ -8940,7 +25805,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/folders/%7Bfolder%7D/labels",
+      "operationId": "VODDetachLabelsFromAFolderV2",
+      "summary": "Detach labels from a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "labels",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "labels",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Label</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAttachLabelsToAFolderV2",
@@ -8974,7 +25900,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D/labels",
+      "operationId": "VODAttachLabelsToAFolderV2",
+      "summary": "Attach labels to a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODLocksTheProvidedFolderV2",
@@ -9006,7 +25973,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D/lock",
+      "operationId": "VODLocksTheProvidedFolderV2",
+      "summary": "Locks the provided folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDetachALogoFromAFolderV2",
@@ -9038,7 +26046,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/folders/%7Bfolder%7D/logo",
+      "operationId": "VODDetachALogoFromAFolderV2",
+      "summary": "Detach a logo from a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAttachALogoToAFolderV2",
@@ -9072,7 +26121,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D/logo",
+      "operationId": "VODAttachALogoToAFolderV2",
+      "summary": "Attach a logo to a folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUnlocksTheProvidedFolderV2",
@@ -9104,7 +26194,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/folders/%7Bfolder%7D/unlock",
+      "operationId": "VODUnlocksTheProvidedFolderV2",
+      "summary": "Unlocks the provided folder",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Folder"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetAnUploadEndpoointV2",
@@ -9136,7 +26267,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/folders/%7Bfolder%7D/upload/endpoint",
+      "operationId": "VODGetAnUploadEndpoointV2",
+      "summary": "Get an upload endpooint",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Upload"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "folder",
+          "in": "path",
+          "required": true,
+          "description": "The Folder unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODLoginV2",
@@ -9162,7 +26334,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/login",
+      "operationId": "VODLoginV2",
+      "summary": "Login",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODOnConnectCallbackV2",
@@ -9186,7 +26380,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/on/connect",
+      "operationId": "VODOnConnectCallbackV2",
+      "summary": "On connect callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODOnDisconnectCallbackV2",
@@ -9210,7 +26426,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/on/disconnect",
+      "operationId": "VODOnDisconnectCallbackV2",
+      "summary": "On disconnect callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODOnLoginFailedCallbackV2",
@@ -9234,7 +26472,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/on/login-failed",
+      "operationId": "VODOnLoginFailedCallbackV2",
+      "summary": "On login failed callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODOnLoginCallbackV2",
@@ -9258,7 +26518,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/on/login",
+      "operationId": "VODOnLoginCallbackV2",
+      "summary": "On login callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODOnLogoutCallbackV2",
@@ -9282,7 +26564,29 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/ftp/on/logout",
+      "operationId": "VODOnLogoutCallbackV2",
+      "summary": "On logout callback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteFTPUserV2",
@@ -9314,7 +26618,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/ftpusers/%7Buser%7D",
+      "operationId": "VODDeleteFTPUserV2",
+      "summary": "Delete FTP user",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "user",
+          "in": "path",
+          "required": true,
+          "description": "The FtpUser unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowFTPUserDetailsV2",
@@ -9346,7 +26691,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/ftpusers/%7Buser%7D",
+      "operationId": "VODShowFTPUserDetailsV2",
+      "summary": "Show FTP user details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "user",
+          "in": "path",
+          "required": true,
+          "description": "The FtpUser unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateFTPUserDetailsV2",
@@ -9380,7 +26766,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/ftpusers/%7Buser%7D",
+      "operationId": "VODUpdateFTPUserDetailsV2",
+      "summary": "Update FTP user details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ftp"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "user",
+          "in": "path",
+          "required": true,
+          "description": "The FtpUser unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteLabelV2",
@@ -9412,7 +26839,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/labels/%7BgenericLabel%7D",
+      "operationId": "VODDeleteLabelV2",
+      "summary": "Delete label",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "genericLabel",
+          "in": "path",
+          "required": true,
+          "description": "The GenericLabel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78614
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78614
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowLabelDetailsV2",
@@ -9444,7 +26912,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/labels/%7BgenericLabel%7D",
+      "operationId": "VODShowLabelDetailsV2",
+      "summary": "Show label details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "genericLabel",
+          "in": "path",
+          "required": true,
+          "description": "The GenericLabel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 26089
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            26089
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateLabelV2",
@@ -9478,7 +26987,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/labels/%7BgenericLabel%7D",
+      "operationId": "VODUpdateLabelV2",
+      "summary": "Update label",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Label"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "genericLabel",
+          "in": "path",
+          "required": true,
+          "description": "The GenericLabel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 56810
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            56810
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListLanguagesV2",
@@ -9504,7 +27054,106 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/lang",
+      "operationId": "VODListLanguagesV2",
+      "summary": "List languages",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Language"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 28801
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            28801
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 81961
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            81961
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowLanguageDetailsV2",
@@ -9536,7 +27185,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/lang/%7Blang%7D",
+      "operationId": "VODShowLanguageDetailsV2",
+      "summary": "Show language details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Language"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "lang",
+          "in": "path",
+          "required": true,
+          "description": "The Language unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 15766
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            15766
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteALogoV2",
@@ -9568,7 +27258,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/logos/%7Blogo%7D",
+      "operationId": "VODDeleteALogoV2",
+      "summary": "Delete a logo",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "The Logo unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowLogoDetailsV2",
@@ -9600,7 +27331,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/logos/%7Blogo%7D",
+      "operationId": "VODShowLogoDetailsV2",
+      "summary": "Show logo details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "The Logo unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateLogoDetailsV2",
@@ -9634,7 +27406,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/logos/%7Blogo%7D",
+      "operationId": "VODUpdateLogoDetailsV2",
+      "summary": "Update logo details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Logo"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "The Logo unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowMediaDetailsV2",
@@ -9666,7 +27479,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D",
+      "operationId": "VODShowMediaDetailsV2",
+      "summary": "Show media details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateMediaDetailsV2",
@@ -9700,7 +27554,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/media/%7Bmedia%7D",
+      "operationId": "VODUpdateMediaDetailsV2",
+      "summary": "Update media details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListChaptersV2",
@@ -9732,7 +27627,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/chapters",
+      "operationId": "VODListChaptersV2",
+      "summary": "List chapters",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Chapter"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 63368
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            63368
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 1620
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            1620
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetMediaJournalV2",
@@ -9764,7 +27776,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/journal",
+      "operationId": "VODGetMediaJournalV2",
+      "summary": "Get media journal",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Journal"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 50206
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            50206
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 24366
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            24366
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDetachLabelsFromAMediaV2",
@@ -9802,7 +27931,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/media/%7Bmedia%7D/labels",
+      "operationId": "VODDetachLabelsFromAMediaV2",
+      "summary": "Detach labels from a media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "labels",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "labels",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Label</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAttachLabelsToAMediaV2",
@@ -9836,7 +28026,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/media/%7Bmedia%7D/labels",
+      "operationId": "VODAttachLabelsToAMediaV2",
+      "summary": "Attach labels to a media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeletesMetadataFromAMediaV2",
@@ -9874,7 +28105,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/media/%7Bmedia%7D/metadata",
+      "operationId": "VODDeletesMetadataFromAMediaV2",
+      "summary": "Deletes metadata from a media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "labels",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "labels",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Label</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODGetMetadataFromAMediaV2",
@@ -9906,7 +28198,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/metadata",
+      "operationId": "VODGetMetadataFromAMediaV2",
+      "summary": "Get metadata from a media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 14947
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            14947
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 86556
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            86556
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateMetadataFromAMediaV2",
@@ -9940,7 +28349,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/media/%7Bmedia%7D/metadata",
+      "operationId": "VODUpdateMetadataFromAMediaV2",
+      "summary": "Update metadata from a media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteMediaSharesV2",
@@ -9978,7 +28428,69 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/media/%7Bmedia%7D/shares",
+      "operationId": "VODBulkDeleteMediaSharesV2",
+      "summary": "Bulk delete media shares",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "shares",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "shares",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Share</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListMediaSharesV2",
@@ -10021,7 +28533,168 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/shares",
+      "operationId": "VODListMediaSharesV2",
+      "summary": "List media shares",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "expired_since",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expired_since",
+            "pattern": "^\\d+[YyMdhims]{1}$",
+            "type": "string",
+            "description": "The expiry interval in the past",
+            "nullable": true,
+            "example": "10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10d"
+          ]
+        },
+        {
+          "name": "expires_in",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "expires_in",
+            "pattern": "^\\d+[YyMdhims]{1}$",
+            "type": "string",
+            "description": "The expiry interval in the future",
+            "nullable": true,
+            "example": "10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10d"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 42262
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            42262
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 36744
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            36744
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShareMediaV2",
@@ -10055,7 +28728,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/media/%7Bmedia%7D/shares",
+      "operationId": "VODShareMediaV2",
+      "summary": "Share media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteSubtitlesV2",
@@ -10093,7 +28807,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/media/%7Bmedia%7D/subtitles",
+      "operationId": "VODBulkDeleteSubtitlesV2",
+      "summary": "Bulk delete subtitles",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "subtitles",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "subtitles",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Subtitle</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListSubtitlesV2",
@@ -10125,7 +28900,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/subtitles",
+      "operationId": "VODListSubtitlesV2",
+      "summary": "List subtitles",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 46164
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            46164
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 61029
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            61029
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateSubtitleV2",
@@ -10159,7 +29051,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/media/%7Bmedia%7D/subtitles",
+      "operationId": "VODCreateSubtitleV2",
+      "summary": "Create subtitle",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODAttachSuggestedMediaV2",
@@ -10193,7 +29126,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/media/%7Bmedia%7D/suggest",
+      "operationId": "VODAttachSuggestedMediaV2",
+      "summary": "Attach suggested media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Media"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListThumbnailsV2",
@@ -10225,7 +29199,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/media/%7Bmedia%7D/thumbnails",
+      "operationId": "VODListThumbnailsV2",
+      "summary": "List thumbnails",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Thumbnail"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 82529
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            82529
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 39559
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            39559
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteMetadataV2",
@@ -10257,7 +29348,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/metadata/%7Bmetadata%7D",
+      "operationId": "VODDeleteMetadataV2",
+      "summary": "Delete metadata",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Metadata"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "metadata",
+          "in": "path",
+          "required": true,
+          "description": "The MetadataLabel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 52899
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            52899
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateMetadataV2",
@@ -10291,7 +29423,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/metadata/%7Bmetadata%7D",
+      "operationId": "VODUpdateMetadataV2",
+      "summary": "Update metadata",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Metadata"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "metadata",
+          "in": "path",
+          "required": true,
+          "description": "The MetadataLabel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 84880
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            84880
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteAMixtapeV2",
@@ -10369,7 +29542,285 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/mixtapes/%7Bmixtape%7D",
+      "operationId": "VODDeleteAMixtapeV2",
+      "summary": "Delete a mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "color",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "color",
+            "type": "string",
+            "description": "Mixtape color",
+            "example": "#FFCC00"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "#FFCC00"
+          ]
+        },
+        {
+          "name": "criteria",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "criteria",
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "description",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "description",
+            "maxLength": 65535,
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "mixtapes",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "mixtapes",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Mixtape</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "The name of the Mixtape",
+            "example": "my product"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "my product"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "object",
+              "properties": {
+                "direction": {
+                  "title": "direction",
+                  "enum": [
+                    "\"asc\"",
+                    "\"desc\""
+                  ],
+                  "type": "string",
+                  "nullable": true
+                },
+                "key": {
+                  "title": "key",
+                  "enum": [
+                    "collected_at",
+                    "created_at",
+                    "description",
+                    "discarded_at",
+                    "duration",
+                    "id",
+                    "name",
+                    "published",
+                    "streams",
+                    "updated_at",
+                    "validated"
+                  ],
+                  "type": "string",
+                  "description": "The key of Mixtape",
+                  "required": true
+                },
+                "natural": {
+                  "title": "natural",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "reverse": {
+                  "title": "reverse",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "soundex": {
+                  "title": "soundex",
+                  "type": "boolean",
+                  "nullable": true
+                }
+              },
+              "description": "Allowed array or object keys"
+            },
+            "description": " Specify the order for the desired queried Media",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "type",
+            "type": "string",
+            "description": "The type of {name}<note><strong>standard</strong>: Mixtape default: créée/éditée directement comme une mixtape classique</note><note><strong>generated</strong>: Mixtape produite dynamiquement par une autre application</note><note><strong>composite</strong>: Mixtape qui référence d’autres mixtape</note>",
+            "example": "standard"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "standard"
+          ]
+        },
+        {
+          "name": "validity",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "validity",
+            "maximum": 31536000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "The {name} validity duration (in seconds)",
+            "example": "3600"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "3600"
+          ]
+        },
+        {
+          "name": "validity_strategy",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "validity_strategy",
+            "type": "string",
+            "description": "The strategy to apply for validity adjustment<note><strong>only_increase</strong>: Only increases the {model} validity if the requested duration is greater than the current one</note><note><strong>only_decrease</strong>: Only decreases the {model} validity if the requested duration is less than the current one</note>",
+            "nullable": true,
+            "example": "only_decrease"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "only_decrease"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowMixtapeDetailsV2",
@@ -10447,7 +29898,285 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/mixtapes/%7Bmixtape%7D",
+      "operationId": "VODShowMixtapeDetailsV2",
+      "summary": "Show mixtape details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "color",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "color",
+            "type": "string",
+            "description": "Mixtape color",
+            "example": "#FFCC00"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "#FFCC00"
+          ]
+        },
+        {
+          "name": "criteria",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "criteria",
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "description",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "description",
+            "maxLength": 65535,
+            "type": "string",
+            "description": "a string free of XSS payloads",
+            "nullable": true,
+            "example": "\"Hello World\""
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "\"Hello World\""
+          ]
+        },
+        {
+          "name": "mixtapes",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "mixtapes",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Mixtape</note>",
+            "nullable": true,
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "name",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "name",
+            "type": "string",
+            "description": "The name of the Mixtape",
+            "example": "my product"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "my product"
+          ]
+        },
+        {
+          "name": "order",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "order",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "object",
+              "properties": {
+                "direction": {
+                  "title": "direction",
+                  "enum": [
+                    "\"asc\"",
+                    "\"desc\""
+                  ],
+                  "type": "string",
+                  "nullable": true
+                },
+                "key": {
+                  "title": "key",
+                  "enum": [
+                    "collected_at",
+                    "created_at",
+                    "description",
+                    "discarded_at",
+                    "duration",
+                    "id",
+                    "name",
+                    "published",
+                    "streams",
+                    "updated_at",
+                    "validated"
+                  ],
+                  "type": "string",
+                  "description": "The key of Mixtape",
+                  "required": true
+                },
+                "natural": {
+                  "title": "natural",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "reverse": {
+                  "title": "reverse",
+                  "type": "boolean",
+                  "nullable": true
+                },
+                "soundex": {
+                  "title": "soundex",
+                  "type": "boolean",
+                  "nullable": true
+                }
+              },
+              "description": "Allowed array or object keys"
+            },
+            "description": " Specify the order for the desired queried Media",
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        },
+        {
+          "name": "type",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "type",
+            "type": "string",
+            "description": "The type of {name}<note><strong>standard</strong>: Mixtape default: créée/éditée directement comme une mixtape classique</note><note><strong>generated</strong>: Mixtape produite dynamiquement par une autre application</note><note><strong>composite</strong>: Mixtape qui référence d’autres mixtape</note>",
+            "example": "standard"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "standard"
+          ]
+        },
+        {
+          "name": "validity",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "validity",
+            "maximum": 31536000,
+            "minimum": 0,
+            "type": "integer",
+            "description": "The {name} validity duration (in seconds)",
+            "example": "3600"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "3600"
+          ]
+        },
+        {
+          "name": "validity_strategy",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "validity_strategy",
+            "type": "string",
+            "description": "The strategy to apply for validity adjustment<note><strong>only_increase</strong>: Only increases the {model} validity if the requested duration is greater than the current one</note><note><strong>only_decrease</strong>: Only decreases the {model} validity if the requested duration is less than the current one</note>",
+            "nullable": true,
+            "example": "only_decrease"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "only_decrease"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateAMixtapeV2",
@@ -10481,7 +30210,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/mixtapes/%7Bmixtape%7D",
+      "operationId": "VODUpdateAMixtapeV2",
+      "summary": "Update a mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDuplicateAMixtapeV2",
@@ -10515,7 +30285,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/mixtapes/%7Bmixtape%7D/duplicate",
+      "operationId": "VODDuplicateAMixtapeV2",
+      "summary": "Duplicate a mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDetachDirectMediaV2",
@@ -10553,7 +30364,75 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/mixtapes/%7Bmixtape%7D/media",
+      "operationId": "VODDetachDirectMediaV2",
+      "summary": "Detach direct media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "array",
+          "schema": {
+            "title": "media",
+            "type": "array",
+            "items": {
+              "title": "item",
+              "type": "string",
+              "description": "Identifier of an existing Media",
+              "example": "1jhvl2upwoctc"
+            },
+            "description": "The media unique identifier",
+            "nullable": true,
+            "example": []
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            []
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListMediaInMixtapeV2",
@@ -10585,7 +30464,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/mixtapes/%7Bmixtape%7D/media",
+      "operationId": "VODListMediaInMixtapeV2",
+      "summary": "List media in mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 24795
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            24795
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 20851
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            20851
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAttachDirectMediaV2",
@@ -10619,7 +30615,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/mixtapes/%7Bmixtape%7D/media",
+      "operationId": "VODAttachDirectMediaV2",
+      "summary": "Attach direct media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODMoveAManuallyAttachedMediaInMixtapeV2",
@@ -10658,7 +30695,142 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/mixtapes/%7Bmixtape%7D/media/%7Bmedia%7D/move",
+      "operationId": "VODMoveAManuallyAttachedMediaInMixtapeV2",
+      "summary": "Move a manually attached media in mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 80640
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            80640
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 4018
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            4018
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODSynchronizeAMixtapeV2",
@@ -10690,7 +30862,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/mixtapes/%7Bmixtape%7D/synchronize",
+      "operationId": "VODSynchronizeAMixtapeV2",
+      "summary": "Synchronize a mixtape",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Mixtape"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "mixtape",
+          "in": "path",
+          "required": true,
+          "description": "The Mixtape unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeletePlayerV2",
@@ -10722,7 +30935,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/players/%7Bplayer%7D",
+      "operationId": "VODDeletePlayerV2",
+      "summary": "Delete player",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowPlayerDetailsV2",
@@ -10754,7 +31008,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/players/%7Bplayer%7D",
+      "operationId": "VODShowPlayerDetailsV2",
+      "summary": "Show player details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdatePlayerDetailsV2",
@@ -10788,7 +31083,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/players/%7Bplayer%7D",
+      "operationId": "VODUpdatePlayerDetailsV2",
+      "summary": "Update player details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Player"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODBulkDeleteAdvertisementsV2",
@@ -10826,7 +31162,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/players/%7Bplayer%7D/ads",
+      "operationId": "VODBulkDeleteAdvertisementsV2",
+      "summary": "Bulk delete advertisements",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "ads",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "ads",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Ad</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListAdvertisementsV2",
@@ -10858,7 +31255,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/players/%7Bplayer%7D/ads",
+      "operationId": "VODListAdvertisementsV2",
+      "summary": "List advertisements",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 93262
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            93262
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 8579
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            8579
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreateAnAdvertisementV2",
@@ -10892,7 +31406,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/players/%7Bplayer%7D/ads",
+      "operationId": "VODCreateAnAdvertisementV2",
+      "summary": "Create an advertisement",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Ad"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "201"
+      ]
+    }
   },
   {
     "operationId": "VODShowPlaylistDetailsV2",
@@ -10924,7 +31479,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/playlists/%7Bplaylist%7D",
+      "operationId": "VODShowPlaylistDetailsV2",
+      "summary": "Show playlist details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "The Playlist unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListMediaInPlaylistV2",
@@ -10956,7 +31552,124 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/playlists/%7Bplaylist%7D/media",
+      "operationId": "VODListMediaInPlaylistV2",
+      "summary": "List media in playlist",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Playlist"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "The Playlist unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 50801
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            50801
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 43480
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            43480
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "get_2_vod_reflect_endpoints_vversion_endpoint",
@@ -10991,7 +31704,8 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "post_2_vod_reflect_endpoints_vversion_endpoint",
@@ -11026,7 +31740,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/reflect/endpoints/v%7Bversion%7D/%7Bendpoint%7D",
+      "operationId": null,
+      "summary": "",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Reflect"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "version",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "endpoint",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDisplayChapterImageV2",
@@ -11061,7 +31834,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/chapters/%7Bchapter%7D.%7Bformat%7D",
+      "operationId": "VODDisplayChapterImageV2",
+      "summary": "Display chapter image",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "chapter",
+          "in": "path",
+          "required": true,
+          "description": "The Chapter unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDisplayALogoImageV2",
@@ -11096,7 +31928,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/logos/%7Blogo%7D.%7Bformat%7D",
+      "operationId": "VODDisplayALogoImageV2",
+      "summary": "Display a logo image",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "logo",
+          "in": "path",
+          "required": true,
+          "description": "The Logo unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODRenderChapterV2",
@@ -11131,7 +32022,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/media/%7Bmedia%7D/chapters.%7Bformat%7D",
+      "operationId": "VODRenderChapterV2",
+      "summary": "Render chapter",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "Use one of the following values<note><strong>json</strong>: JavaScript Object Notation data format</note><note><strong>xml</strong>: EXtensible Markup Language data format</note><note><strong>yaml</strong>: YAML Ain't Markup Language data format</note><note><strong>vtt</strong>: WebVTT (Web Video Text Tracks) subtitle format</note>",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDisplayPlayerImageV2",
@@ -11171,7 +32121,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/players/%7Bplayer%7D.%7Bimage%7D.%7Bformat%7D",
+      "operationId": "VODDisplayPlayerImageV2",
+      "summary": "Display player image",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "player",
+          "in": "path",
+          "required": true,
+          "description": "The Player unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "image",
+          "in": "path",
+          "required": true,
+          "description": "Use one of the following values<note><strong>logo</strong>: Image used as a logo or branding element</note><note><strong>preload</strong>: Image intended for preloading or prefetching</note><note><strong>interrupt</strong>: Image displayed during interruptions or loading delays</note><note><strong>geoip</strong>: Image customized based on geographical location</note><note><strong>restrict</strong>: Image with restrictions or access control settings</note>",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDisplayPlaylistImageV2",
@@ -11206,7 +32233,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/playlists/%7Bplaylist%7D.%7Bformat%7D",
+      "operationId": "VODDisplayPlaylistImageV2",
+      "summary": "Display playlist image",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "playlist",
+          "in": "path",
+          "required": true,
+          "description": "The Playlist unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODRenderShareLinkV2",
@@ -11241,7 +32327,8 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": null
   },
   {
     "operationId": "VODDisplayShareImageV2",
@@ -11281,7 +32368,84 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/shares/%7Bshare%7D.%7Bimage%7D.%7Bformat%7D",
+      "operationId": "VODDisplayShareImageV2",
+      "summary": "Display share image",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "The Share unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "image",
+          "in": "path",
+          "required": true,
+          "description": "Use one of the following values<note><strong>logo</strong>: Image used as a logo or branding element</note><note><strong>preload</strong>: Image intended for preloading or prefetching</note><note><strong>interrupt</strong>: Image displayed during interruptions or loading delays</note><note><strong>geoip</strong>: Image customized based on geographical location</note><note><strong>restrict</strong>: Image with restrictions or access control settings</note>",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODRenderSubtitleV2",
@@ -11316,7 +32480,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/subtitles/%7Bsubtitle%7D.%7Bformat%7D",
+      "operationId": "VODRenderSubtitleV2",
+      "summary": "Render subtitle",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "The Subtitle unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "Use one of the following values<note><strong>srt</strong>: Simple subtitle format</note><note><strong>vtt</strong>: WebVTT subtitle format</note><note><strong>sub</strong>: Generic subtitle format</note><note><strong>stl</strong>: EBU STL subtitle format</note><note><strong>sbv</strong>: YouTube subtitle format</note><note><strong>json</strong>: Raw json format</note><note><strong>txt</strong>: Plain text format</note><note><strong>dxfp</strong>: Standard for XML captions and subtitles based on the TTML (Timed Text Markup Language) format</note><note><strong>ttml</strong>: Standard for XML captions developed by the World Wide Web Consortium (W3C)</note>",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListSuggestedMediaV2",
@@ -11346,7 +32569,48 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/suggestions/%7Btarget%7D",
+      "operationId": "VODListSuggestedMediaV2",
+      "summary": "List suggested media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "target",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDisplayThumbnailV2",
@@ -11381,7 +32645,66 @@ export const vodOperations: readonly OperationMetadata[] = [
       "application/json"
     ],
     "deprecated": false,
-    "auth": []
+    "auth": [],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/res/thumbnails/%7Bthumbnail%7D.%7Bformat%7D",
+      "operationId": "VODDisplayThumbnailV2",
+      "summary": "Display thumbnail",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Resources"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": null,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "thumbnail",
+          "in": "path",
+          "required": true,
+          "description": "The Thumbnail unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "path",
+          "required": true,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODListSampleV2",
@@ -11407,7 +32730,29 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/samples",
+      "operationId": "VODListSampleV2",
+      "summary": "List sample",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Sample"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteShareV2",
@@ -11439,7 +32784,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/shares/%7Bshare%7D",
+      "operationId": "VODDeleteShareV2",
+      "summary": "Delete share",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "The Share unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowShareDetailsV2",
@@ -11471,7 +32857,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/shares/%7Bshare%7D",
+      "operationId": "VODShowShareDetailsV2",
+      "summary": "Show share details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "The Share unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateShareDetailsV2",
@@ -11505,7 +32932,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/shares/%7Bshare%7D",
+      "operationId": "VODUpdateShareDetailsV2",
+      "summary": "Update share details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "The Share unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODCreatesANewTokenV2",
@@ -11545,7 +33013,68 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/2/vod/shares/%7Bshare%7D/token",
+      "operationId": "VODCreatesANewTokenV2",
+      "summary": "Creates a new token",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Share"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "share",
+          "in": "path",
+          "required": true,
+          "description": "The Share unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "X-Ik-Token-Enforce-Ip",
+          "in": "header",
+          "required": false,
+          "description": "",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "boolean",
+          "schema": {
+            "title": "X-Ik-Token-Enforce-Ip",
+            "type": "boolean",
+            "description": "Extra header to pass if `ip_address` should be used, if this header isn't passed, the `ip_address` field will be ignored.",
+            "example": "true"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "true"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersPerClusterV2",
@@ -11593,7 +33122,113 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bchannel%7D/clusters",
+      "operationId": "VODViewersPerClusterV2",
+      "summary": "Viewers per cluster",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 47488
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            47488
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "maximum": 10000,
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": 5808
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5808
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODTopMediaV2",
@@ -11641,7 +33276,188 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bchannel%7D/media/top",
+      "operationId": "VODTopMediaV2",
+      "summary": "Top media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": true,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [
+        {
+          "name": "countable",
+          "description": "Give the total number of records\n",
+          "values": []
+        },
+        {
+          "name": "paginable",
+          "description": "Group a request's items in pages and define which page you want to display\n",
+          "values": []
+        }
+      ],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 88117
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            88117
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        },
+        {
+          "name": "return",
+          "in": "query",
+          "required": false,
+          "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "enum": [
+              "total"
+            ],
+            "type": "string",
+            "example": "total"
+          },
+          "enumValues": [
+            "total"
+          ],
+          "values": [],
+          "examples": [
+            "total"
+          ]
+        },
+        {
+          "name": "page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "default": 1,
+            "example": 84650
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            5,
+            84650
+          ]
+        },
+        {
+          "name": "per_page",
+          "in": "query",
+          "required": false,
+          "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+          "style": null,
+          "explode": null,
+          "schemaType": "integer",
+          "schema": {
+            "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+            "type": "integer",
+            "minimum": 1,
+            "example": 36219
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            10,
+            36219
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUniqueViewersPerMediaV2",
@@ -11694,7 +33510,132 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bchannel%7D/media/unique_viewers",
+      "operationId": "VODUniqueViewersPerMediaV2",
+      "summary": "Unique viewers per media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 15071
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            15071
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "media",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Media</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersPerMediaV2",
@@ -11747,7 +33688,132 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bchannel%7D/media/viewers",
+      "operationId": "VODViewersPerMediaV2",
+      "summary": "Viewers per media",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "channel",
+          "in": "path",
+          "required": true,
+          "description": "The Channel unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "type": "integer",
+            "example": 78991
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            78991
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "media",
+          "in": "query",
+          "required": true,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "media",
+            "type": "string",
+            "description": "A list of items, (either comma separated or as an array) (no duplicates) with the following rules: <note><bold>1</bold>: Identifier of an existing Media</note>",
+            "example": "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "1jhvl2upwoctc,1jhvl2upwoctc,1jhvl2upwoctc"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODMediaBenchmarkV2",
@@ -11795,7 +33861,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bmedia%7D/benchmark",
+      "operationId": "VODMediaBenchmarkV2",
+      "summary": "Media benchmark",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODMediaRankV2",
@@ -11843,7 +34014,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bmedia%7D/rank",
+      "operationId": "VODMediaRankV2",
+      "summary": "Media rank",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODRetentionPerPercentV2",
@@ -11891,7 +34167,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bmedia%7D/retention",
+      "operationId": "VODRetentionPerPercentV2",
+      "summary": "Retention per percent",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "media",
+          "in": "path",
+          "required": true,
+          "description": "The Media unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODAverageViewTimeV2",
@@ -11939,7 +34320,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/average_view_time",
+      "operationId": "VODAverageViewTimeV2",
+      "summary": "Average view time",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerBrowserV2",
@@ -11987,7 +34473,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/browsers",
+      "operationId": "VODViewersAndViewingTimePerBrowserV2",
+      "summary": "Viewers and viewing time per browser",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewingTimePerEncodingV2",
@@ -12035,7 +34626,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/consumed_time_per_encoding",
+      "operationId": "VODViewingTimePerEncodingV2",
+      "summary": "Viewing time per encoding",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODConsumptionV2",
@@ -12088,7 +34784,133 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/consumption",
+      "operationId": "VODConsumptionV2",
+      "summary": "Consumption",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "format",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "format",
+            "type": "string",
+            "description": "Any valid byte unit, with or without precision specified (tries to format bytes in the most readable unit if nothing is specified):<br/><note><strong>YB</strong>: Yotta Byte</note><note><strong>ZB</strong>: Zetta Byte</note><note><strong>EB</strong>: Exa Byte</note><note><strong>PB</strong>: Peta Byte</note><note><strong>TB</strong>: Tera Byte</note><note><strong>GB</strong>: Giga Byte</note><note><strong>MB</strong>: Mega Byte</note><note><strong>kB</strong>: Kilo Byte</note><note><strong>B</strong>: Byte</note><note><strong>no</strong>: No formatting (raw number of bytes)</note>A precision (digits after '.') may be added with the following notation:<br/><note><strong>6</strong>: 1.322123MB</note><note><strong>/6</strong>: 1.322123MB</note><note><strong>MB/6</strong>: 1.322123MB</note><note><strong>MB/000000</strong>: 1.322123MB</note><note><strong>GB/9</strong>: 0.001322123GB</note>",
+            "nullable": true,
+            "example": "MB/6"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "MB/6"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndSharePerCountryV2",
@@ -12136,7 +34958,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/countries",
+      "operationId": "VODViewersAndSharePerCountryV2",
+      "summary": "Viewers and share per country",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerDeviceV2",
@@ -12184,7 +35111,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/devices",
+      "operationId": "VODViewersAndViewingTimePerDeviceV2",
+      "summary": "Viewers and viewing time per device",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndEncodingsHistogramV2",
@@ -12237,7 +35269,133 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/histogram/encodings",
+      "operationId": "VODViewersAndEncodingsHistogramV2",
+      "summary": "Viewers and encodings histogram",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "per",
+            "type": "string",
+            "description": "<note><strong>hour</strong>: Interval of time lasting 60 minutes</note><note><strong>day</strong>: Interval of time lasting 24 hours</note><note><strong>week</strong>: Interval of time lasting 7 days</note><note><strong>month</strong>: Interval of time approximately lasting 30 days</note><note><strong>quarter</strong>: Interval of time lasting approximately 3 months</note><note><strong>year</strong>: Interval of time lasting 12 months</note>",
+            "nullable": true,
+            "example": "hour"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "hour"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersHistogramV2",
@@ -12290,7 +35448,133 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/histogram/viewers",
+      "operationId": "VODViewersHistogramV2",
+      "summary": "Viewers histogram",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "per",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "per",
+            "type": "string",
+            "description": "<note><strong>hour</strong>: Interval of time lasting 60 minutes</note><note><strong>day</strong>: Interval of time lasting 24 hours</note><note><strong>week</strong>: Interval of time lasting 7 days</note><note><strong>month</strong>: Interval of time approximately lasting 30 days</note><note><strong>quarter</strong>: Interval of time lasting approximately 3 months</note><note><strong>year</strong>: Interval of time lasting 12 months</note>",
+            "nullable": true,
+            "example": "hour"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "hour"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerOSV2",
@@ -12338,7 +35622,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/operating_systems",
+      "operationId": "VODViewersAndViewingTimePerOSV2",
+      "summary": "Viewers and viewing time per OS",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerOriginV2",
@@ -12386,7 +35775,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/origins",
+      "operationId": "VODViewersAndViewingTimePerOriginV2",
+      "summary": "Viewers and viewing time per origin",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerPlaybackV2",
@@ -12434,7 +35928,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/playbacks",
+      "operationId": "VODViewersAndViewingTimePerPlaybackV2",
+      "summary": "Viewers and viewing time per playback",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerPlayerV2",
@@ -12482,7 +36081,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/players",
+      "operationId": "VODViewersAndViewingTimePerPlayerV2",
+      "summary": "Viewers and viewing time per player",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimePerSourceV2",
@@ -12530,7 +36234,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/sources",
+      "operationId": "VODViewersAndViewingTimePerSourceV2",
+      "summary": "Viewers and viewing time per source",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersAndViewingTimeByTechnologyV2",
@@ -12578,7 +36387,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/technologies",
+      "operationId": "VODViewersAndViewingTimeByTechnologyV2",
+      "summary": "Viewers and viewing time by technology",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUniqueViewersV2",
@@ -12626,7 +36540,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/unique_viewers",
+      "operationId": "VODUniqueViewersV2",
+      "summary": "Unique viewers",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewTimeV2",
@@ -12674,7 +36693,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/view_time",
+      "operationId": "VODViewTimeV2",
+      "summary": "View time",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersPerEncodingV2",
@@ -12722,7 +36846,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/viewers_per_encoding",
+      "operationId": "VODViewersPerEncodingV2",
+      "summary": "Viewers per encoding",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODViewersV2",
@@ -12770,7 +36999,112 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/statistics/%7Bsubject%7D/viewers",
+      "operationId": "VODViewersV2",
+      "summary": "Viewers",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Statistics"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subject",
+          "in": "path",
+          "required": true,
+          "description": "The Sequence unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        },
+        {
+          "name": "from",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "from",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "to",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "title": "to",
+            "type": "string",
+            "description": "<note><strong>Date</strong>: any accepted \n<a href=\"https://www.php.net/manual/fr/datetime.formats.date.php\" target=\"_blank\">PHP date format</a></note>\n<note><strong>Timestamp</strong>: a Timestamp</note>\n<note><strong>Time interval</strong>: a positive or negative interval with pattern: <pre>/\\+|\\-\\d+[YyMdhims]/</pre>\n<table>\n    <thead>\n        <tr>\n            <td>symbol</td>\n            <td>description</td>\n        </tr>\n    </thead>\n    <tbody>\n        <tr>\n            <td>Y|y</td>\n            <td>Year</td>\n        </tr>\n        <tr>\n            <td>M</td>\n            <td>Month</td>\n        </tr>\n        <tr>\n            <td>d</td>\n            <td>Day</td>\n        </tr>\n        <tr>\n            <td>h</td>\n            <td>Hour</td>\n        </tr>\n        <tr>\n            <td>i|m</td>\n            <td>Minute</td>\n        </tr>\n        <tr>\n            <td>s</td>\n            <td>Second</td>\n        </tr>\n    </tbody>\n</table>\n</note>",
+            "nullable": true,
+            "example": "+10d"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "+10d"
+          ]
+        },
+        {
+          "name": "top",
+          "in": "query",
+          "required": false,
+          "description": "",
+          "style": "form",
+          "explode": true,
+          "schemaType": "integer",
+          "schema": {
+            "title": "top",
+            "minimum": 1,
+            "type": "integer",
+            "description": "Limit the response size to the top N results.",
+            "nullable": true,
+            "example": "10"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "10"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODDeleteASubtitleV2",
@@ -12802,7 +37136,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/delete/2/vod/subtitles/%7Bsubtitle%7D",
+      "operationId": "VODDeleteASubtitleV2",
+      "summary": "Delete a subtitle",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "The Subtitle unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowSubtitleDetailsV2",
@@ -12834,7 +37209,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/subtitles/%7Bsubtitle%7D",
+      "operationId": "VODShowSubtitleDetailsV2",
+      "summary": "Show subtitle details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "The Subtitle unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODUpdateSubtitleDetailsV2",
@@ -12868,7 +37284,48 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/put/2/vod/subtitles/%7Bsubtitle%7D",
+      "operationId": "VODUpdateSubtitleDetailsV2",
+      "summary": "Update subtitle details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Subtitle"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "subtitle",
+          "in": "path",
+          "required": true,
+          "description": "The Subtitle unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   },
   {
     "operationId": "VODShowThumbnailDetailsV2",
@@ -12900,6 +37357,47 @@ export const vodOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/2/vod/thumbnails/%7Bthumbnail%7D",
+      "operationId": "VODShowThumbnailDetailsV2",
+      "summary": "Show thumbnail details",
+      "categoryPath": [
+        "VOD",
+        "V3",
+        "Thumbnail"
+      ],
+      "staff": false,
+      "beta": true,
+      "publicCloud": false,
+      "paginable": null,
+      "sortable": null,
+      "authUser": true,
+      "version": 2,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "thumbnail",
+          "in": "path",
+          "required": true,
+          "description": "The Thumbnail unique identifier",
+          "style": "simple",
+          "explode": true,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200"
+      ]
+    }
   }
 ];

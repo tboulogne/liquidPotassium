@@ -39,6 +39,11 @@ export interface OperationSummary {
   summary: string;
   mutating: boolean;
   deprecated: boolean;
+  docs: {
+    url: string;
+    categoryPath: readonly string[];
+    beta: boolean;
+  } | null;
 }
 
 const emptyParamsSchema = Type.Object({}, { additionalProperties: false });
@@ -248,6 +253,13 @@ function summarizeOperation(operation: OperationMetadata): OperationSummary {
     summary: operation.summary,
     mutating: operation.mutating,
     deprecated: operation.deprecated,
+    docs: operation.docs
+      ? {
+          url: operation.docs.url,
+          categoryPath: operation.docs.categoryPath,
+          beta: operation.docs.beta,
+        }
+      : null,
   };
 }
 

@@ -28,7 +28,29 @@ export const kmeetOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/post/1/kmeet/rooms",
+      "operationId": null,
+      "summary": "Plan a conference",
+      "categoryPath": [
+        "kMeet",
+        "Plan a conference"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": false,
+      "sortable": false,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [],
+      "responseStatuses": [
+        "200",
+        "422"
+      ]
+    }
   },
   {
     "operationId": "get_1_kmeet_rooms_room_id_settings",
@@ -60,6 +82,48 @@ export const kmeetOperations: readonly OperationMetadata[] = [
     "deprecated": false,
     "auth": [
       "bearerAuth"
-    ]
+    ],
+    "docs": {
+      "url": "https://developer.infomaniak.com/docs/api/get/1/kmeet/rooms/%7Broom_id%7D/settings",
+      "operationId": null,
+      "summary": "Get room settings",
+      "categoryPath": [
+        "kMeet",
+        "Room settings"
+      ],
+      "staff": false,
+      "beta": false,
+      "publicCloud": false,
+      "paginable": false,
+      "sortable": false,
+      "authUser": true,
+      "version": 1,
+      "capabilities": [],
+      "parameters": [
+        {
+          "name": "room_id",
+          "in": "path",
+          "required": true,
+          "description": "Unique identifier of the room settings",
+          "style": null,
+          "explode": null,
+          "schemaType": "string",
+          "schema": {
+            "type": "string",
+            "example": "example"
+          },
+          "enumValues": [],
+          "values": [],
+          "examples": [
+            "example"
+          ]
+        }
+      ],
+      "responseStatuses": [
+        "200",
+        "403",
+        "404"
+      ]
+    }
   }
 ];

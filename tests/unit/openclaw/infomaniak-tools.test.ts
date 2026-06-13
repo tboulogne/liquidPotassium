@@ -85,6 +85,15 @@ describe("Infomaniak OpenClaw tools", () => {
       method: "GET",
       limit: "invalid",
     });
+    const specOnlySearch = await executeTool(
+      findTool(
+        createInfomaniakOpenClawTools({
+          config: { allowedOperations: ["Core/ResourcesGetApplicationList"] },
+        }),
+        "infomaniak_search",
+      ),
+      { query: "applications" },
+    );
     const description = await executeTool(findTool(tools, "infomaniak_describe"), {
       operation_id: "get_1_kmeet_rooms_room_id_settings",
     });
@@ -100,6 +109,9 @@ describe("Infomaniak OpenClaw tools", () => {
     ]);
     expect(methodSearch.operations).toEqual([
       expect.objectContaining({ operationId: "get_1_kmeet_rooms_room_id_settings" }),
+    ]);
+    expect(specOnlySearch.operations).toEqual([
+      expect.objectContaining({ operationId: "Core/ResourcesGetApplicationList", docs: null }),
     ]);
     expect(description.operation).toMatchObject({
       operationId: "get_1_kmeet_rooms_room_id_settings",

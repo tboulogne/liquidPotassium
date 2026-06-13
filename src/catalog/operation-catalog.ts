@@ -39,6 +39,7 @@ export interface OperationDescription {
   };
   requestContentTypes: readonly string[];
   responseContentTypes: readonly string[];
+  docs: OperationMetadata["docs"];
 }
 
 export interface OperationCatalog {
@@ -114,6 +115,7 @@ export function describeOperation(operationId: string): OperationDescription {
     },
     requestContentTypes: operation.requestContentTypes,
     responseContentTypes: operation.responseContentTypes,
+    docs: operation.docs,
   };
 }
 
@@ -165,6 +167,12 @@ function operationMatchesQuery(operation: OperationMetadata, query: string): boo
     operation.originalOperationId ?? "",
     operation.summary,
     operation.description,
+    operation.docs?.url ?? "",
+    operation.docs?.operationId ?? "",
+    operation.docs?.summary ?? "",
+    operation.docs?.categoryPath.join(" ") ?? "",
+    operation.docs?.capabilities.map((capability) => `${capability.name} ${capability.description} ${capability.values.join(" ")}`).join(" ") ?? "",
+    operation.docs?.parameters.map((parameter) => `${parameter.name} ${parameter.in} ${parameter.description} ${parameter.schemaType ?? ""}`).join(" ") ?? "",
     ...operation.tags,
   ]
     .join(" ")
