@@ -14,6 +14,7 @@ This is an unofficial community project and is not affiliated with Infomaniak.
 - Searchable operation catalog with docs-enriched metadata from a committed Infomaniak Developer Portal snapshot.
 - Resource discovery helpers for common opaque IDs such as kDrive drive IDs.
 - Reviewed Mail application helpers for mailbox consumption routes that are not present in the public OpenAPI spec.
+- Curated domain workflow actions for migration-friendly tasks such as mailbox reads, kDrive browsing/uploads, kChat posts, and resource discovery.
 - Native OpenClaw plugin with six compact tools.
 - No real network calls in tests; runtime HTTP goes through injected `fetch`.
 - 100% unit coverage threshold for handwritten runtime, generation, catalog, discovery, and OpenClaw adapter code.
@@ -106,6 +107,25 @@ const drives = await client.discovery.discover({ kind: "kdriveDrive", parents: {
 ```
 
 Discovery uses reviewed read-only operations. If an ID cannot be discovered through the public API, the SDK returns a structured `no_public_discovery` suggestion instead of guessing.
+
+## Domain Workflow Actions
+
+For OpenClaw and `potassium-openclaw` migration work, prefer the curated workflow layer when a task maps to a common product action. It gives adapters a stable domain/action surface without hiding the generated operation catalog.
+
+```ts
+const client = createInfomaniakClient({ token: process.env.INFOMANIAK_TOKEN, fetch });
+
+const mailActions = client.workflows.listActions({ domain: "mail" });
+const upload = client.workflows.describeAction("kdrive", "uploadFile");
+
+const directory = await client.workflows.run({
+  domain: "kdrive",
+  action: "listDirectory",
+  input: { drive_id: 3024749, file_id: 1, limit: 100, with: "path,capabilities" },
+});
+```
+
+Workflow actions are intentionally small and typed. Each action exposes required inputs, operation IDs, and mutating metadata. Actions may call generated OpenAPI operations, the reviewed `mail.application` surface, or SDK discovery helpers, but they still use the same injected `fetch` and no-network test rules as the rest of the SDK.
 
 ## Mail Application API
 

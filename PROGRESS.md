@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Open-source release readiness.
-- Active task: Open-source metadata, README, license, audit, and packaging review are complete and validated.
-- Repository status: The Phase 1-10 implementation and open-source release preparation are complete and validated on this branch.
+- Phase: OpenClaw migration readiness.
+- Active task: SDK workflow actions and migration documentation for `potassium-openclaw` are complete and validated.
+- Repository status: The Phase 1-11 implementation is complete on branch `codex/native-domain-workflows`.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -80,10 +80,25 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Updated the release checklist for the six-tool OpenClaw surface, including `infomaniak_mail_application`.
   - Upgraded Vitest and coverage tooling to 4.1.8 to clear dev-toolchain audit findings, then pinned test discovery to source tests only.
   - Added small coverage tests required by Vitest 4's V8 coverage accounting.
+- `914a1d3 feat: add domain workflow sdk actions`
+  - Added `client.workflows` plus standalone workflow helpers for listing, describing, and running curated domain actions.
+  - Added migration-critical actions for kDrive browsing/uploads, Mail application mailbox reads, kChat workflows, URL shortener operations, and discovery-backed actions.
+  - Fixed parent-bound discovery recipes so parent values can be supplied in query parameters as well as path parameters.
+- `cd64a48 feat: expand domain workflow coverage`
+  - Expanded workflow actions across all Infomaniak domains, including account, AI, core, domains, eTickets, kMeet, newsletter, profile, publicCloud, radio, Swiss Backup, video, and VOD.
+  - Kept actions backed by generated operations, reviewed Mail application calls, or discovery helpers.
+- `7ddb63f refactor: split domain workflow modules`
+  - Split workflow action types and helpers out of the action registry.
+  - Brought `src/workflows/domain-actions.ts` back under the 1,000-line guidance while preserving 100% coverage.
+- `docs: document OpenClaw migration workflow bridge`
+  - Documents `client.workflows` as the SDK-first bridge for migrating `potassium-openclaw`.
+  - Records that OpenClaw-specific orchestration belongs in the OpenClaw adapter/repository, while this library owns reusable network/domain workflows.
 
 ## Next Task Queue
 
-- No current implementation tasks. Continue with release publishing, repository settings, CI wiring, or official Mail application docs migration only if requested.
+- In `/Users/opencow/Software/potassium-openclaw`, migrate existing skills/tools to call `liquid-potassium` through `client.workflows` where a curated action exists.
+- Fall back to catalog search/describe plus generated/raw SDK calls for operations that are not yet worth promoting to workflow actions.
+- Add new workflow actions in this repository only when migration exposes repeated adapter code or a common user workflow.
 
 ## Validation Status
 
@@ -109,6 +124,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Phase 10 validation: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run check:docs`, `npm run check:generated`, and `npm run test:coverage`.
 - Open-source release preparation: passing `npm run ci`, `npm audit`, `npm audit --omit=dev`, `npm pack --dry-run`, and `git diff --check`.
 - Package preview: `npm pack --dry-run` reports `liquid-potassium@0.1.0`, 160 files, approximately 881.6 kB packed and 16.1 MB unpacked, including `LICENSE`, `README.md`, built SDK output, OpenClaw plugin output, skill docs, Mail application docs, and normalization report.
+- Domain workflow actions: passing `npm run typecheck` and `npm run test:coverage` with 100% statements, branches, functions, and lines after the workflow expansion and module split.
 
 ## Blockers And Risks
 
@@ -118,6 +134,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Resource discovery must avoid guessing opaque IDs. Every domain needs either a read-only discovery recipe or an explicit no-public-discovery explanation.
 - Official docs enrichment must remain a committed generation-time snapshot, not a runtime dependency.
 - Mail application consumption routes are reviewed fallback-backed until Infomaniak publishes official OpenAPI/docs operation metadata for those routes.
+- OpenClaw migration should avoid reimplementing request construction or resource discovery in `/Users/opencow/Software/potassium-openclaw`; use `client.workflows`, `client.discovery`, or generated/raw SDK calls instead.
 - The local `main` branch still reports `origin/main` as gone; configure or recreate the upstream before pushing/publishing from git automation.
 
 ## Open Decisions

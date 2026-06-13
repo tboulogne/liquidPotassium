@@ -50,6 +50,7 @@ Read `MANIFESTO.md`, `MASTERPLAN.md`, and `PROGRESS.md` before planning or imple
 
 - Do not expose one OpenClaw tool per raw API endpoint. The Infomaniak spec is too large for that to be operator-friendly.
 - Expose domain-oriented tools or controlled request/search/describe tools that keep model context small.
+- Prefer the SDK `client.workflows` action layer for common OpenClaw migration tasks; keep OpenClaw-specific orchestration in the OpenClaw adapter/repository.
 - Resource discovery should be exposed through compact SDK and OpenClaw surfaces. Agents should be able to discover required IDs and understand when a resource has no public discovery endpoint before attempting calls.
 - Mailbox-consumption workflows should use the compact Mail application surface, not generated Mail Hosting/admin operations.
 - OpenClaw tools must validate domain, operation, parameters, and body before making a request.

@@ -21,6 +21,7 @@ This plan is the implementation blueprint. It should be followed together with `
 - Newsletter endpoints are a representative resource-discovery pain point: `/1/newsletters/{domain}` uses an integer Newsletter Domain identifier, not a DNS name, and the public spec/docs do not expose an obvious "list my newsletter domains" endpoint.
 - The public OpenAPI `mail` domain covers Mail Hosting/admin routes under `/1/mail_hostings/**`; mailbox consumption uses the Mail application host `https://mail.infomaniak.com/api` and is absent from the committed OpenAPI spec and public docs snapshot currently used for generation.
 - Reviewed mailbox-consumption routes must live in a separate handwritten Mail application surface until Infomaniak publishes official OpenAPI/docs metadata for them.
+- The SDK includes a curated `client.workflows` action layer to ease migration from existing OpenClaw skills and command-line glue without exposing one tool per endpoint.
 
 ## Non-Negotiable Standards
 
@@ -150,6 +151,7 @@ await client.kdrive.operations.someGeneratedOperation(params);
 await client.mail.operations.someGeneratedOperation(params);
 await client.mail.application.listUserMailboxes();
 await client.mail.application.listThreads("mailbox-uuid", "inbox");
+await client.workflows.run({ domain: "kdrive", action: "listDirectory", input: { drive_id: 3024749 } });
 await client.raw.GET("/2/drive/{drive_id}/files/{file_id}", options);
 ```
 
@@ -167,6 +169,9 @@ Required public exports:
 - `ResourceDiscoveryRecipe`
 - `OperationRequirement`
 - `DiscoverySuggestion`
+- `DomainWorkflowClient`
+- `DomainActionMetadata`
+- `DomainActionRequest`
 - generated OpenAPI `paths`, `components`, and operation metadata types
 
 Client config:
@@ -208,6 +213,31 @@ Maintenance rules:
 - Do not merge Mail application routes into generated OpenAPI metadata unless official OpenAPI/docs operation data becomes available.
 - Keep all tests mocked through injected `fetch`.
 - Never store private mailbox content, tokens, cookies, or authorization headers in fixtures or docs.
+
+## SDK Domain Workflow Actions
+
+The migration bridge for `potassium-openclaw` should live in the SDK as curated domain workflow actions, not as OpenClaw-only glue. The goal is to make common user tasks easy while keeping the lower-level generated client, catalog, discovery, and Mail application APIs available.
+
+Required workflow surface:
+
+- `client.workflows.listActions(options?)`
+- `client.workflows.describeAction(domain, action)`
+- `client.workflows.run({ domain, action, input, signal })`
+- standalone exports `listDomainActions`, `describeDomainAction`, `runDomainAction`, and `createDomainWorkflowClient`
+
+Workflow action rules:
+
+- Organize by Infomaniak domain, using action names such as `kdrive/listDirectory`, `mail/getMessage`, `kchat/createPost`, and `urlShortener/createLink`.
+- Expose input metadata, mutating flags, and backing operation IDs so OpenClaw adapters can explain and gate calls.
+- Cover every domain with at least one useful action, even if some actions only route to discovery or a reviewed no-public-discovery result.
+- Prefer generated OpenAPI operations whenever possible.
+- Route mailbox-consumption actions through `client.mail.application`, keeping Mail Hosting/admin and Mail application APIs separate.
+- Route opaque-ID lookup actions through `client.discovery` rather than duplicating discovery logic.
+- Validate required input before calling the runtime; fail closed with clear `InfomaniakError` messages.
+- Preserve `AbortSignal` and injected `fetch` behavior.
+- Keep tests mocked and maintain 100% unit coverage for the workflow layer.
+
+This layer is a convenience facade, not the source of truth. If an operation is missing from workflows, callers can still use catalog search/describe plus generated or raw operation calls. Add workflow actions only when they represent common migration workflows or reduce repeated adapter code.
 
 ## Spec Normalization
 
@@ -473,6 +503,7 @@ OpenClaw safety:
 
 - Validate domain and operation before calling.
 - Refuse calls to unknown operations.
+- Prefer SDK workflow actions for common migrated skills before falling back to raw search/describe/call.
 - Route mailbox-consumption workflows through `infomaniak_mail_application`, not generated Mail Hosting/admin operations.
 - Refuse mutating operations when disabled.
 - Return clear structured errors.
@@ -607,6 +638,15 @@ Generated endpoint test minimum:
 - Update README, skill instructions, and progress tracking.
 - Acceptance: mailboxes, folders, threads, messages, quotas, drafts, schedules, cancel-send, message move, and current kSuite mail context are reachable through mocked SDK/OpenClaw tests without real network calls.
 
+### Phase 11: OpenClaw Migration Readiness
+
+- Add a curated SDK domain workflow action layer for common tasks currently handled by existing OpenClaw skills or command-line glue.
+- Ensure every Infomaniak domain has at least one workflow action.
+- Include migration-critical actions for kDrive browsing, Private-folder lookup, uploads, Mail application mailbox reads, kChat team/channel/post workflows, URL shortener actions, newsletter actions, and resource discovery.
+- Keep the OpenClaw plugin compact; do not add one tool per workflow action in this repository.
+- Document the SDK-first migration boundary so the `potassium-openclaw` repository can adopt `client.workflows` while keeping OpenClaw-specific orchestration there.
+- Acceptance: `client.workflows` lists/describes/runs typed actions with mocked tests, preserves mutating metadata, uses injected fetch paths only, and maintains 100% coverage.
+
 ## Completion Checklist
 
 - Raw spec is preserved.
@@ -625,6 +665,7 @@ Generated endpoint test minimum:
 - OpenClaw plugin exposes compact discovery alongside search, describe, and call.
 - OpenClaw plugin exposes reviewed mailbox-consumption actions through a compact Mail application tool.
 - Mail Hosting/admin and Mail application consumption are clearly separated in SDK, docs, and skill instructions.
+- SDK workflow actions expose migration-friendly domain actions while preserving raw generated/catalog access.
 - Skill documents safe usage.
 - Docs explain installation, generation, testing, and OpenClaw configuration.
 - `PROGRESS.md` accurately reflects current phase, completed work, next tasks, blockers, and validation status.
