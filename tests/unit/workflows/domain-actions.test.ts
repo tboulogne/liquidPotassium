@@ -40,7 +40,25 @@ describe("domain workflow actions", () => {
     const binary = new Uint8Array([1, 2, 3]);
     const actionInputs: Array<[string, string, Record<string, unknown>]> = [
       ["account", "listAccounts", {}],
+      ["account", "getAccount", { account_id: 42 }],
+      ["account", "listAccountProducts", { account_id: 42, with: "resources", filter: { service_names: ["mail"] } }],
+      ["ai", "listProducts", {}],
+      ["ai", "listModels", {}],
+      ["ai", "createChatCompletion", { product_id: 77, body: { model: "test", messages: [] } }],
+      ["ai", "createEmbedding", { product_id: 77, body: { model: "test", input: "hello" } }],
       ["core", "listProducts", {}],
+      ["core", "currentMyKSuite", { with: "mail" }],
+      ["core", "listTasks", {}],
+      ["core", "getTask", { task_uuid: "task-uuid" }],
+      ["domains", "listDomains", { account_id: 42, search: "example" }],
+      ["domains", "getDomain", { domain: "example.com" }],
+      ["domains", "listZones", { domain: "example.com", return: "full" }],
+      ["domains", "listDnsRecords", { zone: "example.com", with: "source", filter: { type: "A" }, search: "www" }],
+      ["etickets", "listDates", { with: "event" }],
+      ["etickets", "getReservation", { reservation_id: 123, with: "tickets" }],
+      ["etickets", "editTicket", { body: { ticket_id: 456 } }],
+      ["kmeet", "createRoom", { body: { title: "Planning" } }],
+      ["kmeet", "getRoomSettings", { room_id: "room-1" }],
       ["kdrive", "listAccessibleDrives", { account_id: 42, with: "capabilities" }],
       ["kdrive", "getUserPreferences", {}],
       ["kdrive", "getDrive", { drive_id: 3024749 }],
@@ -50,6 +68,23 @@ describe("domain workflow actions", () => {
       ["kdrive", "createDirectory", { drive_id: 3024749, file_id: 5, body: { name: "Docs" }, with: "path" }],
       ["kdrive", "createDefaultFile", { drive_id: 3024749, file_id: 5, body: { name: "note", type: "txt" } }],
       ["kdrive", "uploadFile", { drive_id: 3024749, total_size: 3, file_name: "a.txt", directory_id: 5, conflict: "error", body: binary }],
+      ["newsletter", "showDomain", { domain: 9, with: "stats" }],
+      ["newsletter", "listCampaigns", { domain: 9, with: "subject", filter: { status: "draft" } }],
+      ["newsletter", "listSubscribers", { domain: 9, filter: { email: "a@example.com" } }],
+      ["newsletter", "createSubscriber", { domain: 9, body: { email: "a@example.com" } }],
+      ["profile", "getProfile", { with: "emails" }],
+      ["profile", "listEmails", {}],
+      ["profile", "listPhones", {}],
+      ["publicCloud", "listPublicClouds", { account_id: 42, with: "projects", filter: { status: "active" } }],
+      ["publicCloud", "listProjects", { public_cloud_id: 88, with: "quota", filter: { name: "demo" } }],
+      ["publicCloud", "getProject", { public_cloud_id: 88, public_cloud_project_id: 99, with: "openstack" }],
+      ["radio", "listProducts", { account_id: 42, with: "stations", search: "studio" }],
+      ["radio", "getProduct", { radio_product_id: 11, with: "stations" }],
+      ["radio", "listStations", { radio_product_id: 11, with: "streams", search: "main" }],
+      ["radio", "listStreams", { radio_product_id: 11, station_id: 22, with: "stats" }],
+      ["swissBackup", "listBackups", { account_id: 42 }],
+      ["swissBackup", "getBackup", { swiss_backup_id: 33 }],
+      ["swissBackup", "listSlots", { swiss_backup_id: 33 }],
       ["kchat", "listTeams", {}],
       ["kchat", "getTeamByName", { name: "moo" }],
       ["kchat", "getChannelByNameForTeamName", { team_name: "moo", channel_name: "town-square", include_deleted: false }],
@@ -58,6 +93,13 @@ describe("domain workflow actions", () => {
       ["urlShortener", "getQuota", {}],
       ["urlShortener", "createLink", { url: "https://example.com", expiration_date: 1_800_000_000 }],
       ["urlShortener", "updateExpiration", { short_url_code: "abc", expiration_date: 1_800_000_000 }],
+      ["video", "listChannels", { with: "thumbnail" }],
+      ["video", "getChannel", { channel: 44, with: "players" }],
+      ["video", "listEvents", { channel: 44, account_id: 42 }],
+      ["vod", "listChannels", {}],
+      ["vod", "getChannel", { channel: 55 }],
+      ["vod", "browseRoot", { channel: 55 }],
+      ["vod", "listMedia", { channel: 55, with: "folder" }],
     ];
 
     for (const [domain, action, input] of actionInputs) {
@@ -129,6 +171,7 @@ describe("domain workflow actions", () => {
     const abort = new AbortController();
 
     await runDomainAction(client, { domain: "kdrive", action: "getDrive", input: { drive_id: 3024749 }, signal: abort.signal });
+    await runDomainAction(client, { domain: "account", action: "listAccountProducts", input: { account_id: 42, filter: "bad" } });
     await runDomainAction(client, { domain: "kdrive", action: "listDirectory", input: { drive_id: 3024749 } });
     await runDomainAction(client, { domain: "mail", action: "listUserMailboxes", signal: abort.signal });
     await runDomainAction(client, { domain: "mail", action: "listThreads", input: { mailbox_uuid: "mailbox-uuid", folder_id: "inbox" } });
@@ -140,6 +183,10 @@ describe("domain workflow actions", () => {
     expect(client.requestOperation).toHaveBeenCalledWith("kDriveGetDriveInformationV2", {
       path: { drive_id: 3024749 },
       signal: abort.signal,
+    });
+    expect(client.requestOperation).toHaveBeenCalledWith("Core/ResourcesListAccountsProducts", {
+      path: { account_id: 42 },
+      query: {},
     });
     expect(client.requestOperation).toHaveBeenCalledWith("kDriveGetFilesInDirectoryV3", {
       path: { drive_id: 3024749, file_id: 1 },
