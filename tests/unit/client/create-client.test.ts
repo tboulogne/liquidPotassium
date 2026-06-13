@@ -158,10 +158,10 @@ describe("createInfomaniakClient", () => {
 
   it("throws typed operation errors with safe response summaries", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
-      new Response(JSON.stringify({ error: "nope" }), {
+      new Response(JSON.stringify({ error: "nope", token: "returned-token", nested: { password: "mail-secret" }, items: [{ api_key: "key-1" }] }), {
         status: 403,
         statusText: "Forbidden",
-        headers: { "content-type": "application/json", "x-request-id": "req-1" },
+        headers: { authorization: "Bearer returned-token", "content-type": "application/json", "set-cookie": "sid=returned-cookie", "x-request-id": "req-1" },
       }),
     );
     const client = createInfomaniakClient({ fetch: fetchMock });
@@ -172,8 +172,8 @@ describe("createInfomaniakClient", () => {
       path: "/danger",
       status: 403,
       statusText: "Forbidden",
-      responseSummary: "{\"error\":\"nope\"}",
-      headers: { "content-type": "application/json", "x-request-id": "req-1" },
+      responseSummary: "{\"error\":\"nope\",\"token\":\"[redacted]\",\"nested\":{\"password\":\"[redacted]\"},\"items\":[{\"api_key\":\"[redacted]\"}]}",
+      headers: { authorization: "[redacted]", "content-type": "application/json", "set-cookie": "[redacted]", "x-request-id": "req-1" },
     } satisfies Partial<InfomaniakOperationError>);
   });
 
@@ -198,6 +198,32 @@ describe("createInfomaniakClient", () => {
 
     await expect(client.raw.GET("/broken")).rejects.toMatchObject({
       responseSummary: "x".repeat(500),
+    });
+  });
+
+  it("redacts secret-shaped values from text operation errors", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response("Authorization: Bearer returned-token\npassword=returned-password\nmessage=visible", { status: 500, statusText: "Broken" }),
+    );
+    const client = createInfomaniakClient({ fetch: fetchMock });
+
+    await expect(client.raw.GET("/broken")).rejects.toMatchObject({
+      responseSummary: "Authorization: Bearer [redacted]\npassword=[redacted]\nmessage=visible",
+    });
+  });
+
+  it("redacts malformed JSON operation errors as text", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
+      new Response("token=returned-token&message=visible", {
+        status: 500,
+        statusText: "Broken",
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    const client = createInfomaniakClient({ fetch: fetchMock });
+
+    await expect(client.raw.GET("/broken")).rejects.toMatchObject({
+      responseSummary: "token=[redacted]&message=visible",
     });
   });
 

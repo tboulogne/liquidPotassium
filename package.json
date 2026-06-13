@@ -47,6 +47,7 @@
     "openclaw/skills",
     "README.md",
     "RELEASE.md",
+    "SECURITY.md",
     "spec/normalization-report.json"
   ],
   "engines": {

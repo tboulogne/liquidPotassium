@@ -6,6 +6,10 @@ import { InfomaniakError, InfomaniakOperationError } from "./errors.js";
 import { createMailApplicationClient } from "./mail-application.js";
 const defaultBaseUrl = "https://api.infomaniak.com";
 const defaultMailApplicationBaseUrl = "https://mail.infomaniak.com";
+const responseSummaryMaxLength = 500;
+const redactedValue = "[redacted]";
+const sensitiveHeaderNames = new Set(["authorization", "proxy-authorization", "cookie", "set-cookie", "x-api-key", "x-auth-token"]);
+const sensitiveFieldNameFragments = ["authorization", "password", "passwd", "secret", "token", "apikey", "privatekey", "session", "cookie", "csrf"];
 const operationById = new Map(operations.map((operation) => [operation.operationId, operation]));
 export function createInfomaniakClient(config = {}) {
     const fetchImpl = config.fetch ?? globalThis.fetch;
@@ -192,15 +196,50 @@ async function parseSuccessResponse(response) {
 }
 async function safeResponseSummary(response) {
     const contentType = response.headers.get("content-type") ?? "";
-    if (contentType.includes("application/json")) {
-        return JSON.stringify(await response.json());
+    const body = await response.text();
+    if (!body) {
+        return "";
     }
-    return (await response.text()).slice(0, 500);
+    if (contentType.includes("application/json")) {
+        try {
+            return truncateResponseSummary(JSON.stringify(redactJsonValue(JSON.parse(body))));
+        }
+        catch {
+            return truncateResponseSummary(redactSensitiveText(body));
+        }
+    }
+    return truncateResponseSummary(redactSensitiveText(body));
+}
+function redactJsonValue(value, key) {
+    if (key && isSensitiveFieldName(key)) {
+        return redactedValue;
+    }
+    if (Array.isArray(value)) {
+        return value.map((item) => redactJsonValue(item));
+    }
+    if (isQueryObject(value)) {
+        return Object.fromEntries(Object.entries(value).map(([entryKey, entryValue]) => [entryKey, redactJsonValue(entryValue, entryKey)]));
+    }
+    return value;
+}
+function redactSensitiveText(value) {
+    return value
+        .replace(/\b(authorization|proxy-authorization)\s*:\s*bearer\s+[^\r\n]+/gi, "$1: Bearer [redacted]")
+        .replace(/\b((?:set-)?cookie)\s*:\s*[^\r\n]+/gi, "$1: [redacted]")
+        .replace(/\b(access[_-]?token|refresh[_-]?token|api[_-]?key|password|secret|token)\s*=\s*[^&\s]+/gi, "$1=[redacted]")
+        .replace(/\bBearer\s+[A-Za-z0-9._~+/=-]+/gi, "Bearer [redacted]");
+}
+function truncateResponseSummary(value) {
+    return value.slice(0, responseSummaryMaxLength);
+}
+function isSensitiveFieldName(key) {
+    const normalized = key.toLowerCase().replace(/[^a-z0-9]/g, "");
+    return sensitiveFieldNameFragments.some((fragment) => normalized.includes(fragment));
 }
 function headersToRecord(headers) {
     const record = {};
     headers.forEach((value, key) => {
-        record[key] = value;
+        record[key] = sensitiveHeaderNames.has(key.toLowerCase()) ? redactedValue : value;
     });
     return record;
 }

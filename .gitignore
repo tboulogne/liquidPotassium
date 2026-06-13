@@ -4,3 +4,20 @@ coverage/
 .vitest/
 .tsbuildinfo
 *.tsbuildinfo
+*.log
+npm-debug.log*
+
+# TypeScript emits these during local builds, but the package only ships dist/src and dist/openclaw.
+/dist/scripts/
+/dist/tests/
+/dist/vitest.config.*
+
+# Local credentials and machine-specific package registry state.
+.env
+.env.*
+!.env.example
+.npmrc
+*.pem
+*.key
+*.p12
+*.pfx
