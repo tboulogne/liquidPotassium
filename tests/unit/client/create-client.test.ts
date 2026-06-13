@@ -16,7 +16,7 @@ describe("createInfomaniakClient", () => {
     const result = await client.raw.GET("/2/drive/{drive_id}", {
       path: { drive_id: "drive 1" },
       query: { page: 1, tags: ["a", "b"], empty: undefined },
-      headers: { "x-request": "now" },
+      headers: { "x-null": null, "x-request": "now", "x-undefined": undefined },
       signal: abort.signal,
     });
 
@@ -29,6 +29,8 @@ describe("createInfomaniakClient", () => {
     expect(headers.get("authorization")).toBe("Bearer secret");
     expect(headers.get("x-default")).toBe("yes");
     expect(headers.get("x-request")).toBe("now");
+    expect(headers.has("x-null")).toBe(false);
+    expect(headers.has("x-undefined")).toBe(false);
     expect(headers.get("user-agent")).toBe("liquid-potassium-test");
   });
 

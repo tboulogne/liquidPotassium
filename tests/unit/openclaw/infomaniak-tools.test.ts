@@ -102,6 +102,11 @@ describe("Infomaniak OpenClaw tools", () => {
       method: "GET",
       limit: "invalid",
     });
+    const filteredSearch = await executeTool(findTool(tools, "infomaniak_search"), {
+      domain: "kmeet",
+      method: "GET",
+      limit: 1,
+    });
     const specOnlySearch = await executeTool(
       findTool(
         createInfomaniakOpenClawTools({
@@ -126,6 +131,9 @@ describe("Infomaniak OpenClaw tools", () => {
       }),
     ]);
     expect(methodSearch.operations).toEqual([
+      expect.objectContaining({ operationId: "get_1_kmeet_rooms_room_id_settings" }),
+    ]);
+    expect(filteredSearch.operations).toEqual([
       expect.objectContaining({ operationId: "get_1_kmeet_rooms_room_id_settings" }),
     ]);
     expect(specOnlySearch.operations).toEqual([
@@ -512,7 +520,7 @@ describe("Infomaniak OpenClaw tools", () => {
 
   it("passes path, query, headers, body, and abort signals for non-mutating calls", async () => {
     const abort = new AbortController();
-    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(new Response("{}", { headers: { "content-type": "application/json" } }));
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () => new Response("{}", { headers: { "content-type": "application/json" } }));
     const tools = createInfomaniakOpenClawTools({ fetch: fetchMock, config: { allowedDomains: ["kmeet"] } });
 
     await findTool(tools, "infomaniak_call").execute(
@@ -525,11 +533,17 @@ describe("Infomaniak OpenClaw tools", () => {
       },
       abort.signal,
     );
+    await executeTool(findTool(tools, "infomaniak_call"), {
+      operation_id: "get_1_kmeet_rooms_room_id_settings",
+      path: { room_id: "room 2" },
+    });
 
     const [url, init] = fetchMock.mock.calls[0] ?? [];
     expect(url).toBe("https://api.infomaniak.com/1/kmeet/rooms/room%201/settings?verbose=true");
     expect(init?.signal).toBe(abort.signal);
     expect((init?.headers as Headers).get("x-extra")).toBe("2");
+    expect(fetchMock.mock.calls[1]?.[0]).toBe("https://api.infomaniak.com/1/kmeet/rooms/room%202/settings");
+    expect((fetchMock.mock.calls[1]?.[1]?.headers as Headers).has("x-extra")).toBe(false);
   });
 });
 

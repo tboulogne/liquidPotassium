@@ -50,12 +50,13 @@ Confirm these exports remain stable or document breaking changes:
 - Resource discovery exports: `ResourceKind`, `ResourceDescriptor`, `ResourceDiscoveryRecipe`, `OperationRequirement`, `DiscoverySuggestion`
 - generated OpenAPI `paths` and `components`
 - OpenClaw plugin entry: `liquid-potassium/openclaw/plugin`
-- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_discover`, and `infomaniak_call`
+- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_discover`, `infomaniak_mail_application`, and `infomaniak_call`
 
 ## OpenClaw Readiness
 
-- Confirm the native plugin registers all five compact tools.
+- Confirm the native plugin registers all six compact tools.
 - Confirm the plugin registers `infomaniak_discover` and that describe output includes discovery suggestions.
+- Confirm the plugin registers `infomaniak_mail_application` for reviewed mailbox-consumption workflows.
 - Confirm the skill at `openclaw/skills/infomaniak/SKILL.md` references only valid tool names.
 - Confirm mutating operations are blocked by default and require explicit confirmation when unblocked by config.
 - Confirm domain and operation allow/deny policy tests pass.

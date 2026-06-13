@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 10 implementation - Mail Application Consumption Gap Closure.
-- Active task: Phase 10 implementation is complete and validated.
-- Repository status: The Phase 1-10 implementation is complete and validated on this branch.
+- Phase: Open-source release readiness.
+- Active task: Open-source metadata, README, license, audit, and packaging review are complete and validated.
+- Repository status: The Phase 1-10 implementation and open-source release preparation are complete and validated on this branch.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -73,10 +73,17 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added the compact OpenClaw `infomaniak_mail_application` tool with domain/operation policy checks, injected fetch, mutating-operation blocking, explicit confirmation, and parameter validation.
   - Updated README, `MASTERPLAN.md`, `AGENTS.md`, `MANIFESTO.md`, the Infomaniak OpenClaw skill, and `docs/mail-application-api.md` with route provenance and maintenance rules.
   - Added mocked SDK and OpenClaw tests for all reviewed Mail application actions without real network calls.
+- `chore: prepare open source release`
+  - Reworked `README.md` into a public open-source entry point with install, quick start, SDK surfaces, resource discovery, Mail application API, OpenClaw plugin, generation, testing, security, status, contributing, and license sections.
+  - Added Apache-2.0 licensing and npm publication metadata.
+  - Removed the npm `private` publication blocker.
+  - Updated the release checklist for the six-tool OpenClaw surface, including `infomaniak_mail_application`.
+  - Upgraded Vitest and coverage tooling to 4.1.8 to clear dev-toolchain audit findings, then pinned test discovery to source tests only.
+  - Added small coverage tests required by Vitest 4's V8 coverage accounting.
 
 ## Next Task Queue
 
-- No current implementation tasks. Continue with review, packaging, release, or official Mail application docs migration only if requested.
+- No current implementation tasks. Continue with release publishing, repository settings, CI wiring, or official Mail application docs migration only if requested.
 
 ## Validation Status
 
@@ -100,6 +107,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Resource discovery: passing `npm run typecheck` and `npm run test:coverage`; every domain has a tested discovery recipe or reviewed no-public-discovery explanation, and no tests make live network calls.
 - Mail application consumption: passing mocked tests for mailbox listing, folder listing, thread listing, message reads, quota reads, draft create/update/read/delete, draft scheduling, schedule deletion, send cancellation, message moves, current kSuite mail context, OpenClaw policy enforcement, mutating confirmation, and invalid parameter failures.
 - Phase 10 validation: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run check:docs`, `npm run check:generated`, and `npm run test:coverage`.
+- Open-source release preparation: passing `npm run ci`, `npm audit`, `npm audit --omit=dev`, `npm pack --dry-run`, and `git diff --check`.
+- Package preview: `npm pack --dry-run` reports `liquid-potassium@0.1.0`, 160 files, approximately 881.6 kB packed and 16.1 MB unpacked, including `LICENSE`, `README.md`, built SDK output, OpenClaw plugin output, skill docs, Mail application docs, and normalization report.
 
 ## Blockers And Risks
 
@@ -109,6 +118,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Resource discovery must avoid guessing opaque IDs. Every domain needs either a read-only discovery recipe or an explicit no-public-discovery explanation.
 - Official docs enrichment must remain a committed generation-time snapshot, not a runtime dependency.
 - Mail application consumption routes are reviewed fallback-backed until Infomaniak publishes official OpenAPI/docs operation metadata for those routes.
+- The local `main` branch still reports `origin/main` as gone; configure or recreate the upstream before pushing/publishing from git automation.
 
 ## Open Decisions
 

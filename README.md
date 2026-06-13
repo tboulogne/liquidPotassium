@@ -2,19 +2,38 @@
 
 Domain-oriented TypeScript SDK and OpenClaw integration for the Infomaniak API.
 
-The SDK is generated from `infomaniak_api_1781289971.json`, normalized deterministically, grouped by domains such as `kdrive`, `kchat`, and `mail`, and tested without real network calls.
+`liquid-potassium` turns the Infomaniak OpenAPI specification into a generated, searchable, tested Node SDK. It also ships compact OpenClaw tools so agents can search, describe, discover resource IDs, and call Infomaniak operations without registering one tool per endpoint.
 
-## Requirements
+This is an unofficial community project and is not affiliated with Infomaniak.
 
-- Node.js 22+
-- npm
+## Highlights
+
+- TypeScript-first SDK for Node.js 22+ and ESM.
+- Generated coverage for all 1,429 operations in the committed Infomaniak OpenAPI spec.
+- Domain clients for `kdrive`, `mail`, `kchat`, `newsletter`, `publicCloud`, `video`, `vod`, `radio`, `domains`, `account`, `profile`, `ai`, `kmeet`, `swissBackup`, `urlShortener`, `etickets`, and shared `core` operations.
+- Searchable operation catalog with docs-enriched metadata from a committed Infomaniak Developer Portal snapshot.
+- Resource discovery helpers for common opaque IDs such as kDrive drive IDs.
+- Reviewed Mail application helpers for mailbox consumption routes that are not present in the public OpenAPI spec.
+- Native OpenClaw plugin with six compact tools.
+- No real network calls in tests; runtime HTTP goes through injected `fetch`.
+- 100% unit coverage threshold for handwritten runtime, generation, catalog, discovery, and OpenClaw adapter code.
+
+## Install
 
 ```bash
+npm install liquid-potassium
+```
+
+For local development:
+
+```bash
+git clone https://github.com/OpenCow42/liquidPotassium.git
+cd liquidPotassium
 npm ci
 npm run ci
 ```
 
-## SDK Usage
+## Quick Start
 
 ```ts
 import { createInfomaniakClient, searchOperations } from "liquid-potassium";
@@ -24,46 +43,39 @@ const client = createInfomaniakClient({
   fetch,
 });
 
-const matches = searchOperations({ domain: "kmeet", query: "room settings" });
-const settings = await client.kmeet.operations.get1KmeetRoomsRoomIdSettings({
-  path: { room_id: "room-123" },
+const matches = searchOperations({
+  domain: "kdrive",
+  query: "accessible drives",
+  limit: 5,
 });
 
-const raw = await client.raw.GET("/1/kmeet/rooms/{room_id}/settings", {
-  path: { room_id: "room-123" },
+const drives = await client.kdrive.operations.kdriveaccessiblesdrivesv2({
+  query: { account_id: 123456 },
 });
 ```
 
-## Mail Application Usage
+Every SDK request supports an injected `fetch`, bearer token providers, custom headers, custom base URLs, and `AbortSignal`.
 
-The generated `mail` domain covers the public OpenAPI Mail Hosting/admin routes under `/1/mail_hostings/**`. Mailbox consumption, such as listing a user's mailboxes, folders, threads, and message content, is exposed through a reviewed handwritten Mail application surface because those routes are not present in the committed public OpenAPI spec.
+## Client Surfaces
+
+Generated domain operations:
 
 ```ts
-import { createInfomaniakClient } from "liquid-potassium";
-
-const client = createInfomaniakClient({
-  token: process.env.INFOMANIAK_TOKEN,
-  fetch,
+await client.kdrive.operations.kdrivegetfilesindirectoryv3({
+  path: { drive_id: 3024749, file_id: 1 },
+  query: { limit: 100, with: "path,capabilities" },
 });
-
-const mailboxes = await client.mail.application.listUserMailboxes();
-const folders = await client.mail.application.listFolders("mailbox-uuid");
-const threads = await client.mail.application.listThreads("mailbox-uuid", "inbox", {
-  filter: "unseen",
-});
-const message = await client.mail.application.getMessage(
-  "/api/mail/mailbox-uuid/folder/inbox/message/42",
-  { preferredFormat: "text" },
-);
 ```
 
-`mailApplicationBaseUrl` defaults to `https://mail.infomaniak.com`. Override it only for tests, fixtures, or reviewed alternate hosts.
+Raw typed request helpers:
 
-Route provenance and maintenance rules are documented in `docs/mail-application-api.md`.
+```ts
+await client.raw.GET("/1/kmeet/rooms/{room_id}/settings", {
+  path: { room_id: "room-123" },
+});
+```
 
-## Operation Catalog
-
-Use the catalog before calling endpoints:
+Operation catalog:
 
 ```ts
 import {
@@ -75,83 +87,47 @@ import {
 } from "liquid-potassium";
 
 const domains = listDomains();
-const kdriveReads = listOperations({ domain: "kdrive", method: "GET", mutating: false });
-const search = searchOperations({ query: "mailbox", domain: "mail", limit: 10 });
-const description = describeOperation(search[0].operationId);
-const mutating = isMutatingOperation(description.operationId);
+const reads = listOperations({ domain: "kdrive", method: "GET", mutating: false });
+const operation = describeOperation("kDriveAccessiblesDrivesV2");
+const mutating = isMutatingOperation(operation.operationId);
 ```
 
 ## Resource Discovery
 
-Docs-enriched resource discovery helps callers find required IDs before calling operations. The official Infomaniak Developer Portal pages expose structured operation metadata that includes examples, enums, category paths, and pagination/sorting hints missing from the raw OpenAPI file.
-
-The flow is:
+Resource discovery helps callers find required IDs before calling operations.
 
 ```ts
-import {
-  createInfomaniakClient,
-  createResourceDiscovery,
-  describeOperationRequirements,
-} from "liquid-potassium";
+import { createInfomaniakClient, describeOperationRequirements } from "liquid-potassium";
 
 const client = createInfomaniakClient({ token: process.env.INFOMANIAK_TOKEN, fetch });
-const discovery = createResourceDiscovery(client);
 
-const requirements = describeOperationRequirements("NewsletterListCampaigns");
-const drives = await discovery.discover({ kind: "kdriveDrive" });
-const newsletterDomains = await discovery.discover({ kind: "newsletterDomain" });
+const requirements = describeOperationRequirements("kDriveGetFilesInDirectoryV3");
+const drives = await client.discovery.discover({ kind: "kdriveDrive", parents: { account_id: 123456 } });
 ```
 
-Discovery uses only reviewed read-only Infomaniak operations through injected `fetch`. When a required ID cannot be discovered through the public API, such as a Newsletter Domain id, the SDK returns a clear `no_public_discovery` suggestion instead of guessing.
+Discovery uses reviewed read-only operations. If an ID cannot be discovered through the public API, the SDK returns a structured `no_public_discovery` suggestion instead of guessing.
 
-## Generation Flow
+## Mail Application API
 
-The committed root spec is the immutable source:
+The generated `mail` domain covers public Mail Hosting/admin routes under `/1/mail_hostings/**`.
 
-- Raw source: `infomaniak_api_1781289971.json`
-- Tooling copy: `spec/infomaniak.raw.json`
-- Normalized output: `spec/infomaniak.normalized.json`
-- Normalization report: `spec/normalization-report.json`
-- Docs snapshot: `spec/infomaniak.docs-snapshot.json`
-- Docs enrichment report: `spec/docs-enrichment-report.json`
-- Generated TypeScript and tests: `src/generated`, `tests/generated`
+Mailbox consumption uses Infomaniak's Mail application API at `https://mail.infomaniak.com/api`, which is not present in the committed public OpenAPI spec. Those reviewed routes are exposed separately:
 
-Commands:
-
-```bash
-npm run normalize
-npm run generate
-npm run check:generated
-npm run check:docs
+```ts
+const mailboxes = await client.mail.application.listUserMailboxes();
+const folders = await client.mail.application.listFolders("mailbox-uuid");
+const threads = await client.mail.application.listThreads("mailbox-uuid", "inbox", {
+  filter: "unseen",
+});
+const message = await client.mail.application.getMessage(
+  "/api/mail/mailbox-uuid/folder/inbox/message/42",
+  { preferredFormat: "text" },
+);
 ```
 
-`check:generated` re-runs normalization and generation, then fails if generated outputs differ from the committed state.
+`mailApplicationBaseUrl` defaults to `https://mail.infomaniak.com`. Route provenance and maintenance rules are documented in [`docs/mail-application-api.md`](docs/mail-application-api.md).
 
-The docs-enrichment flow is:
-
-```bash
-npm run docs:fetch
-npm run docs:check
-```
-
-Docs are fetched only into a committed snapshot for generation; SDK runtime and tests must not fetch documentation pages. `check:docs` re-runs `docs:check` without network access and fails if the committed enrichment report drifts.
-
-## Testing Rules
-
-Tests and CI must not perform real network calls. Runtime HTTP goes through injected or mocked `fetch`.
-
-```bash
-npm run check:no-network
-npm run check:docs
-npm run typecheck
-npm test
-npm run test:coverage
-npm run build
-```
-
-Coverage is set to 100% for handwritten runtime, normalizer, generator, catalog, and OpenClaw adapter code. Generated endpoint representation tests cover every normalized operation.
-
-## OpenClaw Setup
+## OpenClaw Plugin
 
 The native plugin entry is exported at:
 
@@ -168,9 +144,6 @@ The plugin registers six compact tools:
 - `infomaniak_mail_application`
 - `infomaniak_call`
 
-`infomaniak_describe` includes required resource IDs and discovery suggestions. `infomaniak_discover` discovers reviewed resources or returns a structured no-public-discovery explanation.
-`infomaniak_mail_application` covers reviewed mailbox-consumption actions that are not present in the public OpenAPI catalog.
-
 Plugin config supports:
 
 - `token`
@@ -181,4 +154,71 @@ Plugin config supports:
 - `deniedOperations`
 - `blockMutating`
 
-The OpenClaw skill is in `openclaw/skills/infomaniak/SKILL.md`. Agents should search, describe, discover, and then call generated OpenAPI operations. For mailbox content, agents should use `infomaniak_mail_application`; mutating operations still require explicit user intent plus plugin permission.
+The OpenClaw skill lives in [`openclaw/skills/infomaniak/SKILL.md`](openclaw/skills/infomaniak/SKILL.md). Agents should search, describe, discover, and only then call. Mutating operations require explicit user intent and plugin permission.
+
+## Generation
+
+The committed root spec is the immutable input:
+
+- Raw source: `infomaniak_api_1781289971.json`
+- Tooling copy: `spec/infomaniak.raw.json`
+- Normalized output: `spec/infomaniak.normalized.json`
+- Normalization report: `spec/normalization-report.json`
+- Docs snapshot: `spec/infomaniak.docs-snapshot.json`
+- Docs enrichment report: `spec/docs-enrichment-report.json`
+- Generated SDK and tests: `src/generated`, `tests/generated`
+
+Useful commands:
+
+```bash
+npm run normalize
+npm run generate
+npm run check:generated
+npm run check:docs
+```
+
+`check:generated` re-runs normalization and generation, then fails if generated outputs drift from the committed state. `check:docs` validates the committed docs snapshot without fetching the web.
+
+## Testing
+
+Tests and CI must not perform real network calls. Runtime HTTP goes through injected or mocked `fetch`.
+
+```bash
+npm run check:no-network
+npm run check:docs
+npm run typecheck
+npm test
+npm run test:coverage
+npm run build
+```
+
+The full release gate is:
+
+```bash
+npm run ci
+```
+
+## Security
+
+- Do not commit Infomaniak API tokens, cookies, mailbox content, customer data, or account-specific secrets.
+- Prefer token providers or environment variables for credentials.
+- The SDK does not log authorization headers or request bodies by default.
+- Tests must use fixtures and mocked `fetch`, never live Infomaniak services.
+
+## Project Status
+
+`0.1.0` is an initial open-source release candidate. Public API shape is usable, but consumers should expect breaking changes until `1.0.0`.
+
+## Contributing
+
+Before opening a change:
+
+1. Read [`AGENTS.md`](AGENTS.md), [`MANIFESTO.md`](MANIFESTO.md), and [`MASTERPLAN.md`](MASTERPLAN.md).
+2. Keep generated artifacts deterministic.
+3. Add focused tests for handwritten behavior.
+4. Run `npm run ci`.
+5. Use Conventional Commits.
+
+## License
+
+Licensed under the [Apache License 2.0](LICENSE).
