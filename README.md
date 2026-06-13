@@ -14,6 +14,7 @@ This is an unofficial community project and is not affiliated with Infomaniak.
 - Searchable operation catalog with docs-enriched metadata from a committed Infomaniak Developer Portal snapshot.
 - Resource discovery helpers for common opaque IDs such as kDrive drive IDs.
 - Reviewed Mail application helpers for mailbox consumption routes that are not present in the public OpenAPI spec.
+- Reviewed kChat WebSocket helpers for hosted Infomaniak Echo/Pusher events and plain Mattermost WebSocket events.
 - Curated domain workflow actions for migration-friendly tasks such as mailbox reads, kDrive browsing/uploads, kChat posts, and resource discovery.
 - Native OpenClaw plugin with six compact tools.
 - No real network calls in tests; runtime HTTP goes through injected `fetch`.
@@ -146,6 +147,29 @@ const message = await client.mail.application.getMessage(
 ```
 
 `mailApplicationBaseUrl` defaults to `https://mail.infomaniak.com`. Route provenance and maintenance rules are documented in [`docs/mail-application-api.md`](docs/mail-application-api.md).
+
+## kChat WebSocket API
+
+Hosted Infomaniak kChat exposes live events through an Echo/Pusher-compatible socket at `websocket.kchat.infomaniak.com`, with private subscription auth through the kChat team host. The reviewed SDK surface lives under `client.kchat.websocket` and keeps all network dependencies injectable:
+
+```ts
+const client = createInfomaniakClient({
+  token: process.env.INFOMANIAK_TOKEN,
+  fetch,
+});
+
+const abort = new AbortController();
+await client.kchat.websocket.runConnection({
+  teamName: "my-team",
+  channelIds: ["channel-id-to-accept"],
+  signal: abort.signal,
+  onPost(event) {
+    console.log(event.text, event.channelId, event.userName);
+  },
+});
+```
+
+By default the client resolves `private-team.<team_id>` and `presence-teamUser.<user_id>` from `teamName`, authenticates them through `/broadcasting/auth`, and emits normalized `posted` events. For a plain Mattermost server, set `protocol: "mattermost"` and provide `apiBaseUrl` or a full `url`.
 
 ## OpenClaw Plugin
 

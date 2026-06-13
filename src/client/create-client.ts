@@ -5,6 +5,7 @@ import { createDomainWorkflowClient, type DomainWorkflowClient } from "../workfl
 import type { OperationMetadata } from "../generated/catalog/types.js";
 import type { GeneratedOperationClient, OperationRequest } from "./generated-operation-client.js";
 import { InfomaniakError, InfomaniakOperationError } from "./errors.js";
+import { createKchatWebSocketClient, type KchatWebSocketClient, type KchatWebSocketConstructor } from "./kchat-websocket.js";
 import { createMailApplicationClient, type MailApplicationClient } from "./mail-application.js";
 
 export interface InfomaniakClientConfig {
@@ -14,6 +15,7 @@ export interface InfomaniakClientConfig {
   fetch?: typeof fetch;
   headers?: HeadersInit | (() => HeadersInit | Promise<HeadersInit>);
   userAgent?: string;
+  webSocket?: KchatWebSocketConstructor;
 }
 
 export interface RawRequestOptions extends OperationRequest {
@@ -34,10 +36,14 @@ export type DomainClients = ReturnType<typeof createDomainOperations>;
 export type MailDomainClient = DomainClients["mail"] & {
   application: MailApplicationClient;
 };
+export type KchatDomainClient = DomainClients["kchat"] & {
+  websocket: KchatWebSocketClient;
+};
 
 export type InfomaniakClient = GeneratedOperationClient &
-  Omit<DomainClients, "mail"> & {
+  Omit<DomainClients, "kchat" | "mail"> & {
     discovery: ResourceDiscovery;
+    kchat: KchatDomainClient;
     mail: MailDomainClient;
     raw: RawClient;
     workflows: DomainWorkflowClient;
@@ -81,6 +87,12 @@ export function createInfomaniakClient(config: InfomaniakClientConfig = {}): Inf
     DELETE: (path, options) => requestPath(fetchImpl, config, path, { ...options, method: "DELETE" }),
   };
   const domainClients = createDomainOperations(generatedClient);
+  const kchatWebSocketOptions = {
+    fetch: fetchImpl,
+    ...(config.token === undefined ? {} : { token: config.token }),
+    ...(config.webSocket === undefined ? {} : { webSocket: config.webSocket }),
+  };
+  const kchatWebSocket = createKchatWebSocketClient(kchatWebSocketOptions);
   const mailApplicationBaseUrl = config.mailApplicationBaseUrl ?? defaultMailApplicationBaseUrl;
   const mailApplication = createMailApplicationClient({
     apiRequest: (path, options) => requestPath(fetchImpl, config, path, options as RawRequestOptions | undefined),
@@ -98,6 +110,10 @@ export function createInfomaniakClient(config: InfomaniakClientConfig = {}): Inf
     ...generatedClient,
     ...domainClients,
     discovery,
+    kchat: {
+      ...domainClients.kchat,
+      websocket: kchatWebSocket,
+    },
     mail: {
       ...domainClients.mail,
       application: mailApplication,

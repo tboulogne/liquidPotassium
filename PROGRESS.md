@@ -105,6 +105,10 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Tightened local ignore rules for credential files and generated build leftovers.
   - Restricted CI workflow permissions to read-only contents access and disabled checkout credential persistence.
   - Added `SECURITY.md` and Dependabot updates for npm and GitHub Actions.
+- `feat: add kchat websocket client`
+  - Added reviewed `client.kchat.websocket` helpers for hosted Infomaniak Echo/Pusher sockets and plain Mattermost `/api/v4/websocket` sockets.
+  - Added injectable `fetch` and `WebSocket` transports, team/user discovery for Echo subscriptions, private-channel `/broadcasting/auth`, Mattermost authentication challenge frames, normalized `posted` events, sender/channel filters, abort handling, and no-secret error messages.
+  - Added mocked unit coverage for Echo subscription/auth flows, Mattermost auth/post flows, filtering, malformed frames, binary payloads, socket API variants, and failure cases without live network calls.
 
 ## Next Task Queue
 
@@ -142,6 +146,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - npm publication: `liquid-potassium@0.1.0` is published to `https://registry.npmjs.org/` with `latest` pointing to `0.1.0`.
 - Post-publish install verification: a fresh temporary project installed `liquid-potassium@0.1.0` from npm with 0 vulnerabilities and successfully imported the main SDK, OpenClaw plugin, and OpenClaw tools subpaths.
 - Public GitHub security preflight: passing `npm run ci`, `npm audit`, `npm audit --omit=dev`, `npm pack --dry-run --json`, `git diff --check`, and high-confidence secret scans across current tracked files and git history.
+- kChat WebSocket client: passing `npm run typecheck` and `npm run test:coverage` with 100% statements, branches, functions, and lines; all tests use mocked `fetch` and WebSocket implementations.
 
 ## Blockers And Risks
 

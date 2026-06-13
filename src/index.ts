@@ -16,6 +16,25 @@ export {
 export { createInfomaniakClient, type DomainClients, type InfomaniakClient, type InfomaniakClientConfig, type RawClient, type RawRequestOptions } from "./client/create-client.js";
 export { InfomaniakError, InfomaniakOperationError, type OperationErrorDetails } from "./client/errors.js";
 export type { GeneratedOperationClient, OperationRequest } from "./client/generated-operation-client.js";
+export {
+  createKchatMattermostAuthFrame,
+  createKchatWebSocketClient,
+  normalizeKchatWebSocketPostEvent,
+  resolveKchatWebSocketUrl,
+  runKchatWebSocketConnection,
+  type KchatJsonObject,
+  type KchatJsonValue,
+  type KchatTokenProvider,
+  type KchatWebSocketClient,
+  type KchatWebSocketClientFactoryOptions,
+  type KchatWebSocketConstructor,
+  type KchatWebSocketFrame,
+  type KchatWebSocketLike,
+  type KchatWebSocketPostEvent,
+  type KchatWebSocketProtocol,
+  type KchatWebSocketRunOptions,
+  type KchatWebSocketUrlOptions,
+} from "./client/kchat-websocket.js";
 export type {
   CurrentMyKSuite,
   GetMailboxQuotaOptions,
