@@ -5,8 +5,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 ## Current State
 
 - Phase: Phase 9 implementation - Docs-Enriched Resource Discovery.
-- Active task: Nested Infomaniak query serialization is implemented and validated; next step is SDK and OpenClaw resource discovery APIs.
-- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling, docs snapshot artifacts, catalog enrichment, and nested query serialization are implemented in focused slices.
+- Active task: SDK and OpenClaw resource discovery APIs are implemented and validated; next step is final full CI and commit.
+- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling, docs snapshot artifacts, catalog enrichment, nested query serialization, and resource discovery are implemented in focused slices.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -60,13 +60,17 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - `8b46773 feat: enrich catalog with docs metadata`
   - Enriched generated operation metadata from the committed docs snapshot with docs URLs, docs operation IDs, category paths, portal flags, capabilities, compact parameter descriptions/schema metadata/enums/examples, and response statuses.
   - Extended generated endpoint tests, catalog search/description, public exports, and OpenClaw search summaries to expose and verify docs-backed metadata.
-- `feat: serialize nested query parameters`
+- `dc7f743 feat: serialize nested query parameters`
   - Added Infomaniak-compatible bracket notation for nested query objects and nested arrays while preserving repeated-key serialization for simple top-level arrays.
   - Added runtime tests for nested filters such as `filter[service_names][]=mailing`.
+- `feat: add resource discovery`
+  - Added curated resource discovery kinds and recipes, operation requirement descriptions, no-public-discovery suggestions, SDK discovery helpers, and `client.discovery`.
+  - Added OpenClaw `infomaniak_discover`, enriched `infomaniak_describe` with requirements, and updated the skill workflow to search, describe, discover, then call.
+  - Added tests for every domain having a recipe or reviewed explanation, recipe safety, newsletter/kMeet no-public-discovery behavior, mocked discovery calls, response mapping, policy enforcement, and valid skill tool references.
 
 ## Next Task Queue
 
-1. Add SDK and OpenClaw resource discovery APIs across all domains.
+1. Run final full CI and commit resource discovery.
 
 ## Validation Status
 
@@ -78,8 +82,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Generated endpoint coverage: passing for all 1,429 normalized operations across 17 generated domain test files.
 - Runtime SDK: passing mocked tests for auth, URL/path/query/body handling, multipart, binary/text/JSON responses, abort signals, non-2xx typed errors, generated operation dispatch, raw methods, custom base URLs, and missing fetch failures.
 - Operation catalog API: passing tests for domain listing, operation filtering, search, lookup, descriptions, mutating flags, and unknown-operation failures.
-- OpenClaw plugin: passing tests for native registration, tool schemas, config defaults/validation, search/describe/call behavior, domain/operation filtering, mutating blocks, injected fetch usage, and no-network search/describe behavior.
-- OpenClaw skill: passing tests for valid tool references, search-describe-call workflow, and explicit mutating-operation intent guidance.
+- OpenClaw plugin: passing tests for native registration, tool schemas, config defaults/validation, search/describe/discover/call behavior, domain/operation filtering, mutating blocks, injected fetch usage, and no-network search/describe/discover behavior.
+- OpenClaw skill: passing tests for valid tool references, search-describe-discover-call workflow, and explicit mutating-operation intent guidance.
 - Release readiness: passing full `npm run ci`, including generation consistency, no-network policy, typecheck, build, and 100% coverage.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
@@ -87,7 +91,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Docs snapshot artifacts: fetched 1,405 official docs operations; `npm run docs:check` reports 1,402 matched docs operations, 3 docs-only entries, 27 spec-only operations, 15 operation ID mismatches, 0 duplicate docs entries, and 0 errors.
 - Docs-enriched catalog metadata: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run docs:check`, and `npm run test:coverage` with 100% statements, branches, functions, and lines.
 - Nested query serialization: passing `npm run typecheck` and `npm run test:coverage`; nested objects use bracket notation and simple top-level arrays remain repeated query keys.
-- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling, source artifacts, catalog enrichment, and nested query serialization are implemented, but runtime discovery and OpenClaw discovery are not implemented yet.
+- Resource discovery: passing `npm run typecheck` and `npm run test:coverage`; every domain has a tested discovery recipe or reviewed no-public-discovery explanation, and no tests make live network calls.
 
 ## Blockers And Risks
 

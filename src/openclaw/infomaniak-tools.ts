@@ -4,12 +4,17 @@ import { jsonResult } from "openclaw/plugin-sdk/agent-runtime";
 
 import {
   createInfomaniakClient,
+  createResourceDiscovery,
   describeOperation,
+  describeOperationRequirements,
+  describeResourceKind,
   getOperation,
   listDomains,
+  listResourceDiscoveryRecipes,
   listOperations,
   searchOperations,
   type InfomaniakClientConfig,
+  type OperationRequirement,
   type OperationRequest,
   type OperationSearchOptions,
   type OperationDescription,
@@ -45,6 +50,10 @@ export interface OperationSummary {
     beta: boolean;
   } | null;
 }
+
+export type OperationDescriptionWithRequirements = OperationDescription & {
+  requirements: OperationRequirement;
+};
 
 const emptyParamsSchema = Type.Object({}, { additionalProperties: false });
 
@@ -97,6 +106,17 @@ export const infomaniakDescribeToolSchema = Type.Object(
   { additionalProperties: false },
 );
 
+export const infomaniakDiscoverToolSchema = Type.Object(
+  {
+    domain: Type.Optional(Type.String({ description: "Restrict discovery to one Infomaniak domain." })),
+    kind: Type.Optional(Type.String({ description: "Resource kind to discover, such as kdriveDrive, mailAccess, or newsletterDomain." })),
+    operation_id: Type.Optional(Type.String({ description: "Operation ID whose required resources should guide discovery." })),
+    parents: Type.Optional(Type.Record(Type.String(), Type.Union([Type.String(), Type.Number()]), { description: "Known parent resource values." })),
+    limit: Type.Optional(Type.Integer({ description: "Maximum number of resources to return.", minimum: 1, maximum: 100 })),
+  },
+  { additionalProperties: false },
+);
+
 export const infomaniakCallToolSchema = Type.Object(
   {
     operation_id: Type.String({ description: "Normalized Infomaniak operation ID to call." }),
@@ -136,6 +156,14 @@ export function createInfomaniakOpenClawTools(options: InfomaniakOpenClawToolsOp
       description: "Describe one Infomaniak API operation before calling it.",
       parameters: infomaniakDescribeToolSchema,
       execute: async (_toolCallId, params) => jsonResult({ operation: describeAllowedOperation(config, readOperationId(params)) }),
+    },
+    {
+      name: "infomaniak_discover",
+      label: "Infomaniak Discover",
+      description: "Discover resource IDs for Infomaniak operations, or explain when public discovery is unavailable.",
+      parameters: infomaniakDiscoverToolSchema,
+      executionMode: "sequential",
+      execute: async (_toolCallId, params, signal) => jsonResult(await discoverAllowedResources(config, options.fetch, asRecord(params), signal)),
     },
     {
       name: "infomaniak_call",
@@ -200,9 +228,12 @@ function searchAllowedOperations(config: InfomaniakOpenClawPluginConfig, params:
   return searchOperations(searchOptions).filter((operation) => operationAllowed(config, operation));
 }
 
-function describeAllowedOperation(config: InfomaniakOpenClawPluginConfig, operationId: string): OperationDescription {
+function describeAllowedOperation(config: InfomaniakOpenClawPluginConfig, operationId: string): OperationDescriptionWithRequirements {
   getAllowedOperation(config, operationId);
-  return describeOperation(operationId);
+  return {
+    ...describeOperation(operationId),
+    requirements: describeOperationRequirements(operationId),
+  };
 }
 
 function getAllowedOperation(config: InfomaniakOpenClawPluginConfig, operationId: string): OperationMetadata {
@@ -217,6 +248,45 @@ function allowedOperations(config: InfomaniakOpenClawPluginConfig): readonly Ope
   return listOperations().filter((operation) => operationAllowed(config, operation));
 }
 
+async function discoverAllowedResources(
+  config: InfomaniakOpenClawPluginConfig,
+  fetchImpl: typeof fetch | undefined,
+  params: Record<string, unknown>,
+  signal: AbortSignal | undefined,
+) {
+  const domain = stringParam(params.domain);
+  const kind = stringParam(params.kind);
+  const operationId = stringParam(params.operation_id);
+  if (domain && !domainAllowed(config, domain)) {
+    throw new Error(`Infomaniak domain is not allowed by plugin policy: ${domain}`);
+  }
+  if (kind) {
+    const resourceKind = describeResourceKind(kind);
+    if (!domainAllowed(config, resourceKind.domain)) {
+      throw new Error(`Infomaniak resource kind is not allowed by plugin policy: ${kind}`);
+    }
+  }
+  if (operationId) {
+    getAllowedOperation(config, operationId);
+  }
+  assertDiscoveryRecipeAllowed(config, {
+    ...(domain ? { domain } : {}),
+    ...(kind ? { kind } : {}),
+    ...(operationId ? { operationId } : {}),
+  });
+  const client = createInfomaniakClient(buildClientConfig(config, fetchImpl));
+  const discovery = createResourceDiscovery(client);
+  const discoveryOptions = {
+    ...(domain ? { domain } : {}),
+    ...(kind ? { kind } : {}),
+    ...(operationId ? { operationId } : {}),
+    ...optionalProperty("parents", stringNumberRecord(params.parents)),
+    ...optionalProperty("limit", numberParam(params.limit)),
+    ...optionalProperty("signal", signal),
+  };
+  return discovery.discover(discoveryOptions);
+}
+
 function operationAllowed(config: InfomaniakOpenClawPluginConfig, operation: OperationMetadata): boolean {
   const allowedDomainSet = new Set(config.allowedDomains);
   const allowedOperationSet = new Set(config.allowedOperations);
@@ -229,6 +299,31 @@ function operationAllowed(config: InfomaniakOpenClawPluginConfig, operation: Ope
     return false;
   }
   return !deniedOperationSet.has(operation.operationId);
+}
+
+function domainAllowed(config: InfomaniakOpenClawPluginConfig, domain: string): boolean {
+  return config.allowedDomains.length === 0 || config.allowedDomains.includes(domain);
+}
+
+function assertDiscoveryRecipeAllowed(
+  config: InfomaniakOpenClawPluginConfig,
+  options: { domain?: string; kind?: string; operationId?: string },
+): void {
+  const recipes = options.kind
+    ? listResourceDiscoveryRecipes({ kind: options.kind })
+    : options.domain
+      ? listResourceDiscoveryRecipes({ domain: options.domain })
+      : [];
+  for (const recipe of recipes.slice(0, 1)) {
+    getAllowedOperation(config, recipe.operationId);
+  }
+  if (options.operationId) {
+    for (const suggestion of describeOperationRequirements(options.operationId).suggestions) {
+      if (suggestion.operationId) {
+        getAllowedOperation(config, suggestion.operationId);
+      }
+    }
+  }
 }
 
 function assertMutationAllowed(config: InfomaniakOpenClawPluginConfig, operation: OperationMetadata, confirmed: boolean): void {
@@ -345,6 +440,20 @@ function numberParam(value: unknown): number | undefined {
 
 function asOptionalRecord(value: unknown): Record<string, unknown> | undefined {
   return value === undefined ? undefined : asRecord(value);
+}
+
+function stringNumberRecord(value: unknown): Record<string, string | number> | undefined {
+  const record = asOptionalRecord(value);
+  if (!record) {
+    return undefined;
+  }
+  return Object.fromEntries(
+    Object.entries(record).filter((entry): entry is [string, string | number] => typeof entry[1] === "string" || typeof entry[1] === "number"),
+  );
+}
+
+function optionalProperty<K extends string, V>(key: K, value: V | undefined): Partial<Record<K, V>> {
+  return value === undefined ? {} : { [key]: value } as Partial<Record<K, V>>;
 }
 
 function asRecord(value: unknown): Record<string, unknown> {

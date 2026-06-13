@@ -17,6 +17,25 @@ export { createInfomaniakClient, type DomainClients, type InfomaniakClient, type
 export { InfomaniakError, InfomaniakOperationError, type OperationErrorDetails } from "./client/errors.js";
 export type { GeneratedOperationClient, OperationRequest } from "./client/generated-operation-client.js";
 export {
+  createResourceDiscovery,
+  describeOperationRequirements,
+  describeResourceKind,
+  discoverResources,
+  listResourceDiscoveryRecipes,
+  listResourceKinds,
+  type DiscoverySuggestion,
+  type OperationParameterRequirement,
+  type OperationRequirement,
+  type ResourceDescriptor,
+  type ResourceDiscovery,
+  type ResourceDiscoveryClient,
+  type ResourceDiscoveryOptions,
+  type ResourceDiscoveryRecipe,
+  type ResourceDiscoveryResult,
+  type ResourceKind,
+  type ResourceKindMetadata,
+} from "./discovery/resource-discovery.js";
+export {
   buildDomainMetadata,
   buildOperationCatalog,
   renderCatalogSources,

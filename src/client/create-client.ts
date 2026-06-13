@@ -1,5 +1,6 @@
 import { createDomainOperations } from "../generated/operations/index.js";
 import { operations } from "../generated/catalog/operations.js";
+import { createResourceDiscovery, type ResourceDiscovery } from "../discovery/resource-discovery.js";
 import type { OperationMetadata } from "../generated/catalog/types.js";
 import type { GeneratedOperationClient, OperationRequest } from "./generated-operation-client.js";
 import { InfomaniakError, InfomaniakOperationError } from "./errors.js";
@@ -30,6 +31,7 @@ export type DomainClients = ReturnType<typeof createDomainOperations>;
 
 export type InfomaniakClient = GeneratedOperationClient &
   DomainClients & {
+    discovery: ResourceDiscovery;
     raw: RawClient;
     request(path: string, options?: RawRequestOptions): Promise<unknown>;
   };
@@ -69,6 +71,7 @@ export function createInfomaniakClient(config: InfomaniakClientConfig = {}): Inf
   return {
     ...generatedClient,
     ...createDomainOperations(generatedClient),
+    discovery: createResourceDiscovery(generatedClient),
     raw,
     request: (path, options) => requestPath(fetchImpl, config, path, options),
   };

@@ -47,15 +47,15 @@ Confirm these exports remain stable or document breaking changes:
 - `InfomaniakOperationError`
 - `InfomaniakDomain`
 - `OperationCatalog`
-- Resource discovery exports once implemented: `ResourceKind`, `ResourceDescriptor`, `ResourceDiscoveryRecipe`, `OperationRequirement`, `DiscoverySuggestion`
+- Resource discovery exports: `ResourceKind`, `ResourceDescriptor`, `ResourceDiscoveryRecipe`, `OperationRequirement`, `DiscoverySuggestion`
 - generated OpenAPI `paths` and `components`
 - OpenClaw plugin entry: `liquid-potassium/openclaw/plugin`
-- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_call`, and `infomaniak_discover` once the discovery expansion lands
+- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_discover`, and `infomaniak_call`
 
 ## OpenClaw Readiness
 
-- Confirm the native plugin registers all four compact tools.
-- Once resource discovery lands, confirm the plugin registers `infomaniak_discover` and that describe output includes discovery suggestions.
+- Confirm the native plugin registers all five compact tools.
+- Confirm the plugin registers `infomaniak_discover` and that describe output includes discovery suggestions.
 - Confirm the skill at `openclaw/skills/infomaniak/SKILL.md` references only valid tool names.
 - Confirm mutating operations are blocked by default and require explicit confirmation when unblocked by config.
 - Confirm domain and operation allow/deny policy tests pass.

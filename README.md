@@ -54,11 +54,11 @@ const description = describeOperation(search[0].operationId);
 const mutating = isMutatingOperation(description.operationId);
 ```
 
-## Planned Resource Discovery
+## Resource Discovery
 
-The next planned expansion is docs-enriched resource discovery. The official Infomaniak Developer Portal pages expose structured operation metadata that includes examples, enums, category paths, and pagination/sorting hints missing from the raw OpenAPI file.
+Docs-enriched resource discovery helps callers find required IDs before calling operations. The official Infomaniak Developer Portal pages expose structured operation metadata that includes examples, enums, category paths, and pagination/sorting hints missing from the raw OpenAPI file.
 
-The planned flow is:
+The flow is:
 
 ```ts
 import {
@@ -71,10 +71,11 @@ const client = createInfomaniakClient({ token: process.env.INFOMANIAK_TOKEN, fet
 const discovery = createResourceDiscovery(client);
 
 const requirements = describeOperationRequirements("NewsletterListCampaigns");
-const resources = await discovery.discover({ domain: "newsletter", kind: "newsletterDomain" });
+const drives = await discovery.discover({ kind: "kdriveDrive" });
+const newsletterDomains = await discovery.discover({ kind: "newsletterDomain" });
 ```
 
-Discovery will use only read-only Infomaniak operations through injected `fetch`. When a required ID cannot be discovered through the public API, such as a Newsletter Domain id, the SDK should return a clear explanation instead of guessing.
+Discovery uses only reviewed read-only Infomaniak operations through injected `fetch`. When a required ID cannot be discovered through the public API, such as a Newsletter Domain id, the SDK returns a clear `no_public_discovery` suggestion instead of guessing.
 
 ## Generation Flow
 
@@ -131,14 +132,15 @@ The native plugin entry is exported at:
 import plugin from "liquid-potassium/openclaw/plugin";
 ```
 
-The plugin registers four compact tools:
+The plugin registers five compact tools:
 
 - `infomaniak_domains`
 - `infomaniak_search`
 - `infomaniak_describe`
+- `infomaniak_discover`
 - `infomaniak_call`
 
-The planned resource-discovery expansion adds `infomaniak_discover` and enriches `infomaniak_describe` with required resource IDs and discovery suggestions.
+`infomaniak_describe` includes required resource IDs and discovery suggestions. `infomaniak_discover` discovers reviewed resources or returns a structured no-public-discovery explanation.
 
 Plugin config supports:
 
@@ -149,4 +151,4 @@ Plugin config supports:
 - `deniedOperations`
 - `blockMutating`
 
-The OpenClaw skill is in `openclaw/skills/infomaniak/SKILL.md`. Agents should search and describe before calling, and mutating operations require explicit user intent plus plugin permission.
+The OpenClaw skill is in `openclaw/skills/infomaniak/SKILL.md`. Agents should search, describe, discover, and then call; mutating operations require explicit user intent plus plugin permission.

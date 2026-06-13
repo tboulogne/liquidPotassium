@@ -6,6 +6,7 @@ import {
   createInfomaniakOpenClawTools,
   InfomaniakPluginConfigJsonSchema,
   infomaniakCallToolSchema,
+  infomaniakDiscoverToolSchema,
   infomaniakDescribeToolSchema,
   infomaniakDomainsToolSchema,
   infomaniakSearchToolSchema,
@@ -13,7 +14,7 @@ import {
 } from "../../../src/openclaw/infomaniak-tools.js";
 
 describe("Infomaniak OpenClaw tools", () => {
-  it("declares plugin config and registers the four compact tools", () => {
+  it("declares plugin config and registers the five compact tools", () => {
     const registeredTools: AnyAgentTool[] = [];
     const api = {
       pluginConfig: { allowedDomains: ["kmeet"] },
@@ -30,12 +31,14 @@ describe("Infomaniak OpenClaw tools", () => {
       "infomaniak_domains",
       "infomaniak_search",
       "infomaniak_describe",
+      "infomaniak_discover",
       "infomaniak_call",
     ]);
     expect(registeredTools.map((tool) => tool.parameters)).toEqual([
       infomaniakDomainsToolSchema,
       infomaniakSearchToolSchema,
       infomaniakDescribeToolSchema,
+      infomaniakDiscoverToolSchema,
       infomaniakCallToolSchema,
     ]);
     expect(registeredTools.every((tool) => tool.label && tool.description)).toBe(true);
@@ -116,11 +119,101 @@ describe("Infomaniak OpenClaw tools", () => {
     expect(description.operation).toMatchObject({
       operationId: "get_1_kmeet_rooms_room_id_settings",
       path: "/1/kmeet/rooms/{room_id}/settings",
+      requirements: {
+        suggestions: [expect.objectContaining({ kind: "kmeetRoom", code: "no_public_discovery" })],
+      },
     });
     await expect(
       executeTool(findTool(tools, "infomaniak_describe"), { operation_id: "post_1_kmeet_rooms" }),
     ).rejects.toThrow(/not allowed/);
     await expect(findTool(tools, "infomaniak_describe").execute("bad-call", undefined)).rejects.toThrow(/operation_id is required/);
+  });
+
+  it("discovers resources or explains reviewed gaps through policy-aware OpenClaw tooling", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () =>
+      new Response(JSON.stringify({ data: [{ id: 123, name: "Drive" }] }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    const tools = createInfomaniakOpenClawTools({
+      fetch: fetchMock,
+      config: { allowedDomains: ["kdrive", "newsletter"] },
+    });
+
+    const kdriveDiscovery = await executeTool(findTool(tools, "infomaniak_discover"), {
+      kind: "kdriveDrive",
+      limit: 1,
+      parents: { ignored: true, account_id: 12 },
+    });
+    const domainDiscovery = await executeTool(findTool(tools, "infomaniak_discover"), {
+      domain: "kdrive",
+    });
+    const newsletterDiscovery = await executeTool(findTool(tools, "infomaniak_discover"), {
+      kind: "newsletterDomain",
+    });
+
+    expect(kdriveDiscovery).toMatchObject({
+      resources: [
+        {
+          id: 123,
+          label: "Drive",
+          domain: "kdrive",
+          kind: "kdriveDrive",
+          sourceOperationId: "kDriveAccessiblesDrivesV2",
+          parents: { account_id: 12 },
+        },
+      ],
+      recipe: { operationId: "kDriveAccessiblesDrivesV2" },
+    });
+    expect(domainDiscovery).toMatchObject({
+      resources: [expect.objectContaining({ kind: "kdriveDrive" })],
+      recipe: { operationId: "kDriveAccessiblesDrivesV2" },
+    });
+    expect(newsletterDiscovery).toMatchObject({
+      resources: [],
+      recipe: null,
+      suggestions: [expect.objectContaining({ code: "no_public_discovery", kind: "newsletterDomain" })],
+    });
+    expect(fetchMock).toHaveBeenCalledTimes(2);
+    expect(fetchMock.mock.calls[0]?.[0]).toBe("https://api.infomaniak.com/2/drive");
+
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["mail"] } }), "infomaniak_discover"),
+        { domain: "kdrive" },
+      ),
+    ).rejects.toThrow(/domain is not allowed/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["mail"] } }), "infomaniak_discover"),
+        { kind: "kdriveDrive" },
+      ),
+    ).rejects.toThrow(/resource kind is not allowed/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { deniedOperations: ["kDriveAccessiblesDrivesV2"] } }), "infomaniak_discover"),
+        { kind: "kdriveDrive" },
+      ),
+    ).rejects.toThrow(/not allowed by plugin policy/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { deniedOperations: ["kDriveAccessiblesDrivesV2"] } }), "infomaniak_discover"),
+        { operation_id: "kDriveGetDriveInformationV2" },
+      ),
+    ).rejects.toThrow(/not allowed by plugin policy/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { deniedOperations: ["kDriveAccessiblesDrivesV2"] } }), "infomaniak_discover"),
+        { domain: "kdrive" },
+      ),
+    ).rejects.toThrow(/not allowed by plugin policy/);
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["newsletter"] } }), "infomaniak_discover"), {
+        operation_id: "NewsletterShowDomain",
+      }),
+    ).resolves.toMatchObject({
+      suggestions: [expect.objectContaining({ code: "no_public_discovery", kind: "newsletterDomain" })],
+    });
   });
 
   it("calls allowed operations through the SDK with injected fetch", async () => {
