@@ -1,0 +1,16625 @@
+export const kchatOperations = [
+    {
+        "operationId": "GetBots",
+        "functionName": "getbots",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/bots",
+        "summary": "Get bots",
+        "description": "Get a page of a list of bots.\n##### Permissions\nMust have `read_bots` permission for bots you are managing, and `read_others_bots` permission for bots others are managing.\n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "only_orphaned",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/bots",
+            "operationId": "GetBots",
+            "summary": "Get bots",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 52588
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        52588
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of users per page. There is a maximum limit of 200 users per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 56838
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        56838
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "If deleted bots should be returned.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "only_orphaned",
+                    "in": "query",
+                    "required": false,
+                    "description": "When true, only orphaned bots will be returned. A bot is consitered orphaned if it's owner has been deactivated.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateBot",
+        "functionName": "createbot",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/bots",
+        "summary": "Create a bot",
+        "description": "Create a new bot account on the system. Username is required.\n##### Permissions\nMust have `create_bot` permission.\n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/bots",
+            "operationId": "CreateBot",
+            "summary": "Create a bot",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetBot",
+        "functionName": "getbot",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/bots/{bot_user_id}",
+        "summary": "Get a bot",
+        "description": "Get a bot specified by its bot id.\n##### Permissions\nMust have `read_bots` permission for bots you are managing, and `read_others_bots` permission for bots others are managing.\n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "bot_user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/bots/%7Bbot_user_id%7D",
+            "operationId": "GetBot",
+            "summary": "Get a bot",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "bot_user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Bot user ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "If deleted bots should be returned.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "PatchBot",
+        "functionName": "patchbot",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/bots/{bot_user_id}",
+        "summary": "Patch a bot",
+        "description": "Partially update a bot by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.\n##### Permissions\nMust have `manage_bots` permission. \n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "bot_user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/bots/%7Bbot_user_id%7D",
+            "operationId": "PatchBot",
+            "summary": "Patch a bot",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "bot_user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Bot user ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DisableBot",
+        "functionName": "disablebot",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/bots/{bot_user_id}/disable",
+        "summary": "Disable a bot",
+        "description": "Disable a bot.\n##### Permissions\nMust have `manage_bots` permission. \n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "bot_user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/bots/%7Bbot_user_id%7D/disable",
+            "operationId": "DisableBot",
+            "summary": "Disable a bot",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "bot_user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Bot user ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "EnableBot",
+        "functionName": "enablebot",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/bots/{bot_user_id}/enable",
+        "summary": "Enable a bot",
+        "description": "Enable a bot.\n##### Permissions\nMust have `manage_bots` permission. \n",
+        "tags": [
+            "bots"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "bot_user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/bots/%7Bbot_user_id%7D/enable",
+            "operationId": "EnableBot",
+            "summary": "Enable a bot",
+            "categoryPath": [
+                "kChat",
+                "bots"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "bot_user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Bot user ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetAllChannels",
+        "functionName": "getallchannels",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels",
+        "summary": "Get a list of all channels",
+        "description": "##### Permissions\n`manage_system`\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "not_associated_to_group",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "exclude_default_channels",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_total_count",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "exclude_policy_constrained",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels",
+            "operationId": "GetAllChannels",
+            "summary": "Get a list of all channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "not_associated_to_group",
+                    "in": "query",
+                    "required": false,
+                    "description": "A group id to exclude channels that are associated with that group via GroupChannel records. This can also be left blank with `not_associated_to_group=`.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 93721
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        93721
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of channels per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 31623
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        31623
+                    ]
+                },
+                {
+                    "name": "exclude_default_channels",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to exclude default channels (ex Town Square, Off-Topic) from the results.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Include channels that have been archived. This correlates to the `DeleteAt` flag being set in the database.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "include_total_count",
+                    "in": "query",
+                    "required": false,
+                    "description": "Appends a total count of returned channels inside the response object - ex: `{ \"channels\": [], \"total_count\" : 0 }`.      ",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "exclude_policy_constrained",
+                    "in": "query",
+                    "required": false,
+                    "description": "If set to true, channels which are part of a data retention policy will be excluded. The `sysconsole_read_compliance` permission is required to use this parameter.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateChannel",
+        "functionName": "createchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels",
+        "summary": "Create a channel",
+        "description": "Create a new channel.\n##### Permissions\nIf creating a public channel, `create_public_channel` permission is required. If creating a private channel, `create_private_channel` permission is required.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels",
+            "operationId": "CreateChannel",
+            "summary": "Create a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteChannel",
+        "functionName": "deletechannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/channels/{channel_id}",
+        "summary": "Delete a channel",
+        "description": "Archives a channel. This will set the `deleteAt` to the current timestamp in the database. Soft deleted channels may not be accessible in the user interface. They can be viewed and unarchived in the **System Console > User Management > Channels** based on your license. Direct and group message channels cannot be deleted.\n\n##### Permissions\n`delete_public_channel` permission if the channel is public,\n`delete_private_channel` permission if the channel is private,\nor have `manage_system` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/channels/%7Bchannel_id%7D",
+            "operationId": "DeleteChannel",
+            "summary": "Delete a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannel",
+        "functionName": "getchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}",
+        "summary": "Get a channel",
+        "description": "Get channel from the provided channel id string.\n##### Permissions\n`read_channel` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D",
+            "operationId": "GetChannel",
+            "summary": "Get a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannel",
+        "functionName": "updatechannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}",
+        "summary": "Update a channel",
+        "description": "Update a channel. The fields that can be updated are listed as parameters. Omitted fields will be treated as blanks.\n##### Permissions\nIf updating a public channel, `manage_public_channel_members` permission is required. If updating a private channel, `manage_private_channel_members` permission is required.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D",
+            "operationId": "UpdateChannel",
+            "summary": "Update a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetGroupsByChannel",
+        "functionName": "getgroupsbychannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/groups",
+        "summary": "Get channel groups",
+        "description": "Retrieve the list of groups associated with a given channel.\n\n##### Permissions\nMust have `manage_system` permission.\n\n",
+        "tags": [
+            "groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter_allow_reference",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/groups",
+            "operationId": "GetGroupsByChannel",
+            "summary": "Get channel groups",
+            "categoryPath": [
+                "kChat",
+                "groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 50927
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        50927
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of groups per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 40910
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        40910
+                    ]
+                },
+                {
+                    "name": "filter_allow_reference",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean which filters the group entries with the `allow_reference` attribute set.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "500",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelMembers",
+        "functionName": "getchannelmembers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/members",
+        "summary": "Get channel members",
+        "description": "Get a page of members for a channel.\n##### Permissions\n`read_channel` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/members",
+            "operationId": "GetChannelMembers",
+            "summary": "Get channel members",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 8756
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        8756
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of members per page. There is a maximum limit of 200 members.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 34570
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        34570
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "AddChannelMember",
+        "functionName": "addchannelmember",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/{channel_id}/members",
+        "summary": "Add user(s) to channel",
+        "description": "Add a user(s) to a channel by creating a channel member object(s).",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/%7Bchannel_id%7D/members",
+            "operationId": "AddChannelMember",
+            "summary": "Add user(s) to channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The channel ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "RemoveUserFromChannel",
+        "functionName": "removeuserfromchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/channels/{channel_id}/members/{user_id}",
+        "summary": "Remove user from channel",
+        "description": "Delete a channel member, effectively removing them from a channel.\n\nChannel members can only be deleted from public or private channels.\n##### Permissions\n`manage_public_channel_members` permission if the channel is public.\n`manage_private_channel_members` permission if the channel is private.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/channels/%7Bchannel_id%7D/members/%7Buser_id%7D",
+            "operationId": "RemoveUserFromChannel",
+            "summary": "Remove user from channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelMember",
+        "functionName": "getchannelmember",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/members/{user_id}",
+        "summary": "Get channel member",
+        "description": "Get a channel member.\n##### Permissions\n`read_channel` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/members/%7Buser_id%7D",
+            "operationId": "GetChannelMember",
+            "summary": "Get channel member",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannelNotifyProps",
+        "functionName": "updatechannelnotifyprops",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/members/{user_id}/notify_props",
+        "summary": "Update channel notifications",
+        "description": "Update a user's notification properties for a channel. Only the provided fields are updated.\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/members/%7Buser_id%7D/notify_props",
+            "operationId": "UpdateChannelNotifyProps",
+            "summary": "Update channel notifications",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannelRoles",
+        "functionName": "updatechannelroles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/members/{user_id}/roles",
+        "summary": "Update channel roles",
+        "description": "Update a user's roles for a channel.\n##### Permissions\nMust have `manage_channel_roles` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/members/%7Buser_id%7D/roles",
+            "operationId": "UpdateChannelRoles",
+            "summary": "Update channel roles",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannelMemberSchemeRoles",
+        "functionName": "updatechannelmemberschemeroles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/members/{user_id}/schemeRoles",
+        "summary": "Update the scheme-derived roles of a channel member.",
+        "description": "Update a channel member's scheme_admin/scheme_user properties. Typically this should either be `scheme_admin=false, scheme_user=true` for ordinary channel member, or `scheme_admin=true, scheme_user=true` for a channel admin.\n##### Permissions\nMust be authenticated and have the `manage_channel_roles` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/members/%7Buser_id%7D/schemeRoles",
+            "operationId": "UpdateChannelMemberSchemeRoles",
+            "summary": "Update the scheme-derived roles of a channel member",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelMembersByIds",
+        "functionName": "getchannelmembersbyids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/{channel_id}/members/ids",
+        "summary": "Get channel members by ids",
+        "description": "Get a list of channel members based on the provided user ids.\n##### Permissions\nMust have the `read_channel` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/%7Bchannel_id%7D/members/ids",
+            "operationId": "GetChannelMembersByIds",
+            "summary": "Get channel members by ids",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelModerations",
+        "functionName": "getchannelmoderations",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/moderations",
+        "summary": "Get information about channel's moderation.",
+        "description": "##### Permissions\nMust have `manage_system` permission.\n\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/moderations",
+            "operationId": "GetChannelModerations",
+            "summary": "Get information about channel's moderation",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "PatchChannelModerations",
+        "functionName": "patchchannelmoderations",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/moderations/patch",
+        "summary": "Update a channel's moderation settings.",
+        "description": "##### Permissions\nMust have `manage_system` permission.\n\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/moderations/patch",
+            "operationId": "PatchChannelModerations",
+            "summary": "Update a channel's moderation settings",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "MoveChannel",
+        "functionName": "movechannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/{channel_id}/move",
+        "summary": "Move a channel",
+        "description": "Move a channel to another team.\n\n\n##### Permissions\n\nMust have `manage_system` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/%7Bchannel_id%7D/move",
+            "operationId": "MoveChannel",
+            "summary": "Move a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "PatchChannel",
+        "functionName": "patchchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/patch",
+        "summary": "Patch a channel",
+        "description": "Partially update a channel by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.\n##### Permissions\nIf updating a public channel, `manage_public_channel_members` permission is required. If updating a private channel, `manage_private_channel_members` permission is required.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/patch",
+            "operationId": "PatchChannel",
+            "summary": "Patch a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPinnedPosts",
+        "functionName": "getpinnedposts",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/pinned",
+        "summary": "Get a channel's pinned posts",
+        "description": "Get a list of pinned posts for channel.",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/pinned",
+            "operationId": "GetPinnedPosts",
+            "summary": "Get a channel's pinned posts",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPostsForChannel",
+        "functionName": "getpostsforchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/posts",
+        "summary": "Get posts for a channel",
+        "description": "Get a page of posts in a channel. Use the query parameters to modify the behaviour of this endpoint. The parameter `since` must not be used with any of `before`, `after`, `page`, and `per_page` parameters.\nIf `since` is used, it will always return all posts modified since that time, ordered by their create time limited till 1000. A caveat with this parameter is that there is no guarantee that the returned posts will be consecutive. It is left to the clients to maintain state and fill any missing holes in the post order.\n##### Permissions\nMust have `read_channel` permission for the channel.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "since",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "before",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "after",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/posts",
+            "operationId": "GetPostsForChannel",
+            "summary": "Get posts for a channel",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The channel ID to get the posts for",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 79390
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        79390
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of posts per page",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 13957
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        13957
+                    ]
+                },
+                {
+                    "name": "since",
+                    "in": "query",
+                    "required": false,
+                    "description": "Provide a non-zero value in Unix time milliseconds to select posts modified after that time",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 56843
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        56843
+                    ]
+                },
+                {
+                    "name": "before",
+                    "in": "query",
+                    "required": false,
+                    "description": "A post id to select the posts that came before this one",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "after",
+                    "in": "query",
+                    "required": false,
+                    "description": "A post id to select the posts that came after this one",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to include deleted posts or not. Must have system admin permissions.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannelPrivacy",
+        "functionName": "updatechannelprivacy",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/privacy",
+        "summary": "Update channel's privacy",
+        "description": "Updates channel's privacy allowing changing a channel from Public to Private and back.\n\n##### Permissions\n`convert_public_channel_to_private` permission for the channel if updating privacy to 'P'. `convert_private_channel_to_public` permission for the channel if updating privacy to 'O'.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/privacy",
+            "operationId": "UpdateChannelPrivacy",
+            "summary": "Update channel's privacy",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "RestoreChannel",
+        "functionName": "restorechannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/{channel_id}/restore",
+        "summary": "Restore a channel",
+        "description": "Restore channel from the provided channel id string.\n\n##### Permissions\n`manage_team` permission for the team of the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/%7Bchannel_id%7D/restore",
+            "operationId": "RestoreChannel",
+            "summary": "Restore a channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateChannelScheme",
+        "functionName": "updatechannelscheme",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/channels/{channel_id}/scheme",
+        "summary": "Set a channel's scheme",
+        "description": "Set a channel's scheme, more specifically sets the scheme_id value of a channel record.\n\n##### Permissions\nMust have `manage_system` permission.\n\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/channels/%7Bchannel_id%7D/scheme",
+            "operationId": "UpdateChannelScheme",
+            "summary": "Set a channel's scheme",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelStats",
+        "functionName": "getchannelstats",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/channels/{channel_id}/stats",
+        "summary": "Get channel statistics",
+        "description": "Get statistics for a channel.\n##### Permissions\nMust have the `read_channel` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/channels/%7Bchannel_id%7D/stats",
+            "operationId": "GetChannelStats",
+            "summary": "Get channel statistics",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateDirectChannel",
+        "functionName": "createdirectchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/direct",
+        "summary": "Create a direct message channel",
+        "description": "Create a new direct message channel between two users.\n##### Permissions\nMust be one of the two users and have `create_direct_channel` permission. Having the `manage_system` permission voids the previous requirements.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/direct",
+            "operationId": "CreateDirectChannel",
+            "summary": "Create a direct message channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateGroupChannel",
+        "functionName": "creategroupchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/group",
+        "summary": "Create a group message channel",
+        "description": "Create a new group message channel to group of users. If the logged in user's id is not included in the list, it will be appended to the end.\n##### Permissions\nMust have `create_group_channel` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/group",
+            "operationId": "CreateGroupChannel",
+            "summary": "Create a group message channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchGroupChannels",
+        "functionName": "searchgroupchannels",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/group/search",
+        "summary": "Search Group Channels",
+        "description": "Get a list of group channels for a user which members' usernames match the search term.\n\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/group/search",
+            "operationId": "SearchGroupChannels",
+            "summary": "Search Group Channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "ViewChannel",
+        "functionName": "viewchannel",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/members/{user_id}/view",
+        "summary": "View channel",
+        "description": "Perform all the actions involved in viewing a channel. This includes marking channels as read, clearing push notifications, and updating the active channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/members/%7Buser_id%7D/view",
+            "operationId": "ViewChannel",
+            "summary": "View channel",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID to perform the view action for",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchAllChannels",
+        "functionName": "searchallchannels",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/channels/search",
+        "summary": "Search all private and open type channels",
+        "description": "Returns all private and open type channels where 'term' matches on the name, display name, or purpose of\nthe channel.\n\nConfigured 'default' channels (ex Town Square and Off-Topic) can be excluded from the results\nwith the `exclude_default_channels` boolean parameter.\n\nChannels that are associated (via GroupChannel records) to a given group can be excluded from the results\nwith the `not_associated_to_group` parameter and a group id string.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "system_console",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/channels/search",
+            "operationId": "SearchAllChannels",
+            "summary": "Search all private and open type channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "system_console",
+                    "in": "query",
+                    "required": false,
+                    "description": "Is the request from system_console. If this is set to true, it filters channels by the logged in user.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": true,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "ListCommands",
+        "functionName": "listcommands",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/commands",
+        "summary": "List commands for a team",
+        "description": "List commands for a team.\n##### Permissions\n`manage_slash_commands` if need list custom commands.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "custom_only",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/commands",
+            "operationId": "ListCommands",
+            "summary": "List commands for a team",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "The team id.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "custom_only",
+                    "in": "query",
+                    "required": false,
+                    "description": "To get only the custom commands. If set to false will get the custom\nif the user have access plus the system commands, otherwise just the system commands.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateCommand",
+        "functionName": "createcommand",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/commands",
+        "summary": "Create a command",
+        "description": "Create a command for a team.\n##### Permissions\n`manage_slash_commands` for the team the command is in.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/commands",
+            "operationId": "CreateCommand",
+            "summary": "Create a command",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteCommand",
+        "functionName": "deletecommand",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/commands/{command_id}",
+        "summary": "Delete a command",
+        "description": "Delete a command based on command id string.\n##### Permissions\nMust have `manage_slash_commands` permission for the team the command is in.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "command_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/commands/%7Bcommand_id%7D",
+            "operationId": "DeleteCommand",
+            "summary": "Delete a command",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "command_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the command to delete",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetCommandById",
+        "functionName": "getcommandbyid",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/commands/{command_id}",
+        "summary": "Get a command",
+        "description": "Get a command definition based on command id string.\n##### Permissions\nMust have `manage_slash_commands` permission for the team the command is in.\n\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "command_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/commands/%7Bcommand_id%7D",
+            "operationId": "GetCommandById",
+            "summary": "Get a command",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "command_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the command to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateCommand",
+        "functionName": "updatecommand",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/commands/{command_id}",
+        "summary": "Update a command",
+        "description": "Update a single command based on command id string and Command struct.\n##### Permissions\nMust have `manage_slash_commands` permission for the team the command is in.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "command_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/commands/%7Bcommand_id%7D",
+            "operationId": "UpdateCommand",
+            "summary": "Update a command",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "command_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the command to update",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "RegenCommandToken",
+        "functionName": "regencommandtoken",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/commands/{command_id}/regen_token",
+        "summary": "Generate a new token",
+        "description": "Generate a new token for the command based on command id string.\n##### Permissions\nMust have `manage_slash_commands` permission for the team the command is in.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "command_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/commands/%7Bcommand_id%7D/regen_token",
+            "operationId": "RegenCommandToken",
+            "summary": "Generate a new token",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "command_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the command to generate the new token",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "ExecuteCommand",
+        "functionName": "executecommand",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/commands/execute",
+        "summary": "Execute a command",
+        "description": "Execute a command on a team.\n##### Permissions\nMust have `use_slash_commands` permission for the team the command is in.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/commands/execute",
+            "operationId": "ExecuteCommand",
+            "summary": "Execute a command",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetClientConfig",
+        "functionName": "getclientconfig",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/config/client",
+        "summary": "Get client configuration",
+        "description": "Get a subset of the server configuration needed by the client.\n##### Permissions\nNo permission required.\n",
+        "tags": [
+            "system"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "format",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/config/client",
+            "operationId": "GetClientConfig",
+            "summary": "Get client configuration",
+            "categoryPath": [
+                "kChat",
+                "system"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": false,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "format",
+                    "in": "query",
+                    "required": true,
+                    "description": "Must be `old`, other formats not implemented yet",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetEmojiList",
+        "functionName": "getemojilist",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/emoji",
+        "summary": "Get a list of custom emoji",
+        "description": "Get a page of metadata for custom emoji on the system.##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "sort",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/emoji",
+            "operationId": "GetEmojiList",
+            "summary": "Get a list of custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 16245
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        16245
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of emojis per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 24502
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        24502
+                    ]
+                },
+                {
+                    "name": "sort",
+                    "in": "query",
+                    "required": false,
+                    "description": "Either blank for no sorting or \"name\" to sort by emoji names.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "default": "",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateEmoji",
+        "functionName": "createemoji",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/emoji",
+        "summary": "Create a custom emoji",
+        "description": "Create a custom emoji for the team.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/emoji",
+            "operationId": "CreateEmoji",
+            "summary": "Create a custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "413",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteEmoji",
+        "functionName": "deleteemoji",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/emoji/{emoji_id}",
+        "summary": "Delete a custom emoji",
+        "description": "Delete a custom emoji.\n##### Permissions\nMust have the `manage_team` or `manage_system` permissions or be the user who created the emoji.\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "emoji_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/emoji/%7Bemoji_id%7D",
+            "operationId": "DeleteEmoji",
+            "summary": "Delete a custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "emoji_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Emoji GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetEmoji",
+        "functionName": "getemoji",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/emoji/{emoji_id}",
+        "summary": "Get a custom emoji",
+        "description": "Get some metadata for a custom emoji.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "emoji_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/emoji/%7Bemoji_id%7D",
+            "operationId": "GetEmoji",
+            "summary": "Get a custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "emoji_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Emoji GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetEmojiImage",
+        "functionName": "getemojiimage",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/emoji/{emoji_id}/image",
+        "summary": "Get custom emoji image",
+        "description": "Get the image for a custom emoji.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "emoji_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "image/png"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/emoji/%7Bemoji_id%7D/image",
+            "operationId": "GetEmojiImage",
+            "summary": "Get custom emoji image",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "emoji_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Emoji GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "403",
+                "404",
+                "500",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "AutocompleteEmoji",
+        "functionName": "autocompleteemoji",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/emoji/autocomplete",
+        "summary": "Autocomplete custom emoji",
+        "description": "Get a list of custom emoji with names starting with or matching the provided name. Returns a maximum of 100 results.\n##### Permissions\nMust be authenticated.\n\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "name",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/emoji/autocomplete",
+            "operationId": "AutocompleteEmoji",
+            "summary": "Autocomplete custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "name",
+                    "in": "query",
+                    "required": true,
+                    "description": "The emoji name to search.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetEmojiByName",
+        "functionName": "getemojibyname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/emoji/name/{emoji_name}",
+        "summary": "Get a custom emoji by name",
+        "description": "Get some metadata for a custom emoji using its name.\n##### Permissions\nMust be authenticated.\n\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "emoji_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/emoji/name/%7Bemoji_name%7D",
+            "operationId": "GetEmojiByName",
+            "summary": "Get a custom emoji by name",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "emoji_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Emoji name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchEmoji",
+        "functionName": "searchemoji",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/emoji/search",
+        "summary": "Search custom emoji",
+        "description": "Search for custom emoji by name based on search criteria provided in the request body. A maximum of 200 results are returned.\n##### Permissions\nMust be authenticated.\n\n",
+        "tags": [
+            "emoji"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/emoji/search",
+            "operationId": "SearchEmoji",
+            "summary": "Search custom emoji",
+            "categoryPath": [
+                "kChat",
+                "emoji"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "UploadFile",
+        "functionName": "uploadfile",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/files",
+        "summary": "Upload a file",
+        "description": "Uploads a file that can later be attached to a post.\n\nThis request can either be a multipart/form-data request with a channel_id, files and optional\nclient_ids defined in the FormData, or it can be a request with the channel_id and filename\ndefined as query parameters with the contents of a single file in the body of the request.",
+        "tags": [
+            "files"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "channel_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filename",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "multipart/form-data"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/files",
+            "operationId": "UploadFile",
+            "summary": "Upload a file",
+            "categoryPath": [
+                "kChat",
+                "files"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "channel_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the channel that this file will be uploaded to",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "filename",
+                    "in": "query",
+                    "required": false,
+                    "description": "The name of the file to be uploaded",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "413",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFile",
+        "functionName": "getfile",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/files/{file_id}",
+        "summary": "Get a file",
+        "description": "Gets a file that has been uploaded previously.\n##### Permissions\nMust have `read_channel` permission or be uploader of the file.\n",
+        "tags": [
+            "files"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "file_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/files/%7Bfile_id%7D",
+            "operationId": "GetFile",
+            "summary": "Get a file",
+            "categoryPath": [
+                "kChat",
+                "files"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "file_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the file to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFileInfo",
+        "functionName": "getfileinfo",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/files/{file_id}/info",
+        "summary": "Get metadata for a file",
+        "description": "Gets a file's info.\n##### Permissions\nMust have `read_channel` permission or be uploader of the file.\n",
+        "tags": [
+            "files"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "file_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/files/%7Bfile_id%7D/info",
+            "operationId": "GetFileInfo",
+            "summary": "Get metadata for a file",
+            "categoryPath": [
+                "kChat",
+                "files"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "file_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the file info to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFilePreview",
+        "functionName": "getfilepreview",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/files/{file_id}/preview",
+        "summary": "Get a file's preview",
+        "description": "Gets a file's preview.\n##### Permissions\nMust have `read_channel` permission or be uploader of the file.\n",
+        "tags": [
+            "files"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "file_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/files/%7Bfile_id%7D/preview",
+            "operationId": "GetFilePreview",
+            "summary": "Get a file's preview",
+            "categoryPath": [
+                "kChat",
+                "files"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "file_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the file to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFileThumbnail",
+        "functionName": "getfilethumbnail",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/files/{file_id}/thumbnail",
+        "summary": "Get a file's thumbnail",
+        "description": "Gets a file's thumbnail.\n##### Permissions\nMust have `read_channel` permission or be uploader of the file.\n",
+        "tags": [
+            "files"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "file_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/files/%7Bfile_id%7D/thumbnail",
+            "operationId": "GetFileThumbnail",
+            "summary": "Get a file's thumbnail",
+            "categoryPath": [
+                "kChat",
+                "files"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "file_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the file to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetGroups",
+        "functionName": "getgroups",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/groups",
+        "summary": "Get groups",
+        "description": "Retrieve a list of all groups not associated to a particular channel or team.\n\n`not_associated_to_team` **OR** `not_associated_to_channel` is required.\n\nIf you use `not_associated_to_team`, you must be a team admin for that particular team (permission to manage that team).\n\nIf you use `not_associated_to_channel`, you must be a channel admin for that particular channel (permission to manage that channel).\n\nn",
+        "tags": [
+            "groups"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "q",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_member_count",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "not_associated_to_team",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "not_associated_to_channel",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "since",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter_allow_reference",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/groups",
+            "operationId": "GetGroups",
+            "summary": "Get groups",
+            "categoryPath": [
+                "kChat",
+                "groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 67945
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        67945
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of groups per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 32848
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        32848
+                    ]
+                },
+                {
+                    "name": "q",
+                    "in": "query",
+                    "required": false,
+                    "description": "String to pattern match the `name` and `display_name` field. Will return all groups whose `name` and `display_name` field match any of the text.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_member_count",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean which adds the `member_count` attribute to each group JSON object",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "not_associated_to_team",
+                    "in": "query",
+                    "required": true,
+                    "description": "Team GUID which is used to return all the groups not associated to this team",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "not_associated_to_channel",
+                    "in": "query",
+                    "required": true,
+                    "description": "Group GUID which is used to return all the groups not associated to this channel",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "since",
+                    "in": "query",
+                    "required": false,
+                    "description": "Only return groups that have been modified since the given Unix timestamp (in milliseconds). All modified groups, including deleted and created groups, will be returned.\nn",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 40121
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        40121
+                    ]
+                },
+                {
+                    "name": "filter_allow_reference",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean which filters the group entries with the `allow_reference` attribute set.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetIncomingWebhooks",
+        "functionName": "getincomingwebhooks",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/hooks/incoming",
+        "summary": "List incoming webhooks",
+        "description": "Get a page of a list of incoming webhooks. Optionally filter for a specific team using query parameters.\n##### Permissions\n`manage_webhooks` for the system or `manage_webhooks` for the specific team.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/hooks/incoming",
+            "operationId": "GetIncomingWebhooks",
+            "summary": "List incoming webhooks",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 10267
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10267
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of hooks per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 79288
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        79288
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the team to get hooks for.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateIncomingWebhook",
+        "functionName": "createincomingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/hooks/incoming",
+        "summary": "Create an incoming webhook",
+        "description": "Create an incoming webhook for a channel.\n##### Permissions\n`manage_webhooks` for the team the webhook is in.\n\n`manage_others_incoming_webhooks` for the team the webhook is in if the user is different than the requester.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/hooks/incoming",
+            "operationId": "CreateIncomingWebhook",
+            "summary": "Create an incoming webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteIncomingWebhook",
+        "functionName": "deleteincomingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/hooks/incoming/{hook_id}",
+        "summary": "Delete an incoming webhook",
+        "description": "Delete an incoming webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/hooks/incoming/%7Bhook_id%7D",
+            "operationId": "DeleteIncomingWebhook",
+            "summary": "Delete an incoming webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Incoming webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetIncomingWebhook",
+        "functionName": "getincomingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/hooks/incoming/{hook_id}",
+        "summary": "Get an incoming webhook",
+        "description": "Get an incoming webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/hooks/incoming/%7Bhook_id%7D",
+            "operationId": "GetIncomingWebhook",
+            "summary": "Get an incoming webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Incoming Webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateIncomingWebhook",
+        "functionName": "updateincomingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/hooks/incoming/{hook_id}",
+        "summary": "Update an incoming webhook",
+        "description": "Update an incoming webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/hooks/incoming/%7Bhook_id%7D",
+            "operationId": "UpdateIncomingWebhook",
+            "summary": "Update an incoming webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Incoming Webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetOutgoingWebhooks",
+        "functionName": "getoutgoingwebhooks",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/hooks/outgoing",
+        "summary": "List outgoing webhooks",
+        "description": "Get a page of a list of outgoing webhooks. Optionally filter for a specific team or channel using query parameters.\n##### Permissions\n`manage_webhooks` for the system or `manage_webhooks` for the specific team/channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "channel_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/hooks/outgoing",
+            "operationId": "GetOutgoingWebhooks",
+            "summary": "List outgoing webhooks",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 83112
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        83112
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of hooks per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 26461
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        26461
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the team to get hooks for.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the channel to get hooks for.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateOutgoingWebhook",
+        "functionName": "createoutgoingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/hooks/outgoing",
+        "summary": "Create an outgoing webhook",
+        "description": "Create an outgoing webhook for a team.\n##### Permissions\n`manage_webhooks` for the team the webhook is in.\n\n`manage_others_outgoing_webhooks` for the team the webhook is in if the user is different than the requester.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/hooks/outgoing",
+            "operationId": "CreateOutgoingWebhook",
+            "summary": "Create an outgoing webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteOutgoingWebhook",
+        "functionName": "deleteoutgoingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/hooks/outgoing/{hook_id}",
+        "summary": "Delete an outgoing webhook",
+        "description": "Delete an outgoing webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/hooks/outgoing/%7Bhook_id%7D",
+            "operationId": "DeleteOutgoingWebhook",
+            "summary": "Delete an outgoing webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Outgoing webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetOutgoingWebhook",
+        "functionName": "getoutgoingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/hooks/outgoing/{hook_id}",
+        "summary": "Get an outgoing webhook",
+        "description": "Get an outgoing webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/hooks/outgoing/%7Bhook_id%7D",
+            "operationId": "GetOutgoingWebhook",
+            "summary": "Get an outgoing webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Outgoing webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateOutgoingWebhook",
+        "functionName": "updateoutgoingwebhook",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/hooks/outgoing/{hook_id}",
+        "summary": "Update an outgoing webhook",
+        "description": "Update an outgoing webhook given the hook id.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/hooks/outgoing/%7Bhook_id%7D",
+            "operationId": "UpdateOutgoingWebhook",
+            "summary": "Update an outgoing webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "outgoing Webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "RegenOutgoingHookToken",
+        "functionName": "regenoutgoinghooktoken",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/hooks/outgoing/{hook_id}/regen_token",
+        "summary": "Regenerate the token for the outgoing webhook.",
+        "description": "Regenerate the token for the outgoing webhook.\n##### Permissions\n`manage_webhooks` for system or `manage_webhooks` for the specific team or `manage_webhooks` for the channel.\n",
+        "tags": [
+            "webhooks"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "hook_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/hooks/outgoing/%7Bhook_id%7D/regen_token",
+            "operationId": "RegenOutgoingHookToken",
+            "summary": "Regenerate the token for the outgoing webhook",
+            "categoryPath": [
+                "kChat",
+                "webhooks"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "hook_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Outgoing webhook GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "CreatePost",
+        "functionName": "createpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts",
+        "summary": "Create a post",
+        "description": "Create a new post in a channel. To create the post as a comment on another post, provide `root_id`.\n##### Permissions\nMust have `create_post` permission for the channel the post is being created in.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "set_online",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts",
+            "operationId": "CreatePost",
+            "summary": "Create a post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "set_online",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to set the user status as online or not.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DeletePost",
+        "functionName": "deletepost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/posts/{post_id}",
+        "summary": "Delete a post",
+        "description": "Soft deletes a post, by marking the post as deleted in the database. Soft deleted posts will not be returned in post queries.\n##### Permissions\nMust be logged in as the user or have `delete_others_posts` permission.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/posts/%7Bpost_id%7D",
+            "operationId": "DeletePost",
+            "summary": "Delete a post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the post to delete",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPost",
+        "functionName": "getpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/posts/{post_id}",
+        "summary": "Get a post",
+        "description": "Get a single post.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/posts/%7Bpost_id%7D",
+            "operationId": "GetPost",
+            "summary": "Get a post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the post to get",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if result should include deleted posts, must have 'manage_system' (admin) permission.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DoPostAction",
+        "functionName": "dopostaction",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts/{post_id}/actions/{action_id}",
+        "summary": "Perform a post action",
+        "description": "Perform a post action, which allows users to interact with integrations through posts.\n##### Permissions\nMust be authenticated and have the `read_channel` permission to the channel the post is in.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "action_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts/%7Bpost_id%7D/actions/%7Baction_id%7D",
+            "operationId": "DoPostAction",
+            "summary": "Perform a post action",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "action_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Action GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFileInfosForPost",
+        "functionName": "getfileinfosforpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/posts/{post_id}/files/info",
+        "summary": "Get file info for post",
+        "description": "Gets a list of file information objects for the files attached to a post.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/posts/%7Bpost_id%7D/files/info",
+            "operationId": "GetFileInfosForPost",
+            "summary": "Get file info for post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the post",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if result should include deleted posts, must have 'manage_system' (admin) permission.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "PatchPost",
+        "functionName": "patchpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/posts/{post_id}/patch",
+        "summary": "Patch a post",
+        "description": "Partially update a post by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.\n##### Permissions\nMust have the `edit_post` permission.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/posts/%7Bpost_id%7D/patch",
+            "operationId": "PatchPost",
+            "summary": "Patch a post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "PinPost",
+        "functionName": "pinpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts/{post_id}/pin",
+        "summary": "Pin a post to the channel",
+        "description": "Pin a post to a channel it is in based from the provided post id string.\n##### Permissions\nMust be authenticated and have the `read_channel` permission to the channel the post is in.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts/%7Bpost_id%7D/pin",
+            "operationId": "PinPost",
+            "summary": "Pin a post to the channel",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetReactions",
+        "functionName": "getreactions",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/posts/{post_id}/reactions",
+        "summary": "Get a list of reactions to a post",
+        "description": "Get a list of reactions made by all users to a given post.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in.\n",
+        "tags": [
+            "reactions"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/posts/%7Bpost_id%7D/reactions",
+            "operationId": "GetReactions",
+            "summary": "Get a list of reactions to a post",
+            "categoryPath": [
+                "kChat",
+                "reactions"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of a post",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPostThread",
+        "functionName": "getpostthread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/posts/{post_id}/thread",
+        "summary": "Get a thread",
+        "description": "Get a post and the rest of the posts in the same thread.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "perPage",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "fromPost",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "fromCreateAt",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "direction",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "skipFetchThreads",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "collapsedThreads",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "collapsedThreadsExtended",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/posts/%7Bpost_id%7D/thread",
+            "operationId": "GetPostThread",
+            "summary": "Get a thread",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of a post in the thread",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "perPage",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of posts per page",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 95630
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        95630
+                    ]
+                },
+                {
+                    "name": "fromPost",
+                    "in": "query",
+                    "required": false,
+                    "description": "The post_id to return the next page of posts from",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "default": "",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "fromCreateAt",
+                    "in": "query",
+                    "required": false,
+                    "description": "The create_at timestamp to return the next page of posts from",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 67564
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        67564
+                    ]
+                },
+                {
+                    "name": "direction",
+                    "in": "query",
+                    "required": false,
+                    "description": "The direction to return the posts. Either up or down.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "default": "",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "skipFetchThreads",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to skip fetching threads or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "collapsedThreads",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether the client uses CRT or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "collapsedThreadsExtended",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to return the associated users as part of the response or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UnpinPost",
+        "functionName": "unpinpost",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts/{post_id}/unpin",
+        "summary": "Unpin a post to the channel",
+        "description": "Unpin a post to a channel it is in based from the provided post id string.\n##### Permissions\nMust be authenticated and have the `read_channel` permission to the channel the post is in.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts/%7Bpost_id%7D/unpin",
+            "operationId": "UnpinPost",
+            "summary": "Unpin a post to the channel",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "CreatePostEphemeral",
+        "functionName": "createpostephemeral",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts/ephemeral",
+        "summary": "Create a ephemeral post",
+        "description": "Create a new ephemeral post in a channel.\n##### Permissions\nMust have `create_post_ephemeral` permission (currently only given to system admin)\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts/ephemeral",
+            "operationId": "CreatePostEphemeral",
+            "summary": "Create a ephemeral post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "getPostsByIds",
+        "functionName": "getpostsbyids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/posts/ids",
+        "summary": "Get posts by a list of ids",
+        "description": "Fetch a list of posts based on the provided postIDs\n##### Permissions\nMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/posts/ids",
+            "operationId": "getPostsByIds",
+            "summary": "Get posts by a list of ids",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SaveReaction",
+        "functionName": "savereaction",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/reactions",
+        "summary": "Create a reaction",
+        "description": "Create a reaction.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in.\n",
+        "tags": [
+            "reactions"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/reactions",
+            "operationId": "SaveReaction",
+            "summary": "Create a reaction",
+            "categoryPath": [
+                "kChat",
+                "reactions"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "201",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetAllRoles",
+        "functionName": "getallroles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/roles",
+        "summary": "Get a list of all the roles",
+        "description": "##### Permissions\n\n`manage_system` permission is required.\n\n",
+        "tags": [
+            "roles"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/roles",
+            "operationId": "GetAllRoles",
+            "summary": "Get a list of all the roles",
+            "categoryPath": [
+                "kChat",
+                "roles"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetRole",
+        "functionName": "getrole",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/roles/{role_id}",
+        "summary": "Get a role",
+        "description": "Get a role from the provided role id.\n\n##### Permissions\nRequires an active session but no other permissions.\n\n",
+        "tags": [
+            "roles"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "role_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/roles/%7Brole_id%7D",
+            "operationId": "GetRole",
+            "summary": "Get a role",
+            "categoryPath": [
+                "kChat",
+                "roles"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "role_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Role GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetRoleByName",
+        "functionName": "getrolebyname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/roles/name/{role_name}",
+        "summary": "Get a role by name",
+        "description": "Get a role from the provided role name.\n\n##### Permissions\nRequires an active session but no other permissions.\n\n",
+        "tags": [
+            "roles"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "role_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/roles/name/%7Brole_name%7D",
+            "operationId": "GetRoleByName",
+            "summary": "Get a role by name",
+            "categoryPath": [
+                "kChat",
+                "roles"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "role_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Role Name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetRolesByNames",
+        "functionName": "getrolesbynames",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/roles/names",
+        "summary": "Get a list of roles by name",
+        "description": "Get a list of roles from their names.\n\n##### Permissions\nRequires an active session but no other permissions.\n\n",
+        "tags": [
+            "roles"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/roles/names",
+            "operationId": "GetRolesByNames",
+            "summary": "Get a list of roles by name",
+            "categoryPath": [
+                "kChat",
+                "roles"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetAllTeams",
+        "functionName": "getallteams",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams",
+        "summary": "Get teams",
+        "description": "For regular users only returns open teams. Users with the \"manage_system\" permission will return teams regardless of type. The result is based on query string parameters - page and per_page.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_total_count",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "exclude_policy_constrained",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams",
+            "operationId": "GetAllTeams",
+            "summary": "Get teams",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 90675
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        90675
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of teams per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 54619
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        54619
+                    ]
+                },
+                {
+                    "name": "include_total_count",
+                    "in": "query",
+                    "required": false,
+                    "description": "Appends a total count of returned teams inside the response object - ex: `{ \"teams\": [], \"total_count\" : 0 }`.      ",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "exclude_policy_constrained",
+                    "in": "query",
+                    "required": false,
+                    "description": "If set to true, teams which are part of a data retention policy will be excluded. The `sysconsole_read_compliance` permission is required to use this parameter.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeam",
+        "functionName": "getteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}",
+        "summary": "Get a team",
+        "description": "Get a team on the system.\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D",
+            "operationId": "GetTeam",
+            "summary": "Get a team",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPublicChannelsForTeam",
+        "functionName": "getpublicchannelsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels",
+        "summary": "Get public channels",
+        "description": "Get a page of public channels on a team based on query string parameters - page and per_page.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels",
+            "operationId": "GetPublicChannelsForTeam",
+            "summary": "Get public channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 47741
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        47741
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of public channels per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 90140
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        90140
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "AutocompleteChannelsForTeam",
+        "functionName": "autocompletechannelsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels/autocomplete",
+        "summary": "Autocomplete channels",
+        "description": "Autocomplete public channels on a team based on the search term provided in the request URL.\n\n##### Permissions\nMust have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "name",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels/autocomplete",
+            "operationId": "AutocompleteChannelsForTeam",
+            "summary": "Autocomplete channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "required": true,
+                    "description": "Name or display name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetDeletedChannelsForTeam",
+        "functionName": "getdeletedchannelsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels/deleted",
+        "summary": "Get deleted channels",
+        "description": "Get a page of deleted channels on a team based on query string parameters - team_id, page and per_page.\n\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels/deleted",
+            "operationId": "GetDeletedChannelsForTeam",
+            "summary": "Get deleted channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 6955
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        6955
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of public channels per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 29292
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        29292
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPublicChannelsByIdsForTeam",
+        "functionName": "getpublicchannelsbyidsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/channels/ids",
+        "summary": "Get a list of channels by ids",
+        "description": "Get a list of public channels on a team by id.\n##### Permissions\n`view_team` for the team the channels are on.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/channels/ids",
+            "operationId": "GetPublicChannelsByIdsForTeam",
+            "summary": "Get a list of channels by ids",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelByName",
+        "functionName": "getchannelbyname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels/name/{channel_name}",
+        "summary": "Get a channel by name",
+        "description": "Gets channel from the provided team id and channel name strings.\n##### Permissions\n`read_channel` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "channel_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels/name/%7Bchannel_name%7D",
+            "operationId": "GetChannelByName",
+            "summary": "Get a channel by name",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel Name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if deleted channels should be returned or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPrivateChannelsForTeam",
+        "functionName": "getprivatechannelsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels/private",
+        "summary": "Get private channels",
+        "description": "Get a page of private channels on a team based on query string\nparameters - team_id, page and per_page.\n\n\n##### Permissions\nMust have `manage_system` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels/private",
+            "operationId": "GetPrivateChannelsForTeam",
+            "summary": "Get private channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 28183
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        28183
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of private channels per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 18934
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        18934
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchArchivedChannels",
+        "functionName": "searcharchivedchannels",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/channels/search_archived",
+        "summary": "Search archived channels",
+        "description": "Search archived channels on a team based on the search term provided in the request body.\n\n##### Permissions\nMust have the `list_team_channels` permission.\n\nA user without the `list_team_channels` permission will be able to use this endpoint, with the search results limited to the channels that the user is a member of.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/channels/search_archived",
+            "operationId": "SearchArchivedChannels",
+            "summary": "Search archived channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "AutocompleteChannelsForTeamForSearch",
+        "functionName": "autocompletechannelsforteamforsearch",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/channels/search_autocomplete",
+        "summary": "Autocomplete channels for search",
+        "description": "Autocomplete your channels on a team based on the search term provided in the request URL.\n\n##### Permissions\nMust have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "name",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/channels/search_autocomplete",
+            "operationId": "AutocompleteChannelsForTeamForSearch",
+            "summary": "Autocomplete channels for search",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "required": true,
+                    "description": "Name or display name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchChannels",
+        "functionName": "searchchannels",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/channels/search",
+        "summary": "Search channels",
+        "description": "Search public channels on a team based on the search term provided in the request body.\n##### Permissions\nMust have the `list_team_channels` permission.\n\nA user without the `list_team_channels` permission will be able to use this endpoint, with the search results limited to the channels that the user is a member of.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/channels/search",
+            "operationId": "SearchChannels",
+            "summary": "Search channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "ListCommandAutocompleteSuggestions",
+        "functionName": "listcommandautocompletesuggestions",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/commands/autocomplete_suggestions",
+        "summary": "List commands' autocomplete data",
+        "description": "List commands' autocomplete data for the team.\n##### Permissions\n`view_team` for the team.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "user_input",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/commands/autocomplete_suggestions",
+            "operationId": "ListCommandAutocompleteSuggestions",
+            "summary": "List commands' autocomplete data",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_input",
+                    "in": "query",
+                    "required": true,
+                    "description": "String inputted by the user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "ListAutocompleteCommands",
+        "functionName": "listautocompletecommands",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/commands/autocomplete",
+        "summary": "List autocomplete commands",
+        "description": "List autocomplete commands in the team.\n##### Permissions\n`view_team` for the team.\n",
+        "tags": [
+            "commands"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/commands/autocomplete",
+            "operationId": "ListAutocompleteCommands",
+            "summary": "List autocomplete commands",
+            "categoryPath": [
+                "kChat",
+                "commands"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchFiles",
+        "functionName": "searchfiles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/files/search",
+        "summary": "Search files in a team",
+        "description": "Search for files in a team based on file name, extention and file content (if file content extraction is enabled and supported for the files).\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "files",
+            "search",
+            "teams"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/files/search",
+            "operationId": "SearchFiles",
+            "summary": "Search files in a team",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetGroupsAssociatedToChannelsByTeam",
+        "functionName": "getgroupsassociatedtochannelsbyteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/groups_by_channels",
+        "summary": "Get team groups by channels",
+        "description": "Retrieve the set of groups associated with the channels in the given team grouped by channel.\n\n##### Permissions\nMust have `manage_system` permission or can access only for current user\n\n",
+        "tags": [
+            "groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter_allow_reference",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "paginate",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/groups_by_channels",
+            "operationId": "GetGroupsAssociatedToChannelsByTeam",
+            "summary": "Get team groups by channels",
+            "categoryPath": [
+                "kChat",
+                "groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 98207
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        98207
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of groups per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 23646
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        23646
+                    ]
+                },
+                {
+                    "name": "filter_allow_reference",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean which filters in the group entries with the `allow_reference` attribute set.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "paginate",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean to determine whether the pagination should be applied or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "500",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetGroupsByTeam",
+        "functionName": "getgroupsbyteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/groups",
+        "summary": "Get team groups",
+        "description": "Retrieve the list of groups associated with a given team.\n\n",
+        "tags": [
+            "groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter_allow_reference",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/groups",
+            "operationId": "GetGroupsByTeam",
+            "summary": "Get team groups",
+            "categoryPath": [
+                "kChat",
+                "groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 81648
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        81648
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of groups per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 35743
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        35743
+                    ]
+                },
+                {
+                    "name": "filter_allow_reference",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean which filters in the group entries with the `allow_reference` attribute set.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "500",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "InviteGuestsToTeam",
+        "functionName": "invitegueststoteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/invite-guests/email",
+        "summary": "Invite guests to the team by email",
+        "description": "Invite guests to existing team channels usign the user's email.\n\nThe number of emails that can be sent is rate limited to 20 per hour with a burst of 20 emails. If the rate limit exceeds, the error message contains details on when to retry and when the timer will be reset.\n\n##### Permissions\nMust have `invite_guest` permission for the team.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/invite-guests/email",
+            "operationId": "InviteGuestsToTeam",
+            "summary": "Invite guests to the team by email",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "413"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamMembers",
+        "functionName": "getteammembers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/members",
+        "summary": "Get team members",
+        "description": "Get a page team members list based on query string parameters - team id, page and per page.\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/members",
+            "operationId": "GetTeamMembers",
+            "summary": "Get team members",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 75164
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        75164
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of users per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 5710
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5710
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamMember",
+        "functionName": "getteammember",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/members/{user_id}",
+        "summary": "Get a team member",
+        "description": "Get a team member on the system.\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/members/%7Buser_id%7D",
+            "operationId": "GetTeamMember",
+            "summary": "Get a team member",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateTeamMemberRoles",
+        "functionName": "updateteammemberroles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/teams/{team_id}/members/{user_id}/roles",
+        "summary": "Update a team member roles",
+        "description": "Update a team member roles. Valid team roles are \"team_user\", \"team_admin\" or both of them. Overwrites any previously assigned team roles.\n##### Permissions\nMust be authenticated and have the `manage_team_roles` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/teams/%7Bteam_id%7D/members/%7Buser_id%7D/roles",
+            "operationId": "UpdateTeamMemberRoles",
+            "summary": "Update a team member roles",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamMembersByIds",
+        "functionName": "getteammembersbyids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/members/ids",
+        "summary": "Get team members by ids",
+        "description": "Get a list of team members based on a provided array of user ids.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/members/ids",
+            "operationId": "GetTeamMembersByIds",
+            "summary": "Get team members by ids",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchPosts",
+        "functionName": "searchposts",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/teams/{team_id}/posts/search",
+        "summary": "Search for team posts",
+        "description": "Search posts in the team and from the provided terms string.\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/teams/%7Bteam_id%7D/posts/search",
+            "operationId": "SearchPosts",
+            "summary": "Search for team posts",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamStats",
+        "functionName": "getteamstats",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/stats",
+        "summary": "Get a team stats",
+        "description": "Get a team stats on the system.\n##### Permissions\nMust be authenticated and have the `view_team` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/stats",
+            "operationId": "GetTeamStats",
+            "summary": "Get a team stats",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopChannelsForTeam",
+        "functionName": "gettopchannelsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/top/channels",
+        "summary": "Get a list of the top channels for a team.",
+        "description": "Get a list of the top public and private channels (the user is a member of) for a given team.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/top/channels",
+            "operationId": "GetTopChannelsForTeam",
+            "summary": "Get a list of the top channels for a team",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: channels with posts on the current day.\n- `7_day`: channels with posts in the last 7 days.\n- `28_day`: channels with posts in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 2520
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2520
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 39461
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        39461
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopReactionsForTeam",
+        "functionName": "gettopreactionsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/top/reactions",
+        "summary": "Get a list of the top reactions for a team.",
+        "description": "Get a list of the top reactions across all public and private channels (the user is a member of) for a given team.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/top/reactions",
+            "operationId": "GetTopReactionsForTeam",
+            "summary": "Get a list of the top reactions for a team",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: reactions posted on the current day.\n- `7_day`: reactions posted in the last 7 days.\n- `28_day`: reactions posted in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 71964
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        71964
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 86378
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        86378
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetNewTeamMembers",
+        "functionName": "getnewteammembers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/top/team_members",
+        "summary": "Get a list of new team members.",
+        "description": "Get a list of all of the new team members that have joined the given team during the given time period.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/top/team_members",
+            "operationId": "GetNewTeamMembers",
+            "summary": "Get a list of new team members",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: team members who joined during the current day.\n- `7_day`: team members who joined in the last 7 days.\n- `28_day`: team members who joined in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 91653
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        91653
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 51309
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        51309
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopThreadsForTeam",
+        "functionName": "gettopthreadsforteam",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/{team_id}/top/threads",
+        "summary": "Get a list of the top threads for a team.",
+        "description": "Get a list of the top threads from public and private channels (the user is a member of) for a given team.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/%7Bteam_id%7D/top/threads",
+            "operationId": "GetTopThreadsForTeam",
+            "summary": "Get a list of the top threads for a team",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: threads with activity on the current day.\n- `7_day`: threads with activity in the last 7 days.\n- `28_day`: threads with activity in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 88024
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        88024
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 9706
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        9706
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamByName",
+        "functionName": "getteambyname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/name/{name}",
+        "summary": "Get a team by name",
+        "description": "Get a team based on provided name string\n##### Permissions\nMust be authenticated, team type is open and have the `view_team` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/name/%7Bname%7D",
+            "operationId": "GetTeamByName",
+            "summary": "Get a team by name",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team Name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelByNameForTeamName",
+        "functionName": "getchannelbynameforteamname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/teams/name/{team_name}/channels/name/{channel_name}",
+        "summary": "Get a channel by name and team name",
+        "description": "Gets a channel from the provided team name and channel name strings.\n##### Permissions\n`read_channel` permission for the channel.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_name",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "channel_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/teams/name/%7Bteam_name%7D/channels/name/%7Bchannel_name%7D",
+            "operationId": "GetChannelByNameForTeamName",
+            "summary": "Get a channel by name and team name",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team Name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel Name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if deleted channels should be returned or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUsers",
+        "functionName": "getusers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users",
+        "summary": "Get users",
+        "description": "Get a page of a list of users. Based on query string parameters, select users from a team, channel, or select users not in a specific channel.\n\nSome basic sorting is available using the `sort` query parameter. Sorting is currently only supported when selecting users on a team.\n##### Permissions\nRequires an active session and (if specified) membership to the channel or team being selected from.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "in_team",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "not_in_team",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "in_channel",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "not_in_channel",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "in_group",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "group_constrained",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "without_team",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "active",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "inactive",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "role",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "sort",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "roles",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "channel_roles",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_roles",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users",
+            "operationId": "GetUsers",
+            "summary": "Get users",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 15851
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        15851
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of users per page. There is a maximum limit of 200 users per page.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 43753
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        43753
+                    ]
+                },
+                {
+                    "name": "in_team",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the team to get users for.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "not_in_team",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the team to exclude users for. Must not be used with \"in_team\" query parameter.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "in_channel",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the channel to get users for.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "not_in_channel",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the channel to exclude users for. Must be used with \"in_channel\" query parameter.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "in_group",
+                    "in": "query",
+                    "required": false,
+                    "description": "The ID of the group to get users for. Must have `manage_system` permission.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "group_constrained",
+                    "in": "query",
+                    "required": false,
+                    "description": "When used with `not_in_channel` or `not_in_team`, returns only the users that are allowed to join the channel or team based on its group constrains.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "without_team",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether or not to list users that are not on any team. This option takes precendence over `in_team`, `in_channel`, and `not_in_channel`.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "active",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether or not to list only users that are active. This option cannot be used along with the `inactive` option.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "inactive",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether or not to list only users that are deactivated. This option cannot be used along with the `active` option.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "role",
+                    "in": "query",
+                    "required": false,
+                    "description": "Returns users that have this role.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "sort",
+                    "in": "query",
+                    "required": false,
+                    "description": "Sort is only available in conjunction with certain options below. The paging parameter is also always available.\n\n##### `in_team`\nCan be \"\", \"last_activity_at\" or \"create_at\".\nWhen left blank, sorting is done by username.\n##### `in_channel`\nCan be \"\", \"status\".\nWhen left blank, sorting is done by username. `status` will sort by User's current status (Online, Away, DND, Offline), then by Username.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "roles",
+                    "in": "query",
+                    "required": false,
+                    "description": "Comma separated string used to filter users based on any of the specified system roles\n\nExample: `?roles=system_admin,system_user` will return users that are either system admins or system users\n\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_roles",
+                    "in": "query",
+                    "required": false,
+                    "description": "Comma separated string used to filter users based on any of the specified channel roles, can only be used in conjunction with `in_channel`\n\nExample: `?in_channel=4eb6axxw7fg3je5iyasnfudc5y&channel_roles=channel_user` will return users that are only channel users and not admins or guests\n\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_roles",
+                    "in": "query",
+                    "required": false,
+                    "description": "Comma separated string used to filter users based on any of the specified team roles, can only be used in conjunction with `in_team`\n\nExample: `?in_team=4eb6axxw7fg3je5iyasnfudc5y&team_roles=team_user` will return users that are only team users and not admins or guests\n\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUser",
+        "functionName": "getuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}",
+        "summary": "Get a user",
+        "description": "Get a user a object. Sensitive information will be sanitized out.\n##### Permissions\nRequires an active session but no other permissions.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D",
+            "operationId": "GetUser",
+            "summary": "Get a user",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelMembersWithTeamDataForUser",
+        "functionName": "getchannelmemberswithteamdataforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/channel_members",
+        "summary": "Get all channel members for a user",
+        "description": "Get all channel members for a user.\n\n##### Permissions\nLogged in as the user, or have `edit_other_users` permission.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "pageSize",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/channel_members",
+            "operationId": "GetChannelMembersWithTeamDataForUser",
+            "summary": "Get all channel members for a user",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "Page specifies which part of the results to return, by PageSize.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 5189
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5189
+                    ]
+                },
+                {
+                    "name": "pageSize",
+                    "in": "query",
+                    "required": false,
+                    "description": "PageSize specifies the size of the returned chunk of results.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 94942
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        94942
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelsForUser",
+        "functionName": "getchannelsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/channels",
+        "summary": "Get all channels",
+        "description": "Get all channels that a user is a member of.\n\n##### Permissions\n\nLogged in as the user, or have `edit_other_users` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "last_delete_at",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/channels",
+            "operationId": "GetChannelsForUser",
+            "summary": "Get all channels",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "last_delete_at",
+                    "in": "query",
+                    "required": false,
+                    "description": "Filters the deleted channels by this time in epoch format. Does not have any effect if include_deleted is set to false.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 7636
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        7636
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if deleted channels should be returned or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPostsAroundLastUnread",
+        "functionName": "getpostsaroundlastunread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/channels/{channel_id}/posts/unread",
+        "summary": "Get posts around oldest unread",
+        "description": "Get the oldest unread post in the channel for the given user as well as the posts around it. The returned list is sorted in descending order (most recent post first).\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission, and must have `read_channel` permission for the channel.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "limit_before",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "limit_after",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "skipFetchThreads",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "collapsedThreads",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "collapsedThreadsExtended",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/channels/%7Bchannel_id%7D/posts/unread",
+            "operationId": "GetPostsAroundLastUnread",
+            "summary": "Get posts around oldest unread",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the user",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The channel ID to get the posts for",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "limit_before",
+                    "in": "query",
+                    "required": false,
+                    "description": "Number of posts before the oldest unread posts. Maximum is 200 posts if limit is set greater than that.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "maximum": 200,
+                        "minimum": 0,
+                        "example": 153
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        153
+                    ]
+                },
+                {
+                    "name": "limit_after",
+                    "in": "query",
+                    "required": false,
+                    "description": "Number of posts after and including the oldest unread post. Maximum is 200 posts if limit is set greater than that.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "maximum": 200,
+                        "minimum": 1,
+                        "example": 80
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        80
+                    ]
+                },
+                {
+                    "name": "skipFetchThreads",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to skip fetching threads or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "collapsedThreads",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether the client uses CRT or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "collapsedThreadsExtended",
+                    "in": "query",
+                    "required": false,
+                    "description": "Whether to return the associated users as part of the response or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelUnread",
+        "functionName": "getchannelunread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/channels/{channel_id}/unread",
+        "summary": "Get unread messages",
+        "description": "Get the total unread messages and mentions for a channel for a user.\n##### Permissions\nMust be logged in as user and have the `read_channel` permission, or have `edit_other_usrs` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "channel_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/channels/%7Bchannel_id%7D/unread",
+            "operationId": "GetChannelUnread",
+            "summary": "Get unread messages",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Channel GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetGroupsByUserId",
+        "functionName": "getgroupsbyuserid",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/groups",
+        "summary": "Get groups for a userId",
+        "description": "Retrieve the list of groups associated to the user\n\n",
+        "tags": [
+            "groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/groups",
+            "operationId": "GetGroupsByUserId",
+            "summary": "Get groups for a userId",
+            "categoryPath": [
+                "kChat",
+                "groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetProfileImage",
+        "functionName": "getprofileimage",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/image",
+        "summary": "Get user's profile image",
+        "description": "Get a user's profile image based on user_id string parameter.\n##### Permissions\nMust be logged in.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "_",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "image/png"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/image",
+            "operationId": "GetProfileImage",
+            "summary": "Get user's profile image",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "_",
+                    "in": "query",
+                    "required": false,
+                    "description": "Not used by the server. Clients can pass in the last picture update time of the user to potentially take advantage of caching",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "number",
+                    "schema": {
+                        "type": "number",
+                        "example": 6.7
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        6.7
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "GetDefaultProfileImage",
+        "functionName": "getdefaultprofileimage",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/image/default",
+        "summary": "Return user's default (generated) profile image",
+        "description": "Returns the default (generated) user profile image based on user_id string parameter.\n##### Permissions\nMust be logged in.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "image/png"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/image/default",
+            "operationId": "GetDefaultProfileImage",
+            "summary": "Return user's default (generated) profile image",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404",
+                "501"
+            ]
+        }
+    },
+    {
+        "operationId": "PatchUser",
+        "functionName": "patchuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/patch",
+        "summary": "Patch a user",
+        "description": "Partially update a user by providing only the fields you want to update. Omitted fields will not be updated. The fields that can be updated are defined in the request body, all other provided fields will be ignored.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/patch",
+            "operationId": "PatchUser",
+            "summary": "Patch a user",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "DeleteReaction",
+        "functionName": "deletereaction",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/users/{user_id}/posts/{post_id}/reactions/{emoji_name}",
+        "summary": "Remove a reaction from a post",
+        "description": "Deletes a reaction made by a user from the given post.\n##### Permissions\nMust be user or have `manage_system` permission.\n",
+        "tags": [
+            "reactions"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "emoji_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/users/%7Buser_id%7D/posts/%7Bpost_id%7D/reactions/%7Bemoji_name%7D",
+            "operationId": "DeleteReaction",
+            "summary": "Remove a reaction from a post",
+            "categoryPath": [
+                "kChat",
+                "reactions"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the user",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the post",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "emoji_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "emoji name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SetPostReminder",
+        "functionName": "setpostreminder",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/posts/{post_id}/reminder",
+        "summary": "Set a post reminder",
+        "description": "Set a reminder for the user for the post.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in.\n\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/posts/%7Bpost_id%7D/reminder",
+            "operationId": "SetPostReminder",
+            "summary": "Set a post reminder",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "SetPostUnread",
+        "functionName": "setpostunread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/posts/{post_id}/set_unread",
+        "summary": "Mark as unread from a post.",
+        "description": "Mark a channel as being unread from a given post.\n##### Permissions\nMust have `read_channel` permission for the channel the post is in or if the channel is public, have the `read_public_channels` permission for the team.\nMust have `edit_other_users` permission if the user is not the one marking the post for himself.\n\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/posts/%7Bpost_id%7D/set_unread",
+            "operationId": "SetPostUnread",
+            "summary": "Mark as unread from a post",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Post GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetFlaggedPostsForUser",
+        "functionName": "getflaggedpostsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/posts/flagged",
+        "summary": "Get a list of flagged posts",
+        "description": "Get a page of flagged posts of a user provided user id string. Selects from a channel, team, or all flagged posts by a user. Will only return posts from channels in which the user is member.\n##### Permissions\nMust be user or have `manage_system` permission.\n",
+        "tags": [
+            "posts"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "channel_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/posts/flagged",
+            "operationId": "GetFlaggedPostsForUser",
+            "summary": "Get a list of flagged posts",
+            "categoryPath": [
+                "kChat",
+                "posts"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "ID of the user",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Team ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Channel ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 16569
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        16569
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of posts per page",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 18343
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        18343
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPreferences",
+        "functionName": "getpreferences",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/preferences",
+        "summary": "Get the user's preferences",
+        "description": "Get a list of the user's preferences.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "preferences"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/preferences",
+            "operationId": "GetPreferences",
+            "summary": "Get the user's preferences",
+            "categoryPath": [
+                "kChat",
+                "preferences"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdatePreferences",
+        "functionName": "updatepreferences",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/preferences",
+        "summary": "Save the user's preferences",
+        "description": "Save a list of the user's preferences.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "preferences"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/preferences",
+            "operationId": "UpdatePreferences",
+            "summary": "Save the user's preferences",
+            "categoryPath": [
+                "kChat",
+                "preferences"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPreferencesByCategory",
+        "functionName": "getpreferencesbycategory",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/preferences/{category}",
+        "summary": "List a user's preferences by category",
+        "description": "Lists the current user's stored preferences in the given category.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "preferences"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "category",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/preferences/%7Bcategory%7D",
+            "operationId": "GetPreferencesByCategory",
+            "summary": "List a user's preferences by category",
+            "categoryPath": [
+                "kChat",
+                "preferences"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "category",
+                    "in": "path",
+                    "required": true,
+                    "description": "The category of a group of preferences",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetPreferencesByCategoryByName",
+        "functionName": "getpreferencesbycategorybyname",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/preferences/{category}/name/{preference_name}",
+        "summary": "Get a specific user preference",
+        "description": "Gets a single preference for the current user with the given category and name.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "preferences"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "category",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "preference_name",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/preferences/%7Bcategory%7D/name/%7Bpreference_name%7D",
+            "operationId": "GetPreferencesByCategoryByName",
+            "summary": "Get a specific user preference",
+            "categoryPath": [
+                "kChat",
+                "preferences"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "category",
+                    "in": "path",
+                    "required": true,
+                    "description": "The category of a group of preferences",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "preference_name",
+                    "in": "path",
+                    "required": true,
+                    "description": "The name of the preference",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "DeletePreferences",
+        "functionName": "deletepreferences",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/preferences/delete",
+        "summary": "Delete user's preferences",
+        "description": "Delete a list of the user's preferences.\n##### Permissions\nMust be logged in as the user being updated or have the `edit_other_users` permission.\n",
+        "tags": [
+            "preferences"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/preferences/delete",
+            "operationId": "DeletePreferences",
+            "summary": "Delete user's preferences",
+            "categoryPath": [
+                "kChat",
+                "preferences"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateUserRoles",
+        "functionName": "updateuserroles",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/roles",
+        "summary": "Update a user's roles",
+        "description": "Update a user's system-level roles. Valid user roles are \"system_user\", \"system_admin\" or both of them. Overwrites any previously assigned system-level roles.\n##### Permissions\nMust have the `manage_roles` permission.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/roles",
+            "operationId": "UpdateUserRoles",
+            "summary": "Update a user's roles",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUserStatus",
+        "functionName": "getuserstatus",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/status",
+        "summary": "Get user status",
+        "description": "Get user status by id from the server.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/status",
+            "operationId": "GetUserStatus",
+            "summary": "Get user status",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateUserStatus",
+        "functionName": "updateuserstatus",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/status",
+        "summary": "Update user status",
+        "description": "Manually set a user's status. When setting a user's status, the status will remain that value until set \"online\" again, which will return the status to being automatically updated based on user activity.\n##### Permissions\nMust have `edit_other_users` permission for the team.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/status",
+            "operationId": "UpdateUserStatus",
+            "summary": "Update user status",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "UnsetUserCustomStatus",
+        "functionName": "unsetusercustomstatus",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/users/{user_id}/status/custom",
+        "summary": "Unsets user custom status",
+        "description": "Unsets a user's custom status by updating the user's props and updates the user\n##### Permissions\nMust be logged in as the user whose custom status is being removed.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/users/%7Buser_id%7D/status/custom",
+            "operationId": "UnsetUserCustomStatus",
+            "summary": "Unsets user custom status",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateUserCustomStatus",
+        "functionName": "updateusercustomstatus",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/status/custom",
+        "summary": "Update user custom status",
+        "description": "Updates a user's custom status by setting the value in the user's props and updates the user. Also save the given custom status to the recent custom statuses in the user's props\n##### Permissions\nMust be logged in as the user whose custom status is being updated.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/status/custom",
+            "operationId": "UpdateUserCustomStatus",
+            "summary": "Update user custom status",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "PostUserRecentCustomStatusDelete",
+        "functionName": "postuserrecentcustomstatusdelete",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/status/custom/recent/delete",
+        "summary": "Delete user's recent custom status",
+        "description": "Deletes a user's recent custom status by removing the specific status from the recentCustomStatuses in the user's props and updates the user.\n##### Permissions\nMust be logged in as the user whose recent custom status is being deleted.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/status/custom/recent/delete",
+            "operationId": "PostUserRecentCustomStatusDelete",
+            "summary": "Delete user's recent custom status",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamsForUser",
+        "functionName": "getteamsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams",
+        "summary": "Get a user's teams",
+        "description": "Get a list of teams that a user is on.\n##### Permissions\nMust be authenticated as the user or have the `manage_system` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams",
+            "operationId": "GetTeamsForUser",
+            "summary": "Get a user's teams",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelsForTeamForUser",
+        "functionName": "getchannelsforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels",
+        "summary": "Get channels for user",
+        "description": "Get all the channels on a team for a user.\n##### Permissions\nLogged in as the user, or have `edit_other_users` permission, and `view_team` permission for the team.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "include_deleted",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "last_delete_at",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels",
+            "operationId": "GetChannelsForTeamForUser",
+            "summary": "Get channels for user",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Defines if deleted channels should be returned or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "last_delete_at",
+                    "in": "query",
+                    "required": false,
+                    "description": "Filters the deleted channels by this time in epoch format. Does not have any effect if include_deleted is set to false.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 25254
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        25254
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetSidebarCategoriesForTeamForUser",
+        "functionName": "getsidebarcategoriesforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories",
+        "summary": "Get user's sidebar categories",
+        "description": "Get a list of sidebar categories that will appear in the user's sidebar on the given team, including a list of channel IDs in each category.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories",
+            "operationId": "GetSidebarCategoriesForTeamForUser",
+            "summary": "Get user's sidebar categories",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "CreateSidebarCategoryForTeamForUser",
+        "functionName": "createsidebarcategoryforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories",
+        "summary": "Create user's sidebar category",
+        "description": "Create a custom sidebar category for the user on the given team.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories",
+            "operationId": "CreateSidebarCategoryForTeamForUser",
+            "summary": "Create user's sidebar category",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateSidebarCategoriesForTeamForUser",
+        "functionName": "updatesidebarcategoriesforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories",
+        "summary": "Update user's sidebar categories",
+        "description": "Update any number of sidebar categories for the user on the given team. This can be used to reorder the channels in these categories.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories",
+            "operationId": "UpdateSidebarCategoriesForTeamForUser",
+            "summary": "Update user's sidebar categories",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "RemoveSidebarCategoryForTeamForUser",
+        "functionName": "removesidebarcategoryforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories/{category_id}",
+        "summary": "Delete sidebar category",
+        "description": "Deletes a single sidebar category for the user on the given team. Only custom categories can be deleted.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "category_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories/%7Bcategory_id%7D",
+            "operationId": "RemoveSidebarCategoryForTeamForUser",
+            "summary": "Delete sidebar category",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "category_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Category GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetSidebarCategoryForTeamForUser",
+        "functionName": "getsidebarcategoryforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories/{category_id}",
+        "summary": "Get sidebar category",
+        "description": "Returns a single sidebar category for the user on the given team.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "category_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories/%7Bcategory_id%7D",
+            "operationId": "GetSidebarCategoryForTeamForUser",
+            "summary": "Get sidebar category",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "category_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Category GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateSidebarCategoryForTeamForUser",
+        "functionName": "updatesidebarcategoryforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories/{category_id}",
+        "summary": "Update sidebar category",
+        "description": "Updates a single sidebar category for the user on the given team.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "category_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories/%7Bcategory_id%7D",
+            "operationId": "UpdateSidebarCategoryForTeamForUser",
+            "summary": "Update sidebar category",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "category_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Category GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetSidebarCategoryOrderForTeamForUser",
+        "functionName": "getsidebarcategoryorderforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories/order",
+        "summary": "Get user's sidebar category order",
+        "description": "Returns the order of the sidebar categories for a user on the given team as an array of IDs.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories/order",
+            "operationId": "GetSidebarCategoryOrderForTeamForUser",
+            "summary": "Get user's sidebar category order",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateSidebarCategoryOrderForTeamForUser",
+        "functionName": "updatesidebarcategoryorderforteamforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/categories/order",
+        "summary": "Update user's sidebar category order",
+        "description": "Updates the order of the sidebar categories for a user on the given team. The provided array must include the IDs of all categories on the team.\n##### Permissions\nMust be authenticated and have the `list_team_channels` permission.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/categories/order",
+            "operationId": "UpdateSidebarCategoryOrderForTeamForUser",
+            "summary": "Update user's sidebar category order",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetChannelMembersForUser",
+        "functionName": "getchannelmembersforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/channels/members",
+        "summary": "Get channel memberships and roles for a user",
+        "description": "Get all channel memberships and associated membership roles (i.e. `channel_user`, `channel_admin`) for a user on a specific team.\n##### Permissions\nLogged in as the user and `view_team` permission for the team. Having `manage_system` permission voids the previous requirements.\n",
+        "tags": [
+            "channels"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/channels/members",
+            "operationId": "GetChannelMembersForUser",
+            "summary": "Get channel memberships and roles for a user",
+            "categoryPath": [
+                "kChat",
+                "channels"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUserThreads",
+        "functionName": "getuserthreads",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads",
+        "summary": "Get all threads that user is following",
+        "description": "Get all threads that user is following\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "since",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "deleted",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "extended",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "pageSize",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "totalsOnly",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "threadsOnly",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads",
+            "operationId": "GetUserThreads",
+            "summary": "Get all threads that user is following",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "since",
+                    "in": "query",
+                    "required": false,
+                    "description": "Since filters the threads based on their LastUpdateAt timestamp.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 71546
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        71546
+                    ]
+                },
+                {
+                    "name": "deleted",
+                    "in": "query",
+                    "required": false,
+                    "description": "Deleted will specify that even deleted threads should be returned (For mobile sync).",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "extended",
+                    "in": "query",
+                    "required": false,
+                    "description": "Extended will enrich the response with participant details.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "Page specifies which part of the results to return, by PageSize.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 54656
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        54656
+                    ]
+                },
+                {
+                    "name": "pageSize",
+                    "in": "query",
+                    "required": false,
+                    "description": "PageSize specifies the size of the returned chunk of results.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "default": 30,
+                        "type": "integer",
+                        "example": 39460
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        39460
+                    ]
+                },
+                {
+                    "name": "totalsOnly",
+                    "in": "query",
+                    "required": false,
+                    "description": "Setting this to true will only return the total counts.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                },
+                {
+                    "name": "threadsOnly",
+                    "in": "query",
+                    "required": false,
+                    "description": "Setting this to true will only return threads.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": true
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        true
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUserThread",
+        "functionName": "getuserthread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}",
+        "summary": "Get a thread followed by the user",
+        "description": "Get a thread\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "thread_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/%7Bthread_id%7D",
+            "operationId": "GetUserThread",
+            "summary": "Get a thread followed by the user",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "thread_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the thread to follow",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "StopFollowingThread",
+        "functionName": "stopfollowingthread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "DELETE",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/following",
+        "summary": "Stop following a thread",
+        "description": "Stop following a thread\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "thread_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/%7Bthread_id%7D/following",
+            "operationId": "StopFollowingThread",
+            "summary": "Stop following a thread",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "thread_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the thread to update",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "StartFollowingThread",
+        "functionName": "startfollowingthread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/following",
+        "summary": "Start following a thread",
+        "description": "Start following a thread\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "thread_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/%7Bthread_id%7D/following",
+            "operationId": "StartFollowingThread",
+            "summary": "Start following a thread",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "thread_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the thread to follow",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateThreadReadForUser",
+        "functionName": "updatethreadreadforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/read/{timestamp}",
+        "summary": "Mark a thread that user is following read state to the timestamp",
+        "description": "Mark a thread that user is following as read\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "thread_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "timestamp",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/%7Bthread_id%7D/read/%7Btimestamp%7D",
+            "operationId": "UpdateThreadReadForUser",
+            "summary": "Mark a thread that user is following read state to the timestamp",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "thread_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the thread to update",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "timestamp",
+                    "in": "path",
+                    "required": true,
+                    "description": "The timestamp to which the thread's \"last read\" state will be reset.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "SetThreadUnreadByPostId",
+        "functionName": "setthreadunreadbypostid",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/{thread_id}/set_unread/{post_id}",
+        "summary": "Mark a thread that user is following as unread based on a post id",
+        "description": "Mark a thread that user is following as unread\n\n##### Permissions\nMust have `read_channel` permission for the channel the thread is in or if the channel is public, have the `read_public_channels` permission for the team.\n\nMust have `edit_other_users` permission if the user is not the one marking the thread for himself.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "thread_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "post_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/%7Bthread_id%7D/set_unread/%7Bpost_id%7D",
+            "operationId": "SetThreadUnreadByPostId",
+            "summary": "Mark a thread that user is following as unread based on a post id",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "thread_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the thread to update",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "post_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of a post belonging to the thread to mark as unread.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "UpdateThreadsReadForUser",
+        "functionName": "updatethreadsreadforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "PUT",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/threads/read",
+        "summary": "Mark all threads that user is following as read",
+        "description": "Mark all threads that user is following as read\n\n\n##### Permissions\nMust be logged in as the user or have `edit_other_users` permission.\n",
+        "tags": [
+            "threads"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/threads/read",
+            "operationId": "UpdateThreadsReadForUser",
+            "summary": "Mark all threads that user is following as read",
+            "categoryPath": [
+                "kChat",
+                "threads"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the user. This can also be \"me\" which will point to the current user.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "The ID of the team in which the thread is.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamUnread",
+        "functionName": "getteamunread",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/{team_id}/unread",
+        "summary": "Get unreads for a team",
+        "description": "Get the unread mention and message counts for a team for the specified user.\n##### Permissions\nMust be the user or have `edit_other_users` permission and have `view_team` permission for the team.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "team_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/%7Bteam_id%7D/unread",
+            "operationId": "GetTeamUnread",
+            "summary": "Get unreads for a team",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Team GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamMembersForUser",
+        "functionName": "getteammembersforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/members",
+        "summary": "Get team members for a user",
+        "description": "Get a list of team members for a user. Useful for getting the ids of teams the user is on and the roles they have in those teams.\n##### Permissions\nMust be logged in as the user or have the `edit_other_users` permission.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/members",
+            "operationId": "GetTeamMembersForUser",
+            "summary": "Get team members for a user",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTeamsUnreadForUser",
+        "functionName": "getteamsunreadforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/{user_id}/teams/unread",
+        "summary": "Get team unreads for a user",
+        "description": "Get the count for unread messages and mentions in the teams the user is a member of.\n##### Permissions\nMust be logged in.\n",
+        "tags": [
+            "teams"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "exclude_team",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "include_collapsed_threads",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/%7Buser_id%7D/teams/unread",
+            "operationId": "GetTeamsUnreadForUser",
+            "summary": "Get team unreads for a user",
+            "categoryPath": [
+                "kChat",
+                "teams"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "exclude_team",
+                    "in": "query",
+                    "required": true,
+                    "description": "Optional team id to be excluded from the results",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "include_collapsed_threads",
+                    "in": "query",
+                    "required": false,
+                    "description": "Boolean to determine whether the collapsed threads should be included or not",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "boolean",
+                    "schema": {
+                        "type": "boolean",
+                        "default": false,
+                        "example": false
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        false
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "PublishUserTyping",
+        "functionName": "publishusertyping",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/{user_id}/typing",
+        "summary": "Publish a user typing websocket event.",
+        "description": "Notify users in the given channel via websocket that the given user is typing.\n##### Permissions\nMust have `manage_system` permission to publish for any user other than oneself.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "user_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/%7Buser_id%7D/typing",
+            "operationId": "PublishUserTyping",
+            "summary": "Publish a user typing websocket event",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "User GUID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "AutocompleteUsers",
+        "functionName": "autocompleteusers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/autocomplete",
+        "summary": "Autocomplete users",
+        "description": "Get a list of users for the purpose of autocompleting based on the provided search term. Specify a combination of `team_id` and `channel_id` to filter results further.\n##### Permissions\nRequires an active session and `view_team` and `read_channel` on any teams or channels used to filter the results further.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "channel_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "name",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "limit",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/autocomplete",
+            "operationId": "AutocompleteUsers",
+            "summary": "Autocomplete users",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Team ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "channel_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Channel ID",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "name",
+                    "in": "query",
+                    "required": true,
+                    "description": "Username, nickname first name or last name",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "The maximum number of users to return in each subresult\n\n__Defaults to `100` if not provided.__\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 100,
+                        "example": 96385
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        96385
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUserByEmail",
+        "functionName": "getuserbyemail",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/email/{email}",
+        "summary": "Get a user by email",
+        "description": "Get a user object by providing a user email. Sensitive information will be sanitized out.\n##### Permissions\nRequires an active session and for the current session to be able to view another user's email based on the server's privacy settings.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "email",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/email/%7Bemail%7D",
+            "operationId": "GetUserByEmail",
+            "summary": "Get a user by email",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "email",
+                    "in": "path",
+                    "required": true,
+                    "description": "User Email",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "streich.beaulah@bogan.biz"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "streich.beaulah@bogan.biz"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUsersByGroupChannelIds",
+        "functionName": "getusersbygroupchannelids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/group_channels",
+        "summary": "Get users by group channels ids",
+        "description": "Get an object containing a key per group channel id in the\nquery and its value as a list of users members of that group\nchannel.\n\nThe user must be a member of the group ids in the query, or\nthey will be omitted from the response.\n##### Permissions\nRequires an active session but no other permissions.\n\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/group_channels",
+            "operationId": "GetUsersByGroupChannelIds",
+            "summary": "Get users by group channels ids",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUsersByIds",
+        "functionName": "getusersbyids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/ids",
+        "summary": "Get users by ids",
+        "description": "Get a list of users based on a provided list of user ids.\n##### Permissions\nRequires an active session but no other permissions.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "since",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/ids",
+            "operationId": "GetUsersByIds",
+            "summary": "Get users by ids",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "since",
+                    "in": "query",
+                    "required": false,
+                    "description": "Only return users that have been modified since the given Unix timestamp (in milliseconds).\n\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 47406
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        47406
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopChannelsForUser",
+        "functionName": "gettopchannelsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/me/top/channels",
+        "summary": "Get a list of the top channels for a user.",
+        "description": "Get a list of the top public and private channels (the user is a member of) for a given user.\n##### Permissions\nMust be logged in as the user.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/me/top/channels",
+            "operationId": "GetTopChannelsForUser",
+            "summary": "Get a list of the top channels for a user",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: channels with posts on the current day.\n- `7_day`: channels with posts in the last 7 days.\n- `28_day`: channels with posts in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 10616
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10616
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 41201
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        41201
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Team ID will scope the response to a given team.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopDMsForUser",
+        "functionName": "gettopdmsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/me/top/dms",
+        "summary": "Get a list of the top dms for a user.",
+        "description": "Get a list of the top dms for a given user.\n##### Permissions\nMust be logged in as the user.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/me/top/dms",
+            "operationId": "GetTopDMsForUser",
+            "summary": "Get a list of the top dms for a user",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: threads with activity on the current day.\n- `7_day`: threads with activity in the last 7 days.\n- `28_day`: threads with activity in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 19303
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        19303
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 29859
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        29859
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopReactionsForUser",
+        "functionName": "gettopreactionsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/me/top/reactions",
+        "summary": "Get a list of the top reactions for a user.",
+        "description": "Get a list of the top reactions across all public and private channels (the user is a member of) for a given user.\nIf no `team_id` is provided, this will also include reactions posted by the given user in direct and group messages.\n##### Permissions\nMust be logged in as the user.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/me/top/reactions",
+            "operationId": "GetTopReactionsForUser",
+            "summary": "Get a list of the top reactions for a user",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: reactions posted on the current day.\n- `7_day`: reactions posted in the last 7 days.\n- `28_day`: reactions posted in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 264
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        264
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 44194
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        44194
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Team ID will scope the response to a given team and exclude direct and group messages.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetTopThreadsForUser",
+        "functionName": "gettopthreadsforuser",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/me/top/threads",
+        "summary": "Get a list of the top threads for a user.",
+        "description": "Get a list of the top threads from public and private channels (the user is a member of and participating in the thread) for a given user.\n##### Permissions\nMust be logged in as the user.\n",
+        "tags": [
+            "insights"
+        ],
+        "mutating": false,
+        "pathParameters": [],
+        "queryParameters": [
+            {
+                "name": "time_range",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "per_page",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "team_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/me/top/threads",
+            "operationId": "GetTopThreadsForUser",
+            "summary": "Get a list of the top threads for a user",
+            "categoryPath": [
+                "kChat",
+                "insights"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "time_range",
+                    "in": "query",
+                    "required": true,
+                    "description": "Time range can be \"today\", \"7_day\", or \"28_day\".\n- `today`: threads with activity on the current day.\n- `7_day`: threads with activity in the last 7 days.\n- `28_day`: threads with activity in the last 28 days.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The page to select.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 0,
+                        "example": 75047
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        75047
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "The number of items per page, up to a maximum of 200.",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "default": 60,
+                        "example": 55176
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        55176
+                    ]
+                },
+                {
+                    "name": "team_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "Team ID will scope the response to a given team.\n##### Permissions\nMust have `view_team` permission for the team.\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "SearchUsers",
+        "functionName": "searchusers",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/search",
+        "summary": "Search users",
+        "description": "Get a list of users based on search criteria provided in the request body. Searches are typically done against username, full name, nickname and email unless otherwise configured by the server.\n##### Permissions\nRequires an active session and `read_channel` and/or `view_team` permissions for any channels or teams specified in the request body.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/search",
+            "operationId": "SearchUsers",
+            "summary": "Search users",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUsersStatusesByIds",
+        "functionName": "getusersstatusesbyids",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/status/ids",
+        "summary": "Get user statuses by id",
+        "description": "Get a list of user statuses by id from the server.\n##### Permissions\nMust be authenticated.\n",
+        "tags": [
+            "status"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/status/ids",
+            "operationId": "GetUsersStatusesByIds",
+            "summary": "Get user statuses by id",
+            "categoryPath": [
+                "kChat",
+                "status"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUserByUsername",
+        "functionName": "getuserbyusername",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "GET",
+        "path": "/api/v4/users/username/{username}",
+        "summary": "Get a user by username",
+        "description": "Get a user object by providing a username. Sensitive information will be sanitized out.\n##### Permissions\nRequires an active session but no other permissions.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "username",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/api/v4/users/username/%7Busername%7D",
+            "operationId": "GetUserByUsername",
+            "summary": "Get a user by username",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "username",
+                    "in": "path",
+                    "required": true,
+                    "description": "Username",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "GetUsersByUsernames",
+        "functionName": "getusersbyusernames",
+        "originalOperationId": null,
+        "domain": "kchat",
+        "method": "POST",
+        "path": "/api/v4/users/usernames",
+        "summary": "Get users by usernames",
+        "description": "Get a list of users based on a provided list of usernames.\n##### Permissions\nRequires an active session but no other permissions.\n",
+        "tags": [
+            "users"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/api/v4/users/usernames",
+            "operationId": "GetUsersByUsernames",
+            "summary": "Get users by usernames",
+            "categoryPath": [
+                "kChat",
+                "users"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": null,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "400",
+                "401"
+            ]
+        }
+    }
+];
+//# sourceMappingURL=kchat.js.map

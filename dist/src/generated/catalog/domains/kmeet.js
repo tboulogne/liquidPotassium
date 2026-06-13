@@ -1,0 +1,127 @@
+export const kmeetOperations = [
+    {
+        "operationId": "post_1_kmeet_rooms",
+        "functionName": "post1KmeetRooms",
+        "originalOperationId": null,
+        "domain": "kmeet",
+        "method": "POST",
+        "path": "/1/kmeet/rooms",
+        "summary": "Plan a conference",
+        "description": "This endpoint allows you to plan a conference with predefined settings. It will add an event on your Infomaniak Calendar with the meeting url.\n If you just want to create a room you don't need any API calls, you can build a conference URL by adding an unique identifier to your kMeet instance url (eg: kmeet.infomaniak.com/${MY_VERY_SECRET_CONFERENCE_ID})",
+        "tags": [
+            "Plan a conference"
+        ],
+        "mutating": true,
+        "pathParameters": [],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [
+            "bearerAuth"
+        ],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/kmeet/rooms",
+            "operationId": null,
+            "summary": "Plan a conference",
+            "categoryPath": [
+                "kMeet",
+                "Plan a conference"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": false,
+            "sortable": false,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [],
+            "responseStatuses": [
+                "200",
+                "422"
+            ]
+        }
+    },
+    {
+        "operationId": "get_1_kmeet_rooms_room_id_settings",
+        "functionName": "get1KmeetRoomsRoomIdSettings",
+        "originalOperationId": null,
+        "domain": "kmeet",
+        "method": "GET",
+        "path": "/1/kmeet/rooms/{room_id}/settings",
+        "summary": "Get room settings",
+        "description": "This endpoint allows you to fetch room settings.\n",
+        "tags": [
+            "Room settings"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "room_id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [
+            "bearerAuth"
+        ],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/kmeet/rooms/%7Broom_id%7D/settings",
+            "operationId": null,
+            "summary": "Get room settings",
+            "categoryPath": [
+                "kMeet",
+                "Room settings"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": false,
+            "sortable": false,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "room_id",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the room settings",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "403",
+                "404"
+            ]
+        }
+    }
+];
+//# sourceMappingURL=kmeet.js.map

@@ -1,0 +1,26 @@
+import type { GeneratedOperationClient, OperationRequest } from "../../client/generated-operation-client.js";
+export declare function createCoreOperations(client: GeneratedOperationClient): {
+    readonly coreResourceslistavailableactions: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1ActionsActionId: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetapplicationlist: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetapplication: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1AppInformationApplicationsVersionTypes: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetsupportedstorelist: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetsupportedstorelistGet1AppInformationVersionsAppstore: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetapplicationwithassociatedversionsdetails: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslisttasks: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayatask: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistcountries: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayacountry: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistlanguages: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayalanguage: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1MyKsuiteMyKSuiteId: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcescancelunsubscribe: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcescurrentmyksuite: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1Products: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslisttimezones: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayatimezone: (request?: OperationRequest) => Promise<unknown>;
+    readonly get2Events: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayaneventv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistpubliccloudstatusv2: (request?: OperationRequest) => Promise<unknown>;
+};

@@ -1,0 +1,21 @@
+import type { GeneratedOperationClient, OperationRequest } from "../../client/generated-operation-client.js";
+export declare function createSwissbackupOperations(client: GeneratedOperationClient): {
+    readonly get1SwissBackups: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsSwissBackupId: (request?: OperationRequest) => Promise<unknown>;
+    readonly put1SwissBackupsSwissBackupId: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsSwissBackupIdAcronisInformations: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdAdmin: (request?: OperationRequest) => Promise<unknown>;
+    readonly put1SwissBackupsSwissBackupIdAdmin: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdAdminRequestPassword: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsSwissBackupIdSlots: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdSlots: (request?: OperationRequest) => Promise<unknown>;
+    readonly delete1SwissBackupsSwissBackupIdSlotsSlotId: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsSwissBackupIdSlotsSlotId: (request?: OperationRequest) => Promise<unknown>;
+    readonly put1SwissBackupsSwissBackupIdSlotsSlotId: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdSlotsSlotIdDisable: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdSlotsSlotIdEnable: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsSwissBackupIdSlotsSlotIdRclone: (request?: OperationRequest) => Promise<unknown>;
+    readonly post1SwissBackupsSwissBackupIdSlotsSlotIdRequestPassword: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsCalculate: (request?: OperationRequest) => Promise<unknown>;
+    readonly get1SwissBackupsPricing: (request?: OperationRequest) => Promise<unknown>;
+};

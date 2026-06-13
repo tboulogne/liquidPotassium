@@ -1,0 +1,23 @@
+import type { GeneratedOperationClient, OperationRequest } from "../../client/generated-operation-client.js";
+export declare function createProfileOperations(client: GeneratedOperationClient): {
+    readonly coreResourceslistuserinformationv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesupdateprofileinformationv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistauthenticatorpasskeysv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdeleteanauthenticatorpasskeyv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistapplicationspasswordsv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesaddanapplicationpasswordv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayanapplicationpasswordv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdeleteprofilesavatarv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesaddupdateprofilesavatarv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistemailsv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdeleteanemailv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayanemailv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesgetrelatedworkspaceusersv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesattachamailboxtocurrentuserv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesunlinkamailboxfromcurrentuserv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcessetmailboxasprimaryv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesupdatemailboxcredentialpasswordv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourceslistphonesv2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdeleteaphonev2: (request?: OperationRequest) => Promise<unknown>;
+    readonly coreResourcesdisplayaphonev2: (request?: OperationRequest) => Promise<unknown>;
+};

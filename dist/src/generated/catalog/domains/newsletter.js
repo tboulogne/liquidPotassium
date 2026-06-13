@@ -1,0 +1,10955 @@
+export const newsletterOperations = [
+    {
+        "operationId": "NewsletterDestroyDomain",
+        "functionName": "newsletterdestroydomain",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}",
+        "summary": "Delete Domain",
+        "description": "Definitively delete a domain",
+        "tags": [
+            "Domains"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D",
+            "operationId": "NewsletterDestroyDomain",
+            "summary": "Delete Domain",
+            "categoryPath": [
+                "Newsletter",
+                "Domains"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 37211
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        37211
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowDomain",
+        "functionName": "newslettershowdomain",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}",
+        "summary": "Display Domain",
+        "description": "Returns a variety of information about one Domain from a Domain identifier",
+        "tags": [
+            "Domains"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D",
+            "operationId": "NewsletterShowDomain",
+            "summary": "Display Domain",
+            "categoryPath": [
+                "Newsletter",
+                "Domains"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 32210
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        32210
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "sub_domains",
+                        "enum": [
+                            "provider",
+                            "account",
+                            "can_use_other_domains",
+                            "sub_domains"
+                        ]
+                    },
+                    "enumValues": [
+                        "provider",
+                        "account",
+                        "can_use_other_domains",
+                        "sub_domains"
+                    ],
+                    "values": [
+                        "provider",
+                        "account",
+                        "can_use_other_domains",
+                        "sub_domains"
+                    ],
+                    "examples": [
+                        "sub_domains"
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "integer",
+                        "example": 25537
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        25537
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteCampaigns",
+        "functionName": "newsletterdeletecampaigns",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/campaigns",
+        "summary": "Delete campaigns bulk",
+        "description": "Delete multiple campaigns.",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/campaigns",
+            "operationId": "NewsletterDeleteCampaigns",
+            "summary": "Delete campaigns bulk",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "maxLength": 500,
+                                "type": "string",
+                                "description": "Filter groups"
+                            },
+                            "status": {
+                                "title": "status",
+                                "type": "array",
+                                "items": {
+                                    "title": "item",
+                                    "enum": [
+                                        "blocked",
+                                        "canceled",
+                                        "draft",
+                                        "scheduled",
+                                        "scheduled_v1",
+                                        "sending_failed",
+                                        "sending_v1",
+                                        "sent"
+                                    ],
+                                    "type": "string"
+                                },
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListCampaigns",
+        "functionName": "newsletterlistcampaigns",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/campaigns",
+        "summary": "List all campaigns",
+        "description": "Returns a variety of information about one or more Campaigns",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "extra",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/campaigns",
+            "operationId": "NewsletterListCampaigns",
+            "summary": "List all campaigns",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 93687
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        93687
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "thumbnail",
+                        "enum": [
+                            "statistics",
+                            "domain",
+                            "thumbnail",
+                            "recipients",
+                            "content",
+                            "designer"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "domain",
+                        "thumbnail",
+                        "recipients",
+                        "content",
+                        "designer"
+                    ],
+                    "values": [
+                        "statistics",
+                        "domain",
+                        "thumbnail",
+                        "recipients",
+                        "content",
+                        "designer"
+                    ],
+                    "examples": [
+                        "thumbnail"
+                    ]
+                },
+                {
+                    "name": "extra",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "extra",
+                        "enum": [
+                            "campaigns_count"
+                        ],
+                        "type": "string",
+                        "example": "campaigns_count"
+                    },
+                    "enumValues": [
+                        "campaigns_count"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "campaigns_count"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "lang": {
+                                "title": "lang",
+                                "type": "array",
+                                "items": {
+                                    "title": "item",
+                                    "enum": [
+                                        "de_DE",
+                                        "en_GB",
+                                        "es_ES",
+                                        "fr_FR",
+                                        "it_IT"
+                                    ],
+                                    "type": "string"
+                                }
+                            },
+                            "provider_id": {
+                                "title": "provider_id",
+                                "type": "integer",
+                                "description": "Unique identifier of the `Provider` to request"
+                            },
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "description": "Search on campaign subject only",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "type": "array",
+                                "items": {
+                                    "title": "item",
+                                    "enum": [
+                                        "blocked",
+                                        "canceled",
+                                        "draft",
+                                        "scheduled",
+                                        "scheduled_v1",
+                                        "sending",
+                                        "sending_failed",
+                                        "sending_v1",
+                                        "sent",
+                                        "unknown"
+                                    ],
+                                    "type": "string"
+                                },
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 42213
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        42213
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 87763
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        87763
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 30469
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        30469
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 78281
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        78281
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateCampaign",
+        "functionName": "newslettercreatecampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/campaigns",
+        "summary": "Create campaign",
+        "description": "Create a campaign with the given parameters",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/campaigns",
+            "operationId": "NewsletterCreateCampaign",
+            "summary": "Create campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 38708
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        38708
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteCampaign",
+        "functionName": "newsletterdeletecampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}",
+        "summary": "Delete campaign",
+        "description": "Delete a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D",
+            "operationId": "NewsletterDeleteCampaign",
+            "summary": "Delete campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowCampaign",
+        "functionName": "newslettershowcampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}",
+        "summary": "Get Campaign",
+        "description": "Returns a variety of information about one Campaign identifier",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D",
+            "operationId": "NewsletterShowCampaign",
+            "summary": "Get Campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 55278
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        55278
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 77386
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        77386
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "designer",
+                        "enum": [
+                            "statistics",
+                            "advanced_statistics",
+                            "recipients",
+                            "thumbnail",
+                            "content",
+                            "designer",
+                            "preview",
+                            "limits"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "advanced_statistics",
+                        "recipients",
+                        "thumbnail",
+                        "content",
+                        "designer",
+                        "preview",
+                        "limits"
+                    ],
+                    "values": [
+                        "statistics",
+                        "advanced_statistics",
+                        "recipients",
+                        "thumbnail",
+                        "content",
+                        "designer",
+                        "preview",
+                        "limits"
+                    ],
+                    "examples": [
+                        "designer"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterEditCampaign",
+        "functionName": "newslettereditcampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}",
+        "summary": "Edit campaign",
+        "description": "Edit an existing campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D",
+            "operationId": "NewsletterEditCampaign",
+            "summary": "Edit campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 89886
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        89886
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "campaign",
+                        "type": "integer",
+                        "example": 57581
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        57581
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCancelCampaign",
+        "functionName": "newslettercancelcampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/cancel",
+        "summary": "Cancel campaign",
+        "description": "Cancel a scheduled campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/cancel",
+            "operationId": "NewsletterCancelCampaign",
+            "summary": "Cancel campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 91037
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        91037
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 83547
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        83547
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDuplicateCampaign",
+        "functionName": "newsletterduplicatecampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/duplicate",
+        "summary": "Duplicate campaign",
+        "description": "Duplicate a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/duplicate",
+            "operationId": "NewsletterDuplicateCampaign",
+            "summary": "Duplicate campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 1314
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        1314
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 96489
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        96489
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterSubscribersActivity",
+        "functionName": "newslettersubscribersactivity",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/report/activity",
+        "summary": "Subscribers activity",
+        "description": "Return statistics about subscribers for a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "order_by",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/report/activity",
+            "operationId": "NewsletterSubscribersActivity",
+            "summary": "Subscribers activity",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 53177
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        53177
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 88947
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        88947
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "array",
+                    "schema": {
+                        "title": "order_by",
+                        "type": "array",
+                        "items": {
+                            "title": "item",
+                            "enum": [
+                                "click_count",
+                                "email",
+                                "open_count"
+                            ],
+                            "type": "string"
+                        },
+                        "nullable": true,
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "action": {
+                                "title": "action",
+                                "enum": [
+                                    "bounce",
+                                    "click",
+                                    "complaint",
+                                    "not_open",
+                                    "open",
+                                    "sbounce",
+                                    "unsub"
+                                ],
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 53898
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        53898
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 95027
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        95027
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterLinksActivity",
+        "functionName": "newsletterlinksactivity",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/report/links",
+        "summary": "Links activity",
+        "description": "Return statistics about links for a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/report/links",
+            "operationId": "NewsletterLinksActivity",
+            "summary": "Links activity",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 28011
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        28011
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 11194
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        11194
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterScheduleCampaign",
+        "functionName": "newsletterschedulecampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/schedule",
+        "summary": "Schedule campaign",
+        "description": "Schedule a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/schedule",
+            "operationId": "NewsletterScheduleCampaign",
+            "summary": "Schedule campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 38321
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        38321
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 51498
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        51498
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateTemplateFromCampaign",
+        "functionName": "newslettercreatetemplatefromcampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/template/{template}",
+        "summary": "Create template from campaign",
+        "description": "Create a new template from an existing campaign.",
+        "tags": [
+            "Templates"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "template",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/template/%7Btemplate%7D",
+            "operationId": "NewsletterCreateTemplateFromCampaign",
+            "summary": "Create template from campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Templates"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 23054
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        23054
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 20019
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        20019
+                    ]
+                },
+                {
+                    "name": "template",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Template",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": []
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "post_1_newsletters_domain_campaigns_campaign_test",
+        "functionName": "post1NewslettersDomainCampaignsCampaignTest",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/test",
+        "summary": "Test campaign",
+        "description": "Allow to send a test campaign to an email. If the email is in the subscribers, custom fields will be filled",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/test",
+            "operationId": null,
+            "summary": "Test campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 82135
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        82135
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 27749
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        27749
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterGetTracking",
+        "functionName": "newslettergettracking",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/campaigns/{campaign}/tracking",
+        "summary": "Get tracking",
+        "description": "Returns tracking records for a campaign",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "campaign",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/campaigns/%7Bcampaign%7D/tracking",
+            "operationId": "NewsletterGetTracking",
+            "summary": "Get tracking",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 66664
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        66664
+                    ]
+                },
+                {
+                    "name": "campaign",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Campaign",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 77752
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        77752
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "action": {
+                                "title": "action",
+                                "enum": [
+                                    "bounce",
+                                    "click",
+                                    "complaint",
+                                    "delivery",
+                                    "not_delivery",
+                                    "not_open",
+                                    "open",
+                                    "sbounce",
+                                    "send",
+                                    "unsub",
+                                    "unsub-reason",
+                                    "v3",
+                                    "webform_conversion",
+                                    "webform_display"
+                                ],
+                                "type": "string",
+                                "nullable": true
+                            },
+                            "search": {
+                                "title": "search",
+                                "type": "string"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 2966
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        2966
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 5133
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        5133
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 51699
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        51699
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 54363
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        54363
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterTestCampaign",
+        "functionName": "newslettertestcampaign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/campaigns/template/{template_uuid}/test",
+        "summary": "Test campaign",
+        "description": "Allow to send a test campaign to an email based on the campaign template uuid.\n\nIf the email is in the subscribers, custom fields will be filled",
+        "tags": [
+            "Campaigns"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "template_uuid",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/campaigns/template/%7Btemplate_uuid%7D/test",
+            "operationId": "NewsletterTestCampaign",
+            "summary": "Test campaign",
+            "categoryPath": [
+                "Newsletter",
+                "Campaigns"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 8789
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        8789
+                    ]
+                },
+                {
+                    "name": "template_uuid",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the template",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListCredits",
+        "functionName": "newsletterlistcredits",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/credits",
+        "summary": "List all credits",
+        "description": "Returns a variety of information about one or more Credits",
+        "tags": [
+            "Credits"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/credits",
+            "operationId": "NewsletterListCredits",
+            "summary": "List all credits",
+            "categoryPath": [
+                "Newsletter",
+                "Credits"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 45289
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        45289
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "campaign",
+                        "enum": [
+                            "domain",
+                            "campaign"
+                        ]
+                    },
+                    "enumValues": [
+                        "domain",
+                        "campaign"
+                    ],
+                    "values": [
+                        "domain",
+                        "campaign"
+                    ],
+                    "examples": [
+                        "campaign"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 75819
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        75819
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 79063
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        79063
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 39128
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        39128
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 48823
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        48823
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterAccountCredits",
+        "functionName": "newsletteraccountcredits",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/credits/accounts",
+        "summary": "Account credits",
+        "description": "Returns a variety of information about credits for an account",
+        "tags": [
+            "Credits"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/credits/accounts",
+            "operationId": "NewsletterAccountCredits",
+            "summary": "Account credits",
+            "categoryPath": [
+                "Newsletter",
+                "Credits"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 8003
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        8003
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "campaign",
+                        "enum": [
+                            "domain",
+                            "campaign"
+                        ]
+                    },
+                    "enumValues": [
+                        "domain",
+                        "campaign"
+                    ],
+                    "values": [
+                        "domain",
+                        "campaign"
+                    ],
+                    "examples": [
+                        "campaign"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 72235
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        72235
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 30678
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        30678
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 17336
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        17336
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 45505
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        45505
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCheckout",
+        "functionName": "newslettercheckout",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/credits/checkout/{id}",
+        "summary": "Checkout",
+        "description": "Redirect the user to check out after choosing a credit pack",
+        "tags": [
+            "Credits"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "id",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/credits/checkout/%7Bid%7D",
+            "operationId": "NewsletterCheckout",
+            "summary": "Checkout",
+            "categoryPath": [
+                "Newsletter",
+                "Credits"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 26586
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        26586
+                    ]
+                },
+                {
+                    "name": "id",
+                    "in": "path",
+                    "required": true,
+                    "description": "l'id du Pack",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 11476
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        11476
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreditsDetails",
+        "functionName": "newslettercreditsdetails",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/credits/details",
+        "summary": "Credits details",
+        "description": "Get details about account credits",
+        "tags": [
+            "Credits"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/credits/details",
+            "operationId": "NewsletterCreditsDetails",
+            "summary": "Credits details",
+            "categoryPath": [
+                "Newsletter",
+                "Credits"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 72084
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        72084
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListCreditsOffers",
+        "functionName": "newsletterlistcreditsoffers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/credits/packs",
+        "summary": "List credits offers",
+        "description": "Return the list of credits pack",
+        "tags": [
+            "Credits"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/credits/packs",
+            "operationId": "NewsletterListCreditsOffers",
+            "summary": "List credits offers",
+            "categoryPath": [
+                "Newsletter",
+                "Credits"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 30787
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        30787
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShow",
+        "functionName": "newslettershow",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/dashboard",
+        "summary": "Show dashboard infos",
+        "description": "Returns dashboard infos",
+        "tags": [
+            "Dashboard"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/dashboard",
+            "operationId": "NewsletterShow",
+            "summary": "Show dashboard infos",
+            "categoryPath": [
+                "Newsletter",
+                "Dashboard"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 49963
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        49963
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "thumbnail",
+                        "enum": [
+                            "statistics",
+                            "thumbnail"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "thumbnail"
+                    ],
+                    "values": [
+                        "statistics",
+                        "thumbnail"
+                    ],
+                    "examples": [
+                        "thumbnail"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListDashboardCampaigns",
+        "functionName": "newsletterlistdashboardcampaigns",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/dashboard/campaigns",
+        "summary": "List lastest campaigns",
+        "description": "List lastest campaigns in dashboard",
+        "tags": [
+            "Dashboard"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/dashboard/campaigns",
+            "operationId": "NewsletterListDashboardCampaigns",
+            "summary": "List lastest campaigns",
+            "categoryPath": [
+                "Newsletter",
+                "Dashboard"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 65046
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        65046
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics"
+                    ],
+                    "values": [
+                        "statistics"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListDashboardCampaignsStats",
+        "functionName": "newsletterlistdashboardcampaignsstats",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/dashboard/stats/campaigns",
+        "summary": "List campaigns statistics",
+        "description": "Returns statistics about campaigns for a specific period",
+        "tags": [
+            "Dashboard"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "from",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "to",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/dashboard/stats/campaigns",
+            "operationId": "NewsletterListDashboardCampaignsStats",
+            "summary": "List campaigns statistics",
+            "categoryPath": [
+                "Newsletter",
+                "Dashboard"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 41875
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        41875
+                    ]
+                },
+                {
+                    "name": "from",
+                    "in": "query",
+                    "required": true,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "from",
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "to",
+                    "in": "query",
+                    "required": true,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "to",
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListDashboardCampaignsStatsMonthly",
+        "functionName": "newsletterlistdashboardcampaignsstatsmonthly",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/dashboard/stats/campaigns/monthly",
+        "summary": "List monthly campaigns statistics",
+        "description": "Returns monthly campaigns statistics with aggregated metrics",
+        "tags": [
+            "Dashboard"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/dashboard/stats/campaigns/monthly",
+            "operationId": "NewsletterListDashboardCampaignsStatsMonthly",
+            "summary": "List monthly campaigns statistics",
+            "categoryPath": [
+                "Newsletter",
+                "Dashboard"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 77754
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        77754
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListDashboardSubscribersStats",
+        "functionName": "newsletterlistdashboardsubscribersstats",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/dashboard/stats/subscribers",
+        "summary": "List subscribers statistics",
+        "description": "Returns statistics about subscribers for a specific period",
+        "tags": [
+            "Dashboard"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "from",
+                "in": "query",
+                "required": true
+            },
+            {
+                "name": "to",
+                "in": "query",
+                "required": true
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/dashboard/stats/subscribers",
+            "operationId": "NewsletterListDashboardSubscribersStats",
+            "summary": "List subscribers statistics",
+            "categoryPath": [
+                "Newsletter",
+                "Dashboard"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 87673
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        87673
+                    ]
+                },
+                {
+                    "name": "from",
+                    "in": "query",
+                    "required": true,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "from",
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "to",
+                    "in": "query",
+                    "required": true,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "to",
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteFields",
+        "functionName": "newsletterdeletefields",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/fields",
+        "summary": "Delete fields",
+        "description": "Delete multiple fields.",
+        "tags": [
+            "Fields"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/fields",
+            "operationId": "NewsletterDeleteFields",
+            "summary": "Delete fields",
+            "categoryPath": [
+                "Newsletter",
+                "Fields"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 34764
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        34764
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListFields",
+        "functionName": "newsletterlistfields",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/fields",
+        "summary": "List all fields",
+        "description": "Returns a variety of information about one or more Field",
+        "tags": [
+            "Fields"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/fields",
+            "operationId": "NewsletterListFields",
+            "summary": "List all fields",
+            "categoryPath": [
+                "Newsletter",
+                "Fields"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 93703
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        93703
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 64140
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        64140
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 24632
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        24632
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 7938
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        7938
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 45759
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        45759
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateField",
+        "functionName": "newslettercreatefield",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/fields",
+        "summary": "Create a field",
+        "description": "Create a new Field.",
+        "tags": [
+            "Fields"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/fields",
+            "operationId": "NewsletterCreateField",
+            "summary": "Create a field",
+            "categoryPath": [
+                "Newsletter",
+                "Fields"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 79466
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        79466
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteField",
+        "functionName": "newsletterdeletefield",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/fields/{field}",
+        "summary": "Delete a field",
+        "description": "Delete a field.",
+        "tags": [
+            "Fields"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "field",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/fields/%7Bfield%7D",
+            "operationId": "NewsletterDeleteField",
+            "summary": "Delete a field",
+            "categoryPath": [
+                "Newsletter",
+                "Fields"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 41720
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        41720
+                    ]
+                },
+                {
+                    "name": "field",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Field",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 76958
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        76958
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateField",
+        "functionName": "newsletterupdatefield",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/fields/{field}",
+        "summary": "Update a field",
+        "description": "Update a field with new values.",
+        "tags": [
+            "Fields"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "field",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/fields/%7Bfield%7D",
+            "operationId": "NewsletterUpdateField",
+            "summary": "Update a field",
+            "categoryPath": [
+                "Newsletter",
+                "Fields"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 9358
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        9358
+                    ]
+                },
+                {
+                    "name": "field",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Field",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 58155
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        58155
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteGroups",
+        "functionName": "newsletterdeletegroups",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/groups",
+        "summary": "Delete groups",
+        "description": "Delete multiple groups.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/groups",
+            "operationId": "NewsletterDeleteGroups",
+            "summary": "Delete groups",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 71398
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        71398
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListGroups",
+        "functionName": "newsletterlistgroups",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/groups",
+        "summary": "List all groups",
+        "description": "List all groups\n\nReturns a variety of information about one or more Groups",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/groups",
+            "operationId": "NewsletterListGroups",
+            "summary": "List all groups",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 60017
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        60017
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "subscribed_count",
+                        "enum": [
+                            "subscribed_count",
+                            "statistics"
+                        ]
+                    },
+                    "enumValues": [
+                        "subscribed_count",
+                        "statistics"
+                    ],
+                    "values": [
+                        "subscribed_count",
+                        "statistics"
+                    ],
+                    "examples": [
+                        "subscribed_count"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 74148
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        74148
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 67138
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        67138
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 1783
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        1783
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 25110
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        25110
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateGroup",
+        "functionName": "newslettercreategroup",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/groups",
+        "summary": "Create a group",
+        "description": "Create a new group.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/groups",
+            "operationId": "NewsletterCreateGroup",
+            "summary": "Create a group",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 21873
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        21873
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteGroup",
+        "functionName": "newsletterdeletegroup",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/groups/{group}",
+        "summary": "Delete a group",
+        "description": "Delete a group.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D",
+            "operationId": "NewsletterDeleteGroup",
+            "summary": "Delete a group",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 13579
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        13579
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 63791
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        63791
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowGroup",
+        "functionName": "newslettershowgroup",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/groups/{group}",
+        "summary": "Fetch a group",
+        "description": "Fetch a group\n\nReturns a variety of information about one Groups identifier",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D",
+            "operationId": "NewsletterShowGroup",
+            "summary": "Fetch a group",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 99541
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        99541
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 28409
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        28409
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateGroup",
+        "functionName": "newsletterupdategroup",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/groups/{group}",
+        "summary": "Update a group",
+        "description": "Update a group with new values.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D",
+            "operationId": "NewsletterUpdateGroup",
+            "summary": "Update a group",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 43935
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        43935
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 741
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        741
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterGetGroupSubscribers",
+        "functionName": "newslettergetgroupsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/groups/{group}/subscribers",
+        "summary": "List subscribers",
+        "description": "Get subscribers belonging to a group.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "group_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D/subscribers",
+            "operationId": "NewsletterGetGroupSubscribers",
+            "summary": "List subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 19235
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        19235
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 60384
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        60384
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics"
+                    ],
+                    "values": [
+                        "statistics"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "description": "Filter groups"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "under_verification",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "group_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "group_id",
+                        "type": "integer",
+                        "example": 28916
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        28916
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 1340
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        1340
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 3105
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        3105
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 93520
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        93520
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 26938
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        26938
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc",
+                        "desc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterAssignSubscribers",
+        "functionName": "newsletterassignsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/groups/{group}/subscribers/assign",
+        "summary": "Assign subscribers",
+        "description": "Assign subscribers to a group.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D/subscribers/assign",
+            "operationId": "NewsletterAssignSubscribers",
+            "summary": "Assign subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 55807
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        55807
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 85648
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        85648
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUnassignSubscribers",
+        "functionName": "newsletterunassignsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/groups/{group}/subscribers/unassign",
+        "summary": "Unassign subscribers",
+        "description": "Unassign subscribers to a group.",
+        "tags": [
+            "Groups"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "group",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/groups/%7Bgroup%7D/subscribers/unassign",
+            "operationId": "NewsletterUnassignSubscribers",
+            "summary": "Unassign subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Groups"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 96467
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        96467
+                    ]
+                },
+                {
+                    "name": "group",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Group",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 48421
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        48421
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCancelOperation",
+        "functionName": "newslettercanceloperation",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/operations/{operationId}",
+        "summary": "Cancel an operation",
+        "description": "Cancel an outgoing operation",
+        "tags": [
+            "Operations"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "operationId",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/operations/%7BoperationId%7D",
+            "operationId": "NewsletterCancelOperation",
+            "summary": "Cancel an operation",
+            "categoryPath": [
+                "Newsletter",
+                "Operations"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 91942
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        91942
+                    ]
+                },
+                {
+                    "name": "operationId",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Operation",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteSegments",
+        "functionName": "newsletterdeletesegments",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/segments",
+        "summary": "Delete segments",
+        "description": "Delete multiple segments.",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/segments",
+            "operationId": "NewsletterDeleteSegments",
+            "summary": "Delete segments",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 76651
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        76651
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "number",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "number",
+                        "example": 0.66
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        0.66
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListSegments",
+        "functionName": "newsletterlistsegments",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/segments",
+        "summary": "List all segments",
+        "description": "Returns a variety of information about one or more Segment",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/segments",
+            "operationId": "NewsletterListSegments",
+            "summary": "List all segments",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 81237
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        81237
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "data",
+                        "enum": [
+                            "statistics",
+                            "data"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "data"
+                    ],
+                    "values": [
+                        "statistics",
+                        "data"
+                    ],
+                    "examples": [
+                        "data"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "inactive"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "integer",
+                        "example": 83405
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        83405
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 95105
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        95105
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 26668
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        26668
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 67759
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        67759
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 13441
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        13441
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateSegment",
+        "functionName": "newslettercreatesegment",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/segments",
+        "summary": "Create a segment",
+        "description": "Create a new segment.",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/segments",
+            "operationId": "NewsletterCreateSegment",
+            "summary": "Create a segment",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 59904
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        59904
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteSegment",
+        "functionName": "newsletterdeletesegment",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/segments/{segment}",
+        "summary": "Delete a segment",
+        "description": "Delete a segment.",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "segment",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/segments/%7Bsegment%7D",
+            "operationId": "NewsletterDeleteSegment",
+            "summary": "Delete a segment",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 53807
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        53807
+                    ]
+                },
+                {
+                    "name": "segment",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Segment",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 37648
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        37648
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowSegment",
+        "functionName": "newslettershowsegment",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/segments/{segment}",
+        "summary": "Fetch a segment",
+        "description": "Returns a variety of information about one Segment identifier",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "segment",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "segment_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/segments/%7Bsegment%7D",
+            "operationId": "NewsletterShowSegment",
+            "summary": "Fetch a segment",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 52085
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        52085
+                    ]
+                },
+                {
+                    "name": "segment",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Segment",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 10806
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10806
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics",
+                            "data"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "data"
+                    ],
+                    "values": [
+                        "statistics",
+                        "data"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "integer",
+                        "example": 80638
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        80638
+                    ]
+                },
+                {
+                    "name": "segment_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "segment_id",
+                        "type": "integer",
+                        "description": "Unique identifier of the `Segment` to request",
+                        "example": 39556
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        39556
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateSegment",
+        "functionName": "newsletterupdatesegment",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/segments/{segment}",
+        "summary": "Update a segment",
+        "description": "Update a segment with new values.",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "segment",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/segments/%7Bsegment%7D",
+            "operationId": "NewsletterUpdateSegment",
+            "summary": "Update a segment",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 55017
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        55017
+                    ]
+                },
+                {
+                    "name": "segment",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Segment",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 29628
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        29628
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterGetSegmentSubscribers",
+        "functionName": "newslettergetsegmentsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/segments/{segment}/subscribers",
+        "summary": "List subscribers",
+        "description": "Get subscribers belonging to a segment",
+        "tags": [
+            "Segments"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "segment",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "segment_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/segments/%7Bsegment%7D/subscribers",
+            "operationId": "NewsletterGetSegmentSubscribers",
+            "summary": "List subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Segments"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 39262
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        39262
+                    ]
+                },
+                {
+                    "name": "segment",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Segment",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 66522
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        66522
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "data",
+                        "enum": [
+                            "statistics",
+                            "data"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "data"
+                    ],
+                    "values": [
+                        "statistics",
+                        "data"
+                    ],
+                    "examples": [
+                        "data"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "integer",
+                        "example": 26427
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        26427
+                    ]
+                },
+                {
+                    "name": "segment_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "segment_id",
+                        "type": "integer",
+                        "description": "Unique identifier of the `Segment` to request",
+                        "example": 65336
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        65336
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 93296
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        93296
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 87657
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        87657
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 12867
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        12867
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 16440
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        16440
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteSubscribers",
+        "functionName": "newsletterdeletesubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/subscribers",
+        "summary": "Delete subscribers",
+        "description": "Delete multiple subscribers.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/subscribers",
+            "operationId": "NewsletterDeleteSubscribers",
+            "summary": "Delete subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 27687
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        27687
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListSubscribers",
+        "functionName": "newsletterlistsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/subscribers",
+        "summary": "List all subscribers",
+        "description": "Returns a variety of information about one or more Subscribers",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/subscribers",
+            "operationId": "NewsletterListSubscribers",
+            "summary": "List all subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 85375
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        85375
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "fields",
+                        "enum": [
+                            "statistics",
+                            "verifalia_status",
+                            "fields",
+                            "groups",
+                            "sources",
+                            "added_at",
+                            "source"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "verifalia_status",
+                        "fields",
+                        "groups",
+                        "sources",
+                        "added_at",
+                        "source"
+                    ],
+                    "values": [
+                        "statistics",
+                        "verifalia_status",
+                        "fields",
+                        "groups",
+                        "sources",
+                        "added_at",
+                        "source"
+                    ],
+                    "examples": [
+                        "fields"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "groups": {
+                                "title": "groups",
+                                "type": "array",
+                                "items": {
+                                    "title": "item",
+                                    "type": "integer"
+                                },
+                                "description": "Array must contain existing group ids."
+                            },
+                            "search": {
+                                "title": "search",
+                                "type": "string",
+                                "example": "johndoe"
+                            },
+                            "status": {
+                                "title": "status",
+                                "enum": [
+                                    "active",
+                                    "all",
+                                    "bounced",
+                                    "junk",
+                                    "unconfirmed",
+                                    "under_verification",
+                                    "unsubscribed"
+                                ],
+                                "type": "string",
+                                "description": "Status of the resource `{name}`"
+                            },
+                            "validation_status": {
+                                "title": "validation_status",
+                                "type": "integer"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 32559
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        32559
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 18897
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        18897
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 69349
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        69349
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 23324
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        23324
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "asc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateSubscriber",
+        "functionName": "newslettercreatesubscriber",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers",
+        "summary": "Create a subscriber",
+        "description": "Create a subscriber.\n\nIf a subscriber already exists, it will be updated with new values.\nThis is non-destructive operation, omitted parameters will not affect the subscriber.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers",
+            "operationId": "NewsletterCreateSubscriber",
+            "summary": "Create a subscriber",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 30124
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        30124
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteSubscriber",
+        "functionName": "newsletterdeletesubscriber",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/subscribers/{subscriber}",
+        "summary": "Delete a subscriber",
+        "description": "It will remove the subscriber from your account, but all their information is still kept in case they re-subscribe to your list.\n\nIf you need, to forget a subscriber use /forget.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "subscriber",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/subscribers/%7Bsubscriber%7D",
+            "operationId": "NewsletterDeleteSubscriber",
+            "summary": "Delete a subscriber",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 42249
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        42249
+                    ]
+                },
+                {
+                    "name": "subscriber",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Subscriber",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 84635
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        84635
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowSubscriber",
+        "functionName": "newslettershowsubscriber",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/subscribers/{subscriber}",
+        "summary": "Fetch a subscriber",
+        "description": "Returns a variety of information about one Subscriber",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "subscriber",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/subscribers/%7Bsubscriber%7D",
+            "operationId": "NewsletterShowSubscriber",
+            "summary": "Fetch a subscriber",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 56024
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        56024
+                    ]
+                },
+                {
+                    "name": "subscriber",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Subscriber",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 42474
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        42474
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "source",
+                        "enum": [
+                            "statistics",
+                            "groups",
+                            "sources",
+                            "source",
+                            "fields"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "groups",
+                        "sources",
+                        "source",
+                        "fields"
+                    ],
+                    "values": [
+                        "statistics",
+                        "groups",
+                        "sources",
+                        "source",
+                        "fields"
+                    ],
+                    "examples": [
+                        "source"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateSubscriber",
+        "functionName": "newsletterupdatesubscriber",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/subscribers/{subscriber}",
+        "summary": "Update a subscriber",
+        "description": "Update a subscriber with new values.\n\nThis is non-destructive operation, omitted parameters will not affect the subscriber.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "subscriber",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/subscribers/%7Bsubscriber%7D",
+            "operationId": "NewsletterUpdateSubscriber",
+            "summary": "Update a subscriber",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 99175
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        99175
+                    ]
+                },
+                {
+                    "name": "subscriber",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Subscriber",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 77807
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        77807
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "sources",
+                        "enum": [
+                            "statistics",
+                            "groups",
+                            "sources",
+                            "source",
+                            "fields"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "groups",
+                        "sources",
+                        "source",
+                        "fields"
+                    ],
+                    "values": [
+                        "statistics",
+                        "groups",
+                        "sources",
+                        "source",
+                        "fields"
+                    ],
+                    "examples": [
+                        "sources"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterForgetSubscriber",
+        "functionName": "newsletterforgetsubscriber",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/subscribers/{subscriber}/forget",
+        "summary": "Forget a subscriber",
+        "description": "It will remove the subscriber from your account and all information will be completely deleted in 30 days.\n\nThis feature is GDPR compliant.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "subscriber",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/subscribers/%7Bsubscriber%7D/forget",
+            "operationId": "NewsletterForgetSubscriber",
+            "summary": "Forget a subscriber",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 40114
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        40114
+                    ]
+                },
+                {
+                    "name": "subscriber",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Subscriber",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 31765
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        31765
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterAssign",
+        "functionName": "newsletterassign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/subscribers/assign",
+        "summary": "Assign",
+        "description": "Assign subscribers to a group.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/subscribers/assign",
+            "operationId": "NewsletterAssign",
+            "summary": "Assign",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 68161
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        68161
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCountSubscribersStatus",
+        "functionName": "newslettercountsubscribersstatus",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/subscribers/count_status",
+        "summary": "Count subscribers status",
+        "description": "Count subscribers in every status for a given domain",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/subscribers/count_status",
+            "operationId": "NewsletterCountSubscribersStatus",
+            "summary": "Count subscribers status",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 68974
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        68974
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterExportSubscribers",
+        "functionName": "newsletterexportsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers/export",
+        "summary": "Export subscribers",
+        "description": "Export subscribers selection.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers/export",
+            "operationId": "NewsletterExportSubscribers",
+            "summary": "Export subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 66336
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        66336
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterFilterProviders",
+        "functionName": "newsletterfilterproviders",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers/filter",
+        "summary": "Filter subscribers",
+        "description": "Returns a variety of information about one or more Subscribers.\n\nAllows advanced filters (e.g. segmentation).",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "extra",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers/filter",
+            "operationId": "NewsletterFilterProviders",
+            "summary": "Filter subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 19914
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        19914
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics"
+                    ],
+                    "values": [
+                        "statistics"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                },
+                {
+                    "name": "extra",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "title": "extra",
+                        "enum": [
+                            "metadata"
+                        ],
+                        "type": "string",
+                        "nullable": true,
+                        "example": "metadata"
+                    },
+                    "enumValues": [
+                        "metadata"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "metadata"
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 20971
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        20971
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 90494
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        90494
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 89641
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        89641
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 23714
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        23714
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterImportSubscribers",
+        "functionName": "newsletterimportsubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers/import",
+        "summary": "Import subscribers",
+        "description": "Import subscribers from a upload id.\n\nBy default, if subscribers exists replace the custom fields with the new values",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers/import",
+            "operationId": "NewsletterImportSubscribers",
+            "summary": "Import subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "403"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUploadCsvFile",
+        "functionName": "newsletteruploadcsvfile",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers/import/upload",
+        "summary": "Upload csv file",
+        "description": "Upload a csv file with subscribers to be processed",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers/import/upload",
+            "operationId": "NewsletterUploadCsvFile",
+            "summary": "Upload csv file",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListWorkspaceAddressBooks",
+        "functionName": "newsletterlistworkspaceaddressbooks",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/subscribers/import/workspace",
+        "summary": "List adressbook",
+        "description": "List all worspace adressebook with subscriber count",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/subscribers/import/workspace",
+            "operationId": "NewsletterListWorkspaceAddressBooks",
+            "summary": "List adressbook",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterImportWorkspaceAddressBooks",
+        "functionName": "newsletterimportworkspaceaddressbooks",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/subscribers/import/workspace",
+        "summary": "Select adressbooks",
+        "description": "Get selected contacts from Infomaniak workspace and prepare them for field match step",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "newsletter_id",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/subscribers/import/workspace",
+            "operationId": "NewsletterImportWorkspaceAddressBooks",
+            "summary": "Select adressbooks",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "newsletter_id",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "newsletter_id",
+                        "type": "integer",
+                        "example": 24866
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        24866
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "400"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUnassign",
+        "functionName": "newsletterunassign",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/subscribers/unassign",
+        "summary": "Unassign",
+        "description": "Unassign subscribers to a group.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/subscribers/unassign",
+            "operationId": "NewsletterUnassign",
+            "summary": "Unassign",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 90039
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        90039
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUnsubscribeSubscribers",
+        "functionName": "newsletterunsubscribesubscribers",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/subscribers/unsubscribe",
+        "summary": "Unsubscribe subscribers",
+        "description": "Unsubscribe multiple subscribers.",
+        "tags": [
+            "Subscribers"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/subscribers/unsubscribe",
+            "operationId": "NewsletterUnsubscribeSubscribers",
+            "summary": "Unsubscribe subscribers",
+            "categoryPath": [
+                "Newsletter",
+                "Subscribers"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 2271
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2271
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListAllTemplates",
+        "functionName": "newsletterlistalltemplates",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/templates",
+        "summary": "List all templates",
+        "description": "Returns a variety of information about one or more Templates",
+        "tags": [
+            "Templates"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/templates",
+            "operationId": "NewsletterListAllTemplates",
+            "summary": "List all templates",
+            "categoryPath": [
+                "Newsletter",
+                "Templates"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 56544
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        56544
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 35959
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        35959
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 15977
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        15977
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 28275
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        28275
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 12561
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        12561
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowHtml",
+        "functionName": "newslettershowhtml",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/templates/{template}/html",
+        "summary": "Show html",
+        "description": "Return the template content as html",
+        "tags": [
+            "Templates"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "template",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/templates/%7Btemplate%7D/html",
+            "operationId": "NewsletterShowHtml",
+            "summary": "Show html",
+            "categoryPath": [
+                "Newsletter",
+                "Templates"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 87857
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        87857
+                    ]
+                },
+                {
+                    "name": "template",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Template",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "integer"
+                            },
+                            {
+                                "type": "string"
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": []
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateThumbnail",
+        "functionName": "newsletterupdatethumbnail",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/templates/{template}/update-thumbnails",
+        "summary": "Update thumbnail",
+        "description": "Generate or update a thumbnail for the given template and return it's url",
+        "tags": [
+            "Templates"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "template",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/templates/%7Btemplate%7D/update-thumbnails",
+            "operationId": "NewsletterUpdateThumbnail",
+            "summary": "Update thumbnail",
+            "categoryPath": [
+                "Newsletter",
+                "Templates"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                },
+                {
+                    "name": "template",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterBulkDeleteWebform",
+        "functionName": "newsletterbulkdeletewebform",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/webforms",
+        "summary": "Bulk delete webform",
+        "description": "Bulk delete webform for a domain",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/webforms",
+            "operationId": "NewsletterBulkDeleteWebform",
+            "summary": "Bulk delete webform",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 5532
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5532
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "202"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListWebforms",
+        "functionName": "newsletterlistwebforms",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/webforms",
+        "summary": "List all Webforms",
+        "description": "Returns a variety of information about one or more Webforms",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            },
+            {
+                "name": "filter",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/webforms",
+            "operationId": "NewsletterListWebforms",
+            "summary": "List all Webforms",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": true,
+            "sortable": true,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [
+                {
+                    "name": "countable",
+                    "description": "Give the total number of records\n",
+                    "values": []
+                },
+                {
+                    "name": "offsetable",
+                    "description": "Limit a request's results and define from which item you want the results\n",
+                    "values": []
+                },
+                {
+                    "name": "paginable",
+                    "description": "Group a request's items in pages and define which page you want to display\n",
+                    "values": []
+                },
+                {
+                    "name": "sortable",
+                    "description": "",
+                    "values": []
+                }
+            ],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "title": "domain",
+                        "type": "integer",
+                        "description": "Unique identifier of the `Domain` to request",
+                        "example": 51357
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        51357
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics",
+                            "codes",
+                            "groups",
+                            "fields"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "values": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                },
+                {
+                    "name": "filter",
+                    "in": "query",
+                    "required": false,
+                    "description": "",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "title": "filter",
+                        "type": "object",
+                        "properties": {
+                            "search": {
+                                "title": "search",
+                                "type": "string"
+                            }
+                        },
+                        "example": []
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        []
+                    ]
+                },
+                {
+                    "name": "return",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* :  If you pass this parameter with the value `total`, then the response will be the number of items in the collection, instead of the items themselves.<br />\nPart of the `total` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "total"
+                        ],
+                        "type": "string",
+                        "example": "total"
+                    },
+                    "enumValues": [
+                        "total"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "total"
+                    ]
+                },
+                {
+                    "name": "limit",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items to return<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 14232
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        14232
+                    ]
+                },
+                {
+                    "name": "skip",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the index of the first item to return (0 = first item)<br />\nPart of the `offset` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 7848
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        2,
+                        7848
+                    ]
+                },
+                {
+                    "name": "page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the page number<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "default": 1,
+                        "example": 49567
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        5,
+                        49567
+                    ]
+                },
+                {
+                    "name": "per_page",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "integer",
+                    "schema": {
+                        "description": "*Optional parameter* that define the number of items per page<br />\nPart of the `pagination` capacity\n",
+                        "type": "integer",
+                        "minimum": 1,
+                        "example": 55277
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        10,
+                        55277
+                    ]
+                },
+                {
+                    "name": "order_by",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the field used for sorting<br />\nPart of the `sort` capacity\n",
+                    "style": "form",
+                    "explode": false,
+                    "schemaType": null,
+                    "schema": {
+                        "oneOf": [
+                            {
+                                "type": "string"
+                            },
+                            {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        ]
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "id"
+                    ]
+                },
+                {
+                    "name": "order",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the default sort order<br />\nPart of the `sort` capacity\n",
+                    "style": null,
+                    "explode": null,
+                    "schemaType": "string",
+                    "schema": {
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "type": "string",
+                        "default": "asc",
+                        "example": "asc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        "asc"
+                    ]
+                },
+                {
+                    "name": "order_for",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                    "style": "deepObject",
+                    "explode": true,
+                    "schemaType": "object",
+                    "schema": {
+                        "description": "*Optional parameter* that define the sorting order for a field<br />\nBy default **order** is used<br />\nPart of the `sort` capacity\n",
+                        "type": "object",
+                        "enum": [
+                            "asc",
+                            "desc"
+                        ],
+                        "example": "desc"
+                    },
+                    "enumValues": [
+                        "asc",
+                        "desc"
+                    ],
+                    "values": [],
+                    "examples": [
+                        {
+                            "id": "asc"
+                        },
+                        "desc"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200",
+                "500"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterCreateWebform",
+        "functionName": "newslettercreatewebform",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "POST",
+        "path": "/1/newsletters/{domain}/webforms",
+        "summary": "Create a Webform",
+        "description": "Create a new Webform.",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/post/1/newsletters/%7Bdomain%7D/webforms",
+            "operationId": "NewsletterCreateWebform",
+            "summary": "Create a Webform",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 17331
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        17331
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "201",
+                "401",
+                "404"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterDeleteWebform",
+        "functionName": "newsletterdeletewebform",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "DELETE",
+        "path": "/1/newsletters/{domain}/webforms/{webform}",
+        "summary": "Delete a webform",
+        "description": "Delete a webform.",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "webform",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/delete/1/newsletters/%7Bdomain%7D/webforms/%7Bwebform%7D",
+            "operationId": "NewsletterDeleteWebform",
+            "summary": "Delete a webform",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the `Domain` to request",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 87031
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        87031
+                    ]
+                },
+                {
+                    "name": "webform",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Webform",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 28615
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        28615
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterShowWebform",
+        "functionName": "newslettershowwebform",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/webforms/{webform}",
+        "summary": "Fetch a webform",
+        "description": "Returns a variety of information about one Webform identifier",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "webform",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/webforms/%7Bwebform%7D",
+            "operationId": "NewsletterShowWebform",
+            "summary": "Fetch a webform",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 99770
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        99770
+                    ]
+                },
+                {
+                    "name": "webform",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Webform",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 66788
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        66788
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "groups",
+                        "enum": [
+                            "statistics",
+                            "codes",
+                            "groups",
+                            "fields"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "values": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "examples": [
+                        "groups"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterUpdateWebform",
+        "functionName": "newsletterupdatewebform",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "PUT",
+        "path": "/1/newsletters/{domain}/webforms/{webform}",
+        "summary": "Update a webform",
+        "description": "Update a webform with new values.",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": true,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "webform",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [
+            {
+                "name": "with",
+                "in": "query",
+                "required": false
+            }
+        ],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [
+            "application/json"
+        ],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/put/1/newsletters/%7Bdomain%7D/webforms/%7Bwebform%7D",
+            "operationId": "NewsletterUpdateWebform",
+            "summary": "Update a webform",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 44388
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        44388
+                    ]
+                },
+                {
+                    "name": "webform",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Webform",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 38972
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        38972
+                    ]
+                },
+                {
+                    "name": "with",
+                    "in": "query",
+                    "required": false,
+                    "description": "*Optional* : Allows loading additional data about a resource, which may include related resources.",
+                    "style": "form",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "statistics",
+                        "enum": [
+                            "statistics",
+                            "codes",
+                            "groups",
+                            "fields"
+                        ]
+                    },
+                    "enumValues": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "values": [
+                        "statistics",
+                        "codes",
+                        "groups",
+                        "fields"
+                    ],
+                    "examples": [
+                        "statistics"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListWebformFields",
+        "functionName": "newsletterlistwebformfields",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/webforms/{webform}/fields",
+        "summary": "List webform fields",
+        "description": "Return a variety of information about fields related to a webform",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            },
+            {
+                "name": "webform",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/webforms/%7Bwebform%7D/fields",
+            "operationId": "NewsletterListWebformFields",
+            "summary": "List webform fields",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Domain",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 62230
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        62230
+                    ]
+                },
+                {
+                    "name": "webform",
+                    "in": "path",
+                    "required": true,
+                    "description": "Unique identifier of the Webform",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "integer",
+                    "schema": {
+                        "type": "integer",
+                        "example": 24637
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        24637
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    },
+    {
+        "operationId": "NewsletterListThemes",
+        "functionName": "newsletterlistthemes",
+        "originalOperationId": null,
+        "domain": "newsletter",
+        "method": "GET",
+        "path": "/1/newsletters/{domain}/webforms/themes",
+        "summary": "List themes",
+        "description": "List all available webform themes",
+        "tags": [
+            "Webforms"
+        ],
+        "mutating": false,
+        "pathParameters": [
+            {
+                "name": "domain",
+                "in": "path",
+                "required": true
+            }
+        ],
+        "queryParameters": [],
+        "headerParameters": [],
+        "cookieParameters": [],
+        "requestContentTypes": [],
+        "responseContentTypes": [
+            "application/json"
+        ],
+        "deprecated": false,
+        "auth": [],
+        "docs": {
+            "url": "https://developer.infomaniak.com/docs/api/get/1/newsletters/%7Bdomain%7D/webforms/themes",
+            "operationId": "NewsletterListThemes",
+            "summary": "List themes",
+            "categoryPath": [
+                "Newsletter",
+                "Webforms"
+            ],
+            "staff": false,
+            "beta": false,
+            "publicCloud": false,
+            "paginable": null,
+            "sortable": null,
+            "authUser": true,
+            "version": 1,
+            "capabilities": [],
+            "parameters": [
+                {
+                    "name": "domain",
+                    "in": "path",
+                    "required": true,
+                    "description": "",
+                    "style": "simple",
+                    "explode": true,
+                    "schemaType": "string",
+                    "schema": {
+                        "type": "string",
+                        "example": "example"
+                    },
+                    "enumValues": [],
+                    "values": [],
+                    "examples": [
+                        "example"
+                    ]
+                }
+            ],
+            "responseStatuses": [
+                "200"
+            ]
+        }
+    }
+];
+//# sourceMappingURL=newsletter.js.map
