@@ -100,6 +100,22 @@ describe("createInfomaniakClient", () => {
     expect((init?.headers as Headers).has("content-type")).toBe(false);
   });
 
+  it("preserves typed array request bodies as binary content", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 204 }));
+    const binary = new Uint8Array([1, 2, 3]);
+    const client = createInfomaniakClient({ fetch: fetchMock });
+
+    const result = await client.raw.POST("/upload", {
+      body: binary,
+      requestContentTypes: ["application/octet-stream"],
+    });
+
+    expect(result).toBeUndefined();
+    const init = fetchMock.mock.calls[0]?.[1];
+    expect(init?.body).toBe(binary);
+    expect((init?.headers as Headers).has("content-type")).toBe(false);
+  });
+
   it("supports the generic request helper, custom base URLs, header providers, and all raw mutating methods", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () => jsonResponse({ ok: true }));
     const client = createInfomaniakClient({

@@ -20,6 +20,9 @@ describe("Infomaniak OpenClaw skill", () => {
       "infomaniak_describe",
       "infomaniak_discover",
       "infomaniak_mail_application",
+      "infomaniak_workflow_list",
+      "infomaniak_workflow_describe",
+      "infomaniak_workflow_run",
       "infomaniak_call",
     ]) {
       expect(registeredToolNames).toContain(toolName);
@@ -32,15 +35,18 @@ describe("Infomaniak OpenClaw skill", () => {
     const searchIndex = skill.indexOf("Use `infomaniak_search`");
     const describeIndex = skill.indexOf("Use `infomaniak_describe`");
     const discoverIndex = skill.indexOf("Use `infomaniak_discover`");
+    const workflowIndex = skill.indexOf("Use `infomaniak_workflow_list`");
     const callIndex = skill.indexOf("Use `infomaniak_call`");
 
     expect(searchIndex).toBeGreaterThan(0);
     expect(describeIndex).toBeGreaterThan(searchIndex);
     expect(discoverIndex).toBeGreaterThan(describeIndex);
-    expect(callIndex).toBeGreaterThan(discoverIndex);
+    expect(workflowIndex).toBeGreaterThan(discoverIndex);
+    expect(callIndex).toBeGreaterThan(workflowIndex);
     expect(skill).toContain("Do not guess operation IDs");
     expect(skill).toContain("no_public_discovery");
     expect(skill).toContain("Mail application actions for mailbox consumption");
+    expect(skill).toContain("Prefer reviewed workflow actions over raw operation calls");
     expect(skill).toContain("Call a mutating operation only when the user has explicitly asked");
     expect(skill).toContain("confirm_mutating=true");
   });

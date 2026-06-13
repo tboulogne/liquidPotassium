@@ -9,10 +9,12 @@ import {
   describeOperationRequirements,
   describeResourceKind,
   getOperation,
+  listDomainActions,
   listDomains,
   listResourceDiscoveryRecipes,
   listOperations,
   searchOperations,
+  type DomainActionMetadata,
   type InfomaniakClientConfig,
   type MailDraftPayload,
   type MailMoveMessagesPayload,
@@ -25,6 +27,7 @@ import {
 
 export interface InfomaniakOpenClawPluginConfig {
   token?: string;
+  tokenEnvName: string;
   baseUrl?: string;
   mailApplicationBaseUrl?: string;
   allowedDomains: readonly string[];
@@ -65,6 +68,11 @@ export const InfomaniakPluginConfigJsonSchema = {
   additionalProperties: false,
   properties: {
     token: { type: "string", description: "Infomaniak API bearer token." },
+    tokenEnvName: {
+      type: "string",
+      default: "INFOMANIAK_TOKEN",
+      description: "Environment variable name used for the Infomaniak API bearer token when token is not configured directly.",
+    },
     baseUrl: { type: "string", description: "Infomaniak API base URL. Defaults to https://api.infomaniak.com." },
     mailApplicationBaseUrl: {
       type: "string",
@@ -175,6 +183,32 @@ export const infomaniakMailApplicationToolSchema = Type.Object(
     payload: Type.Optional(Type.Unknown({ description: "Draft or message-move payload." })),
     headers: Type.Optional(Type.Record(Type.String(), Type.Unknown(), { description: "Additional request headers." })),
     confirm_mutating: Type.Optional(Type.Boolean({ description: "Required for mutating mail application actions when plugin config allows mutation." })),
+  },
+  { additionalProperties: false },
+);
+
+export const infomaniakWorkflowListToolSchema = Type.Object(
+  {
+    domain: Type.Optional(Type.String({ description: "Restrict workflow actions to one Infomaniak domain." })),
+    mutating: Type.Optional(Type.Boolean({ description: "Restrict workflow actions by mutating status." })),
+  },
+  { additionalProperties: false },
+);
+
+export const infomaniakWorkflowDescribeToolSchema = Type.Object(
+  {
+    domain: Type.String({ description: "Infomaniak workflow domain." }),
+    action: Type.String({ description: "Infomaniak workflow action name." }),
+  },
+  { additionalProperties: false },
+);
+
+export const infomaniakWorkflowRunToolSchema = Type.Object(
+  {
+    domain: Type.String({ description: "Infomaniak workflow domain." }),
+    action: Type.String({ description: "Infomaniak workflow action name." }),
+    input: Type.Optional(Type.Record(Type.String(), Type.Unknown(), { description: "Workflow action input." })),
+    confirm_mutating: Type.Optional(Type.Boolean({ description: "Required for mutating workflow actions when plugin config allows mutation." })),
   },
   { additionalProperties: false },
 );
@@ -382,6 +416,29 @@ export function createInfomaniakOpenClawTools(options: InfomaniakOpenClawToolsOp
       execute: async (_toolCallId, params, signal) => jsonResult(await callMailApplicationAction(config, options.fetch, asRecord(params), signal)),
     },
     {
+      name: "infomaniak_workflow_list",
+      label: "Infomaniak Workflow List",
+      description: "List reviewed Infomaniak SDK workflow actions available through the current OpenClaw plugin policy.",
+      parameters: infomaniakWorkflowListToolSchema,
+      execute: async (_toolCallId, params) => jsonResult({ actions: listAllowedWorkflowActions(config, asRecord(params)) }),
+    },
+    {
+      name: "infomaniak_workflow_describe",
+      label: "Infomaniak Workflow Describe",
+      description: "Describe one reviewed Infomaniak SDK workflow action before running it.",
+      parameters: infomaniakWorkflowDescribeToolSchema,
+      execute: async (_toolCallId, params) => jsonResult({ action: getAllowedWorkflowAction(config, readDomain(params), readAction(params)) }),
+    },
+    {
+      name: "infomaniak_workflow_run",
+      label: "Infomaniak Workflow Run",
+      description:
+        "Run one reviewed Infomaniak SDK workflow action. Prefer this for common domain workflows; mutating actions require explicit confirmation and plugin permission.",
+      parameters: infomaniakWorkflowRunToolSchema,
+      executionMode: "sequential",
+      execute: async (_toolCallId, params, signal) => jsonResult(await runWorkflowAction(config, options.fetch, asRecord(params), signal)),
+    },
+    {
       name: "infomaniak_call",
       label: "Infomaniak Call",
       description: "Call one Infomaniak API operation through the SDK. Use search and describe first; mutating operations require explicit confirmation and plugin permission.",
@@ -404,6 +461,7 @@ export function resolveInfomaniakPluginConfig(config: Record<string, unknown> | 
   const record = asRecord(config ?? {});
   return {
     ...optionalStringProperty(record, "token"),
+    tokenEnvName: stringParam(record.tokenEnvName) ?? "INFOMANIAK_TOKEN",
     ...optionalStringProperty(record, "baseUrl"),
     ...optionalStringProperty(record, "mailApplicationBaseUrl"),
     allowedDomains: stringArrayProperty(record, "allowedDomains"),
@@ -523,6 +581,23 @@ async function callMailApplicationAction(
   return { operation: summarizeMailApplicationAction(action), result };
 }
 
+async function runWorkflowAction(
+  config: InfomaniakOpenClawPluginConfig,
+  fetchImpl: typeof fetch | undefined,
+  params: Record<string, unknown>,
+  signal: AbortSignal | undefined,
+) {
+  const action = getAllowedWorkflowAction(config, readDomain(params), readAction(params));
+  assertMutationAllowed(config, { operationId: action.id, mutating: action.mutating }, params.confirm_mutating === true);
+  const client = createInfomaniakClient(buildClientConfig(config, fetchImpl));
+  return client.workflows.run({
+    domain: action.domain,
+    action: action.action,
+    ...optionalProperty("input", asOptionalRecord(params.input)),
+    ...optionalProperty("signal", signal),
+  });
+}
+
 async function executeMailApplicationAction(
   client: ReturnType<typeof createInfomaniakClient>,
   action: MailApplicationActionMetadata,
@@ -618,6 +693,39 @@ function mailApplicationActionAllowed(config: InfomaniakOpenClawPluginConfig, ac
   return !deniedOperationSet.has(action.operationId);
 }
 
+function listAllowedWorkflowActions(config: InfomaniakOpenClawPluginConfig, params: Record<string, unknown>): readonly DomainActionMetadata[] {
+  return listDomainActions({
+    ...optionalProperty("domain", stringParam(params.domain)),
+    ...optionalProperty("mutating", typeof params.mutating === "boolean" ? params.mutating : undefined),
+  }).filter((action) => workflowActionAllowed(config, action));
+}
+
+function getAllowedWorkflowAction(config: InfomaniakOpenClawPluginConfig, domain: string, actionName: string): DomainActionMetadata {
+  const action = listDomainActions({ domain }).find((candidate) => candidate.action === actionName);
+  if (!action) {
+    throw new Error(`Unknown Infomaniak workflow action: ${domain}/${actionName}`);
+  }
+  if (!workflowActionAllowed(config, action)) {
+    throw new Error(`Infomaniak workflow action is not allowed by plugin policy: ${action.id}`);
+  }
+  return action;
+}
+
+function workflowActionAllowed(config: InfomaniakOpenClawPluginConfig, action: DomainActionMetadata): boolean {
+  const allowedOperationSet = new Set(config.allowedOperations);
+  const deniedOperationSet = new Set(config.deniedOperations);
+  if (!domainAllowed(config, action.domain)) {
+    return false;
+  }
+  if (action.operationIds.some((operationId) => deniedOperationSet.has(operationId))) {
+    return false;
+  }
+  if (allowedOperationSet.size > 0) {
+    return action.operationIds.length > 0 && action.operationIds.every((operationId) => allowedOperationSet.has(operationId));
+  }
+  return true;
+}
+
 function domainAllowed(config: InfomaniakOpenClawPluginConfig, domain: string): boolean {
   return config.allowedDomains.length === 0 || config.allowedDomains.includes(domain);
 }
@@ -693,6 +801,8 @@ function buildClientConfig(config: InfomaniakOpenClawPluginConfig, fetchImpl: ty
   const clientConfig: InfomaniakClientConfig = {};
   if (config.token) {
     clientConfig.token = config.token;
+  } else {
+    clientConfig.token = () => process.env[config.tokenEnvName] ?? "";
   }
   if (config.baseUrl) {
     clientConfig.baseUrl = config.baseUrl;
@@ -747,6 +857,22 @@ function readOperationId(params: unknown): string {
 
 function readMailApplicationAction(params: Record<string, unknown>): string {
   const action = stringParam(params.action);
+  if (!action) {
+    throw new Error("action is required.");
+  }
+  return action;
+}
+
+function readDomain(params: unknown): string {
+  const domain = stringParam(asRecord(params).domain);
+  if (!domain) {
+    throw new Error("domain is required.");
+  }
+  return domain;
+}
+
+function readAction(params: unknown): string {
+  const action = stringParam(asRecord(params).action);
   if (!action) {
     throw new Error("action is required.");
   }

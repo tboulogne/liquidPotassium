@@ -237,7 +237,15 @@ function serializeBody(body: unknown, headers: Headers): BodyInit | undefined {
 }
 
 function isJsonSerializableBody(body: unknown): boolean {
-  return typeof body === "object" && body !== null && !(body instanceof ArrayBuffer) && !(body instanceof Blob) && !(body instanceof FormData) && !(body instanceof URLSearchParams);
+  return (
+    typeof body === "object" &&
+    body !== null &&
+    !(body instanceof ArrayBuffer) &&
+    !ArrayBuffer.isView(body) &&
+    !(body instanceof Blob) &&
+    !(body instanceof FormData) &&
+    !(body instanceof URLSearchParams)
+  );
 }
 
 async function parseSuccessResponse(response: Response): Promise<unknown> {

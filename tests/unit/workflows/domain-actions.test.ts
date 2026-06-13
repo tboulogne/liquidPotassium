@@ -1,3 +1,7 @@
+import { mkdtemp, rm, writeFile } from "node:fs/promises";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
+
 import { describe, expect, it, vi } from "vitest";
 
 import {
@@ -132,6 +136,43 @@ describe("domain workflow actions", () => {
     });
   });
 
+  it("uploads kDrive files from absolute file paths", async () => {
+    const client = createMockWorkflowRuntime();
+    const directory = await mkdtemp(join(tmpdir(), "liquid-potassium-"));
+    const filePath = join(directory, "note.txt");
+
+    try {
+      await writeFile(filePath, "hello");
+
+      await runDomainAction(client, {
+        domain: "kdrive",
+        action: "uploadFile",
+        input: { drive_id: 3024749, file_path: filePath, directory_path: "/Docs" },
+      });
+      await runDomainAction(client, {
+        domain: "kdrive",
+        action: "uploadFile",
+        input: { drive_id: 3024749, file_path: filePath, total_size: 5, file_name: "remote.txt" },
+      });
+
+      const firstUpload = client.requestOperation.mock.calls.find((call) => call[0] === "kDriveUploadV3")?.[1];
+      const secondUpload = client.requestOperation.mock.calls.filter((call) => call[0] === "kDriveUploadV3")[1]?.[1];
+      expect(firstUpload).toEqual({
+        path: { drive_id: 3024749 },
+        query: { total_size: 5, file_name: "note.txt", directory_path: "/Docs" },
+        body: expect.any(Uint8Array),
+      });
+      expect([...(firstUpload?.body as Uint8Array)]).toEqual([104, 101, 108, 108, 111]);
+      expect(secondUpload).toEqual({
+        path: { drive_id: 3024749 },
+        query: { total_size: 5, file_name: "remote.txt" },
+        body: expect.any(Uint8Array),
+      });
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
+  });
+
   it("delegates mailbox actions to the Mail application client", async () => {
     const client = createMockWorkflowRuntime();
 
@@ -249,7 +290,12 @@ describe("domain workflow actions", () => {
     await expect(runDomainAction(client, { domain: "kdrive", action: "createDirectory", input: { drive_id: 1, file_id: 1, body: "bad" } })).rejects.toThrow(
       /body must be an object/,
     );
-    await expect(runDomainAction(client, { domain: "kdrive", action: "uploadFile", input: { drive_id: 1, total_size: 10 } })).rejects.toThrow(/body is required/);
+    await expect(runDomainAction(client, { domain: "kdrive", action: "uploadFile", input: { drive_id: 1, total_size: 10 } })).rejects.toThrow(
+      /body or file_path is required/,
+    );
+    await expect(runDomainAction(client, { domain: "kdrive", action: "uploadFile", input: { drive_id: 1, file_path: "relative.txt" } })).rejects.toThrow(
+      /file_path must be absolute/,
+    );
     await expect(runDomainAction(client, { domain: "kdrive", action: "discoverKdriveDrive", input: { parents: "bad" } })).rejects.toThrow(
       /parents must be an object/,
     );
@@ -260,6 +306,25 @@ describe("domain workflow actions", () => {
     await expect(runDomainAction(client, { domain: "kdrive", action: "findPrivateFolder", input: { drive_id: 1 } })).rejects.toThrow(/Private/);
     client.requestOperation.mockResolvedValueOnce(null);
     await expect(runDomainAction(client, { domain: "kdrive", action: "findPrivateFolder", input: { drive_id: 1 } })).rejects.toThrow(/Private/);
+  });
+
+  it("fails closed for invalid kDrive upload file paths", async () => {
+    const client = createMockWorkflowRuntime();
+    const directory = await mkdtemp(join(tmpdir(), "liquid-potassium-"));
+    const filePath = join(directory, "note.txt");
+
+    try {
+      await writeFile(filePath, "hello");
+
+      await expect(
+        runDomainAction(client, { domain: "kdrive", action: "uploadFile", input: { drive_id: 1, file_path: directory } }),
+      ).rejects.toThrow(/regular file/);
+      await expect(
+        runDomainAction(client, { domain: "kdrive", action: "uploadFile", input: { drive_id: 1, file_path: filePath, total_size: 4 } }),
+      ).rejects.toThrow(/total_size must match/);
+    } finally {
+      await rm(directory, { recursive: true, force: true });
+    }
   });
 
   it("exposes workflows on createInfomaniakClient", async () => {
