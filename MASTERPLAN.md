@@ -17,6 +17,8 @@ This plan is the implementation blueprint. It should be followed together with `
 - The spec has 769 schemas and a small number of missing component refs that must be normalized.
 - 83 operations have malformed tags as a string value instead of an array.
 - Content types include JSON, binary, file, image, CSV, ZIP, and multipart form data.
+- The official Infomaniak Developer Portal operation pages expose structured `data-page` JSON containing richer operation metadata than the raw OpenAPI file, including parameter examples, enums, docs categories, pagination/sorting flags, and capabilities.
+- Newsletter endpoints are a representative resource-discovery pain point: `/1/newsletters/{domain}` uses an integer Newsletter Domain identifier, not a DNS name, and the public spec/docs do not expose an obvious "list my newsletter domains" endpoint.
 
 ## Non-Negotiable Standards
 
@@ -61,6 +63,8 @@ Start as a single package if that is fastest, but structure it so packages can s
       catalog/
   scripts/
     normalize-openapi.ts
+    fetch-docs-snapshot.ts
+    check-docs-snapshot.ts
     generate-types.ts
     generate-operations.ts
     generate-endpoint-tests.ts
@@ -68,6 +72,8 @@ Start as a single package if that is fastest, but structure it so packages can s
     infomaniak.raw.json
     infomaniak.normalized.json
     normalization-report.json
+    infomaniak.docs-snapshot.json
+    docs-enrichment-report.json
   tests/
     unit/
     generated/
@@ -151,6 +157,11 @@ Required public exports:
 - `InfomaniakOperationError`
 - `InfomaniakDomain`
 - `OperationCatalog`
+- `ResourceKind`
+- `ResourceDescriptor`
+- `ResourceDiscoveryRecipe`
+- `OperationRequirement`
+- `DiscoverySuggestion`
 - generated OpenAPI `paths`, `components`, and operation metadata types
 
 Client config:
@@ -228,6 +239,8 @@ Runtime requirements:
 
 - Inject `fetch` for all requests.
 - Build URLs from base URL, path templates, and query parameters.
+- Serialize nested query objects using Infomaniak-compatible bracket notation, such as `filter[service_names][]=mailing`.
+- Preserve simple top-level array behavior for existing callers.
 - Add bearer auth when `token` is configured.
 - Allow custom headers.
 - Never log secrets.
@@ -259,7 +272,10 @@ Each operation metadata entry must include:
 - body content types;
 - response content types;
 - deprecation flag;
-- auth requirements when known.
+- auth requirements when known;
+- parameter descriptions, schema type, enum values, examples, style, and explode behavior when available;
+- docs URL and docs category path when available;
+- pagination, sorting, capability, beta, and public-cloud metadata when available.
 
 Catalog helpers:
 
@@ -268,9 +284,129 @@ Catalog helpers:
 - `searchOperations(query, filters?)`
 - `getOperation(operationId)`
 - `describeOperation(operationId)`
+- `describeOperationRequirements(operationId)`
 - `isMutatingOperation(operationId)`
+- `listResourceKinds(options?)`
+- `describeResourceKind(kind)`
+- `discoverResources(client, options)`
+- `createResourceDiscovery(client)`
 
 Search should match operation ID, original operation ID, path, method, summary, description, and tags.
+
+## Docs-Enriched Resource Discovery
+
+Resource discovery is the next major usability layer after the generated SDK, catalog, and OpenClaw tools. Its purpose is to answer: "What identifier does this operation need, how can I find it, and is there a public API path to discover it?"
+
+### Docs Snapshot And Enrichment
+
+Use the official Infomaniak Developer Portal docs as a generation-time enrichment source.
+
+Required commands:
+
+- `docs:fetch`: fetch one official docs page, collect the navigation endpoint list, fetch each operation page, extract `data-page.props.operation.meta`, and write a deterministic committed snapshot.
+- `docs:check`: validate that the committed snapshot still maps to normalized operations by `method + path` without making network calls.
+
+Rules:
+
+- Do not fetch documentation at SDK runtime.
+- Do not fetch documentation in unit tests or CI validation except when a maintainer explicitly runs `docs:fetch`.
+- Treat docs examples as examples only, never as real account or customer IDs.
+- Generate from the committed docs snapshot so normal generation remains reproducible.
+- Emit `spec/docs-enrichment-report.json` with matched operations, unmatched docs entries, unmatched spec entries, changed examples/enums, and warnings.
+
+Generated catalog metadata must preserve docs-enriched facts when available:
+
+- full parameter schema summaries;
+- parameter descriptions;
+- enum and `x-values` values;
+- examples;
+- docs URL;
+- category/subcategory path;
+- `x-paginable`, `x-sortable`, `x-capabilities`, beta flags, and public-cloud flags.
+
+### Discovery Model
+
+Add a typed discovery model that can represent both successful discovery paths and known gaps.
+
+Core concepts:
+
+- `ResourceKind`: a named resource type such as account, product, kDrive drive, mail service, mailbox, newsletter domain, kChat team, public cloud project, video channel, VOD channel, radio product, Swiss Backup product, short URL, eTicket event, or AI product.
+- `ResourceDescriptor`: one discovered resource with stable id, display label, domain, kind, raw source operation, and optional parent resource references.
+- `ResourceDiscoveryRecipe`: a read-only operation plus mapping rules that turn API results into descriptors.
+- `OperationRequirement`: the required path/query/header/body identifiers for an operation and the resource kinds likely to satisfy them.
+- `DiscoverySuggestion`: guidance returned when discovery is missing, ambiguous, blocked by auth, or not exposed by the public API.
+
+Discovery must fail honestly. If the public API does not expose a list endpoint for a required ID, return an explicit explanation and recommended manual source instead of guessing or probing random IDs.
+
+### Generation And Curated Rules
+
+Use generated candidates plus curated overrides.
+
+Generated candidates should come from:
+
+- read-only list/search/show operations;
+- docs categories and subcategories;
+- path parameter names and descriptions;
+- parameter schema types and examples;
+- response shapes containing `id`, `name`, `display_name`, `email`, `service_name`, or similar labels.
+
+Curated overrides must review and stabilize:
+
+- root resources for each domain;
+- parent-child relationships;
+- display labels;
+- resource id field names;
+- known non-discoverable resources;
+- operations that look like list operations but are not useful for discovery.
+
+Every domain must have at least one of:
+
+- a reliable discovery recipe;
+- a reviewed explanation that no public live discovery path is available yet.
+
+Newsletter-specific rule:
+
+- The newsletter `domain` path parameter is an integer Newsletter Domain id, not a DNS domain string.
+- `NewsletterShowDomain`, `NewsletterListCampaigns`, and related operations should point to the Newsletter Domain resource kind.
+- If no recipe can list Newsletter Domain ids, discovery must explain that the id must come from the Newsletter Manager/API key context or a future public endpoint.
+
+### SDK Surface
+
+Expose discovery through the SDK without hiding raw operation behavior.
+
+Required shape:
+
+```ts
+const discovery = createResourceDiscovery(client);
+
+const resources = await discovery.discover({
+  domain: "newsletter",
+  kind: "newsletterDomain",
+});
+
+const requirements = describeOperationRequirements("NewsletterListCampaigns");
+```
+
+Discovery calls must:
+
+- use injected `fetch`;
+- use only non-mutating operations;
+- support `AbortSignal`;
+- respect base URL, token, headers, and caller-provided fetch;
+- return structured errors and suggestions instead of throwing for expected missing-resource cases.
+
+### OpenClaw Surface
+
+Add a compact `infomaniak_discover` tool.
+
+The agent workflow becomes:
+
+1. `infomaniak_search`
+2. `infomaniak_describe`
+3. `infomaniak_discover`
+4. `infomaniak_call`
+
+`infomaniak_describe` should include operation requirements and discovery suggestions. `infomaniak_discover` should accept optional domain, resource kind, operation id, parent resource values, and limit. It must obey the same domain and operation allow/deny policy as the call tool.
 
 ## OpenClaw Integration
 
@@ -283,6 +419,7 @@ Register compact tools:
 - `infomaniak_domains`: list available domains and operation counts.
 - `infomaniak_search`: search operations by domain, text, method, tag, and mutating flag.
 - `infomaniak_describe`: describe one operation's parameters, body, response types, and safety metadata.
+- `infomaniak_discover`: discover resource IDs and explain missing or non-discoverable requirements.
 - `infomaniak_call`: call one operation by ID with validated params/body.
 
 If model usability requires more domain separation, add optional domain tools such as `infomaniak_kdrive`, `infomaniak_mail`, and `infomaniak_kchat`, each using the same action set: `search`, `describe`, and `call`.
@@ -314,6 +451,8 @@ Skill goals:
 - Prefer read-only operations first.
 - Require explicit user intent before mutating calls.
 - Explain required parameters before requesting missing data.
+- Use resource discovery before asking the user for opaque IDs.
+- Explain when an ID cannot be discovered through public API endpoints.
 - Keep implementation out of the skill.
 
 The skill must reference the plugin tools and the domain model.
@@ -328,10 +467,14 @@ Test groups:
 
 - Normalizer unit tests for malformed tags, synthetic IDs, duplicate IDs, missing refs, domain assignment, and report output.
 - Generator tests for deterministic output and stable operation wrapper names.
+- Docs snapshot tests for extracting `data-page` operation JSON from fixture HTML and matching docs entries to normalized operations.
+- Docs enrichment tests for parameter schema, enum, example, category, pagination, sorting, and docs URL metadata.
 - Runtime tests for URL construction, auth headers, custom headers, JSON body, multipart body, binary responses, aborts, and typed errors.
+- Runtime tests for nested Infomaniak query serialization with bracket notation.
 - Catalog tests for domain listing, operation lookup, search, describe, and mutating flags.
+- Resource discovery tests for every domain, including reliable recipes or explicit no-public-discovery explanations.
 - Generated endpoint tests for every normalized operation.
-- OpenClaw plugin tests for tool schemas, config validation, domain filtering, operation search, describe, call validation, and mutating blocks.
+- OpenClaw plugin tests for tool schemas, config validation, domain filtering, operation search, describe, discovery, call validation, and mutating blocks.
 - Skill content tests or lint checks to ensure referenced tool names stay valid.
 
 Generated endpoint test minimum:
@@ -404,6 +547,17 @@ Generated endpoint test minimum:
 - Add CI workflow for typecheck, tests, coverage, generation consistency, and no-network tests.
 - Acceptance: a new maintainer can install, generate, test, and use the SDK/plugin from documented commands.
 
+### Phase 9: Docs-Enriched Resource Discovery
+
+- Add docs snapshot tooling and committed docs snapshot artifacts.
+- Enrich generated operation metadata from the docs snapshot.
+- Add Infomaniak-compatible nested query serialization.
+- Add resource discovery types, catalog helpers, and SDK discovery API.
+- Add generated discovery candidates plus reviewed curated overrides for every domain.
+- Add `infomaniak_discover` and enrich `infomaniak_describe` with requirements and suggestions.
+- Update the OpenClaw skill to teach search, describe, discover, then call.
+- Acceptance: every domain has either a tested discovery recipe or an explicit reviewed no-public-discovery explanation; no tests make real network calls; newsletter domain-id requirements are described accurately.
+
 ## Completion Checklist
 
 - Raw spec is preserved.
@@ -415,7 +569,11 @@ Generated endpoint test minimum:
 - No tests perform real network calls.
 - SDK exposes domain clients and raw typed access.
 - Operation catalog supports OpenClaw search/describe/call workflows.
+- Operation catalog includes docs-enriched parameter/schema metadata where available.
+- Resource discovery supports every domain through recipes or explicit no-public-discovery explanations.
+- Nested query serialization supports Infomaniak filter object syntax.
 - OpenClaw plugin uses compact tools, not one tool per endpoint.
+- OpenClaw plugin exposes compact discovery alongside search, describe, and call.
 - Skill documents safe usage.
 - Docs explain installation, generation, testing, and OpenClaw configuration.
 - `PROGRESS.md` accurately reflects current phase, completed work, next tasks, blockers, and validation status.

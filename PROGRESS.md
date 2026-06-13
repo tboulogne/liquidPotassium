@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 8 - Release Readiness.
-- Active task: Release readiness is implemented and verified; next step is committing docs, CI, and release checks.
-- Repository status: OpenClaw skill is committed; release documentation, CI, package exports, and check scripts are ready to commit.
+- Phase: Phase 9 planning - Docs-Enriched Resource Discovery.
+- Active task: Project documentation now includes the resource-discovery and docs-enriched catalog plan; next step is commit or implementation.
+- Repository status: The Phase 1-8 implementation is complete and committed; resource discovery is planned but not implemented.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -45,10 +45,16 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added native OpenClaw plugin entry, compact tools, config policy handling, injected SDK calls, and OpenClaw adapter tests.
 - `3d0fe5d feat: add openclaw infomaniak skill`
   - Added the Infomaniak OpenClaw skill and drift tests for valid tool references and safe search-describe-call guidance.
+- `834383c docs: add release readiness`
+  - Added README usage, release checklist, CI workflow, package exports, no-network policy check, and release validation.
 
 ## Next Task Queue
 
-1. Commit Phase 8 release readiness.
+1. Commit the docs update for Phase 9 resource discovery planning.
+2. Implement docs snapshot tooling and committed docs enrichment artifacts.
+3. Enrich generated operation metadata from the docs snapshot.
+4. Add nested Infomaniak query serialization.
+5. Add SDK and OpenClaw resource discovery APIs across all domains.
 
 ## Validation Status
 
@@ -65,13 +71,16 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Release readiness: passing full `npm run ci`, including generation consistency, no-network policy, typecheck, build, and 100% coverage.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
+- Resource discovery: planned in `MASTERPLAN.md`; not implemented yet.
 
 ## Blockers And Risks
 
 - No current blockers.
 - The OpenAPI spec has known generator-hostile issues that must be handled in normalization: missing operation IDs, duplicate operation IDs, malformed tags, unusual content types, and missing component refs.
 - The project must avoid exposing all raw endpoints as OpenClaw tools because that would create an oversized and unsafe tool surface.
+- Resource discovery must avoid guessing opaque IDs. Every domain needs either a read-only discovery recipe or an explicit no-public-discovery explanation.
+- Official docs enrichment must remain a committed generation-time snapshot, not a runtime dependency.
 
 ## Open Decisions
 
-- None currently. `MASTERPLAN.md` is the decision-complete implementation blueprint unless the user changes direction.
+- None currently. `MASTERPLAN.md` now includes the decision-complete Phase 9 resource-discovery blueprint unless the user changes direction.

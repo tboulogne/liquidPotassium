@@ -23,6 +23,8 @@ The SDK is the durable foundation. The OpenClaw plugin and skills are the agent-
 - Higher-level domain helpers only when they clarify common workflows without hiding important behavior.
 - Deterministic generated output from a normalized spec.
 - A searchable operation catalog that OpenClaw tools can use to find and describe operations before calling them.
+- A resource discovery layer that helps developers and agents find required IDs, understand parent-child resource relationships, and recognize when the public API does not expose a discovery path.
+- Docs-enriched operation metadata from the official Infomaniak Developer Portal, captured at generation time and committed as deterministic project data.
 - No required real network access for tests, generation checks, or OpenClaw tool validation.
 
 ## OpenClaw Product Goal
@@ -34,6 +36,7 @@ It should not register one tool per raw API endpoint. The Infomaniak API is too 
 - list supported domains;
 - search operations by domain, path, method, tag, summary, and operation id;
 - describe the exact parameters and request body for an operation;
+- discover resources and required identifiers before calling operations;
 - call an operation through the typed SDK with validation;
 - clearly identify read-only versus mutating operations;
 - make destructive operations suitable for future approval gating.
@@ -46,6 +49,7 @@ Skills should teach safe workflows and domain conventions. They should not conta
 - Keep generated code reproducible, reviewable, and clearly marked.
 - Keep handwritten runtime code small, typed, and unit-tested.
 - Treat the OpenAPI spec as an input, not as perfect truth. Normalize it through explicit, tested rules.
+- Treat the official API documentation as a useful enrichment source, not as a runtime dependency or a substitute for reviewed behavior.
 - Preserve escape hatches for raw operations while making domain workflows pleasant.
 - Keep auth, transport, and environment handling injectable so the library works in OpenClaw, tests, scripts, and services.
 - Fail closed when the domain, operation, auth, or request shape is ambiguous.
@@ -66,4 +70,5 @@ The project succeeds when:
 - every generated endpoint is represented and tested;
 - developers can call Infomaniak APIs through typed domain clients;
 - OpenClaw can search, describe, and call Infomaniak operations by domain;
+- OpenClaw can discover required resources or explain clearly why a required identifier cannot be discovered through public API endpoints;
 - the implementation remains auditable, maintainable, and safe to evolve as the spec changes.

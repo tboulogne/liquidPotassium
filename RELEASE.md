@@ -24,8 +24,10 @@ This runs:
 - Keep `infomaniak_api_1781289971.json` immutable unless deliberately updating the upstream Infomaniak OpenAPI source.
 - Re-run `npm run normalize` after any normalizer change.
 - Re-run `npm run generate` after any normalized spec or generator change.
+- When docs enrichment is implemented, re-run `npm run docs:fetch` only when intentionally refreshing the official Infomaniak docs snapshot, then run `npm run docs:check`.
 - Commit generated files and endpoint tests with the generator change that produced them.
 - Confirm `spec/normalization-report.json` has no unresolved refs and no warnings.
+- Confirm docs-derived examples, enums, and resource-discovery metadata do not contain real tokens, private customer data, or account-specific secrets.
 
 ## Network Safety
 
@@ -45,13 +47,15 @@ Confirm these exports remain stable or document breaking changes:
 - `InfomaniakOperationError`
 - `InfomaniakDomain`
 - `OperationCatalog`
+- Resource discovery exports once implemented: `ResourceKind`, `ResourceDescriptor`, `ResourceDiscoveryRecipe`, `OperationRequirement`, `DiscoverySuggestion`
 - generated OpenAPI `paths` and `components`
 - OpenClaw plugin entry: `liquid-potassium/openclaw/plugin`
-- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_call`
+- OpenClaw tools: `infomaniak_domains`, `infomaniak_search`, `infomaniak_describe`, `infomaniak_call`, and `infomaniak_discover` once the discovery expansion lands
 
 ## OpenClaw Readiness
 
 - Confirm the native plugin registers all four compact tools.
+- Once resource discovery lands, confirm the plugin registers `infomaniak_discover` and that describe output includes discovery suggestions.
 - Confirm the skill at `openclaw/skills/infomaniak/SKILL.md` references only valid tool names.
 - Confirm mutating operations are blocked by default and require explicit confirmation when unblocked by config.
 - Confirm domain and operation allow/deny policy tests pass.
