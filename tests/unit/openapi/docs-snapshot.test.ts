@@ -145,7 +145,7 @@ describe("docs snapshot utilities", () => {
       pageHtml({
         operation: operationPayload({
           method: "post",
-          path: "/valid",
+          path: "https://your-team.kchat.infomaniak.com/api/v4/channels/{channel_id}",
           operationId: "",
           summary: undefined,
           meta: {
@@ -179,7 +179,8 @@ describe("docs snapshot utilities", () => {
       },
     ]);
     expect(operation).toMatchObject({
-      key: "post /valid",
+      key: "post /api/v4/channels/{channel_id}",
+      path: "/api/v4/channels/{channel_id}",
       operationId: null,
       categoryPath: ["fallbackRoot"],
       staff: true,
@@ -197,6 +198,20 @@ describe("docs snapshot utilities", () => {
         xCapabilities: ["read"],
       },
     });
+    expect(
+      extractDocsOperation(
+        pageHtml({
+          operation: operationPayload({
+            method: "get",
+            path: "/absolute",
+            operationId: "Absolute",
+            summary: "Absolute",
+          }),
+          navigation: {},
+        }),
+        "https://developer.infomaniak.com/docs/api/get/absolute",
+      ).path,
+    ).toBe("/absolute");
   });
 
   it("reports matches, misses, operation ID drift, duplicates, and malformed snapshot metadata", async () => {

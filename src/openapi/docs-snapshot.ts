@@ -281,6 +281,9 @@ function normalizeApiPath(path: string, apiBaseUrl: string): string {
   if (path.startsWith(apiBaseUrl)) {
     return decodeURI(new URL(path).pathname);
   }
+  if (path.startsWith("http://") || path.startsWith("https://")) {
+    return decodeURI(new URL(path).pathname);
+  }
   if (path.startsWith("/")) {
     return path;
   }
