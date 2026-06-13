@@ -5,8 +5,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 ## Current State
 
 - Phase: Phase 9 implementation - Docs-Enriched Resource Discovery.
-- Active task: SDK and OpenClaw resource discovery APIs are implemented and validated; next step is final full CI and commit.
-- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling, docs snapshot artifacts, catalog enrichment, nested query serialization, and resource discovery are implemented in focused slices.
+- Active task: Phase 9 implementation is complete and committed.
+- Repository status: The Phase 1-9 implementation is complete and committed on this branch.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -63,14 +63,14 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - `dc7f743 feat: serialize nested query parameters`
   - Added Infomaniak-compatible bracket notation for nested query objects and nested arrays while preserving repeated-key serialization for simple top-level arrays.
   - Added runtime tests for nested filters such as `filter[service_names][]=mailing`.
-- `feat: add resource discovery`
+- `d7c2135 feat: add resource discovery`
   - Added curated resource discovery kinds and recipes, operation requirement descriptions, no-public-discovery suggestions, SDK discovery helpers, and `client.discovery`.
   - Added OpenClaw `infomaniak_discover`, enriched `infomaniak_describe` with requirements, and updated the skill workflow to search, describe, discover, then call.
   - Added tests for every domain having a recipe or reviewed explanation, recipe safety, newsletter/kMeet no-public-discovery behavior, mocked discovery calls, response mapping, policy enforcement, and valid skill tool references.
 
 ## Next Task Queue
 
-1. Run final full CI and commit resource discovery.
+- No current implementation tasks. Continue with review, packaging, or release only if requested.
 
 ## Validation Status
 
