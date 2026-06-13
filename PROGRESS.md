@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 9 planning - Docs-Enriched Resource Discovery.
-- Active task: Docs snapshot extraction/check tooling is implemented; next step is committing this first Phase 9 slice.
-- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling has local changes awaiting commit.
+- Phase: Phase 9 implementation - Docs-Enriched Resource Discovery.
+- Active task: Official docs snapshot artifacts have been fetched and checked; next step is generated catalog enrichment from docs metadata.
+- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling is committed and docs snapshot artifacts are ready to commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -49,14 +49,19 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added README usage, release checklist, CI workflow, package exports, no-network policy check, and release validation.
 - `39c0692 docs: plan resource discovery`
   - Added the Phase 9 docs-enriched resource discovery plan to project documentation.
+- `83d88c2 feat: add docs snapshot tooling`
+  - Added deterministic official-docs snapshot extraction, docs consistency checking, fixture-backed tests, and `docs:fetch`/`docs:check` scripts.
+- `5604d71 fix: support alternate docs API hosts`
+  - Fixed docs operation extraction for documented API examples that use product-specific absolute hosts, including kChat URLs.
+- `17dc23d fix: retry docs snapshot fetches`
+  - Added bounded retry/backoff handling for live docs snapshot fetching when the developer portal returns transient 429 or 5xx responses.
 
 ## Next Task Queue
 
-1. Commit docs snapshot extraction/check tooling.
-2. Run `npm run docs:fetch` and commit `spec/infomaniak.docs-snapshot.json` plus `spec/docs-enrichment-report.json`.
-3. Enrich generated operation metadata from the docs snapshot.
-4. Add nested Infomaniak query serialization.
-5. Add SDK and OpenClaw resource discovery APIs across all domains.
+1. Commit `spec/infomaniak.docs-snapshot.json` plus `spec/docs-enrichment-report.json`.
+2. Enrich generated operation metadata from the docs snapshot.
+3. Add nested Infomaniak query serialization.
+4. Add SDK and OpenClaw resource discovery APIs across all domains.
 
 ## Validation Status
 
@@ -74,7 +79,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
 - Docs snapshot tooling: passing `npm run typecheck` and `npm run test:coverage` with fixture-backed unit tests and no live network calls.
-- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling is implemented, but enrichment, runtime discovery, and OpenClaw discovery are not implemented yet.
+- Docs snapshot artifacts: fetched 1,405 official docs operations; `npm run docs:check` reports 1,402 matched docs operations, 3 docs-only entries, 27 spec-only operations, 15 operation ID mismatches, 0 duplicate docs entries, and 0 errors.
+- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling and source artifacts are implemented, but enrichment, runtime discovery, and OpenClaw discovery are not implemented yet.
 
 ## Blockers And Risks
 

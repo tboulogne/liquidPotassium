@@ -1,0 +1,118 @@
+{
+  "operationCount": 1405,
+  "normalizedOperationCount": 1429,
+  "matchedCount": 1402,
+  "duplicateDocs": [],
+  "unmatchedDocs": [
+    "get /1/vod/channel/{channel}/playlist/{playlist}/browse/{folder",
+    "get /2/vod/reflect/endpoints/v{version}/{endpoint",
+    "get /2/vod/res/shares/{share}.{format"
+  ],
+  "unmatchedSpec": [
+    "delete /1/radios/{radio_product_id}/stations/{station_id}",
+    "delete /1/radios/{radio_product_id}/stations/{station_id}/thumbnail",
+    "get /1/app-information/applications",
+    "get /1/app-information/applications/version-types",
+    "get /1/app-information/applications/{application}",
+    "get /1/app-information/versions",
+    "get /1/app-information/versions/{appStore}",
+    "get /1/app-information/versions/{appStore}/{appPlatform}/{appName}",
+    "get /1/radios/{radio_product_id}/stations",
+    "get /1/radios/{radio_product_id}/stations/{station_id}",
+    "get /1/vod/channel/{channel}/playlist/{playlist}/browse/{folder?}",
+    "get /2/domains/accounts/{account}/contacts",
+    "get /2/drive/preferences",
+    "get /2/drive/users",
+    "get /2/drive/users/{user_id}/drives",
+    "get /2/vod/reflect/endpoints/v{version}/{endpoint?}",
+    "get /2/vod/res/shares/{share}.{format?}",
+    "patch /2/drive/preferences",
+    "post /1/radios/{radio_product_id}/stations",
+    "post /1/radios/{radio_product_id}/stations/{station_id}/disconnect_streams",
+    "post /1/radios/{radio_product_id}/stations/{station_id}/reset_general_parameters",
+    "post /1/radios/{radio_product_id}/stations/{station_id}/send_logs",
+    "post /1/radios/{radio_product_id}/stations/{station_id}/thumbnail",
+    "post /1/radios/{radio_product_id}/stations/{station_id}/toggle_direct_live",
+    "post /2/domains/accounts/{account}/contacts",
+    "put /1/radios/{radio_product_id}/stations/{station_id}",
+    "put /2/domains/accounts/{account}/contacts/{contact}"
+  ],
+  "operationIdMismatches": [
+    {
+      "key": "get /1/public_clouds/{public_cloud_id}/projects/{public_cloud_project_id}/users/{public_cloud_user_id}/openrc",
+      "docsOperationId": "Public/CloudGetAuthenticationFile",
+      "normalizedOperationId": "Public_CloudGetAuthenticationFile_get_1_public_clouds_public_cloud_id_projects_public_cloud_project_id_users_public_cloud_user_id_openrc"
+    },
+    {
+      "key": "get /1/radios/admin/stats",
+      "docsOperationId": "Streaming/radioGetStatsListeners",
+      "normalizedOperationId": "Streaming_radioGetStatsListeners_get_1_radios_admin_stats"
+    },
+    {
+      "key": "get /1/radios/admin/stats.xml",
+      "docsOperationId": "Streaming/radioGetStatsListeners",
+      "normalizedOperationId": "Streaming_radioGetStatsListeners_get_1_radios_admin_stats_xml"
+    },
+    {
+      "key": "get /1/radios/admin/stats_group.xml",
+      "docsOperationId": "Streaming/radioGetStatsListeners",
+      "normalizedOperationId": "Streaming_radioGetStatsListeners_get_1_radios_admin_stats_group_xml"
+    },
+    {
+      "key": "get /1/radios/listclients.xml",
+      "docsOperationId": "Streaming/radioGetMediastats",
+      "normalizedOperationId": "Streaming_radioGetMediastats_get_1_radios_listclients_xml"
+    },
+    {
+      "key": "get /1/radios/mediastats.php",
+      "docsOperationId": "Streaming/radioGetMediastats",
+      "normalizedOperationId": "Streaming_radioGetMediastats_get_1_radios_mediastats_php"
+    },
+    {
+      "key": "get /1/radios/radio/diag/status.php",
+      "docsOperationId": "Streaming/radioGetStatus",
+      "normalizedOperationId": "Streaming_radioGetStatus_get_1_radios_radio_diag_status_php"
+    },
+    {
+      "key": "get /1/radios/stats/sum-listeners-on-product",
+      "docsOperationId": "Streaming/radioGetStatsListeners",
+      "normalizedOperationId": "Streaming_radioGetStatsListeners_get_1_radios_stats_sum_listeners_on_product"
+    },
+    {
+      "key": "get /1/radios/updatemetadata.php",
+      "docsOperationId": "Streaming/radioSetMetadataToStation",
+      "normalizedOperationId": "Streaming_radioSetMetadataToStation_get_1_radios_updatemetadata_php"
+    },
+    {
+      "key": "get /1/radios/{radio_product_id}/notification",
+      "docsOperationId": "Streaming/radioGetNotification",
+      "normalizedOperationId": "Streaming_radioGetNotification_get_1_radios_radio_product_id_notification"
+    },
+    {
+      "key": "get /1/radios/{radio_product_id}/stations/{station_id}/autodj/playing_playlist/medias",
+      "docsOperationId": "Streaming/radioGetPlayingPlaylist",
+      "normalizedOperationId": "Streaming_radioGetPlayingPlaylist_get_1_radios_radio_product_id_stations_station_id_autodj_playing_playlist_medias"
+    },
+    {
+      "key": "get /1/videos/order",
+      "docsOperationId": "Streaming/videoReturnsAPackOrder",
+      "normalizedOperationId": "Streaming_videoReturnsAPackOrder_get_1_videos_order"
+    },
+    {
+      "key": "get /2/etickets/reservation/{reservation_uuid}",
+      "docsOperationId": "EticketsGetReservationV2",
+      "normalizedOperationId": "EticketsGetReservationV2_get_2_etickets_reservation_reservation_uuid"
+    },
+    {
+      "key": "patch /1/mail_hostings/{mail_hosting_id}/mailboxes/{mailbox_name}",
+      "docsOperationId": "Mail/ServicesUpdateAMailbox",
+      "normalizedOperationId": "Mail_ServicesUpdateAMailbox_patch_1_mail_hostings_mail_hosting_id_mailboxes_mailbox_name"
+    },
+    {
+      "key": "post /1/radios/players/{player_uuid}/config",
+      "docsOperationId": "Streaming/radioGetPlayerConfig",
+      "normalizedOperationId": "Streaming_radioGetPlayerConfig_post_1_radios_players_player_uuid_config"
+    }
+  ],
+  "errors": []
+}
