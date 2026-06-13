@@ -21,6 +21,7 @@ The SDK is the durable foundation. The OpenClaw plugin and skills are the agent-
 - Typed request parameters, request bodies, responses, errors, and domain metadata wherever the spec allows.
 - A low-level typed request surface for advanced users and generated endpoint coverage.
 - Higher-level domain helpers only when they clarify common workflows without hiding important behavior.
+- Reviewed handwritten application surfaces for important workflows that Infomaniak exposes outside the public OpenAPI spec, kept separate from generated operations until official metadata is available.
 - Deterministic generated output from a normalized spec.
 - A searchable operation catalog that OpenClaw tools can use to find and describe operations before calling them.
 - A resource discovery layer that helps developers and agents find required IDs, understand parent-child resource relationships, and recognize when the public API does not expose a discovery path.

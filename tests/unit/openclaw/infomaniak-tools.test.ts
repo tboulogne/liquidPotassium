@@ -9,12 +9,13 @@ import {
   infomaniakDiscoverToolSchema,
   infomaniakDescribeToolSchema,
   infomaniakDomainsToolSchema,
+  infomaniakMailApplicationToolSchema,
   infomaniakSearchToolSchema,
   resolveInfomaniakPluginConfig,
 } from "../../../src/openclaw/infomaniak-tools.js";
 
 describe("Infomaniak OpenClaw tools", () => {
-  it("declares plugin config and registers the five compact tools", () => {
+  it("declares plugin config and registers the compact tools", () => {
     const registeredTools: AnyAgentTool[] = [];
     const api = {
       pluginConfig: { allowedDomains: ["kmeet"] },
@@ -32,6 +33,7 @@ describe("Infomaniak OpenClaw tools", () => {
       "infomaniak_search",
       "infomaniak_describe",
       "infomaniak_discover",
+      "infomaniak_mail_application",
       "infomaniak_call",
     ]);
     expect(registeredTools.map((tool) => tool.parameters)).toEqual([
@@ -39,6 +41,7 @@ describe("Infomaniak OpenClaw tools", () => {
       infomaniakSearchToolSchema,
       infomaniakDescribeToolSchema,
       infomaniakDiscoverToolSchema,
+      infomaniakMailApplicationToolSchema,
       infomaniakCallToolSchema,
     ]);
     expect(registeredTools.every((tool) => tool.label && tool.description)).toBe(true);
@@ -55,6 +58,7 @@ describe("Infomaniak OpenClaw tools", () => {
       resolveInfomaniakPluginConfig({
         token: " token ",
         baseUrl: " https://example.test ",
+        mailApplicationBaseUrl: " https://mail.example.test ",
         allowedDomains: ["kmeet", "", 1],
         allowedOperations: ["post_1_kmeet_rooms"],
         deniedOperations: ["missing"],
@@ -63,6 +67,7 @@ describe("Infomaniak OpenClaw tools", () => {
     ).toEqual({
       token: "token",
       baseUrl: "https://example.test",
+      mailApplicationBaseUrl: "https://mail.example.test",
       allowedDomains: ["kmeet"],
       allowedOperations: ["post_1_kmeet_rooms"],
       deniedOperations: ["missing"],
@@ -77,6 +82,15 @@ describe("Infomaniak OpenClaw tools", () => {
       config: { allowedDomains: ["kmeet"], deniedOperations: ["post_1_kmeet_rooms"] },
     });
     const domains = await executeTool(findTool(tools, "infomaniak_domains"), {});
+    const mailApplicationDomains = await executeTool(
+      findTool(
+        createInfomaniakOpenClawTools({
+          config: { allowedOperations: ["MailApplication/ListUserMailboxes"] },
+        }),
+        "infomaniak_domains",
+      ),
+      {},
+    );
     const search = await executeTool(findTool(tools, "infomaniak_search"), {
       query: "kmeet room",
       limit: 10,
@@ -102,6 +116,7 @@ describe("Infomaniak OpenClaw tools", () => {
     });
 
     expect(domains).toEqual({ domains: [{ domain: "kmeet", operationCount: 1 }] });
+    expect(mailApplicationDomains).toEqual({ domains: [{ domain: "mail", operationCount: 1 }] });
     expect(search.operations).toEqual([
       expect.objectContaining({
         operationId: "get_1_kmeet_rooms_room_id_settings",
@@ -216,6 +231,223 @@ describe("Infomaniak OpenClaw tools", () => {
     });
   });
 
+  it("calls every read-only Mail application action through injected fetch", async () => {
+    const abort = new AbortController();
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () =>
+      new Response(JSON.stringify({ result: "success", data: [] }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    const tool = findTool(
+      createInfomaniakOpenClawTools({
+        fetch: fetchMock,
+        config: {
+          token: "secret",
+          baseUrl: "https://api.example.test",
+          mailApplicationBaseUrl: "https://mail.example.test",
+          allowedDomains: ["mail"],
+        },
+      }),
+      "infomaniak_mail_application",
+    );
+
+    const mailboxes = await executeTool(tool, { action: "listUserMailboxes", headers: { "x-mail": "yes" } });
+    await executeTool(tool, { action: "listFolders", mailbox_uuid: "mailbox-uuid", with: "ik-static" });
+    await tool.execute(
+      "threads",
+      {
+        action: "listThreads",
+        mailbox_uuid: "mailbox-uuid",
+        folder_id: "inbox",
+        offset: 0,
+        thread_mode: "off",
+        filter: "unseen",
+        with: "emoji_reactions_per_message",
+      },
+      abort.signal,
+    );
+    await executeTool(tool, {
+      action: "listThreads",
+      mailbox_uuid: "mailbox-uuid",
+      folder_id: "archive",
+      offset: -1,
+    });
+    await executeTool(tool, {
+      action: "getMessage",
+      message_resource: "/api/mail/mailbox-uuid/folder/inbox/message/42",
+      preferred_format: "text",
+      with: "auto_uncrypt",
+    });
+    await executeTool(tool, { action: "getMailboxQuota", mailbox: "opencow", product_id: 497445, unit: "MB" });
+    await executeTool(tool, { action: "getDraft", mailbox_uuid: "mailbox-uuid", draft_uuid: "draft-uuid" });
+    await executeTool(tool, { action: "currentMyKSuite", with: "mail" });
+
+    expect(mailboxes.operation).toEqual(
+      expect.objectContaining({
+        operationId: "MailApplication/ListUserMailboxes",
+        domain: "mail",
+        method: "GET",
+        mutating: false,
+      }),
+    );
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://mail.example.test/api/mailbox?with=unseen%2Caliases",
+      "https://mail.example.test/api/mail/mailbox-uuid/folder?with=ik-static",
+      "https://mail.example.test/api/mail/mailbox-uuid/folder/inbox/message?offset=0&thread=off&filters=unseen&with=emoji_reactions_per_message",
+      "https://mail.example.test/api/mail/mailbox-uuid/folder/archive/message?offset=0&thread=on&with=emoji_reactions_per_message",
+      "https://mail.example.test/api/mail/mailbox-uuid/folder/inbox/message/42?prefered_format=text&with=auto_uncrypt",
+      "https://mail.example.test/api/mailbox/quotas?mailbox=opencow&product_id=497445&unit=MB",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid",
+      "https://api.example.test/1/my_ksuite/current?with=mail",
+    ]);
+    expect((fetchMock.mock.calls[0]?.[1]?.headers as Headers).get("authorization")).toBe("Bearer secret");
+    expect((fetchMock.mock.calls[0]?.[1]?.headers as Headers).get("x-mail")).toBe("yes");
+    expect(fetchMock.mock.calls[2]?.[1]?.signal).toBe(abort.signal);
+  });
+
+  it("calls every mutating Mail application action only with explicit permission", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () =>
+      new Response(JSON.stringify({ result: "success", data: {} }), {
+        headers: { "content-type": "application/json" },
+      }),
+    );
+    const tool = findTool(
+      createInfomaniakOpenClawTools({
+        fetch: fetchMock,
+        config: {
+          blockMutating: false,
+          mailApplicationBaseUrl: "https://mail.example.test",
+          allowedDomains: ["mail"],
+        },
+      }),
+      "infomaniak_mail_application",
+    );
+    const draftPayload = {
+      body: "<p>Hello</p>",
+      to: [{ email: "recipient@example.com" }],
+    };
+
+    await executeTool(tool, { action: "createDraft", mailbox_uuid: "mailbox-uuid", payload: draftPayload, confirm_mutating: true });
+    await executeTool(tool, {
+      action: "updateDraft",
+      mailbox_uuid: "mailbox-uuid",
+      draft_uuid: "draft-uuid",
+      payload: { ...draftPayload, subject: "Updated" },
+      confirm_mutating: true,
+    });
+    await executeTool(tool, { action: "deleteDraft", mailbox_uuid: "mailbox-uuid", draft_uuid: "draft-uuid", confirm_mutating: true });
+    await executeTool(tool, {
+      action: "scheduleDraft",
+      draft_resource: "/api/mail/mailbox-uuid/draft/draft-uuid",
+      schedule_date: "2026-05-10T08:00:00+02:00",
+      confirm_mutating: true,
+    });
+    await executeTool(tool, {
+      action: "deleteSchedule",
+      schedule_action: "/api/mail/mailbox-uuid/draft/draft-uuid/schedule",
+      confirm_mutating: true,
+    });
+    await executeTool(tool, {
+      action: "cancelSend",
+      cancel_send_resource: "/api/mail/mailbox-uuid/draft/draft-uuid/cancel",
+      confirm_mutating: true,
+    });
+    const move = await executeTool(tool, {
+      action: "moveMessages",
+      mailbox_uuid: "mailbox-uuid",
+      payload: { to: "archive", uids: ["31@inbox"] },
+      confirm_mutating: true,
+    });
+
+    expect(move.operation).toEqual(expect.objectContaining({ operationId: "MailApplication/MoveMessages", mutating: true }));
+    expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
+      "https://mail.example.test/api/mail/mailbox-uuid/draft",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid/schedule",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid/schedule",
+      "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid/cancel",
+      "https://mail.example.test/api/mail/mailbox-uuid/message/move",
+    ]);
+    expect(fetchMock.mock.calls.map(([, init]) => init?.method)).toEqual(["POST", "PUT", "DELETE", "PUT", "DELETE", "PUT", "POST"]);
+    expect(jsonBodyAt(fetchMock, 0)).toEqual({
+      action: "save",
+      ack_request: false,
+      attachments: [],
+      body: "<p>Hello</p>",
+      mime_type: "text/html",
+      priority: "normal",
+      subject: "",
+      to: [{ email: "recipient@example.com" }],
+    });
+    expect(jsonBodyAt(fetchMock, 6)).toEqual({ to: "archive", uids: ["31@inbox"] });
+  });
+
+  it("applies policy, confirmation, and parameter validation to Mail application actions", async () => {
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_mail_application"), {
+        action: "createDraft",
+        mailbox_uuid: "mailbox-uuid",
+        payload: { body: "Hello", to: [{ email: "recipient@example.com" }] },
+        confirm_mutating: true,
+      }),
+    ).rejects.toThrow(/blocked by plugin config/);
+
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { blockMutating: false } }), "infomaniak_mail_application"),
+        { action: "createDraft", mailbox_uuid: "mailbox-uuid", payload: { body: "Hello", to: [{ email: "recipient@example.com" }] } },
+      ),
+    ).rejects.toThrow(/confirm_mutating=true/);
+
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { allowedDomains: ["kmeet"] } }), "infomaniak_mail_application"),
+        { action: "listUserMailboxes" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(
+      executeTool(
+        findTool(
+          createInfomaniakOpenClawTools({ config: { allowedOperations: ["MailApplication/ListUserMailboxes"] } }),
+          "infomaniak_mail_application",
+        ),
+        { action: "listFolders", mailbox_uuid: "mailbox-uuid" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(
+      executeTool(
+        findTool(
+          createInfomaniakOpenClawTools({ config: { deniedOperations: ["MailApplication/ListUserMailboxes"] } }),
+          "infomaniak_mail_application",
+        ),
+        { action: "listUserMailboxes" },
+      ),
+    ).rejects.toThrow(/not allowed/);
+    await expect(executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_mail_application"), { action: "missing" })).rejects.toThrow(
+      /Unknown Infomaniak Mail application action/,
+    );
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_mail_application"), { action: "listFolders" }),
+    ).rejects.toThrow(/mailbox_uuid is required/);
+    await expect(
+      executeTool(
+        findTool(createInfomaniakOpenClawTools({ config: { blockMutating: false } }), "infomaniak_mail_application"),
+        { action: "createDraft", mailbox_uuid: "mailbox-uuid", payload: "nope", confirm_mutating: true },
+      ),
+    ).rejects.toThrow(/payload must be an object/);
+    await expect(
+      executeTool(findTool(createInfomaniakOpenClawTools(), "infomaniak_mail_application"), {
+        action: "getMailboxQuota",
+        mailbox: "opencow",
+        product_id: 0,
+      }),
+    ).rejects.toThrow(/product_id must be a positive integer/);
+    await expect(findTool(createInfomaniakOpenClawTools(), "infomaniak_mail_application").execute("bad-call", undefined)).rejects.toThrow(
+      /action is required/,
+    );
+  });
+
   it("calls allowed operations through the SDK with injected fetch", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(
       new Response(JSON.stringify({ planned: true }), {
@@ -312,4 +544,12 @@ function findTool(tools: readonly AnyAgentTool[], name: string): AnyAgentTool {
 async function executeTool(tool: AnyAgentTool, params: Record<string, unknown>): Promise<Record<string, unknown>> {
   const result = await tool.execute("test-call", params);
   return result.details as Record<string, unknown>;
+}
+
+function jsonBodyAt(fetchMock: ReturnType<typeof vi.fn<typeof fetch>>, index: number): unknown {
+  const body = fetchMock.mock.calls[index]?.[1]?.body;
+  if (typeof body !== "string") {
+    throw new Error(`Expected JSON string body at fetch call ${index}.`);
+  }
+  return JSON.parse(body) as unknown;
 }

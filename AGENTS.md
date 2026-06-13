@@ -30,6 +30,7 @@ Read `MANIFESTO.md`, `MASTERPLAN.md`, and `PROGRESS.md` before planning or imple
 - Normalization must be deterministic and tested.
 - Use the official Infomaniak Developer Portal docs as a generation-time enrichment source only. Fetch docs into a committed deterministic snapshot, then generate from the snapshot; do not fetch docs at SDK runtime or in tests.
 - Preserve docs-derived facts such as parameter descriptions, schema types, enums, examples, category paths, docs URLs, pagination/sorting hints, and capabilities in generated metadata when available.
+- Keep reviewed application APIs that are absent from the public OpenAPI/docs snapshot separate from generated OpenAPI operations. For example, Mail Hosting/admin routes belong to `client.mail.operations`, while mailbox-consumption routes belong to `client.mail.application`.
 - Missing or duplicate `operationId` values must be resolved using stable generated names.
 - Malformed tags, missing schema aliases, unusual content types, and binary/file responses must be handled explicitly.
 - Domain assignment must be reproducible from path-prefix rules plus a small reviewed override map for ambiguous endpoints.
@@ -50,6 +51,7 @@ Read `MANIFESTO.md`, `MASTERPLAN.md`, and `PROGRESS.md` before planning or imple
 - Do not expose one OpenClaw tool per raw API endpoint. The Infomaniak spec is too large for that to be operator-friendly.
 - Expose domain-oriented tools or controlled request/search/describe tools that keep model context small.
 - Resource discovery should be exposed through compact SDK and OpenClaw surfaces. Agents should be able to discover required IDs and understand when a resource has no public discovery endpoint before attempting calls.
+- Mailbox-consumption workflows should use the compact Mail application surface, not generated Mail Hosting/admin operations.
 - OpenClaw tools must validate domain, operation, parameters, and body before making a request.
 - Destructive operations must be easy to identify from metadata and suitable for future approval gating.
 - Skills should teach workflows and safety constraints; they should not contain the core implementation.

@@ -4,9 +4,9 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
-- Phase: Phase 9 implementation - Docs-Enriched Resource Discovery.
-- Active task: Phase 9 implementation is complete and committed.
-- Repository status: The Phase 1-9 implementation is complete and committed on this branch.
+- Phase: Phase 10 implementation - Mail Application Consumption Gap Closure.
+- Active task: Phase 10 implementation is complete and validated.
+- Repository status: The Phase 1-10 implementation is complete and validated on this branch.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -67,10 +67,16 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added curated resource discovery kinds and recipes, operation requirement descriptions, no-public-discovery suggestions, SDK discovery helpers, and `client.discovery`.
   - Added OpenClaw `infomaniak_discover`, enriched `infomaniak_describe` with requirements, and updated the skill workflow to search, describe, discover, then call.
   - Added tests for every domain having a recipe or reviewed explanation, recipe safety, newsletter/kMeet no-public-discovery behavior, mocked discovery calls, response mapping, policy enforcement, and valid skill tool references.
+- `feat: add mail application consumption api`
+  - Recorded the root cause that public OpenAPI/docs Mail routes cover Mail Hosting/admin, while mailbox consumption uses the separate Mail application API host.
+  - Added `client.mail.application` for reviewed mailbox-consumption workflows: user mailboxes, folders, threads, messages, quotas, drafts, schedules, cancel-send, message moves, and current kSuite mail context.
+  - Added the compact OpenClaw `infomaniak_mail_application` tool with domain/operation policy checks, injected fetch, mutating-operation blocking, explicit confirmation, and parameter validation.
+  - Updated README, `MASTERPLAN.md`, `AGENTS.md`, `MANIFESTO.md`, the Infomaniak OpenClaw skill, and `docs/mail-application-api.md` with route provenance and maintenance rules.
+  - Added mocked SDK and OpenClaw tests for all reviewed Mail application actions without real network calls.
 
 ## Next Task Queue
 
-- No current implementation tasks. Continue with review, packaging, or release only if requested.
+- No current implementation tasks. Continue with review, packaging, release, or official Mail application docs migration only if requested.
 
 ## Validation Status
 
@@ -92,6 +98,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Docs-enriched catalog metadata: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run docs:check`, and `npm run test:coverage` with 100% statements, branches, functions, and lines.
 - Nested query serialization: passing `npm run typecheck` and `npm run test:coverage`; nested objects use bracket notation and simple top-level arrays remain repeated query keys.
 - Resource discovery: passing `npm run typecheck` and `npm run test:coverage`; every domain has a tested discovery recipe or reviewed no-public-discovery explanation, and no tests make live network calls.
+- Mail application consumption: passing mocked tests for mailbox listing, folder listing, thread listing, message reads, quota reads, draft create/update/read/delete, draft scheduling, schedule deletion, send cancellation, message moves, current kSuite mail context, OpenClaw policy enforcement, mutating confirmation, and invalid parameter failures.
+- Phase 10 validation: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run check:docs`, `npm run check:generated`, and `npm run test:coverage`.
 
 ## Blockers And Risks
 
@@ -100,6 +108,7 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - The project must avoid exposing all raw endpoints as OpenClaw tools because that would create an oversized and unsafe tool surface.
 - Resource discovery must avoid guessing opaque IDs. Every domain needs either a read-only discovery recipe or an explicit no-public-discovery explanation.
 - Official docs enrichment must remain a committed generation-time snapshot, not a runtime dependency.
+- Mail application consumption routes are reviewed fallback-backed until Infomaniak publishes official OpenAPI/docs operation metadata for those routes.
 
 ## Open Decisions
 

@@ -19,6 +19,7 @@
   "files": [
     "dist/src",
     "dist/openclaw",
+    "docs",
     "openclaw/skills",
     "README.md",
     "RELEASE.md",

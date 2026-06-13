@@ -19,6 +19,8 @@ This plan is the implementation blueprint. It should be followed together with `
 - Content types include JSON, binary, file, image, CSV, ZIP, and multipart form data.
 - The official Infomaniak Developer Portal operation pages expose structured `data-page` JSON containing richer operation metadata than the raw OpenAPI file, including parameter examples, enums, docs categories, pagination/sorting flags, and capabilities.
 - Newsletter endpoints are a representative resource-discovery pain point: `/1/newsletters/{domain}` uses an integer Newsletter Domain identifier, not a DNS name, and the public spec/docs do not expose an obvious "list my newsletter domains" endpoint.
+- The public OpenAPI `mail` domain covers Mail Hosting/admin routes under `/1/mail_hostings/**`; mailbox consumption uses the Mail application host `https://mail.infomaniak.com/api` and is absent from the committed OpenAPI spec and public docs snapshot currently used for generation.
+- Reviewed mailbox-consumption routes must live in a separate handwritten Mail application surface until Infomaniak publishes official OpenAPI/docs metadata for them.
 
 ## Non-Negotiable Standards
 
@@ -113,7 +115,8 @@ Initial domains:
 
 - `kchat`: `/api/v4/**`
 - `kdrive`: `/2/drive/**`, `/3/drive/**`, and `/2/app/{drive_id}/share/**`
-- `mail`: `/1/mail_hostings/**`
+- `mail`: generated public Mail Hosting/admin operations under `/1/mail_hostings/**`
+- `mail.application`: reviewed Mail application mailbox-consumption routes under `https://mail.infomaniak.com/api/**`, kept separate from generated OpenAPI operations
 - `kmeet`: `/1/kmeet/**`
 - `newsletter`: `/1/newsletters/**`
 - `publicCloud`: `/1/public_clouds/**`
@@ -145,6 +148,8 @@ const client = createInfomaniakClient({
 
 await client.kdrive.operations.someGeneratedOperation(params);
 await client.mail.operations.someGeneratedOperation(params);
+await client.mail.application.listUserMailboxes();
+await client.mail.application.listThreads("mailbox-uuid", "inbox");
 await client.raw.GET("/2/drive/{drive_id}/files/{file_id}", options);
 ```
 
@@ -168,11 +173,41 @@ Client config:
 
 - `token?: string | (() => string | Promise<string>)`
 - `baseUrl?: string`, default `https://api.infomaniak.com`
+- `mailApplicationBaseUrl?: string`, default `https://mail.infomaniak.com`
 - `fetch?: typeof fetch`
 - `headers?: HeadersInit | (() => HeadersInit | Promise<HeadersInit>)`
 - `userAgent?: string`
 
 Every request must support `AbortSignal`.
+
+## Mail Application Consumption
+
+Mailbox content workflows are a reviewed handwritten layer because they are not present in the public OpenAPI snapshot. This layer must be small, typed, documented, and fully unit-tested.
+
+Supported SDK surface:
+
+- `client.mail.application.listUserMailboxes()`
+- `client.mail.application.listFolders(mailboxUuid)`
+- `client.mail.application.listThreads(mailboxUuid, folderId, options?)`
+- `client.mail.application.getMessage(resource, options?)`
+- `client.mail.application.getMailboxQuota(mailbox, productId, options?)`
+- `client.mail.application.createDraft(mailboxUuid, payload, options?)`
+- `client.mail.application.updateDraft(mailboxUuid, draftUuid, payload, options?)`
+- `client.mail.application.getDraft(mailboxUuid, draftUuid, options?)`
+- `client.mail.application.deleteDraft(mailboxUuid, draftUuid, options?)`
+- `client.mail.application.scheduleDraft(draftResource, scheduleDate, options?)`
+- `client.mail.application.deleteSchedule(scheduleAction, options?)`
+- `client.mail.application.cancelSend(cancelSendResource, options?)`
+- `client.mail.application.moveMessages(mailboxUuid, payload, options?)`
+- `client.mail.application.currentMyKSuite(options?)`
+
+Maintenance rules:
+
+- Prefer official Infomaniak OpenAPI/docs metadata whenever it exists.
+- When public docs are unavailable, reviewed local working implementations may be used only as fallback provenance and must be documented in `docs/mail-application-api.md`.
+- Do not merge Mail application routes into generated OpenAPI metadata unless official OpenAPI/docs operation data becomes available.
+- Keep all tests mocked through injected `fetch`.
+- Never store private mailbox content, tokens, cookies, or authorization headers in fixtures or docs.
 
 ## Spec Normalization
 
@@ -420,6 +455,7 @@ Register compact tools:
 - `infomaniak_search`: search operations by domain, text, method, tag, and mutating flag.
 - `infomaniak_describe`: describe one operation's parameters, body, response types, and safety metadata.
 - `infomaniak_discover`: discover resource IDs and explain missing or non-discoverable requirements.
+- `infomaniak_mail_application`: call reviewed Mail application mailbox-consumption actions that are absent from the public OpenAPI catalog.
 - `infomaniak_call`: call one operation by ID with validated params/body.
 
 If model usability requires more domain separation, add optional domain tools such as `infomaniak_kdrive`, `infomaniak_mail`, and `infomaniak_kchat`, each using the same action set: `search`, `describe`, and `call`.
@@ -428,6 +464,7 @@ Plugin config:
 
 - API token through config or SecretRef-compatible environment wiring.
 - Optional base URL.
+- Optional Mail application base URL.
 - Optional allowlist of domains.
 - Optional allowlist or denylist of operations.
 - Optional block for mutating operations.
@@ -436,6 +473,7 @@ OpenClaw safety:
 
 - Validate domain and operation before calling.
 - Refuse calls to unknown operations.
+- Route mailbox-consumption workflows through `infomaniak_mail_application`, not generated Mail Hosting/admin operations.
 - Refuse mutating operations when disabled.
 - Return clear structured errors.
 - Keep tool schemas compact.
@@ -558,6 +596,17 @@ Generated endpoint test minimum:
 - Update the OpenClaw skill to teach search, describe, discover, then call.
 - Acceptance: every domain has either a tested discovery recipe or an explicit reviewed no-public-discovery explanation; no tests make real network calls; newsletter domain-id requirements are described accurately.
 
+### Phase 10: Mail Application Consumption Gap Closure
+
+- Audit public Infomaniak Developer Portal documentation and committed docs snapshot for mailbox-consumption routes.
+- Record the root cause: Mail Hosting/admin public routes are not the same API surface as mailbox consumption.
+- Add a reviewed handwritten `client.mail.application` SDK surface for mailbox-consumption routes missing from the public OpenAPI spec.
+- Add the compact OpenClaw `infomaniak_mail_application` tool for mailbox content workflows.
+- Apply existing plugin policy to Mail application actions: `allowedDomains`, `allowedOperations`, `deniedOperations`, `blockMutating`, and `confirm_mutating`.
+- Document route provenance, official-docs absence, fallback review sources, and maintenance rules in `docs/mail-application-api.md`.
+- Update README, skill instructions, and progress tracking.
+- Acceptance: mailboxes, folders, threads, messages, quotas, drafts, schedules, cancel-send, message move, and current kSuite mail context are reachable through mocked SDK/OpenClaw tests without real network calls.
+
 ## Completion Checklist
 
 - Raw spec is preserved.
@@ -574,6 +623,8 @@ Generated endpoint test minimum:
 - Nested query serialization supports Infomaniak filter object syntax.
 - OpenClaw plugin uses compact tools, not one tool per endpoint.
 - OpenClaw plugin exposes compact discovery alongside search, describe, and call.
+- OpenClaw plugin exposes reviewed mailbox-consumption actions through a compact Mail application tool.
+- Mail Hosting/admin and Mail application consumption are clearly separated in SDK, docs, and skill instructions.
 - Skill documents safe usage.
 - Docs explain installation, generation, testing, and OpenClaw configuration.
 - `PROGRESS.md` accurately reflects current phase, completed work, next tasks, blockers, and validation status.

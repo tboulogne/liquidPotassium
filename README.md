@@ -34,6 +34,33 @@ const raw = await client.raw.GET("/1/kmeet/rooms/{room_id}/settings", {
 });
 ```
 
+## Mail Application Usage
+
+The generated `mail` domain covers the public OpenAPI Mail Hosting/admin routes under `/1/mail_hostings/**`. Mailbox consumption, such as listing a user's mailboxes, folders, threads, and message content, is exposed through a reviewed handwritten Mail application surface because those routes are not present in the committed public OpenAPI spec.
+
+```ts
+import { createInfomaniakClient } from "liquid-potassium";
+
+const client = createInfomaniakClient({
+  token: process.env.INFOMANIAK_TOKEN,
+  fetch,
+});
+
+const mailboxes = await client.mail.application.listUserMailboxes();
+const folders = await client.mail.application.listFolders("mailbox-uuid");
+const threads = await client.mail.application.listThreads("mailbox-uuid", "inbox", {
+  filter: "unseen",
+});
+const message = await client.mail.application.getMessage(
+  "/api/mail/mailbox-uuid/folder/inbox/message/42",
+  { preferredFormat: "text" },
+);
+```
+
+`mailApplicationBaseUrl` defaults to `https://mail.infomaniak.com`. Override it only for tests, fixtures, or reviewed alternate hosts.
+
+Route provenance and maintenance rules are documented in `docs/mail-application-api.md`.
+
 ## Operation Catalog
 
 Use the catalog before calling endpoints:
@@ -132,23 +159,26 @@ The native plugin entry is exported at:
 import plugin from "liquid-potassium/openclaw/plugin";
 ```
 
-The plugin registers five compact tools:
+The plugin registers six compact tools:
 
 - `infomaniak_domains`
 - `infomaniak_search`
 - `infomaniak_describe`
 - `infomaniak_discover`
+- `infomaniak_mail_application`
 - `infomaniak_call`
 
 `infomaniak_describe` includes required resource IDs and discovery suggestions. `infomaniak_discover` discovers reviewed resources or returns a structured no-public-discovery explanation.
+`infomaniak_mail_application` covers reviewed mailbox-consumption actions that are not present in the public OpenAPI catalog.
 
 Plugin config supports:
 
 - `token`
 - `baseUrl`
+- `mailApplicationBaseUrl`
 - `allowedDomains`
 - `allowedOperations`
 - `deniedOperations`
 - `blockMutating`
 
-The OpenClaw skill is in `openclaw/skills/infomaniak/SKILL.md`. Agents should search, describe, discover, and then call; mutating operations require explicit user intent plus plugin permission.
+The OpenClaw skill is in `openclaw/skills/infomaniak/SKILL.md`. Agents should search, describe, discover, and then call generated OpenAPI operations. For mailbox content, agents should use `infomaniak_mail_application`; mutating operations still require explicit user intent plus plugin permission.

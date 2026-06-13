@@ -14,6 +14,8 @@ import {
   listOperations,
   searchOperations,
   type InfomaniakClientConfig,
+  type MailDraftPayload,
+  type MailMoveMessagesPayload,
   type OperationRequirement,
   type OperationRequest,
   type OperationSearchOptions,
@@ -24,6 +26,7 @@ import {
 export interface InfomaniakOpenClawPluginConfig {
   token?: string;
   baseUrl?: string;
+  mailApplicationBaseUrl?: string;
   allowedDomains: readonly string[];
   allowedOperations: readonly string[];
   deniedOperations: readonly string[];
@@ -63,6 +66,10 @@ export const InfomaniakPluginConfigJsonSchema = {
   properties: {
     token: { type: "string", description: "Infomaniak API bearer token." },
     baseUrl: { type: "string", description: "Infomaniak API base URL. Defaults to https://api.infomaniak.com." },
+    mailApplicationBaseUrl: {
+      type: "string",
+      description: "Infomaniak Mail application API base URL. Defaults to https://mail.infomaniak.com.",
+    },
     allowedDomains: {
       type: "array",
       items: { type: "string" },
@@ -85,6 +92,23 @@ export const InfomaniakPluginConfigJsonSchema = {
     },
   },
 } as const;
+
+const mailApplicationActionSchema = Type.Union([
+  Type.Literal("listUserMailboxes"),
+  Type.Literal("listFolders"),
+  Type.Literal("listThreads"),
+  Type.Literal("getMessage"),
+  Type.Literal("getMailboxQuota"),
+  Type.Literal("createDraft"),
+  Type.Literal("updateDraft"),
+  Type.Literal("getDraft"),
+  Type.Literal("deleteDraft"),
+  Type.Literal("scheduleDraft"),
+  Type.Literal("deleteSchedule"),
+  Type.Literal("cancelSend"),
+  Type.Literal("moveMessages"),
+  Type.Literal("currentMyKSuite"),
+]);
 
 export const infomaniakDomainsToolSchema = emptyParamsSchema;
 
@@ -129,6 +153,189 @@ export const infomaniakCallToolSchema = Type.Object(
   { additionalProperties: false },
 );
 
+export const infomaniakMailApplicationToolSchema = Type.Object(
+  {
+    action: mailApplicationActionSchema,
+    mailbox_uuid: Type.Optional(Type.String({ description: "Mail application mailbox UUID." })),
+    folder_id: Type.Optional(Type.String({ description: "Mail application folder identifier." })),
+    message_resource: Type.Optional(Type.String({ description: "Message resource path or same-origin mail application URL returned by the thread list." })),
+    mailbox: Type.Optional(Type.String({ description: "Mailbox name for quota lookups." })),
+    product_id: Type.Optional(Type.Integer({ description: "Mail product ID for quota lookups.", minimum: 1 })),
+    draft_uuid: Type.Optional(Type.String({ description: "Draft UUID." })),
+    draft_resource: Type.Optional(Type.String({ description: "Draft resource path returned by the mail application API." })),
+    schedule_action: Type.Optional(Type.String({ description: "Schedule action resource path returned by the mail application API." })),
+    cancel_send_resource: Type.Optional(Type.String({ description: "Cancel-send resource path returned by the mail application API." })),
+    schedule_date: Type.Optional(Type.String({ description: "ISO-like schedule date accepted by Infomaniak Mail." })),
+    offset: Type.Optional(Type.Integer({ description: "Thread list offset.", minimum: 0 })),
+    thread_mode: Type.Optional(Type.String({ description: "Thread mode, usually on or off." })),
+    filter: Type.Optional(Type.String({ description: "Thread list filter." })),
+    with: Type.Optional(Type.String({ description: "Included resources requested from the mail application API." })),
+    preferred_format: Type.Optional(Type.String({ description: "Message format, usually html or text." })),
+    unit: Type.Optional(Type.String({ description: "Quota unit, usually B, kB, or MB." })),
+    payload: Type.Optional(Type.Unknown({ description: "Draft or message-move payload." })),
+    headers: Type.Optional(Type.Record(Type.String(), Type.Unknown(), { description: "Additional request headers." })),
+    confirm_mutating: Type.Optional(Type.Boolean({ description: "Required for mutating mail application actions when plugin config allows mutation." })),
+  },
+  { additionalProperties: false },
+);
+
+type MailApplicationActionName =
+  | "listUserMailboxes"
+  | "listFolders"
+  | "listThreads"
+  | "getMessage"
+  | "getMailboxQuota"
+  | "createDraft"
+  | "updateDraft"
+  | "getDraft"
+  | "deleteDraft"
+  | "scheduleDraft"
+  | "deleteSchedule"
+  | "cancelSend"
+  | "moveMessages"
+  | "currentMyKSuite";
+
+interface MailApplicationActionMetadata {
+  operationId: string;
+  action: MailApplicationActionName;
+  domain: "mail";
+  method: string;
+  path: string;
+  summary: string;
+  mutating: boolean;
+}
+
+const mailApplicationActions = [
+  {
+    operationId: "MailApplication/ListUserMailboxes",
+    action: "listUserMailboxes",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mailbox",
+    summary: "List mailboxes available to the current user in the Infomaniak Mail application.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/ListFolders",
+    action: "listFolders",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mail/{mailbox_uuid}/folder",
+    summary: "List folders for a mailbox in the Infomaniak Mail application.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/ListThreads",
+    action: "listThreads",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mail/{mailbox_uuid}/folder/{folder_id}/message",
+    summary: "List mailbox threads or messages for a folder in the Infomaniak Mail application.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/GetMessage",
+    action: "getMessage",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mail/{mailbox_uuid}/folder/{folder_id}/message/{message_uid}",
+    summary: "Read one message resource returned by the Infomaniak Mail application thread list.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/GetMailboxQuota",
+    action: "getMailboxQuota",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mailbox/quotas",
+    summary: "Read mailbox quota information from the Infomaniak Mail application.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/CreateDraft",
+    action: "createDraft",
+    domain: "mail",
+    method: "POST",
+    path: "/api/mail/{mailbox_uuid}/draft",
+    summary: "Create a draft in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/UpdateDraft",
+    action: "updateDraft",
+    domain: "mail",
+    method: "PUT",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}",
+    summary: "Update a draft in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/GetDraft",
+    action: "getDraft",
+    domain: "mail",
+    method: "GET",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}",
+    summary: "Read a draft in the Infomaniak Mail application.",
+    mutating: false,
+  },
+  {
+    operationId: "MailApplication/DeleteDraft",
+    action: "deleteDraft",
+    domain: "mail",
+    method: "DELETE",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}",
+    summary: "Delete a draft in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/ScheduleDraft",
+    action: "scheduleDraft",
+    domain: "mail",
+    method: "PUT",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}/schedule",
+    summary: "Schedule a draft send in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/DeleteSchedule",
+    action: "deleteSchedule",
+    domain: "mail",
+    method: "DELETE",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}/schedule",
+    summary: "Delete a scheduled draft send in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/CancelSend",
+    action: "cancelSend",
+    domain: "mail",
+    method: "PUT",
+    path: "/api/mail/{mailbox_uuid}/draft/{draft_uuid}/cancel",
+    summary: "Cancel a pending send in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/MoveMessages",
+    action: "moveMessages",
+    domain: "mail",
+    method: "POST",
+    path: "/api/mail/{mailbox_uuid}/message/move",
+    summary: "Move messages between folders in the Infomaniak Mail application.",
+    mutating: true,
+  },
+  {
+    operationId: "MailApplication/CurrentMyKSuite",
+    action: "currentMyKSuite",
+    domain: "mail",
+    method: "GET",
+    path: "/1/my_ksuite/current",
+    summary: "Read the current user's kSuite mail context from the public API host.",
+    mutating: false,
+  },
+] as const satisfies readonly MailApplicationActionMetadata[];
+
+const mailApplicationActionByName = new Map<string, MailApplicationActionMetadata>(mailApplicationActions.map((action) => [action.action, action]));
+
 export function createInfomaniakOpenClawTools(options: InfomaniakOpenClawToolsOptions = {}): AnyAgentTool[] {
   const config = resolveInfomaniakPluginConfig(options.config);
 
@@ -166,6 +373,15 @@ export function createInfomaniakOpenClawTools(options: InfomaniakOpenClawToolsOp
       execute: async (_toolCallId, params, signal) => jsonResult(await discoverAllowedResources(config, options.fetch, asRecord(params), signal)),
     },
     {
+      name: "infomaniak_mail_application",
+      label: "Infomaniak Mail Application",
+      description:
+        "Call reviewed Infomaniak Mail application actions for mailbox content, threads, messages, quotas, drafts, schedules, and message moves.",
+      parameters: infomaniakMailApplicationToolSchema,
+      executionMode: "sequential",
+      execute: async (_toolCallId, params, signal) => jsonResult(await callMailApplicationAction(config, options.fetch, asRecord(params), signal)),
+    },
+    {
       name: "infomaniak_call",
       label: "Infomaniak Call",
       description: "Call one Infomaniak API operation through the SDK. Use search and describe first; mutating operations require explicit confirmation and plugin permission.",
@@ -189,6 +405,7 @@ export function resolveInfomaniakPluginConfig(config: Record<string, unknown> | 
   return {
     ...optionalStringProperty(record, "token"),
     ...optionalStringProperty(record, "baseUrl"),
+    ...optionalStringProperty(record, "mailApplicationBaseUrl"),
     allowedDomains: stringArrayProperty(record, "allowedDomains"),
     allowedOperations: stringArrayProperty(record, "allowedOperations"),
     deniedOperations: stringArrayProperty(record, "deniedOperations"),
@@ -200,6 +417,11 @@ function listAllowedDomains(config: InfomaniakOpenClawPluginConfig) {
   const counts = new Map<string, number>();
   for (const operation of allowedOperations(config)) {
     counts.set(operation.domain, (counts.get(operation.domain) ?? 0) + 1);
+  }
+  for (const action of mailApplicationActions) {
+    if (mailApplicationActionAllowed(config, action)) {
+      counts.set(action.domain, (counts.get(action.domain) ?? 0) + 1);
+    }
   }
   return listDomains()
     .filter((domain) => counts.has(domain.domain))
@@ -287,6 +509,78 @@ async function discoverAllowedResources(
   return discovery.discover(discoveryOptions);
 }
 
+async function callMailApplicationAction(
+  config: InfomaniakOpenClawPluginConfig,
+  fetchImpl: typeof fetch | undefined,
+  params: Record<string, unknown>,
+  signal: AbortSignal | undefined,
+) {
+  const action = getAllowedMailApplicationAction(config, readMailApplicationAction(params));
+  assertMutationAllowed(config, action, params.confirm_mutating === true);
+  const client = createInfomaniakClient(buildClientConfig(config, fetchImpl));
+  const requestOptions = buildMailApplicationRequestOptions(params, signal);
+  const result = await executeMailApplicationAction(client, action, params, requestOptions);
+  return { operation: summarizeMailApplicationAction(action), result };
+}
+
+async function executeMailApplicationAction(
+  client: ReturnType<typeof createInfomaniakClient>,
+  action: MailApplicationActionMetadata,
+  params: Record<string, unknown>,
+  requestOptions: ReturnType<typeof buildMailApplicationRequestOptions>,
+): Promise<unknown> {
+  switch (action.action) {
+    case "listUserMailboxes":
+      return client.mail.application.listUserMailboxes(requestOptions);
+    case "listFolders":
+      return client.mail.application.listFolders(requiredString(params, "mailbox_uuid"), requestOptions);
+    case "listThreads":
+      return client.mail.application.listThreads(requiredString(params, "mailbox_uuid"), requiredString(params, "folder_id"), {
+        ...requestOptions,
+        ...optionalProperty("offset", nonNegativeIntegerParam(params.offset)),
+        ...optionalProperty("threadMode", stringParam(params.thread_mode)),
+        ...optionalProperty("filter", stringParam(params.filter)),
+      });
+    case "getMessage":
+      return client.mail.application.getMessage(requiredString(params, "message_resource"), {
+        ...requestOptions,
+        ...optionalProperty("preferredFormat", stringParam(params.preferred_format)),
+      });
+    case "getMailboxQuota":
+      return client.mail.application.getMailboxQuota(requiredString(params, "mailbox"), requiredPositiveInteger(params, "product_id"), {
+        ...requestOptions,
+        ...optionalProperty("unit", stringParam(params.unit)),
+      });
+    case "createDraft":
+      return client.mail.application.createDraft(requiredString(params, "mailbox_uuid"), requiredPayload<MailDraftPayload>(params, "payload"), requestOptions);
+    case "updateDraft":
+      return client.mail.application.updateDraft(
+        requiredString(params, "mailbox_uuid"),
+        requiredString(params, "draft_uuid"),
+        requiredPayload<MailDraftPayload>(params, "payload"),
+        requestOptions,
+      );
+    case "getDraft":
+      return client.mail.application.getDraft(requiredString(params, "mailbox_uuid"), requiredString(params, "draft_uuid"), requestOptions);
+    case "deleteDraft":
+      return client.mail.application.deleteDraft(requiredString(params, "mailbox_uuid"), requiredString(params, "draft_uuid"), requestOptions);
+    case "scheduleDraft":
+      return client.mail.application.scheduleDraft(requiredString(params, "draft_resource"), requiredString(params, "schedule_date"), requestOptions);
+    case "deleteSchedule":
+      return client.mail.application.deleteSchedule(requiredString(params, "schedule_action"), requestOptions);
+    case "cancelSend":
+      return client.mail.application.cancelSend(requiredString(params, "cancel_send_resource"), requestOptions);
+    case "moveMessages":
+      return client.mail.application.moveMessages(
+        requiredString(params, "mailbox_uuid"),
+        requiredPayload<MailMoveMessagesPayload>(params, "payload"),
+        requestOptions,
+      );
+    case "currentMyKSuite":
+      return client.mail.application.currentMyKSuite(requestOptions);
+  }
+}
+
 function operationAllowed(config: InfomaniakOpenClawPluginConfig, operation: OperationMetadata): boolean {
   const allowedDomainSet = new Set(config.allowedDomains);
   const allowedOperationSet = new Set(config.allowedOperations);
@@ -299,6 +593,29 @@ function operationAllowed(config: InfomaniakOpenClawPluginConfig, operation: Ope
     return false;
   }
   return !deniedOperationSet.has(operation.operationId);
+}
+
+function getAllowedMailApplicationAction(config: InfomaniakOpenClawPluginConfig, actionName: string): MailApplicationActionMetadata {
+  const action = mailApplicationActionByName.get(actionName);
+  if (!action) {
+    throw new Error(`Unknown Infomaniak Mail application action: ${actionName}`);
+  }
+  if (!mailApplicationActionAllowed(config, action)) {
+    throw new Error(`Infomaniak Mail application action is not allowed by plugin policy: ${action.operationId}`);
+  }
+  return action;
+}
+
+function mailApplicationActionAllowed(config: InfomaniakOpenClawPluginConfig, action: MailApplicationActionMetadata): boolean {
+  const allowedOperationSet = new Set(config.allowedOperations);
+  const deniedOperationSet = new Set(config.deniedOperations);
+  if (!domainAllowed(config, action.domain)) {
+    return false;
+  }
+  if (allowedOperationSet.size > 0 && !allowedOperationSet.has(action.operationId)) {
+    return false;
+  }
+  return !deniedOperationSet.has(action.operationId);
 }
 
 function domainAllowed(config: InfomaniakOpenClawPluginConfig, domain: string): boolean {
@@ -326,7 +643,7 @@ function assertDiscoveryRecipeAllowed(
   }
 }
 
-function assertMutationAllowed(config: InfomaniakOpenClawPluginConfig, operation: OperationMetadata, confirmed: boolean): void {
+function assertMutationAllowed(config: InfomaniakOpenClawPluginConfig, operation: Pick<OperationMetadata, "operationId" | "mutating">, confirmed: boolean): void {
   if (!operation.mutating) {
     return;
   }
@@ -358,6 +675,20 @@ function summarizeOperation(operation: OperationMetadata): OperationSummary {
   };
 }
 
+function summarizeMailApplicationAction(action: MailApplicationActionMetadata): OperationSummary {
+  return {
+    operationId: action.operationId,
+    functionName: action.action,
+    domain: action.domain,
+    method: action.method,
+    path: action.path,
+    summary: action.summary,
+    mutating: action.mutating,
+    deprecated: false,
+    docs: null,
+  };
+}
+
 function buildClientConfig(config: InfomaniakOpenClawPluginConfig, fetchImpl: typeof fetch | undefined): InfomaniakClientConfig {
   const clientConfig: InfomaniakClientConfig = {};
   if (config.token) {
@@ -365,6 +696,9 @@ function buildClientConfig(config: InfomaniakOpenClawPluginConfig, fetchImpl: ty
   }
   if (config.baseUrl) {
     clientConfig.baseUrl = config.baseUrl;
+  }
+  if (config.mailApplicationBaseUrl) {
+    clientConfig.mailApplicationBaseUrl = config.mailApplicationBaseUrl;
   }
   if (fetchImpl) {
     clientConfig.fetch = fetchImpl;
@@ -395,6 +729,14 @@ function buildOperationRequest(record: Record<string, unknown>, signal: AbortSig
   return request;
 }
 
+function buildMailApplicationRequestOptions(record: Record<string, unknown>, signal: AbortSignal | undefined) {
+  return {
+    ...optionalProperty("headers", asOptionalRecord(record.headers)),
+    ...optionalProperty("signal", signal),
+    ...optionalProperty("includedResources", stringParam(record.with)),
+  };
+}
+
 function readOperationId(params: unknown): string {
   const operationId = stringParam(asRecord(params).operation_id);
   if (!operationId) {
@@ -403,7 +745,42 @@ function readOperationId(params: unknown): string {
   return operationId;
 }
 
-function optionalStringProperty(record: Record<string, unknown>, key: "token" | "baseUrl"): Partial<Pick<InfomaniakOpenClawPluginConfig, "token" | "baseUrl">> {
+function readMailApplicationAction(params: Record<string, unknown>): string {
+  const action = stringParam(params.action);
+  if (!action) {
+    throw new Error("action is required.");
+  }
+  return action;
+}
+
+function requiredString(params: Record<string, unknown>, key: string): string {
+  const value = stringParam(params[key]);
+  if (!value) {
+    throw new Error(`${key} is required.`);
+  }
+  return value;
+}
+
+function requiredPositiveInteger(params: Record<string, unknown>, key: string): number {
+  const value = numberParam(params[key]);
+  if (value === undefined) {
+    throw new Error(`${key} must be a positive integer.`);
+  }
+  return value;
+}
+
+function requiredPayload<TPayload>(params: Record<string, unknown>, key: string): TPayload {
+  const payload = params[key];
+  if (typeof payload !== "object" || payload === null || Array.isArray(payload)) {
+    throw new Error(`${key} must be an object.`);
+  }
+  return payload as TPayload;
+}
+
+function optionalStringProperty(
+  record: Record<string, unknown>,
+  key: "token" | "baseUrl" | "mailApplicationBaseUrl",
+): Partial<Pick<InfomaniakOpenClawPluginConfig, "token" | "baseUrl" | "mailApplicationBaseUrl">> {
   const value = stringParam(record[key]);
   return value ? { [key]: value } : {};
 }
@@ -436,6 +813,10 @@ function stringParam(value: unknown): string | undefined {
 
 function numberParam(value: unknown): number | undefined {
   return typeof value === "number" && Number.isInteger(value) && value > 0 ? value : undefined;
+}
+
+function nonNegativeIntegerParam(value: unknown): number | undefined {
+  return typeof value === "number" && Number.isInteger(value) && value >= 0 ? value : undefined;
 }
 
 function asOptionalRecord(value: unknown): Record<string, unknown> | undefined {

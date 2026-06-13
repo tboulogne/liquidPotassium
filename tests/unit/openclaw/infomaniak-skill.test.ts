@@ -14,7 +14,14 @@ describe("Infomaniak OpenClaw skill", () => {
 
     expect(skill).toContain("name: infomaniak");
     expect(skill).toContain("plugins.entries.infomaniak.enabled");
-    for (const toolName of ["infomaniak_domains", "infomaniak_search", "infomaniak_describe", "infomaniak_discover", "infomaniak_call"]) {
+    for (const toolName of [
+      "infomaniak_domains",
+      "infomaniak_search",
+      "infomaniak_describe",
+      "infomaniak_discover",
+      "infomaniak_mail_application",
+      "infomaniak_call",
+    ]) {
       expect(registeredToolNames).toContain(toolName);
       expect(skill).toContain(toolName);
     }
@@ -33,6 +40,7 @@ describe("Infomaniak OpenClaw skill", () => {
     expect(callIndex).toBeGreaterThan(discoverIndex);
     expect(skill).toContain("Do not guess operation IDs");
     expect(skill).toContain("no_public_discovery");
+    expect(skill).toContain("Mail application actions for mailbox consumption");
     expect(skill).toContain("Call a mutating operation only when the user has explicitly asked");
     expect(skill).toContain("confirm_mutating=true");
   });

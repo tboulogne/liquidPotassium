@@ -4,10 +4,12 @@ import { createResourceDiscovery, type ResourceDiscovery } from "../discovery/re
 import type { OperationMetadata } from "../generated/catalog/types.js";
 import type { GeneratedOperationClient, OperationRequest } from "./generated-operation-client.js";
 import { InfomaniakError, InfomaniakOperationError } from "./errors.js";
+import { createMailApplicationClient, type MailApplicationClient } from "./mail-application.js";
 
 export interface InfomaniakClientConfig {
   token?: string | (() => string | Promise<string>);
   baseUrl?: string;
+  mailApplicationBaseUrl?: string;
   fetch?: typeof fetch;
   headers?: HeadersInit | (() => HeadersInit | Promise<HeadersInit>);
   userAgent?: string;
@@ -28,15 +30,20 @@ export interface RawClient {
 }
 
 export type DomainClients = ReturnType<typeof createDomainOperations>;
+export type MailDomainClient = DomainClients["mail"] & {
+  application: MailApplicationClient;
+};
 
 export type InfomaniakClient = GeneratedOperationClient &
-  DomainClients & {
+  Omit<DomainClients, "mail"> & {
     discovery: ResourceDiscovery;
+    mail: MailDomainClient;
     raw: RawClient;
     request(path: string, options?: RawRequestOptions): Promise<unknown>;
   };
 
 const defaultBaseUrl = "https://api.infomaniak.com";
+const defaultMailApplicationBaseUrl = "https://mail.infomaniak.com";
 const operationById = new Map<string, OperationMetadata>(operations.map((operation) => [operation.operationId, operation]));
 
 export function createInfomaniakClient(config: InfomaniakClientConfig = {}): InfomaniakClient {
@@ -67,11 +74,22 @@ export function createInfomaniakClient(config: InfomaniakClientConfig = {}): Inf
     PATCH: (path, options) => requestPath(fetchImpl, config, path, { ...options, method: "PATCH" }),
     DELETE: (path, options) => requestPath(fetchImpl, config, path, { ...options, method: "DELETE" }),
   };
+  const domainClients = createDomainOperations(generatedClient);
+  const mailApplicationBaseUrl = config.mailApplicationBaseUrl ?? defaultMailApplicationBaseUrl;
+  const mailApplication = createMailApplicationClient({
+    apiRequest: (path, options) => requestPath(fetchImpl, config, path, options as RawRequestOptions | undefined),
+    mailApplicationBaseUrl,
+    mailRequest: (path, options) => requestPath(fetchImpl, { ...config, baseUrl: mailApplicationBaseUrl }, path, options as RawRequestOptions | undefined),
+  });
 
   return {
     ...generatedClient,
-    ...createDomainOperations(generatedClient),
+    ...domainClients,
     discovery: createResourceDiscovery(generatedClient),
+    mail: {
+      ...domainClients.mail,
+      application: mailApplication,
+    },
     raw,
     request: (path, options) => requestPath(fetchImpl, config, path, options),
   };
