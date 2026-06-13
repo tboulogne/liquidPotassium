@@ -35,6 +35,8 @@
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "docs:fetch": "tsx scripts/fetch-docs-snapshot.ts",
+    "docs:check": "tsx scripts/check-docs-snapshot.ts",
     "normalize": "tsx scripts/normalize-openapi.ts",
     "generate": "tsx scripts/generate-types.ts && tsx scripts/generate-operations.ts && tsx scripts/generate-endpoint-tests.ts"
   },

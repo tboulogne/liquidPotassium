@@ -5,8 +5,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 ## Current State
 
 - Phase: Phase 9 planning - Docs-Enriched Resource Discovery.
-- Active task: Project documentation now includes the resource-discovery and docs-enriched catalog plan; next step is commit or implementation.
-- Repository status: The Phase 1-8 implementation is complete and committed; resource discovery is planned but not implemented.
+- Active task: Docs snapshot extraction/check tooling is implemented; next step is committing this first Phase 9 slice.
+- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling has local changes awaiting commit.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -47,11 +47,13 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added the Infomaniak OpenClaw skill and drift tests for valid tool references and safe search-describe-call guidance.
 - `834383c docs: add release readiness`
   - Added README usage, release checklist, CI workflow, package exports, no-network policy check, and release validation.
+- `39c0692 docs: plan resource discovery`
+  - Added the Phase 9 docs-enriched resource discovery plan to project documentation.
 
 ## Next Task Queue
 
-1. Commit the docs update for Phase 9 resource discovery planning.
-2. Implement docs snapshot tooling and committed docs enrichment artifacts.
+1. Commit docs snapshot extraction/check tooling.
+2. Run `npm run docs:fetch` and commit `spec/infomaniak.docs-snapshot.json` plus `spec/docs-enrichment-report.json`.
 3. Enrich generated operation metadata from the docs snapshot.
 4. Add nested Infomaniak query serialization.
 5. Add SDK and OpenClaw resource discovery APIs across all domains.
@@ -71,7 +73,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Release readiness: passing full `npm run ci`, including generation consistency, no-network policy, typecheck, build, and 100% coverage.
 - No-network test guarantee: implemented through the Vitest setup harness and injected fetch tests.
 - OpenClaw plugin validation: implemented for compact native tools.
-- Resource discovery: planned in `MASTERPLAN.md`; not implemented yet.
+- Docs snapshot tooling: passing `npm run typecheck` and `npm run test:coverage` with fixture-backed unit tests and no live network calls.
+- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling is implemented, but enrichment, runtime discovery, and OpenClaw discovery are not implemented yet.
 
 ## Blockers And Risks
 
