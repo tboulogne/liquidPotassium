@@ -50,6 +50,37 @@ describe("createInfomaniakClient", () => {
     expect((init?.headers as Headers).get("authorization")).toBe("Bearer token");
   });
 
+  it("serializes nested query objects with Infomaniak bracket notation", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(jsonResponse({ ok: true }));
+    const client = createInfomaniakClient({ fetch: fetchMock });
+
+    await client.raw.GET("/1/accounts/{account_id}/products", {
+      path: { account_id: 42 },
+      query: {
+        tags: ["a", "b"],
+        filter: {
+          service_names: ["mailing", "mailbox"],
+          enabled: true,
+          range: { from: 1, to: 2, empty: null },
+          rules: [{ field: "name" }],
+        },
+        passthrough: new URLSearchParams({ raw: "1" }),
+      },
+    });
+
+    expect(fetchMock.mock.calls[0]?.[0]).toBe(
+      "https://api.infomaniak.com/1/accounts/42/products?" +
+        "tags=a&tags=b&" +
+        "filter%5Bservice_names%5D%5B%5D=mailing&" +
+        "filter%5Bservice_names%5D%5B%5D=mailbox&" +
+        "filter%5Benabled%5D=true&" +
+        "filter%5Brange%5D%5Bfrom%5D=1&" +
+        "filter%5Brange%5D%5Bto%5D=2&" +
+        "filter%5Brules%5D%5B%5D%5Bfield%5D=name&" +
+        "passthrough=raw%3D1",
+    );
+  });
+
   it("does not force JSON content-type for multipart bodies", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(new Response(null, { status: 204 }));
     const form = new FormData();

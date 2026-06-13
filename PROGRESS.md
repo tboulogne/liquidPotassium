@@ -5,8 +5,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 ## Current State
 
 - Phase: Phase 9 implementation - Docs-Enriched Resource Discovery.
-- Active task: Docs-enriched operation catalog metadata is implemented and validated; next step is nested Infomaniak query serialization.
-- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling, docs snapshot artifacts, and catalog enrichment are implemented in focused slices.
+- Active task: Nested Infomaniak query serialization is implemented and validated; next step is SDK and OpenClaw resource discovery APIs.
+- Repository status: The Phase 1-8 implementation is complete and committed; Phase 9 docs tooling, docs snapshot artifacts, catalog enrichment, and nested query serialization are implemented in focused slices.
 - Coordination mode: one main agent owns sequencing, verification, integration, and commits.
 
 ## Coordination Rules
@@ -57,14 +57,16 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
   - Added bounded retry/backoff handling for live docs snapshot fetching when the developer portal returns transient 429 or 5xx responses.
 - `009a418 chore: add infomaniak docs snapshot`
   - Added the committed official docs snapshot and docs enrichment report, with 1,405 docs operations and 1,402 normalized-operation matches.
-- `feat: enrich generated catalog with docs metadata`
+- `8b46773 feat: enrich catalog with docs metadata`
   - Enriched generated operation metadata from the committed docs snapshot with docs URLs, docs operation IDs, category paths, portal flags, capabilities, compact parameter descriptions/schema metadata/enums/examples, and response statuses.
   - Extended generated endpoint tests, catalog search/description, public exports, and OpenClaw search summaries to expose and verify docs-backed metadata.
+- `feat: serialize nested query parameters`
+  - Added Infomaniak-compatible bracket notation for nested query objects and nested arrays while preserving repeated-key serialization for simple top-level arrays.
+  - Added runtime tests for nested filters such as `filter[service_names][]=mailing`.
 
 ## Next Task Queue
 
-1. Add nested Infomaniak query serialization.
-2. Add SDK and OpenClaw resource discovery APIs across all domains.
+1. Add SDK and OpenClaw resource discovery APIs across all domains.
 
 ## Validation Status
 
@@ -84,7 +86,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 - Docs snapshot tooling: passing `npm run typecheck` and `npm run test:coverage` with fixture-backed unit tests and no live network calls.
 - Docs snapshot artifacts: fetched 1,405 official docs operations; `npm run docs:check` reports 1,402 matched docs operations, 3 docs-only entries, 27 spec-only operations, 15 operation ID mismatches, 0 duplicate docs entries, and 0 errors.
 - Docs-enriched catalog metadata: passing `npm run typecheck`, `npm run build`, `npm run check:no-network`, `npm run docs:check`, and `npm run test:coverage` with 100% statements, branches, functions, and lines.
-- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling, source artifacts, and catalog enrichment are implemented, but nested query serialization, runtime discovery, and OpenClaw discovery are not implemented yet.
+- Nested query serialization: passing `npm run typecheck` and `npm run test:coverage`; nested objects use bracket notation and simple top-level arrays remain repeated query keys.
+- Resource discovery: planned in `MASTERPLAN.md`; docs snapshot tooling, source artifacts, catalog enrichment, and nested query serialization are implemented, but runtime discovery and OpenClaw discovery are not implemented yet.
 
 ## Blockers And Risks
 

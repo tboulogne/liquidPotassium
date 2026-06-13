@@ -128,22 +128,32 @@ function buildUrl(baseUrl: string, pathTemplate: string, pathParams?: Record<str
   });
   const url = new URL(path, baseUrl);
   for (const [key, value] of Object.entries(query ?? {})) {
-    appendQueryValue(url, key, value);
+    appendQueryValue(url, key, value, false);
   }
   return url.toString();
 }
 
-function appendQueryValue(url: URL, key: string, value: unknown): void {
+function appendQueryValue(url: URL, key: string, value: unknown, nested: boolean): void {
   if (value === undefined || value === null) {
     return;
   }
   if (Array.isArray(value)) {
     for (const item of value) {
-      appendQueryValue(url, key, item);
+      appendQueryValue(url, nested ? `${key}[]` : key, item, nested);
+    }
+    return;
+  }
+  if (isQueryObject(value)) {
+    for (const [childKey, childValue] of Object.entries(value)) {
+      appendQueryValue(url, `${key}[${childKey}]`, childValue, true);
     }
     return;
   }
   url.searchParams.append(key, String(value));
+}
+
+function isQueryObject(value: unknown): value is Record<string, unknown> {
+  return Object.prototype.toString.call(value) === "[object Object]";
 }
 
 async function buildHeaders(
