@@ -1,16 +1,16 @@
 {
-  "name": "liquid-potassium",
-  "version": "0.3.0",
+  "name": "@tboulogne/liquid-potassium",
+  "version": "0.3.1",
   "description": "Domain-oriented TypeScript SDK and OpenClaw integration for the Infomaniak API.",
   "license": "Apache-2.0",
   "author": "OpenCow42",
-  "homepage": "https://github.com/OpenCow42/liquidPotassium#readme",
+  "homepage": "https://github.com/tboulogne/liquidPotassium#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OpenCow42/liquidPotassium.git"
+    "url": "git+https://github.com/tboulogne/liquidPotassium.git"
   },
   "bugs": {
-    "url": "https://github.com/OpenCow42/liquidPotassium/issues"
+    "url": "https://github.com/tboulogne/liquidPotassium/issues"
   },
   "keywords": [
     "infomaniak",
@@ -80,5 +80,8 @@
     "tsx": "^4.20.0",
     "typescript": "^5.8.3",
     "vitest": "^4.1.8"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

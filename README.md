@@ -1,3 +1,5 @@
+> Fork de [OpenCow42/liquidPotassium](https://github.com/OpenCow42/liquidPotassium), publié indépendamment sous `@tboulogne/liquid-potassium`. Licence Apache-2.0 et attribution d’origine conservées.
+
 # liquid-potassium
 
 Domain-oriented TypeScript SDK and OpenClaw integration for the Infomaniak API.
@@ -23,7 +25,7 @@ This is an unofficial community project and is not affiliated with Infomaniak.
 ## Install
 
 ```bash
-npm install liquid-potassium
+npm install @tboulogne/liquid-potassium
 ```
 
 For local development:
@@ -38,7 +40,7 @@ npm run ci
 ## Quick Start
 
 ```ts
-import { createInfomaniakClient, searchOperations } from "liquid-potassium";
+import { createInfomaniakClient, searchOperations } from "@tboulogne/liquid-potassium";
 
 const client = createInfomaniakClient({
   token: process.env.INFOMANIAK_TOKEN,
@@ -86,7 +88,7 @@ import {
   listDomains,
   listOperations,
   searchOperations,
-} from "liquid-potassium";
+} from "@tboulogne/liquid-potassium";
 
 const domains = listDomains();
 const reads = listOperations({ domain: "kdrive", method: "GET", mutating: false });
@@ -99,7 +101,7 @@ const mutating = isMutatingOperation(operation.operationId);
 Resource discovery helps callers find required IDs before calling operations.
 
 ```ts
-import { createInfomaniakClient, describeOperationRequirements } from "liquid-potassium";
+import { createInfomaniakClient, describeOperationRequirements } from "@tboulogne/liquid-potassium";
 
 const client = createInfomaniakClient({ token: process.env.INFOMANIAK_TOKEN, fetch });
 
@@ -176,7 +178,7 @@ By default the client resolves `private-team.<team_id>` and `presence-teamUser.<
 The native plugin entry is exported at:
 
 ```ts
-import plugin from "liquid-potassium/openclaw/plugin";
+import plugin from "@tboulogne/liquid-potassium/openclaw/plugin";
 ```
 
 The plugin registers six compact tools:
