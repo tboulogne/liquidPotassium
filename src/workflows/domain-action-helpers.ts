@@ -59,6 +59,14 @@ export function mailThreadOptions(input: Record<string, unknown>, signal: AbortS
   const filter = optionalString(input, "filter");
   const threadMode = optionalString(input, "thread_mode");
   const offset = integerParam(input.offset);
+  for (const [key, expected] of [["search_text", "string"], ["search_everywhere", "boolean"], ["search_attachments", "boolean"]] as const) {
+    if (input[key] !== undefined && typeof input[key] !== expected) {
+      throw new InfomaniakError(`${key} must be a ${expected}.`);
+    }
+  }
+  const searchText = optionalString(input, "search_text");
+  const searchEverywhere = booleanParam(input.search_everywhere);
+  const searchAttachments = booleanParam(input.search_attachments);
   if (filter !== undefined) {
     options.filter = filter;
   }
@@ -68,6 +76,9 @@ export function mailThreadOptions(input: Record<string, unknown>, signal: AbortS
   if (offset !== undefined) {
     options.offset = offset;
   }
+  if (searchText !== undefined) options.searchText = searchText;
+  if (searchEverywhere !== undefined) options.searchEverywhere = searchEverywhere;
+  if (searchAttachments !== undefined) options.searchAttachments = searchAttachments;
   return options;
 }
 

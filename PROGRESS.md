@@ -4,6 +4,8 @@ This file is the canonical live tracker for the Infomaniak SDK and OpenClaw inte
 
 ## Current State
 
+- Fork task (2026-11-03): implemented Mail text-search options and opt-in compact OpenClaw listing. Independent review identified discontinuous pagination, nested-field leakage, and missing identifiers; these were corrected with synthetic tests. A subsequent coding-standards audit led to strict search input validation and additional pagination safeguards. `npm run ci` passed under Node 22.21.0 (116 tests, 100% configured coverage). No live mailbox calls, plugin installation, or message mutation. Search semantics and compact response shape remain unverified against a live mailbox; offset pagination is not a stable mailbox snapshot. Integration into an installed plugin and any mailbox cleanup remain future separately authorized work.
+
 - Phase: Published SDK release and OpenClaw migration readiness.
 - Active task: Migrating downstream `potassium-openclaw` usage to the published `liquid-potassium` package.
 - Repository status: `liquid-potassium@0.1.0` is published on npm; OpenClaw workflow tooling and kDrive upload file-path support are implemented on branch `codex/liquid-library-openclaw-workflows`.

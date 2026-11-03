@@ -285,16 +285,19 @@ describe("Infomaniak OpenClaw tools", () => {
         offset: 0,
         thread_mode: "off",
         filter: "unseen",
+        search_text: "example & co",
+        search_everywhere: true,
+        search_attachments: false,
         with: "emoji_reactions_per_message",
       },
       abort.signal,
     );
-    await executeTool(tool, {
+    await expect(executeTool(tool, {
       action: "listThreads",
       mailbox_uuid: "mailbox-uuid",
       folder_id: "archive",
       offset: -1,
-    });
+    })).rejects.toThrow(/offset/);
     await executeTool(tool, {
       action: "getMessage",
       message_resource: "/api/mail/mailbox-uuid/folder/inbox/message/42",
@@ -316,8 +319,7 @@ describe("Infomaniak OpenClaw tools", () => {
     expect(fetchMock.mock.calls.map(([url]) => url)).toEqual([
       "https://mail.example.test/api/mailbox?with=unseen%2Caliases",
       "https://mail.example.test/api/mail/mailbox-uuid/folder?with=ik-static",
-      "https://mail.example.test/api/mail/mailbox-uuid/folder/inbox/message?offset=0&thread=off&filters=unseen&with=emoji_reactions_per_message",
-      "https://mail.example.test/api/mail/mailbox-uuid/folder/archive/message?offset=0&thread=on&with=emoji_reactions_per_message",
+      "https://mail.example.test/api/mail/mailbox-uuid/folder/inbox/message?offset=0&thread=off&filters=unseen&scontains=example+%26+co&severywhere=1&with=emoji_reactions_per_message",
       "https://mail.example.test/api/mail/mailbox-uuid/folder/inbox/message/42?prefered_format=text&with=auto_uncrypt",
       "https://mail.example.test/api/mailbox/quotas?mailbox=opencow&product_id=497445&unit=MB",
       "https://mail.example.test/api/mail/mailbox-uuid/draft/draft-uuid",
@@ -710,6 +712,30 @@ describe("Infomaniak OpenClaw tools", () => {
         { operation_id: "post_1_kmeet_rooms", confirm_mutating: true },
       ),
     ).rejects.toThrow(/not allowed/);
+  });
+
+  it("rejects incorrectly typed Mail search options before fetch", async () => {
+    const fetchMock = vi.fn<typeof fetch>();
+    const tool = findTool(createInfomaniakOpenClawTools({ fetch: fetchMock, config: { allowedDomains: ["mail"] } }), "infomaniak_mail_application");
+    for (const [key, value] of [["search_text", 4], ["search_everywhere", "true"], ["search_attachments", "true"], ["compact", "true"]] as const) {
+      await expect(executeTool(tool, { action: "listThreads", mailbox_uuid: "box", folder_id: "inbox", [key]: value })).rejects.toThrow(key);
+    }
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it("returns compact Mail pages only when explicitly requested and keeps policy enforcement", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockResolvedValue(new Response(JSON.stringify({ result: "success", data: {
+      threads: Array.from({ length: 12 }, (_, n) => ({ messages: [{ uid: String(n), subject: "sample", body: "private" }] })),
+      current_offset: 0, thread_mode: "off", resource_next: null, total_messages_count: 12,
+    } }), { headers: { "content-type": "application/json" } }));
+    const tool = findTool(createInfomaniakOpenClawTools({ fetch: fetchMock, config: { allowedDomains: ["mail"] } }), "infomaniak_mail_application");
+    const result = await executeTool(tool, { action: "listThreads", mailbox_uuid: "box", folder_id: "inbox", thread_mode: "off", compact: true });
+    expect(result.result).toMatchObject({ data: { next_offset: 10, messages: Array.from({ length: 10 }, (_, n) => ({ uid: String(n), subject: "sample" })) } });
+    expect(JSON.stringify(result)).not.toContain("private");
+    await expect(executeTool(tool, { action: "listThreads", mailbox_uuid: "box", folder_id: "inbox", compact: true })).rejects.toThrow(/thread_mode off/);
+    const denied = findTool(createInfomaniakOpenClawTools({ fetch: fetchMock, config: { deniedOperations: ["MailApplication/ListThreads"] } }), "infomaniak_mail_application");
+    await expect(executeTool(denied, { action: "listThreads", mailbox_uuid: "box", folder_id: "inbox", thread_mode: "off", compact: true })).rejects.toThrow(/not allowed/);
+    expect(fetchMock).toHaveBeenCalledTimes(1);
   });
 
   it("passes path, query, headers, body, and abort signals for non-mutating calls", async () => {

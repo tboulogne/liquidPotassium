@@ -181,7 +181,7 @@ describe("domain workflow actions", () => {
     await runDomainAction(client, {
       domain: "mail",
       action: "listThreads",
-      input: { mailbox_uuid: "mailbox-uuid", folder_id: "inbox", filter: "unseen", thread_mode: "off", offset: 0 },
+      input: { mailbox_uuid: "mailbox-uuid", folder_id: "inbox", filter: "unseen", thread_mode: "off", offset: 0, search_text: "example", search_everywhere: false, search_attachments: true },
     });
     await runDomainAction(client, { domain: "mail", action: "getMessage", input: { message_resource: "/api/mail/x", preferred_format: "text" } });
     await runDomainAction(client, {
@@ -201,10 +201,21 @@ describe("domain workflow actions", () => {
       filter: "unseen",
       threadMode: "off",
       offset: 0,
+      searchText: "example",
+      searchEverywhere: false,
+      searchAttachments: true,
     });
     expect(client.mail.application.getMessage).toHaveBeenCalledWith("/api/mail/x", { preferredFormat: "text" });
     expect(client.mail.application.createDraft).toHaveBeenCalledWith("mailbox-uuid", { body: "Hello", to: [{ email: "a@example.com" }] }, {});
     expect(client.mail.application.moveMessages).toHaveBeenCalledWith("mailbox-uuid", { uids: ["1@inbox"], to: "archive" }, {});
+  });
+
+  it("rejects incorrectly typed Mail search options before making a request", async () => {
+    const client = createMockWorkflowRuntime();
+    for (const [key, value] of [["search_text", 4], ["search_everywhere", "true"], ["search_attachments", "true"]] as const) {
+      await expect(runDomainAction(client, { domain: "mail", action: "listThreads", input: { mailbox_uuid: "box", folder_id: "inbox", [key]: value } })).rejects.toThrow(key);
+    }
+    expect(client.mail.application.listThreads).not.toHaveBeenCalled();
   });
 
   it("omits absent optional action fields and propagates abort signals", async () => {

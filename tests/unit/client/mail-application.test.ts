@@ -39,6 +39,20 @@ describe("mail application client", () => {
     expect(fetchMock.mock.calls[0]?.[1]?.signal).toBe(abort.signal);
   });
 
+  it("encodes Mail search parameters and omits disabled attachment filters", async () => {
+    const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () => jsonResponse({ result: "success", data: {} }));
+    const client = createInfomaniakClient({ fetch: fetchMock, mailApplicationBaseUrl: "https://mail.example.test" });
+    await client.mail.application.listThreads("box", "inbox", { searchText: "équipe & test@example.test", searchEverywhere: true, searchAttachments: true });
+    await client.mail.application.listThreads("box", "inbox", { searchEverywhere: false, searchAttachments: false });
+    const first = new URL(String(fetchMock.mock.calls[0]?.[0]));
+    expect(first.searchParams.get("scontains")).toBe("équipe & test@example.test");
+    expect(first.searchParams.get("severywhere")).toBe("1");
+    expect(first.searchParams.get("sattachments")).toBe("yes");
+    const second = new URL(String(fetchMock.mock.calls[1]?.[0]));
+    expect(second.searchParams.get("severywhere")).toBe("0");
+    expect(second.searchParams.has("sattachments")).toBe(false);
+  });
+
   it("reads returned message resources and rejects resources outside the mail API", async () => {
     const fetchMock = vi.fn<typeof fetch>().mockImplementation(async () => jsonResponse({ result: "success", data: { subject: "Hello" } }));
     const client = createInfomaniakClient({

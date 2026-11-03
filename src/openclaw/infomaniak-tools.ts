@@ -1,4 +1,5 @@
 import { Type } from "typebox";
+import { compactMailThreadPage } from "./mail-list-compact.js";
 import type { AnyAgentTool } from "openclaw/plugin-sdk/plugin-entry";
 import { jsonResult } from "openclaw/plugin-sdk/agent-runtime";
 
@@ -177,6 +178,10 @@ export const infomaniakMailApplicationToolSchema = Type.Object(
     offset: Type.Optional(Type.Integer({ description: "Thread list offset.", minimum: 0 })),
     thread_mode: Type.Optional(Type.String({ description: "Thread mode, usually on or off." })),
     filter: Type.Optional(Type.String({ description: "Thread list filter." })),
+    search_text: Type.Optional(Type.String({ description: "Text search; application API behavior is not publicly documented." })),
+    search_everywhere: Type.Optional(Type.Boolean({ description: "Search all folders when true; the selected folder when false." })),
+    search_attachments: Type.Optional(Type.Boolean({ description: "Restrict search to messages with attachments when true." })),
+    compact: Type.Optional(Type.Boolean({ description: "Return up to 10 individual message summaries and an explicit next_offset; requires thread_mode off." })),
     with: Type.Optional(Type.String({ description: "Included resources requested from the mail application API." })),
     preferred_format: Type.Optional(Type.String({ description: "Message format, usually html or text." })),
     unit: Type.Optional(Type.String({ description: "Quota unit, usually B, kB, or MB." })),
@@ -577,8 +582,21 @@ async function callMailApplicationAction(
   assertMutationAllowed(config, action, params.confirm_mutating === true);
   const client = createInfomaniakClient(buildClientConfig(config, fetchImpl));
   const requestOptions = buildMailApplicationRequestOptions(params, signal);
+  if (action.action === "listThreads") {
+    for (const [key, expected] of [["search_text", "string"], ["search_everywhere", "boolean"], ["search_attachments", "boolean"], ["compact", "boolean"]] as const) {
+      if (params[key] !== undefined && typeof params[key] !== expected) {
+        throw new Error(`${key} must be a ${expected}.`);
+      }
+    }
+  }
+  if (action.action === "listThreads" && params.offset !== undefined && nonNegativeIntegerParam(params.offset) === undefined) {
+    throw new Error("offset must be a non-negative integer.");
+  }
+  if (params.compact === true && (action.action !== "listThreads" || params.thread_mode !== "off")) {
+    throw new Error("compact requires listThreads with thread_mode off.");
+  }
   const result = await executeMailApplicationAction(client, action, params, requestOptions);
-  return { operation: summarizeMailApplicationAction(action), result };
+  return { operation: summarizeMailApplicationAction(action), result: params.compact === true ? compactMailThreadPage(result, nonNegativeIntegerParam(params.offset) ?? 0) : result };
 }
 
 async function runWorkflowAction(
@@ -615,6 +633,9 @@ async function executeMailApplicationAction(
         ...optionalProperty("offset", nonNegativeIntegerParam(params.offset)),
         ...optionalProperty("threadMode", stringParam(params.thread_mode)),
         ...optionalProperty("filter", stringParam(params.filter)),
+        ...optionalProperty("searchText", stringParam(params.search_text)),
+        ...optionalProperty("searchEverywhere", typeof params.search_everywhere === "boolean" ? params.search_everywhere : undefined),
+        ...optionalProperty("searchAttachments", typeof params.search_attachments === "boolean" ? params.search_attachments : undefined),
       });
     case "getMessage":
       return client.mail.application.getMessage(requiredString(params, "message_resource"), {

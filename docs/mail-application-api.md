@@ -67,6 +67,12 @@ The tool uses compact action names matching the SDK method names. It obeys the s
 - Mutating actions require explicit user intent, `confirm_mutating=true`, and `blockMutating=false`.
 - All calls use the SDK's injected `fetch`; tests must never call the real network.
 
+## Mail search and compact OpenClaw pages
+
+`listThreads` accepts `searchText`, `searchEverywhere`, and `searchAttachments` in the SDK; their workflow and tool names are `search_text`, `search_everywhere`, and `search_attachments`. These map to `scontains`, `severywhere=1|0`, and `sattachments=yes` respectively. A false attachment option omits the filter rather than selecting messages without attachments. The parameter behavior is derived from [Infomaniak's Android Mail search client](https://github.com/Infomaniak/android-kMail/blob/eae10c9183acca4de4c939f80fdc78a83d2f3975/app/src/main/java/com/infomaniak/mail/utils/SearchUtils.kt), not a public stability contract. Text search is not guaranteed to match a sender field specifically. Treat search results as sensitive.
+
+The `infomaniak_mail_application` tool accepts `compact: true` for `listThreads` only with `thread_mode: "off"`. It returns at most ten message summaries and an explicit `next_offset` (or `null` at the reported end); repeat the same filters and search options at that offset. This is a local projection, not an API page-size setting. It excludes message bodies and previews, but still includes personal metadata. It requires a nonempty UID or resource, checks the returned offset and contiguous server continuation, and fails on ambiguous response shapes. Correspondent objects are reduced to name and email fields. Offset pagination can shift when a mailbox changes, so verify IDs and do not claim a consistent snapshot or exhaustive count without reconciliation. The original, unprojected tool behavior remains the default. Workflow actions and the standalone SDK still return the API's raw response.
+
 ## Maintenance Rules
 
 - Do not merge these routes into the generated OpenAPI catalog unless Infomaniak publishes them in the official OpenAPI spec or public Developer Portal operation data.

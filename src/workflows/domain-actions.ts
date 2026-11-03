@@ -753,6 +753,9 @@ const staticActions: readonly DomainActionDefinition[] = [
       field("filter", "string", false, "Optional Mail application filter such as unseen."),
       field("thread_mode", "string", false, "Thread mode, usually on or off."),
       field("offset", "number", false, "Result offset."),
+      field("search_text", "string", false, "Text search; application API behavior is not publicly documented."),
+      field("search_everywhere", "boolean", false, "Search all folders when true; the selected folder when false."),
+      field("search_attachments", "boolean", false, "Restrict search to messages with attachments when true."),
     ],
     mutating: false,
     run: (client, input, signal) =>

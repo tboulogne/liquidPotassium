@@ -53,6 +53,10 @@ export interface ListMailThreadsOptions extends MailIncludedResourcesOptions {
   offset?: number;
   threadMode?: "on" | "off" | (string & {});
   filter?: string | null;
+  /** Search behavior observed in the official Mail client; not a public API contract. */
+  searchText?: string;
+  searchEverywhere?: boolean;
+  searchAttachments?: boolean;
 }
 
 export interface GetMailMessageOptions extends MailIncludedResourcesOptions {
@@ -143,6 +147,9 @@ export function createMailApplicationClient(options: MailApplicationClientFactor
             offset: requestOptions?.offset ?? 0,
             thread: requestOptions?.threadMode ?? "on",
             filters: requestOptions?.filter,
+            scontains: requestOptions?.searchText,
+            severywhere: requestOptions?.searchEverywhere === undefined ? undefined : requestOptions.searchEverywhere ? "1" : "0",
+            sattachments: requestOptions?.searchAttachments ? "yes" : undefined,
             with: defaulted(requestOptions?.includedResources, "emoji_reactions_per_message"),
           }),
           headers: requestOptions?.headers,
